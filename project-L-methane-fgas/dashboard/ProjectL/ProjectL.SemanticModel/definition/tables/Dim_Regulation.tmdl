@@ -1,0 +1,46 @@
+table Dim_Regulation
+	lineageTag: fc5cd85c-3f51-5d52-a49e-f4d0b66f8148
+
+	column Regulation
+		dataType: string
+		lineageTag: b3c67261-d0e0-567b-a66d-ba555f10c7e8
+		summarizeBy: none
+		sourceColumn: Regulation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reference
+		dataType: string
+		lineageTag: e6c4e840-0e19-5aec-af0d-9d5ccd28b7e3
+		summarizeBy: none
+		sourceColumn: Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column Scope
+		dataType: string
+		lineageTag: 7d78c254-df0e-5a0c-93a5-92d8d7fe6529
+		summarizeBy: none
+		sourceColumn: Scope
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key_Date
+		dataType: string
+		lineageTag: 68ba013b-870b-5d96-b9c7-1c1f6fe7c1b4
+		summarizeBy: none
+		sourceColumn: Key_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Regulation = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Dim_Regulation.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Regulation", type text}, {"Reference", type text}, {"Scope", type text}, {"Key_Date", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

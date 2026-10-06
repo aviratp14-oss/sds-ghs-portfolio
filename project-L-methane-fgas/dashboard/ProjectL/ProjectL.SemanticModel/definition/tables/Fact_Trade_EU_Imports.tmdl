@@ -1,0 +1,127 @@
+table Fact_Trade_EU_Imports
+	lineageTag: db8b0023-4bc6-5fdc-befd-b40e4bf6524c
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f193d0d-f001-5cca-b976-9f7215e33c32
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Partner_Code
+		dataType: string
+		lineageTag: cd899cba-32b1-5cad-a298-7757cda5d6e4
+		summarizeBy: none
+		sourceColumn: Partner_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Partner_Name
+		dataType: string
+		lineageTag: e787fb43-51d8-5a33-af67-37bf00cd5ffb
+		summarizeBy: none
+		sourceColumn: Partner_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Partner_Is_EU27
+		dataType: boolean
+		lineageTag: 633e9fd7-44c6-50e0-8808-625aef61b6a7
+		summarizeBy: none
+		sourceColumn: Partner_Is_EU27
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flow_Type
+		dataType: string
+		lineageTag: 59ee8b76-2471-5f9e-a023-25a565036f82
+		summarizeBy: none
+		sourceColumn: Flow_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column HS6
+		dataType: string
+		lineageTag: e81b5f49-619c-5a61-83c2-24e5726ce035
+		summarizeBy: none
+		sourceColumn: HS6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		lineageTag: 1ebd8a47-4e36-5ecf-bf7f-12afa39aaa78
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Group
+		dataType: string
+		lineageTag: 660c2c00-a0b9-5e6f-bf55-a95a74658039
+		summarizeBy: none
+		sourceColumn: Product_Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Regulation
+		dataType: string
+		lineageTag: a12bc9ed-eaa8-57fa-a39e-1c986cb2e360
+		summarizeBy: none
+		sourceColumn: Regulation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity_t
+		dataType: double
+		lineageTag: 0d4b7271-fef3-5aa1-8135-dd9694a4ad30
+		summarizeBy: sum
+		sourceColumn: Quantity_t
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value_EUR
+		dataType: double
+		lineageTag: 2e8e6cc6-6f19-5ddf-9eee-8e3845a55e42
+		summarizeBy: sum
+		sourceColumn: Value_EUR
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value_USD
+		dataType: double
+		lineageTag: 0f7db67c-4520-5249-8231-e426f60814ca
+		summarizeBy: sum
+		sourceColumn: Value_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column USD_per_EUR
+		dataType: double
+		lineageTag: 8a052cef-40da-581c-99d0-f9ecfa59d07b
+		summarizeBy: none
+		sourceColumn: USD_per_EUR
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unit_Value_USD_per_t
+		dataType: double
+		lineageTag: de5306ae-3b8b-5827-b467-1b90fed2ad0a
+		summarizeBy: none
+		sourceColumn: Unit_Value_USD_per_t
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Trade_EU_Imports = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_Trade_EU_Imports.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Year", Int64.Type}, {"Partner_Code", type text}, {"Partner_Name", type text}, {"Partner_Is_EU27", type logical}, {"Flow_Type", type text}, {"HS6", type text}, {"Product", type text}, {"Product_Group", type text}, {"Regulation", type text}, {"Quantity_t", type number}, {"Value_EUR", type number}, {"Value_USD", type number}, {"USD_per_EUR", type number}, {"Unit_Value_USD_per_t", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

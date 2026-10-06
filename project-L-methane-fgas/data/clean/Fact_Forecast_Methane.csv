@@ -1,0 +1,123 @@
+Year,Segment,Series,Methane_MtCO2e,Lower_90_MtCO2e,Upper_90_MtCO2e,Method,Run_Date
+2011,All Segments,Actual,263.565,,,EPA GHGRP reported,2026-10-05
+2012,All Segments,Actual,256.701,,,EPA GHGRP reported,2026-10-05
+2013,All Segments,Actual,250.439,,,EPA GHGRP reported,2026-10-05
+2014,All Segments,Actual,246.973,,,EPA GHGRP reported,2026-10-05
+2015,All Segments,Actual,245.646,,,EPA GHGRP reported,2026-10-05
+2016,All Segments,Actual,255.875,,,EPA GHGRP reported,2026-10-05
+2017,All Segments,Actual,250.914,,,EPA GHGRP reported,2026-10-05
+2018,All Segments,Actual,252.683,,,EPA GHGRP reported,2026-10-05
+2019,All Segments,Actual,252.545,,,EPA GHGRP reported,2026-10-05
+2020,All Segments,Actual,232.544,,,EPA GHGRP reported,2026-10-05
+2021,All Segments,Actual,221.676,,,EPA GHGRP reported,2026-10-05
+2022,All Segments,Actual,207.507,,,EPA GHGRP reported,2026-10-05
+2023,All Segments,Actual,204.328,,,EPA GHGRP reported,2026-10-05
+2011,Direct Emitter,Actual,181.205,,,EPA GHGRP reported,2026-10-05
+2012,Direct Emitter,Actual,178.959,,,EPA GHGRP reported,2026-10-05
+2013,Direct Emitter,Actual,175.784,,,EPA GHGRP reported,2026-10-05
+2014,Direct Emitter,Actual,176.813,,,EPA GHGRP reported,2026-10-05
+2015,Direct Emitter,Actual,176.509,,,EPA GHGRP reported,2026-10-05
+2016,Direct Emitter,Actual,166.282,,,EPA GHGRP reported,2026-10-05
+2017,Direct Emitter,Actual,163.467,,,EPA GHGRP reported,2026-10-05
+2018,Direct Emitter,Actual,163.569,,,EPA GHGRP reported,2026-10-05
+2019,Direct Emitter,Actual,163.985,,,EPA GHGRP reported,2026-10-05
+2020,Direct Emitter,Actual,152.395,,,EPA GHGRP reported,2026-10-05
+2021,Direct Emitter,Actual,148.408,,,EPA GHGRP reported,2026-10-05
+2022,Direct Emitter,Actual,142.979,,,EPA GHGRP reported,2026-10-05
+2023,Direct Emitter,Actual,145.192,,,EPA GHGRP reported,2026-10-05
+2016,Gathering & Boosting,Actual,20.196,,,EPA GHGRP reported,2026-10-05
+2017,Gathering & Boosting,Actual,20.272,,,EPA GHGRP reported,2026-10-05
+2018,Gathering & Boosting,Actual,19.838,,,EPA GHGRP reported,2026-10-05
+2019,Gathering & Boosting,Actual,18.921,,,EPA GHGRP reported,2026-10-05
+2020,Gathering & Boosting,Actual,17.934,,,EPA GHGRP reported,2026-10-05
+2021,Gathering & Boosting,Actual,16.684,,,EPA GHGRP reported,2026-10-05
+2022,Gathering & Boosting,Actual,14.457,,,EPA GHGRP reported,2026-10-05
+2023,Gathering & Boosting,Actual,14.145,,,EPA GHGRP reported,2026-10-05
+2011,Local Distribution,Actual,17.202,,,EPA GHGRP reported,2026-10-05
+2012,Local Distribution,Actual,17.04,,,EPA GHGRP reported,2026-10-05
+2013,Local Distribution,Actual,16.63,,,EPA GHGRP reported,2026-10-05
+2014,Local Distribution,Actual,16.1,,,EPA GHGRP reported,2026-10-05
+2015,Local Distribution,Actual,16.119,,,EPA GHGRP reported,2026-10-05
+2016,Local Distribution,Actual,15.502,,,EPA GHGRP reported,2026-10-05
+2017,Local Distribution,Actual,14.807,,,EPA GHGRP reported,2026-10-05
+2018,Local Distribution,Actual,14.279,,,EPA GHGRP reported,2026-10-05
+2019,Local Distribution,Actual,13.844,,,EPA GHGRP reported,2026-10-05
+2020,Local Distribution,Actual,13.648,,,EPA GHGRP reported,2026-10-05
+2021,Local Distribution,Actual,13.326,,,EPA GHGRP reported,2026-10-05
+2022,Local Distribution,Actual,12.932,,,EPA GHGRP reported,2026-10-05
+2023,Local Distribution,Actual,12.538,,,EPA GHGRP reported,2026-10-05
+2011,Onshore Production,Actual,65.159,,,EPA GHGRP reported,2026-10-05
+2012,Onshore Production,Actual,60.702,,,EPA GHGRP reported,2026-10-05
+2013,Onshore Production,Actual,58.025,,,EPA GHGRP reported,2026-10-05
+2014,Onshore Production,Actual,54.06,,,EPA GHGRP reported,2026-10-05
+2015,Onshore Production,Actual,53.018,,,EPA GHGRP reported,2026-10-05
+2016,Onshore Production,Actual,50.333,,,EPA GHGRP reported,2026-10-05
+2017,Onshore Production,Actual,49.349,,,EPA GHGRP reported,2026-10-05
+2018,Onshore Production,Actual,51.583,,,EPA GHGRP reported,2026-10-05
+2019,Onshore Production,Actual,52.596,,,EPA GHGRP reported,2026-10-05
+2020,Onshore Production,Actual,44.663,,,EPA GHGRP reported,2026-10-05
+2021,Onshore Production,Actual,40.304,,,EPA GHGRP reported,2026-10-05
+2022,Onshore Production,Actual,34.791,,,EPA GHGRP reported,2026-10-05
+2023,Onshore Production,Actual,30.739,,,EPA GHGRP reported,2026-10-05
+2016,Transmission Pipelines,Actual,3.562,,,EPA GHGRP reported,2026-10-05
+2017,Transmission Pipelines,Actual,3.019,,,EPA GHGRP reported,2026-10-05
+2018,Transmission Pipelines,Actual,3.413,,,EPA GHGRP reported,2026-10-05
+2019,Transmission Pipelines,Actual,3.199,,,EPA GHGRP reported,2026-10-05
+2020,Transmission Pipelines,Actual,3.903,,,EPA GHGRP reported,2026-10-05
+2021,Transmission Pipelines,Actual,2.955,,,EPA GHGRP reported,2026-10-05
+2022,Transmission Pipelines,Actual,2.348,,,EPA GHGRP reported,2026-10-05
+2023,Transmission Pipelines,Actual,1.713,,,EPA GHGRP reported,2026-10-05
+2023,All Segments,Forecast,204.328,204.328,204.328,Last actual (line join),2026-10-05
+2024,All Segments,Forecast,197.747,178.987,216.508,OLS linear 2016-2023,2026-10-05
+2025,All Segments,Forecast,189.522,169.42,209.625,OLS linear 2016-2023,2026-10-05
+2026,All Segments,Forecast,181.298,159.695,202.9,OLS linear 2016-2023,2026-10-05
+2027,All Segments,Forecast,173.073,149.842,196.304,OLS linear 2016-2023,2026-10-05
+2028,All Segments,Forecast,164.848,139.886,189.81,OLS linear 2016-2023,2026-10-05
+2029,All Segments,Forecast,156.623,129.847,183.399,OLS linear 2016-2023,2026-10-05
+2030,All Segments,Forecast,148.398,119.741,177.056,OLS linear 2016-2023,2026-10-05
+2024,Direct Emitter,Forecast,139.331,,,OLS linear 2016-2023,2026-10-05
+2025,Direct Emitter,Forecast,135.674,,,OLS linear 2016-2023,2026-10-05
+2026,Direct Emitter,Forecast,132.018,,,OLS linear 2016-2023,2026-10-05
+2027,Direct Emitter,Forecast,128.361,,,OLS linear 2016-2023,2026-10-05
+2028,Direct Emitter,Forecast,124.705,,,OLS linear 2016-2023,2026-10-05
+2029,Direct Emitter,Forecast,121.048,,,OLS linear 2016-2023,2026-10-05
+2030,Direct Emitter,Forecast,117.392,,,OLS linear 2016-2023,2026-10-05
+2024,Gathering & Boosting,Forecast,13.419,,,OLS linear 2016-2023,2026-10-05
+2025,Gathering & Boosting,Forecast,12.445,,,OLS linear 2016-2023,2026-10-05
+2026,Gathering & Boosting,Forecast,11.47,,,OLS linear 2016-2023,2026-10-05
+2027,Gathering & Boosting,Forecast,10.495,,,OLS linear 2016-2023,2026-10-05
+2028,Gathering & Boosting,Forecast,9.52,,,OLS linear 2016-2023,2026-10-05
+2029,Gathering & Boosting,Forecast,8.546,,,OLS linear 2016-2023,2026-10-05
+2030,Gathering & Boosting,Forecast,7.571,,,OLS linear 2016-2023,2026-10-05
+2024,Local Distribution,Forecast,12.082,,,OLS linear 2016-2023,2026-10-05
+2025,Local Distribution,Forecast,11.687,,,OLS linear 2016-2023,2026-10-05
+2026,Local Distribution,Forecast,11.292,,,OLS linear 2016-2023,2026-10-05
+2027,Local Distribution,Forecast,10.897,,,OLS linear 2016-2023,2026-10-05
+2028,Local Distribution,Forecast,10.502,,,OLS linear 2016-2023,2026-10-05
+2029,Local Distribution,Forecast,10.106,,,OLS linear 2016-2023,2026-10-05
+2030,Local Distribution,Forecast,9.711,,,OLS linear 2016-2023,2026-10-05
+2024,Onshore Production,Forecast,30.81,,,OLS linear 2016-2023,2026-10-05
+2025,Onshore Production,Forecast,27.814,,,OLS linear 2016-2023,2026-10-05
+2026,Onshore Production,Forecast,24.817,,,OLS linear 2016-2023,2026-10-05
+2027,Onshore Production,Forecast,21.821,,,OLS linear 2016-2023,2026-10-05
+2028,Onshore Production,Forecast,18.824,,,OLS linear 2016-2023,2026-10-05
+2029,Onshore Production,Forecast,15.827,,,OLS linear 2016-2023,2026-10-05
+2030,Onshore Production,Forecast,12.831,,,OLS linear 2016-2023,2026-10-05
+2024,Transmission Pipelines,Forecast,2.105,,,OLS linear 2016-2023,2026-10-05
+2025,Transmission Pipelines,Forecast,1.903,,,OLS linear 2016-2023,2026-10-05
+2026,Transmission Pipelines,Forecast,1.701,,,OLS linear 2016-2023,2026-10-05
+2027,Transmission Pipelines,Forecast,1.499,,,OLS linear 2016-2023,2026-10-05
+2028,Transmission Pipelines,Forecast,1.297,,,OLS linear 2016-2023,2026-10-05
+2029,Transmission Pipelines,Forecast,1.095,,,OLS linear 2016-2023,2026-10-05
+2030,Transmission Pipelines,Forecast,0.893,,,OLS linear 2016-2023,2026-10-05
+2020,All Segments,Pledge,232.544,,,"Global Methane Pledge: -30% vs 2020 by 2030, straight line",2026-10-05
+2021,All Segments,Pledge,225.568,,,"Global Methane Pledge: -30% vs 2020 by 2030, straight line",2026-10-05
+2022,All Segments,Pledge,218.592,,,"Global Methane Pledge: -30% vs 2020 by 2030, straight line",2026-10-05
+2023,All Segments,Pledge,211.615,,,"Global Methane Pledge: -30% vs 2020 by 2030, straight line",2026-10-05
+2024,All Segments,Pledge,204.639,,,"Global Methane Pledge: -30% vs 2020 by 2030, straight line",2026-10-05
+2025,All Segments,Pledge,197.663,,,"Global Methane Pledge: -30% vs 2020 by 2030, straight line",2026-10-05
+2026,All Segments,Pledge,190.686,,,"Global Methane Pledge: -30% vs 2020 by 2030, straight line",2026-10-05
+2027,All Segments,Pledge,183.71,,,"Global Methane Pledge: -30% vs 2020 by 2030, straight line",2026-10-05
+2028,All Segments,Pledge,176.734,,,"Global Methane Pledge: -30% vs 2020 by 2030, straight line",2026-10-05
+2029,All Segments,Pledge,169.757,,,"Global Methane Pledge: -30% vs 2020 by 2030, straight line",2026-10-05
+2030,All Segments,Pledge,162.781,,,"Global Methane Pledge: -30% vs 2020 by 2030, straight line",2026-10-05

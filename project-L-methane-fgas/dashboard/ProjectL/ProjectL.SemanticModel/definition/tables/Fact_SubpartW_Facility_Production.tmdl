@@ -1,0 +1,112 @@
+table Fact_SubpartW_Facility_Production
+	lineageTag: c5848d86-b82a-5256-8915-1b72460ecef0
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 07986a1b-3605-5fde-bdae-53f056678bb2
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Facility_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 9fc3e137-71a1-52ff-904f-c0df1d16a1d2
+		summarizeBy: none
+		sourceColumn: Facility_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Facility_Name
+		dataType: string
+		lineageTag: 7f10c232-8c77-5185-837c-afbd8352fd58
+		summarizeBy: none
+		sourceColumn: Facility_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Basin_Code
+		dataType: string
+		lineageTag: a745b8a4-69c7-56ec-83d9-cd5501ce3638
+		summarizeBy: none
+		sourceColumn: Basin_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Basin_Name
+		dataType: string
+		lineageTag: bad578de-e553-5f5c-a86b-cd518c9432a5
+		summarizeBy: none
+		sourceColumn: Basin_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gas_Sales_bcm
+		dataType: double
+		lineageTag: f078061f-812a-5681-9a9a-3d66657a25d7
+		summarizeBy: sum
+		sourceColumn: Gas_Sales_bcm
+
+		annotation SummarizationSetBy = Automatic
+
+	column Oil_Sales_bbl
+		dataType: double
+		lineageTag: 7e0206de-d427-5890-8ee8-4243dee71d33
+		summarizeBy: sum
+		sourceColumn: Oil_Sales_bbl
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gas_Value_Corrected
+		dataType: boolean
+		lineageTag: 4a2a8035-969c-547f-9e61-6ca9bec33193
+		summarizeBy: none
+		sourceColumn: Gas_Value_Corrected
+
+		annotation SummarizationSetBy = Automatic
+
+	column Wells_Producing
+		dataType: double
+		lineageTag: ddbd9187-152a-5e47-b5fb-b2cf3c7319e2
+		summarizeBy: sum
+		sourceColumn: Wells_Producing
+
+		annotation SummarizationSetBy = Automatic
+
+	column Wells_Completed
+		dataType: double
+		lineageTag: 372ec7cf-80cf-5bcc-9826-4e1fe008181f
+		summarizeBy: sum
+		sourceColumn: Wells_Completed
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sub_Basins
+		dataType: double
+		lineageTag: 1b1fd5f0-ed89-5c5c-b215-65e40bf76422
+		summarizeBy: sum
+		sourceColumn: Sub_Basins
+
+		annotation SummarizationSetBy = Automatic
+
+	column CH4_Mole_Fraction_Avg
+		dataType: double
+		lineageTag: 77adf23e-8dcc-5965-be57-6543029329f6
+		summarizeBy: none
+		sourceColumn: CH4_Mole_Fraction_Avg
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_SubpartW_Facility_Production = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_SubpartW_Facility_Production.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Year", Int64.Type}, {"Facility_Id", Int64.Type}, {"Facility_Name", type text}, {"Basin_Code", type text}, {"Basin_Name", type text}, {"Gas_Sales_bcm", type number}, {"Oil_Sales_bbl", type number}, {"Gas_Value_Corrected", type logical}, {"Wells_Producing", type number}, {"Wells_Completed", type number}, {"Sub_Basins", type number}, {"CH4_Mole_Fraction_Avg", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

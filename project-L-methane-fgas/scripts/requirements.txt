@@ -1,0 +1,7 @@
+pandas>=2.2
+numpy>=1.26
+openpyxl>=3.1    # EPA .xlsx summary files
+xlrd>=2.0        # EIA .xls downloads
+pyxlsb>=1.0      # EPA parent company .xlsb
+rapidfuzz>=3.0   # parent company name matching
+pycountry>=24.6  # country codes in the trade data

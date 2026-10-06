@@ -1,0 +1,1092 @@
+table _Measures
+	lineageTag: 10a2fc3f-287a-5b45-9a1a-36832c7f0a7d
+
+	measure 'GHG tCO2e' = SUM(Fact_Emissions[CO2e_AR5_tCO2e])
+		formatString: #,##0
+		displayFolder: 1. Emissions
+		lineageTag: bc51d9bf-7e07-5206-9637-4782ebf3b018
+
+	measure 'GHG MtCO2e' = DIVIDE([GHG tCO2e], 1e6)
+		formatString: #,##0.0
+		displayFolder: 1. Emissions
+		lineageTag: 564dc814-9b6f-5c84-8a75-7533d9f843bb
+
+	measure 'Methane MtCO2e' = CALCULATE([GHG MtCO2e], Fact_Emissions[Gas_Group] = "Methane")
+		formatString: #,##0.0
+		displayFolder: 1. Emissions
+		lineageTag: c9ddb045-245d-503d-90a9-c155655ae3db
+
+	measure 'F-gas MtCO2e' = CALCULATE([GHG MtCO2e], Fact_Emissions[Gas_Group] = "F-gases")
+		formatString: #,##0.00
+		displayFolder: 1. Emissions
+		lineageTag: 230d7087-b2fc-5385-97a5-ffde846fc044
+
+	measure 'Methane t' = CALCULATE(SUM(Fact_Emissions[Gas_t]), Fact_Emissions[Gas] = "CH4")
+		formatString: #,##0
+		displayFolder: 1. Emissions
+		lineageTag: 01548a21-a44a-5f3c-a558-2279d7aad863
+
+	measure 'Facilities Reporting' = DISTINCTCOUNT(Fact_Emissions[Facility_Id])
+		formatString: #,##0
+		displayFolder: 1. Emissions
+		lineageTag: d82fe86b-02cd-505c-8c4a-652c179f7885
+
+	measure 'Selected Year' =
+			IF(
+			    HASONEVALUE(Dim_Year[Year]),
+			    VALUES(Dim_Year[Year]),
+			    CALCULATE(MAX(Fact_Emissions[Year]), REMOVEFILTERS())
+			)
+		formatString: 0
+		displayFolder: 1. Emissions
+		lineageTag: 461c1260-8894-567a-8e24-e95f57407ae3
+
+	measure 'GHG MtCO2e (Year)' =
+			VAR y = [Selected Year]
+			RETURN CALCULATE([GHG MtCO2e], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+		formatString: #,##0.0
+		displayFolder: 1. Emissions
+		lineageTag: 2ee93695-d3fd-5324-baaf-76df442a4836
+
+	measure 'Methane MtCO2e (Year)' =
+			VAR y = [Selected Year]
+			RETURN CALCULATE([Methane MtCO2e], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+		formatString: #,##0.0
+		displayFolder: 1. Emissions
+		lineageTag: 9e0641ed-82fe-5440-b817-a01c1acfb97a
+
+	measure 'F-gas MtCO2e (Year)' =
+			VAR y = [Selected Year]
+			RETURN CALCULATE([F-gas MtCO2e], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+		formatString: #,##0.0
+		displayFolder: 1. Emissions
+		lineageTag: 52652f3f-38a4-5470-a5cd-3ced67cc2572
+
+	measure 'Facilities Reporting (Year)' =
+			VAR y = [Selected Year]
+			RETURN CALCULATE([Facilities Reporting], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+		formatString: #,##0
+		displayFolder: 1. Emissions
+		lineageTag: 80c3a88d-6433-5ec1-ba72-4afe695b388c
+
+	measure 'Methane Change since 2016 %' =
+			VAR y = [Selected Year]
+			VAR NowValue = CALCULATE([Methane MtCO2e], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+			VAR BaseValue = CALCULATE([Methane MtCO2e], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = 2016)
+			RETURN DIVIDE(NowValue - BaseValue, BaseValue)
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 1. Emissions
+		lineageTag: a01478e1-5809-559c-8c7d-bfe0fe67db66
+
+	measure 'O&G Methane t' = CALCULATE(SUM(Fact_SubpartW_Source[Gas_t]), Fact_SubpartW_Source[Gas] = "CH4")
+		formatString: #,##0
+		displayFolder: 2. Oil & gas intensity
+		lineageTag: 09deb057-0b0f-5457-9967-dbd0feb4809f
+
+	measure 'O&G Methane MtCO2e' = DIVIDE(CALCULATE(SUM(Fact_SubpartW_Source[CO2e_AR5_tCO2e]), Fact_SubpartW_Source[Gas] = "CH4"), 1e6)
+		formatString: #,##0.00
+		displayFolder: 2. Oil & gas intensity
+		lineageTag: 216f7f88-032e-5be6-8f10-5e81179f75f1
+
+	measure 'Production Methane t' = CALCULATE([O&G Methane t], Fact_SubpartW_Source[Segment] = "Onshore Production")
+		formatString: #,##0
+		displayFolder: 2. Oil & gas intensity
+		lineageTag: 54878f82-2cdf-5f74-83f6-14beb769e3f6
+
+	measure 'Gas Sold bcm' = SUM(Fact_SubpartW_Facility_Production[Gas_Sales_bcm])
+		formatString: #,##0.0
+		displayFolder: 2. Oil & gas intensity
+		lineageTag: fb29bfd0-5f38-5269-8690-d995532c48bf
+
+	measure 'Methane Produced t' =
+			-- methane in the gas sold: bcm x 678,000 t per bcm (0.678 kg/m3) x methane share of the gas (0.85 when not reported)
+			SUMX(
+			    Fact_SubpartW_Facility_Production,
+			    Fact_SubpartW_Facility_Production[Gas_Sales_bcm] * 678000
+			        * IF(Fact_SubpartW_Facility_Production[CH4_Mole_Fraction_Avg] > 0, Fact_SubpartW_Facility_Production[CH4_Mole_Fraction_Avg], 0.85)
+			)
+		formatString: #,##0
+		displayFolder: 2. Oil & gas intensity
+		lineageTag: 21627126-2143-5494-81f5-fd91daaa6fb2
+
+	measure 'Methane Intensity %' = DIVIDE([Production Methane t], [Methane Produced t])
+		formatString: 0.00%
+		displayFolder: 2. Oil & gas intensity
+		lineageTag: f36cea66-2af2-55bc-956f-b0bae584ab7b
+
+	measure 'Producing Wells' = SUM(Fact_SubpartW_Facility_Production[Wells_Producing])
+		formatString: #,##0
+		displayFolder: 2. Oil & gas intensity
+		lineageTag: 62e8af4e-c98b-5d7b-ac97-49292912637b
+
+	measure 'Methane per Well t' = DIVIDE([Production Methane t], [Producing Wells])
+		formatString: #,##0.00
+		displayFolder: 2. Oil & gas intensity
+		lineageTag: 54ba449c-05f7-5609-b47c-4458c087fe3e
+
+	measure 'Methane Intensity (Year) %' =
+			VAR y = [Selected Year]
+			RETURN CALCULATE([Methane Intensity %], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+		formatString: 0.00%
+		displayFolder: 2. Oil & gas intensity
+		lineageTag: 5a5b38a3-2999-5c90-9ad8-3f5e090aaa51
+
+	measure 'Production Methane t (Year)' =
+			VAR y = [Selected Year]
+			RETURN CALCULATE([Production Methane t], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+		formatString: #,##0
+		displayFolder: 2. Oil & gas intensity
+		lineageTag: 98926437-3749-58f0-a810-784b36cd7e03
+
+	measure 'O&G Methane t (Year)' =
+			VAR y = [Selected Year]
+			RETURN CALCULATE([O&G Methane t], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+		formatString: #,##0
+		displayFolder: 2. Oil & gas intensity
+		lineageTag: e18e3790-36c3-5c9b-9807-221856326833
+
+	measure 'Gas Sold bcm (Year)' =
+			VAR y = [Selected Year]
+			RETURN CALCULATE([Gas Sold bcm], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+		formatString: #,##0.0
+		displayFolder: 2. Oil & gas intensity
+		lineageTag: 9f421b4b-12f0-5628-a3fa-c140a446c047
+
+	measure 'Producing Wells (Year)' =
+			VAR y = [Selected Year]
+			RETURN CALCULATE([Producing Wells], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+		formatString: #,##0
+		displayFolder: 2. Oil & gas intensity
+		lineageTag: 4c964ae7-c117-5b98-a081-8b3b553fed14
+
+	measure 'US LNG Exports bcm' = SUM(Fact_LNG_Exports_Terminal[Volume_bcm])
+		formatString: #,##0.0
+		displayFolder: 3. EU exposure
+		lineageTag: c881926c-3ac7-58e0-837f-784c2bcbe6b2
+
+	measure 'US LNG to EU bcm' = CALCULATE([US LNG Exports bcm], Fact_LNG_Exports_Terminal[Destination_Is_EU27] = TRUE())
+		formatString: #,##0.0
+		displayFolder: 3. EU exposure
+		lineageTag: b8fabe6c-b71d-54bf-b9a9-185e28fca836
+
+	measure 'EU Share of US LNG %' = DIVIDE([US LNG to EU bcm], [US LNG Exports bcm])
+		formatString: 0.0%
+		displayFolder: 3. EU exposure
+		lineageTag: de51d8d1-e59e-5a84-9c91-d3fdbb40d639
+
+	measure 'EU Imports from US USD bn' = DIVIDE(CALCULATE(SUM(Fact_Trade_EU_Imports[Value_USD]), Fact_Trade_EU_Imports[Partner_Code] = "US"), 1e9)
+		formatString: #,##0.0
+		displayFolder: 3. EU exposure
+		lineageTag: bcfaea61-4529-5450-8394-0eec0550540b
+
+	measure 'EU Oil & Gas Imports from US USD bn' = CALCULATE([EU Imports from US USD bn], Fact_Trade_EU_Imports[Product_Group] = "Oil & gas")
+		formatString: #,##0.0
+		displayFolder: 3. EU exposure
+		lineageTag: 4828b4e6-69e6-5ad1-a6c3-7e1014d1045d
+
+	measure 'EU F-gas & Fluoropolymer Imports from US USD bn' = CALCULATE([EU Imports from US USD bn], Fact_Trade_EU_Imports[Product_Group] <> "Oil & gas")
+		formatString: #,##0.00
+		displayFolder: 3. EU exposure
+		lineageTag: dda0a324-d412-5213-8be7-3c311f4cd530
+
+	measure 'US Share of EU LNG Imports %' =
+			DIVIDE(
+			    CALCULATE(SUM(Fact_Trade_EU_Imports[Value_USD]), Fact_Trade_EU_Imports[Product] = "LNG", Fact_Trade_EU_Imports[Partner_Code] = "US"),
+			    CALCULATE(SUM(Fact_Trade_EU_Imports[Value_USD]), Fact_Trade_EU_Imports[Product] = "LNG", Fact_Trade_EU_Imports[Flow_Type] = "Extra-EU")
+			)
+		formatString: 0.0%
+		displayFolder: 3. EU exposure
+		lineageTag: b7bfa96f-7d48-59e8-b4ea-d095e2015afe
+
+	measure 'Trade Year' =
+			IF(
+			    HASONEVALUE(Dim_Year[Year]),
+			    VALUES(Dim_Year[Year]),
+			    CALCULATE(MAX(Fact_Trade_EU_Imports[Year]), REMOVEFILTERS())
+			)
+		formatString: 0
+		displayFolder: 3. EU exposure
+		lineageTag: 673e45bf-2f34-527e-8b19-68422c735723
+
+	measure 'US LNG to EU bcm (Year)' =
+			VAR y = [Trade Year]
+			RETURN CALCULATE([US LNG to EU bcm], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+		formatString: #,##0.0
+		displayFolder: 3. EU exposure
+		lineageTag: 4b38c25c-13ba-5d52-8ed6-7f83f38366be
+
+	measure 'EU Share of US LNG (Year) %' =
+			VAR y = [Trade Year]
+			RETURN CALCULATE([EU Share of US LNG %], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+		formatString: 0.0%
+		displayFolder: 3. EU exposure
+		lineageTag: 998ffa7f-3dc4-541b-86c8-acc5714431cb
+
+	measure 'EU Oil & Gas Imports from US USD bn (Year)' =
+			VAR y = [Trade Year]
+			RETURN CALCULATE([EU Oil & Gas Imports from US USD bn], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+		formatString: #,##0.0
+		displayFolder: 3. EU exposure
+		lineageTag: 39f04ed8-4d52-501f-b331-5183ec60acb2
+
+	measure 'US Share of EU LNG Imports (Year) %' =
+			VAR y = [Trade Year]
+			RETURN CALCULATE([US Share of EU LNG Imports %], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+		formatString: 0.0%
+		displayFolder: 3. EU exposure
+		lineageTag: 7893ccbc-5650-56e7-9b87-17bb6a6e191c
+
+	measure 'EU Value at Risk USD bn' = [EU Oil & Gas Imports from US USD bn (Year)] * [Non-Compliant Share % Value] * [Penalty Rate % Value]
+		formatString: #,##0.00
+		displayFolder: 3. EU exposure
+		lineageTag: f3d7d279-f0ec-596e-906a-ff56e60e99db
+
+	measure 'Abatement Potential MtCO2e' = DIVIDE(SUM(Fact_IEA_Abatement[Savings_CO2e_AR5_tCO2e]), 1e6)
+		formatString: #,##0.0
+		displayFolder: 4. Abatement
+		lineageTag: f956aa82-e209-5a7e-9527-4425b3c46453
+
+	measure 'Abatement Potential Mt CH4' = DIVIDE(SUM(Fact_IEA_Abatement[Savings_CH4_t]), 1e6)
+		formatString: #,##0.00
+		displayFolder: 4. Abatement
+		lineageTag: 2f70ac97-8461-5343-b66f-22e26ca6122d
+
+	measure 'Avg Cost USD per tCO2e' =
+			DIVIDE(
+			    SUMX(Fact_IEA_Abatement, Fact_IEA_Abatement[Cost_USD_per_tCO2e_AR5] * Fact_IEA_Abatement[Savings_CO2e_AR5_tCO2e]),
+			    SUM(Fact_IEA_Abatement[Savings_CO2e_AR5_tCO2e])
+			)
+		formatString: #,##0.00
+		displayFolder: 4. Abatement
+		lineageTag: 37263957-7f1e-596a-8bea-acc0a48f583e
+
+	measure 'Net-Saving Share %' =
+			DIVIDE(
+			    CALCULATE(SUM(Fact_IEA_Abatement[Savings_CO2e_AR5_tCO2e]), Fact_IEA_Abatement[Is_Net_Saving] = TRUE()),
+			    SUM(Fact_IEA_Abatement[Savings_CO2e_AR5_tCO2e])
+			)
+		formatString: 0.0%
+		displayFolder: 4. Abatement
+		lineageTag: ee2d2a95-4ce8-543e-9781-6836aecad6af
+
+	measure 'IEA Methane Mt' = DIVIDE(CALCULATE(SUM(Fact_IEA_Methane[CH4_t]), Fact_IEA_Methane[Region_Type] = "Country"), 1e6)
+		formatString: #,##0.00
+		displayFolder: 5. Global benchmark
+		lineageTag: bc6d104e-710b-5859-829c-c644a80e728d
+
+	measure 'US Share of World O&G Methane %' =
+			DIVIDE(
+			    CALCULATE([IEA Methane Mt], Fact_IEA_Methane[Country] = "United States"),
+			    CALCULATE(DIVIDE(SUM(Fact_IEA_Methane[CH4_t]), 1e6), REMOVEFILTERS(Fact_IEA_Methane[Country]))
+			)
+		formatString: 0.0%
+		displayFolder: 5. Global benchmark
+		lineageTag: 54eab0a3-cc5f-5bc0-b02f-05da20db6ab4
+
+	measure 'Methane Share %' = DIVIDE([Methane MtCO2e], [GHG MtCO2e])
+		formatString: 0.0%
+		displayFolder: 1. Emissions
+		lineageTag: d6a70e64-977f-5ba5-886f-da1c8c42d169
+
+	measure 'Production Methane kt' = DIVIDE([Production Methane t], 1000)
+		formatString: #,##0
+		displayFolder: 2. Oil & gas intensity
+		lineageTag: a80e6fc0-bbdf-5764-8a5a-47540bbc0f4d
+
+	measure 'O&G Methane kt (Year)' = DIVIDE([O&G Methane t (Year)], 1000)
+		formatString: #,##0
+		displayFolder: 2. Oil & gas intensity
+		lineageTag: 757c18a4-6cf4-550d-a9e7-73c9a25195ea
+
+	measure 'Net-Saving Potential MtCO2e' = CALCULATE([Abatement Potential MtCO2e], Fact_IEA_Abatement[Is_Net_Saving] = TRUE())
+		formatString: #,##0.0
+		displayFolder: 4. Abatement
+		lineageTag: 59006070-4736-51aa-ad45-6bb20571ccec
+
+	measure 'US IEA Methane Mt' = CALCULATE([IEA Methane Mt], Fact_IEA_Methane[Country] = "United States")
+		formatString: #,##0.0
+		displayFolder: 5. Global benchmark
+		lineageTag: 971f5838-552d-5c75-ad78-1f0095913df0
+
+	measure 'World IEA Methane Mt' = CALCULATE(DIVIDE(SUM(Fact_IEA_Methane[CH4_t]), 1e6), REMOVEFILTERS(Fact_IEA_Methane))
+		formatString: #,##0
+		displayFolder: 5. Global benchmark
+		lineageTag: 3bbfd354-4582-52a1-944d-ca5a377f87f1
+
+	measure 'US Methane Rank' =
+			RANKX(
+			    FILTER(ALL(Fact_IEA_Methane[Country]), CALCULATE([IEA Methane Mt]) > 0),
+			    CALCULATE([IEA Methane Mt]),
+			    CALCULATE([IEA Methane Mt], Fact_IEA_Methane[Country] = "United States"),
+			    DESC
+			)
+		formatString: 0
+		displayFolder: 5. Global benchmark
+		lineageTag: 3379070a-43ad-579c-85cb-10863e440758
+
+	measure 'IEA Methane Mt (Top 15)' =
+			VAR r = RANKX(FILTER(ALL(Fact_IEA_Methane[Country]), CALCULATE([IEA Methane Mt]) > 0), CALCULATE([IEA Methane Mt]), , DESC)
+			RETURN IF(HASONEVALUE(Fact_IEA_Methane[Country]) && r <= 15, [IEA Methane Mt])
+		formatString: #,##0.0
+		displayFolder: 5. Global benchmark
+		lineageTag: 988b9116-490e-5d22-bbdb-342c0668a59f
+
+	measure 'Color Country Bar' = IF(SELECTEDVALUE(Fact_IEA_Methane[Country]) = "United States", "#2F6B4F", "#B9D1C2")
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 22fc9661-8063-54f4-9ff8-9ec7607c44e1
+
+	measure 'Color Latest Trade Year' = IF(SELECTEDVALUE(Dim_Year[Year]) = CALCULATE(MAX(Fact_Trade_EU_Imports[Year]), REMOVEFILTERS()), "#2F6B4F", "#B9D1C2")
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 5d1b0784-6111-5436-8bdb-19536bb25f59
+
+	measure 'Color Cost Sign' = IF([Avg Cost USD per tCO2e] < 0, "#2F6B4F", "#C9826B")
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 8c6d2162-2432-5976-b896-fe3dc12cd0eb
+
+	measure 'Header Overview' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1280' height='78' viewBox='0 0 1280 78' preserveAspectRatio='none'>"
+			    & "<rect width='1280' height='78' fill='%231F3B2D'/>"
+			    & "<text x='28' y='38' font-family='Georgia, serif' font-size='24' font-weight='bold' fill='%23FFFFFF'>US greenhouse gas emissions</text>"
+			    & "<text x='28' y='62' font-family='Segoe UI, sans-serif' font-size='13' fill='%23FFFFFF'>Facility emissions reported to the EPA (GHGRP), in AR5 CO2e. Year filter drives the cards and the segment chart.</text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: f0d21fb2-acd3-5f13-9733-79ac05703c32
+		dataCategory: ImageUrl
+
+	measure 'Card GHG' =
+			VAR y = [Selected Year]
+			VAR cur = CALCULATE([GHG MtCO2e], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+			VAR prev = CALCULATE([GHG MtCO2e], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y - 1)
+			VAR chg = DIVIDE(cur - prev, prev)
+			VAR dTxt = IF(ISBLANK(prev) || ISBLANK(cur), "", IF(chg >= 0, "▲ +", "▼ -") & FORMAT(ABS(chg), "0%") & " vs " & (y - 1))
+			VAR dCol = IF(chg <= 0, "%232F6B4F", "%23B3462E")
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR pts = FILTER(ADDCOLUMNS(FILTER(ALL(Dim_Year[Year]), Dim_Year[Year] >= 2011 && Dim_Year[Year] <= 2023), "@v", [GHG MtCO2e]), NOT ISBLANK([@v]))
+			VAR mx = MAXX(pts, [@v])
+			VAR mn = MIN(0, MINX(pts, [@v]))
+			VAR poly = CONCATENATEX(pts, FORMAT(ROUND(176 + 104 * (Dim_Year[Year] - 2011) / 12, 0), "0") & "," & FORMAT(ROUND(78 - 34 * DIVIDE([@v] - mn, mx - mn), 0), "0"), " ", Dim_Year[Year], ASC)
+			VAR lastYr = MAXX(pts, Dim_Year[Year])
+			VAR lastV = MAXX(FILTER(pts, Dim_Year[Year] = lastYr), [@v])
+			VAR dot = "<circle cx='" & FORMAT(ROUND(176 + 104 * (lastYr - 2011) / 12, 0), "0") & "' cy='" & FORMAT(ROUND(78 - 34 * DIVIDE(lastV - mn, mx - mn), 0), "0") & "' r='3' fill='%232F6B4F'/>"
+			VAR sp = IF(COUNTROWS(pts) > 1, "<polyline points='" & poly & "' fill='none' stroke='%232F6B4F' stroke-width='2' stroke-linejoin='round'/>" & dot)
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>Total GHG emissions</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> Mt CO2e</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 81fec6b4-ba99-541d-9c60-8ca8824be005
+		dataCategory: ImageUrl
+
+	measure 'Card Methane' =
+			VAR y = [Selected Year]
+			VAR cur = CALCULATE([Methane MtCO2e], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+			VAR prev = CALCULATE([Methane MtCO2e], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y - 1)
+			VAR chg = DIVIDE(cur - prev, prev)
+			VAR dTxt = IF(ISBLANK(prev) || ISBLANK(cur), "", IF(chg >= 0, "▲ +", "▼ -") & FORMAT(ABS(chg), "0%") & " vs " & (y - 1))
+			VAR dCol = IF(chg <= 0, "%232F6B4F", "%23B3462E")
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR pts = FILTER(ADDCOLUMNS(FILTER(ALL(Dim_Year[Year]), Dim_Year[Year] >= 2011 && Dim_Year[Year] <= 2023), "@v", [Methane MtCO2e]), NOT ISBLANK([@v]))
+			VAR mx = MAXX(pts, [@v])
+			VAR mn = MIN(0, MINX(pts, [@v]))
+			VAR poly = CONCATENATEX(pts, FORMAT(ROUND(176 + 104 * (Dim_Year[Year] - 2011) / 12, 0), "0") & "," & FORMAT(ROUND(78 - 34 * DIVIDE([@v] - mn, mx - mn), 0), "0"), " ", Dim_Year[Year], ASC)
+			VAR lastYr = MAXX(pts, Dim_Year[Year])
+			VAR lastV = MAXX(FILTER(pts, Dim_Year[Year] = lastYr), [@v])
+			VAR dot = "<circle cx='" & FORMAT(ROUND(176 + 104 * (lastYr - 2011) / 12, 0), "0") & "' cy='" & FORMAT(ROUND(78 - 34 * DIVIDE(lastV - mn, mx - mn), 0), "0") & "' r='3' fill='%232F6B4F'/>"
+			VAR sp = IF(COUNTROWS(pts) > 1, "<polyline points='" & poly & "' fill='none' stroke='%232F6B4F' stroke-width='2' stroke-linejoin='round'/>" & dot)
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>Methane</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> Mt CO2e</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 1a2ac842-8807-5de6-837a-80c506d50e5d
+		dataCategory: ImageUrl
+
+	measure 'Card Fgas' =
+			VAR y = [Selected Year]
+			VAR cur = CALCULATE([F-gas MtCO2e], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+			VAR prev = CALCULATE([F-gas MtCO2e], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y - 1)
+			VAR chg = DIVIDE(cur - prev, prev)
+			VAR dTxt = IF(ISBLANK(prev) || ISBLANK(cur), "", IF(chg >= 0, "▲ +", "▼ -") & FORMAT(ABS(chg), "0%") & " vs " & (y - 1))
+			VAR dCol = IF(chg <= 0, "%232F6B4F", "%23B3462E")
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0.0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR pts = FILTER(ADDCOLUMNS(FILTER(ALL(Dim_Year[Year]), Dim_Year[Year] >= 2011 && Dim_Year[Year] <= 2023), "@v", [F-gas MtCO2e]), NOT ISBLANK([@v]))
+			VAR mx = MAXX(pts, [@v])
+			VAR mn = MIN(0, MINX(pts, [@v]))
+			VAR poly = CONCATENATEX(pts, FORMAT(ROUND(176 + 104 * (Dim_Year[Year] - 2011) / 12, 0), "0") & "," & FORMAT(ROUND(78 - 34 * DIVIDE([@v] - mn, mx - mn), 0), "0"), " ", Dim_Year[Year], ASC)
+			VAR lastYr = MAXX(pts, Dim_Year[Year])
+			VAR lastV = MAXX(FILTER(pts, Dim_Year[Year] = lastYr), [@v])
+			VAR dot = "<circle cx='" & FORMAT(ROUND(176 + 104 * (lastYr - 2011) / 12, 0), "0") & "' cy='" & FORMAT(ROUND(78 - 34 * DIVIDE(lastV - mn, mx - mn), 0), "0") & "' r='3' fill='%232F6B4F'/>"
+			VAR sp = IF(COUNTROWS(pts) > 1, "<polyline points='" & poly & "' fill='none' stroke='%232F6B4F' stroke-width='2' stroke-linejoin='round'/>" & dot)
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>F-gases</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> Mt CO2e</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 4769cda0-fd57-509b-8b3b-224abc72e504
+		dataCategory: ImageUrl
+
+	measure 'Card MethaneShare' =
+			VAR y = [Selected Year]
+			VAR cur = CALCULATE([Methane Share %], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+			VAR prev = CALCULATE([Methane Share %], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y - 1)
+			VAR chg = (cur - prev) * 100
+			VAR dTxt = IF(ISBLANK(prev) || ISBLANK(cur), "", IF(chg >= 0, "▲ +", "▼ -") & FORMAT(ABS(chg), "0.0") & " pts vs " & (y - 1))
+			VAR dCol = IF(chg <= 0, "%232F6B4F", "%23B3462E")
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "0.0%"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR pts = FILTER(ADDCOLUMNS(FILTER(ALL(Dim_Year[Year]), Dim_Year[Year] >= 2011 && Dim_Year[Year] <= 2023), "@v", [Methane Share %]), NOT ISBLANK([@v]))
+			VAR mx = MAXX(pts, [@v])
+			VAR mn = MIN(0, MINX(pts, [@v]))
+			VAR poly = CONCATENATEX(pts, FORMAT(ROUND(176 + 104 * (Dim_Year[Year] - 2011) / 12, 0), "0") & "," & FORMAT(ROUND(78 - 34 * DIVIDE([@v] - mn, mx - mn), 0), "0"), " ", Dim_Year[Year], ASC)
+			VAR lastYr = MAXX(pts, Dim_Year[Year])
+			VAR lastV = MAXX(FILTER(pts, Dim_Year[Year] = lastYr), [@v])
+			VAR dot = "<circle cx='" & FORMAT(ROUND(176 + 104 * (lastYr - 2011) / 12, 0), "0") & "' cy='" & FORMAT(ROUND(78 - 34 * DIVIDE(lastV - mn, mx - mn), 0), "0") & "' r='3' fill='%232F6B4F'/>"
+			VAR sp = IF(COUNTROWS(pts) > 1, "<polyline points='" & poly & "' fill='none' stroke='%232F6B4F' stroke-width='2' stroke-linejoin='round'/>" & dot)
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>Methane share of all GHG</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "</text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: f1222fc0-ca6d-5206-86d4-086a73ae1bd3
+		dataCategory: ImageUrl
+
+	measure 'Header Intensity' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1280' height='78' viewBox='0 0 1280 78' preserveAspectRatio='none'>"
+			    & "<rect width='1280' height='78' fill='%231F3B2D'/>"
+			    & "<text x='28' y='38' font-family='Georgia, serif' font-size='24' font-weight='bold' fill='%23FFFFFF'>Oil and gas methane intensity</text>"
+			    & "<text x='28' y='62' font-family='Segoe UI, sans-serif' font-size='13' fill='%23FFFFFF'>Onshore production facilities reporting under EPA Subpart W. Intensity = methane emitted / methane in the gas sold.</text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 6158bcbc-7493-5f2c-b88a-794bf151e872
+		dataCategory: ImageUrl
+
+	measure 'Card Intensity' =
+			VAR y = [Selected Year]
+			VAR cur = CALCULATE([Methane Intensity %], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+			VAR prev = CALCULATE([Methane Intensity %], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y - 1)
+			VAR chg = DIVIDE(cur - prev, prev)
+			VAR dTxt = IF(ISBLANK(prev) || ISBLANK(cur), "", IF(chg >= 0, "▲ +", "▼ -") & FORMAT(ABS(chg), "0%") & " vs " & (y - 1))
+			VAR dCol = IF(chg <= 0, "%232F6B4F", "%23B3462E")
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "0.00%"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR pts = FILTER(ADDCOLUMNS(FILTER(ALL(Dim_Year[Year]), Dim_Year[Year] >= 2015 && Dim_Year[Year] <= 2023), "@v", [Methane Intensity %]), NOT ISBLANK([@v]))
+			VAR mx = MAXX(pts, [@v])
+			VAR mn = MIN(0, MINX(pts, [@v]))
+			VAR poly = CONCATENATEX(pts, FORMAT(ROUND(176 + 104 * (Dim_Year[Year] - 2015) / 8, 0), "0") & "," & FORMAT(ROUND(78 - 34 * DIVIDE([@v] - mn, mx - mn), 0), "0"), " ", Dim_Year[Year], ASC)
+			VAR lastYr = MAXX(pts, Dim_Year[Year])
+			VAR lastV = MAXX(FILTER(pts, Dim_Year[Year] = lastYr), [@v])
+			VAR dot = "<circle cx='" & FORMAT(ROUND(176 + 104 * (lastYr - 2015) / 8, 0), "0") & "' cy='" & FORMAT(ROUND(78 - 34 * DIVIDE(lastV - mn, mx - mn), 0), "0") & "' r='3' fill='%232F6B4F'/>"
+			VAR sp = IF(COUNTROWS(pts) > 1, "<polyline points='" & poly & "' fill='none' stroke='%232F6B4F' stroke-width='2' stroke-linejoin='round'/>" & dot)
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>Methane intensity</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "</text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 8ffb32db-0d09-558a-b316-8f3e9e694bea
+		dataCategory: ImageUrl
+
+	measure 'Card ProdMethane' =
+			VAR y = [Selected Year]
+			VAR cur = CALCULATE([Production Methane kt], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+			VAR prev = CALCULATE([Production Methane kt], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y - 1)
+			VAR chg = DIVIDE(cur - prev, prev)
+			VAR dTxt = IF(ISBLANK(prev) || ISBLANK(cur), "", IF(chg >= 0, "▲ +", "▼ -") & FORMAT(ABS(chg), "0%") & " vs " & (y - 1))
+			VAR dCol = IF(chg <= 0, "%232F6B4F", "%23B3462E")
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR pts = FILTER(ADDCOLUMNS(FILTER(ALL(Dim_Year[Year]), Dim_Year[Year] >= 2015 && Dim_Year[Year] <= 2023), "@v", [Production Methane kt]), NOT ISBLANK([@v]))
+			VAR mx = MAXX(pts, [@v])
+			VAR mn = MIN(0, MINX(pts, [@v]))
+			VAR poly = CONCATENATEX(pts, FORMAT(ROUND(176 + 104 * (Dim_Year[Year] - 2015) / 8, 0), "0") & "," & FORMAT(ROUND(78 - 34 * DIVIDE([@v] - mn, mx - mn), 0), "0"), " ", Dim_Year[Year], ASC)
+			VAR lastYr = MAXX(pts, Dim_Year[Year])
+			VAR lastV = MAXX(FILTER(pts, Dim_Year[Year] = lastYr), [@v])
+			VAR dot = "<circle cx='" & FORMAT(ROUND(176 + 104 * (lastYr - 2015) / 8, 0), "0") & "' cy='" & FORMAT(ROUND(78 - 34 * DIVIDE(lastV - mn, mx - mn), 0), "0") & "' r='3' fill='%232F6B4F'/>"
+			VAR sp = IF(COUNTROWS(pts) > 1, "<polyline points='" & poly & "' fill='none' stroke='%232F6B4F' stroke-width='2' stroke-linejoin='round'/>" & dot)
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>Methane from production</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> kt CH4</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 45ba2d04-26f3-56e8-874c-a33e298d2421
+		dataCategory: ImageUrl
+
+	measure 'Card GasSold' =
+			VAR y = [Selected Year]
+			VAR cur = CALCULATE([Gas Sold bcm], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+			VAR prev = CALCULATE([Gas Sold bcm], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y - 1)
+			VAR chg = DIVIDE(cur - prev, prev)
+			VAR dTxt = IF(ISBLANK(prev) || ISBLANK(cur), "", IF(chg >= 0, "▲ +", "▼ -") & FORMAT(ABS(chg), "0%") & " vs " & (y - 1))
+			VAR dCol = "%2326241F"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR pts = FILTER(ADDCOLUMNS(FILTER(ALL(Dim_Year[Year]), Dim_Year[Year] >= 2015 && Dim_Year[Year] <= 2023), "@v", [Gas Sold bcm]), NOT ISBLANK([@v]))
+			VAR mx = MAXX(pts, [@v])
+			VAR mn = MIN(0, MINX(pts, [@v]))
+			VAR poly = CONCATENATEX(pts, FORMAT(ROUND(176 + 104 * (Dim_Year[Year] - 2015) / 8, 0), "0") & "," & FORMAT(ROUND(78 - 34 * DIVIDE([@v] - mn, mx - mn), 0), "0"), " ", Dim_Year[Year], ASC)
+			VAR lastYr = MAXX(pts, Dim_Year[Year])
+			VAR lastV = MAXX(FILTER(pts, Dim_Year[Year] = lastYr), [@v])
+			VAR dot = "<circle cx='" & FORMAT(ROUND(176 + 104 * (lastYr - 2015) / 8, 0), "0") & "' cy='" & FORMAT(ROUND(78 - 34 * DIVIDE(lastV - mn, mx - mn), 0), "0") & "' r='3' fill='%232F6B4F'/>"
+			VAR sp = IF(COUNTROWS(pts) > 1, "<polyline points='" & poly & "' fill='none' stroke='%232F6B4F' stroke-width='2' stroke-linejoin='round'/>" & dot)
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>Gas sold by these facilities</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> bcm</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 9855563e-a71d-5804-8e0d-d5c28791eee0
+		dataCategory: ImageUrl
+
+	measure 'Card PerWell' =
+			VAR y = [Selected Year]
+			VAR cur = CALCULATE([Methane per Well t], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+			VAR prev = CALCULATE([Methane per Well t], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y - 1)
+			VAR chg = DIVIDE(cur - prev, prev)
+			VAR dTxt = IF(ISBLANK(prev) || ISBLANK(cur), "", IF(chg >= 0, "▲ +", "▼ -") & FORMAT(ABS(chg), "0%") & " vs " & (y - 1))
+			VAR dCol = IF(chg <= 0, "%232F6B4F", "%23B3462E")
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "0.00"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR pts = FILTER(ADDCOLUMNS(FILTER(ALL(Dim_Year[Year]), Dim_Year[Year] >= 2015 && Dim_Year[Year] <= 2023), "@v", [Methane per Well t]), NOT ISBLANK([@v]))
+			VAR mx = MAXX(pts, [@v])
+			VAR mn = MIN(0, MINX(pts, [@v]))
+			VAR poly = CONCATENATEX(pts, FORMAT(ROUND(176 + 104 * (Dim_Year[Year] - 2015) / 8, 0), "0") & "," & FORMAT(ROUND(78 - 34 * DIVIDE([@v] - mn, mx - mn), 0), "0"), " ", Dim_Year[Year], ASC)
+			VAR lastYr = MAXX(pts, Dim_Year[Year])
+			VAR lastV = MAXX(FILTER(pts, Dim_Year[Year] = lastYr), [@v])
+			VAR dot = "<circle cx='" & FORMAT(ROUND(176 + 104 * (lastYr - 2015) / 8, 0), "0") & "' cy='" & FORMAT(ROUND(78 - 34 * DIVIDE(lastV - mn, mx - mn), 0), "0") & "' r='3' fill='%232F6B4F'/>"
+			VAR sp = IF(COUNTROWS(pts) > 1, "<polyline points='" & poly & "' fill='none' stroke='%232F6B4F' stroke-width='2' stroke-linejoin='round'/>" & dot)
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>Methane per producing well</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> t CH4</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 5e2f89a2-22f6-5d58-a527-7edf2a8b6c8a
+		dataCategory: ImageUrl
+
+	measure 'Header EU' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1280' height='78' viewBox='0 0 1280 78' preserveAspectRatio='none'>"
+			    & "<rect width='1280' height='78' fill='%231F3B2D'/>"
+			    & "<text x='28' y='38' font-family='Georgia, serif' font-size='24' font-weight='bold' fill='%23FFFFFF'>US exports and EU methane rules</text>"
+			    & "<text x='28' y='62' font-family='Segoe UI, sans-serif' font-size='13' fill='%23FFFFFF'>How much US oil and gas trade the EU Methane Regulation touches. Eurostat and EIA data.</text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 259aaf7e-ae15-5dcd-8b8b-2d81e0bc1d88
+		dataCategory: ImageUrl
+
+	measure 'Card LNGtoEU' =
+			VAR y = [Trade Year]
+			VAR cur = CALCULATE([US LNG to EU bcm], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+			VAR prev = CALCULATE([US LNG to EU bcm], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y - 1)
+			VAR chg = DIVIDE(cur - prev, prev)
+			VAR dTxt = IF(ISBLANK(prev) || ISBLANK(cur), "", IF(chg >= 0, "▲ +", "▼ -") & FORMAT(ABS(chg), "0%") & " vs " & (y - 1))
+			VAR dCol = IF(chg >= 0, "%232F6B4F", "%23B3462E")
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0.0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR pts = FILTER(ADDCOLUMNS(FILTER(ALL(Dim_Year[Year]), Dim_Year[Year] >= 2016 && Dim_Year[Year] <= 2025), "@v", [US LNG to EU bcm]), NOT ISBLANK([@v]))
+			VAR mx = MAXX(pts, [@v])
+			VAR mn = MIN(0, MINX(pts, [@v]))
+			VAR poly = CONCATENATEX(pts, FORMAT(ROUND(176 + 104 * (Dim_Year[Year] - 2016) / 9, 0), "0") & "," & FORMAT(ROUND(78 - 34 * DIVIDE([@v] - mn, mx - mn), 0), "0"), " ", Dim_Year[Year], ASC)
+			VAR lastYr = MAXX(pts, Dim_Year[Year])
+			VAR lastV = MAXX(FILTER(pts, Dim_Year[Year] = lastYr), [@v])
+			VAR dot = "<circle cx='" & FORMAT(ROUND(176 + 104 * (lastYr - 2016) / 9, 0), "0") & "' cy='" & FORMAT(ROUND(78 - 34 * DIVIDE(lastV - mn, mx - mn), 0), "0") & "' r='3' fill='%232F6B4F'/>"
+			VAR sp = IF(COUNTROWS(pts) > 1, "<polyline points='" & poly & "' fill='none' stroke='%232F6B4F' stroke-width='2' stroke-linejoin='round'/>" & dot)
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>US LNG shipped to the EU</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> bcm</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 080a0676-df58-5873-8f4f-752fcfeb3d37
+		dataCategory: ImageUrl
+
+	measure 'Card EUShare' =
+			VAR y = [Trade Year]
+			VAR cur = CALCULATE([EU Share of US LNG %], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+			VAR prev = CALCULATE([EU Share of US LNG %], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y - 1)
+			VAR chg = (cur - prev) * 100
+			VAR dTxt = IF(ISBLANK(prev) || ISBLANK(cur), "", IF(chg >= 0, "▲ +", "▼ -") & FORMAT(ABS(chg), "0.0") & " pts vs " & (y - 1))
+			VAR dCol = IF(chg >= 0, "%232F6B4F", "%23B3462E")
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "0.0%"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR pts = FILTER(ADDCOLUMNS(FILTER(ALL(Dim_Year[Year]), Dim_Year[Year] >= 2016 && Dim_Year[Year] <= 2025), "@v", [EU Share of US LNG %]), NOT ISBLANK([@v]))
+			VAR mx = MAXX(pts, [@v])
+			VAR mn = MIN(0, MINX(pts, [@v]))
+			VAR poly = CONCATENATEX(pts, FORMAT(ROUND(176 + 104 * (Dim_Year[Year] - 2016) / 9, 0), "0") & "," & FORMAT(ROUND(78 - 34 * DIVIDE([@v] - mn, mx - mn), 0), "0"), " ", Dim_Year[Year], ASC)
+			VAR lastYr = MAXX(pts, Dim_Year[Year])
+			VAR lastV = MAXX(FILTER(pts, Dim_Year[Year] = lastYr), [@v])
+			VAR dot = "<circle cx='" & FORMAT(ROUND(176 + 104 * (lastYr - 2016) / 9, 0), "0") & "' cy='" & FORMAT(ROUND(78 - 34 * DIVIDE(lastV - mn, mx - mn), 0), "0") & "' r='3' fill='%232F6B4F'/>"
+			VAR sp = IF(COUNTROWS(pts) > 1, "<polyline points='" & poly & "' fill='none' stroke='%232F6B4F' stroke-width='2' stroke-linejoin='round'/>" & dot)
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>EU share of US LNG exports</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "</text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 20479c1a-b277-5282-89c5-ea2c6b60866f
+		dataCategory: ImageUrl
+
+	measure 'Card USShare' =
+			VAR y = [Trade Year]
+			VAR cur = CALCULATE([US Share of EU LNG Imports %], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+			VAR prev = CALCULATE([US Share of EU LNG Imports %], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y - 1)
+			VAR chg = (cur - prev) * 100
+			VAR dTxt = IF(ISBLANK(prev) || ISBLANK(cur), "", IF(chg >= 0, "▲ +", "▼ -") & FORMAT(ABS(chg), "0.0") & " pts vs " & (y - 1))
+			VAR dCol = IF(chg >= 0, "%232F6B4F", "%23B3462E")
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "0.0%"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR pts = FILTER(ADDCOLUMNS(FILTER(ALL(Dim_Year[Year]), Dim_Year[Year] >= 2016 && Dim_Year[Year] <= 2025), "@v", [US Share of EU LNG Imports %]), NOT ISBLANK([@v]))
+			VAR mx = MAXX(pts, [@v])
+			VAR mn = MIN(0, MINX(pts, [@v]))
+			VAR poly = CONCATENATEX(pts, FORMAT(ROUND(176 + 104 * (Dim_Year[Year] - 2016) / 9, 0), "0") & "," & FORMAT(ROUND(78 - 34 * DIVIDE([@v] - mn, mx - mn), 0), "0"), " ", Dim_Year[Year], ASC)
+			VAR lastYr = MAXX(pts, Dim_Year[Year])
+			VAR lastV = MAXX(FILTER(pts, Dim_Year[Year] = lastYr), [@v])
+			VAR dot = "<circle cx='" & FORMAT(ROUND(176 + 104 * (lastYr - 2016) / 9, 0), "0") & "' cy='" & FORMAT(ROUND(78 - 34 * DIVIDE(lastV - mn, mx - mn), 0), "0") & "' r='3' fill='%232F6B4F'/>"
+			VAR sp = IF(COUNTROWS(pts) > 1, "<polyline points='" & poly & "' fill='none' stroke='%232F6B4F' stroke-width='2' stroke-linejoin='round'/>" & dot)
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>US share of EU LNG imports</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "</text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 2021bd11-c100-57a5-8109-46c2503abb20
+		dataCategory: ImageUrl
+
+	measure 'Card Risk' =
+			VAR cur = [EU Value at Risk USD bn]
+			VAR dTxt = FORMAT([Non-Compliant Share % Value], "0%") & " failing x " & FORMAT([Penalty Rate % Value], "0%") & " penalty"
+			VAR dCol = "%2326241F"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "$#,##0.0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR sp = ""
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>EU import value at risk</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> bn</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: cf4979e6-e5a1-57d7-8082-dabb4de09161
+		dataCategory: ImageUrl
+
+	measure 'Header Abatement' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1280' height='78' viewBox='0 0 1280 78' preserveAspectRatio='none'>"
+			    & "<rect width='1280' height='78' fill='%231F3B2D'/>"
+			    & "<text x='28' y='38' font-family='Georgia, serif' font-size='24' font-weight='bold' fill='%23FFFFFF'>US methane abatement options</text>"
+			    & "<text x='28' y='62' font-family='Segoe UI, sans-serif' font-size='13' fill='%23FFFFFF'>IEA estimates for US oil and gas: how much methane each measure can cut and what it costs net of the gas saved.</text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 5b084089-e656-56e0-915b-a74d2961b13e
+		dataCategory: ImageUrl
+
+	measure 'Card Potential' =
+			VAR cur = [Abatement Potential MtCO2e]
+			VAR dTxt = "All 16 IEA measures, United States"
+			VAR dCol = "%2326241F"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR sp = ""
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>Abatement potential</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> Mt CO2e/yr</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: f40b4c9d-6f90-533c-8d46-5ff6825742a6
+		dataCategory: ImageUrl
+
+	measure 'Card NetSaving' =
+			VAR cur = [Net-Saving Potential MtCO2e]
+			VAR dTxt = FORMAT([Net-Saving Share %], "0%") & " of the potential has a negative net cost"
+			VAR dCol = "%2326241F"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR sp = ""
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>Pays for itself</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> Mt CO2e/yr</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 3b37fe8f-1e90-5de2-a68f-829d08dd5058
+		dataCategory: ImageUrl
+
+	measure 'Card AvgCost' =
+			VAR cur = [Avg Cost USD per tCO2e]
+			VAR dTxt = "Weighted by abatement potential"
+			VAR dCol = "%2326241F"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "$#,##0.0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR sp = ""
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>Average net cost</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> per t CO2e</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: ff9192a7-81c8-52fe-bdd6-d2b580bda566
+		dataCategory: ImageUrl
+
+	measure 'Card PotentialCH4' =
+			VAR cur = [Abatement Potential Mt CH4]
+			VAR dTxt = "Equal to the CO2e figure at GWP 28"
+			VAR dCol = "%2326241F"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0.0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR sp = ""
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>Methane that could be avoided</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> Mt CH4/yr</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 49133505-7520-593e-8954-87ba653dd319
+		dataCategory: ImageUrl
+
+	measure 'Header Benchmark' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1280' height='78' viewBox='0 0 1280 78' preserveAspectRatio='none'>"
+			    & "<rect width='1280' height='78' fill='%231F3B2D'/>"
+			    & "<text x='28' y='38' font-family='Georgia, serif' font-size='24' font-weight='bold' fill='%23FFFFFF'>Global oil and gas methane benchmark</text>"
+			    & "<text x='28' y='62' font-family='Segoe UI, sans-serif' font-size='13' fill='%23FFFFFF'>IEA Global Methane Tracker, 2025 estimates (includes satellite-detected large leaks).</text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 327727d5-914e-5142-a64d-bc08f90bd88b
+		dataCategory: ImageUrl
+
+	measure 'Card USMethane' =
+			VAR cur = [US IEA Methane Mt]
+			VAR dTxt = "IEA estimate, 2025"
+			VAR dCol = "%2326241F"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0.0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR sp = ""
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>US oil &amp; gas methane</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> Mt CH4</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: ed457f3e-a65f-575f-9bc4-254f8aad0dd5
+		dataCategory: ImageUrl
+
+	measure 'Card USShareWorld' =
+			VAR cur = [US Share of World O&G Methane %]
+			VAR dTxt = "Of all oil and gas methane"
+			VAR dCol = "%2326241F"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "0%"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR sp = ""
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>US share of world total</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "</text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 33c7ae61-e210-5a22-8e99-71fc31e9511f
+		dataCategory: ImageUrl
+
+	measure 'Card USRank' =
+			VAR cur = [US Methane Rank]
+			VAR dTxt = "Largest emitter = #1"
+			VAR dCol = "%2326241F"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, ""#"0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR sp = ""
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>US rank among countries</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "</text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 6401a623-2b04-5c1b-84f6-c90b413a9751
+		dataCategory: ImageUrl
+
+	measure 'Card World' =
+			VAR cur = [World IEA Methane Mt]
+			VAR dTxt = "All countries, 2025"
+			VAR dCol = "%2326241F"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR sp = ""
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>World oil &amp; gas methane</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> Mt CH4</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 9999cfa7-5570-5a75-8833-9aebf4bbf3b0
+		dataCategory: ImageUrl
+
+	measure 'Methane Actual Mt' = CALCULATE(SUM(Fact_Forecast_Methane[Methane_MtCO2e]), Fact_Forecast_Methane[Series] = "Actual", Fact_Forecast_Methane[Segment] = "All Segments")
+		formatString: #,##0.0
+		displayFolder: 7. Forecast
+		lineageTag: 10dfd24f-ff77-5322-9cab-1e8dce89509f
+
+	measure 'Methane Forecast Mt' = CALCULATE(SUM(Fact_Forecast_Methane[Methane_MtCO2e]), Fact_Forecast_Methane[Series] = "Forecast", Fact_Forecast_Methane[Segment] = "All Segments")
+		formatString: #,##0.0
+		displayFolder: 7. Forecast
+		lineageTag: 87c7ef63-b2cd-5f17-8601-3eaa5e1b5ad2
+
+	measure 'Forecast 90% Low Mt' = CALCULATE(SUM(Fact_Forecast_Methane[Lower_90_MtCO2e]), Fact_Forecast_Methane[Series] = "Forecast", Fact_Forecast_Methane[Segment] = "All Segments")
+		formatString: #,##0.0
+		displayFolder: 7. Forecast
+		lineageTag: 73a14574-6c4c-5341-a082-7db65da13d41
+
+	measure 'Forecast 90% High Mt' = CALCULATE(SUM(Fact_Forecast_Methane[Upper_90_MtCO2e]), Fact_Forecast_Methane[Series] = "Forecast", Fact_Forecast_Methane[Segment] = "All Segments")
+		formatString: #,##0.0
+		displayFolder: 7. Forecast
+		lineageTag: 3075605d-42ee-5297-bd0c-4d29be164d88
+
+	measure 'Pledge Path Mt' = CALCULATE(SUM(Fact_Forecast_Methane[Methane_MtCO2e]), Fact_Forecast_Methane[Series] = "Pledge")
+		formatString: #,##0.0
+		displayFolder: 7. Forecast
+		lineageTag: 50bf20d0-fbec-55f1-9366-506d84367228
+
+	measure 'Last Actual Year' = CALCULATE(MAX(Fact_Forecast_Methane[Year]), REMOVEFILTERS(), Fact_Forecast_Methane[Series] = "Actual")
+		formatString: 0
+		displayFolder: 7. Forecast
+		lineageTag: 9f8bac35-e7fb-5163-b215-6acd2aa23e70
+
+	measure 'Forecast Year' =
+			VAR s = SELECTEDVALUE(Dim_Year[Year])
+			VAR last = CALCULATE(MAX(Fact_Forecast_Methane[Year]), REMOVEFILTERS())
+			RETURN IF(s > [Last Actual Year] && s <= last, s, last)
+		formatString: 0
+		displayFolder: 7. Forecast
+		lineageTag: b3b9fe24-d9dd-5322-bcf5-80372a3546f6
+
+	measure 'Forecast Gap to Pledge Mt' = IF(NOT ISBLANK([Methane Forecast Mt]) && NOT ISBLANK([Pledge Path Mt]), [Methane Forecast Mt] - [Pledge Path Mt])
+		formatString: +#,##0.0;-#,##0.0;0.0
+		displayFolder: 7. Forecast
+		lineageTag: 30d85888-1544-5104-8858-c2e865fdb6c1
+
+	measure 'Forecast Trend Mt per yr' =
+			VAR last = CALCULATE(MAX(Fact_Forecast_Methane[Year]), REMOVEFILTERS())
+			RETURN CALCULATE([Methane Forecast Mt], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = last) - CALCULATE([Methane Forecast Mt], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = last - 1)
+		formatString: #,##0.0
+		displayFolder: 7. Forecast
+		lineageTag: d1fa2585-05a7-5965-a6a3-a69f06ad6f1b
+
+	measure 'Forecast Change by Segment Mt' =
+			VAR y = [Forecast Year]
+			VAR la = [Last Actual Year]
+			VAR f = CALCULATE(SUM(Fact_Forecast_Methane[Methane_MtCO2e]), REMOVEFILTERS(Dim_Year), Fact_Forecast_Methane[Year] = y, Fact_Forecast_Methane[Series] = "Forecast")
+			VAR a = CALCULATE(SUM(Fact_Forecast_Methane[Methane_MtCO2e]), REMOVEFILTERS(Dim_Year), Fact_Forecast_Methane[Year] = la, Fact_Forecast_Methane[Series] = "Actual")
+			RETURN IF(HASONEVALUE(Fact_Forecast_Methane[Segment]) && SELECTEDVALUE(Fact_Forecast_Methane[Segment]) <> "All Segments", f - a)
+		formatString: +#,##0.0;-#,##0.0;0.0
+		displayFolder: 7. Forecast
+		lineageTag: ef688d24-085a-59f7-9c36-15c21ca7b75c
+
+	measure 'Header Forecast' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1280' height='78' viewBox='0 0 1280 78' preserveAspectRatio='none'>"
+			    & "<rect width='1280' height='78' fill='%231F3B2D'/>"
+			    & "<text x='28' y='38' font-family='Georgia, serif' font-size='24' font-weight='bold' fill='%23FFFFFF'>US methane outlook to 2030</text>"
+			    & "<text x='28' y='62' font-family='Segoe UI, sans-serif' font-size='13' fill='%23FFFFFF'>Linear trend fitted to 2016-2023 EPA methane, with a 90%25 range and the Global Methane Pledge path. Year filter: 2024-2030.</text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 174c7ec1-9ca9-555e-9ac5-bb5e2008fa92
+		dataCategory: ImageUrl
+
+	measure 'Card Forecast' =
+			VAR y = [Forecast Year]
+			VAR cur = CALCULATE([Methane Forecast Mt], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+			VAR prev = CALCULATE([Methane Forecast Mt], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y - 1)
+			VAR dTxt = "90% range " & FORMAT(CALCULATE([Forecast 90% Low Mt], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y), "0") & " to " & FORMAT(CALCULATE([Forecast 90% High Mt], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y), "0") & " Mt"
+			VAR dCol = "%2326241F"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR pts = FILTER(ADDCOLUMNS(FILTER(ALL(Dim_Year[Year]), Dim_Year[Year] >= 2023 && Dim_Year[Year] <= 2030), "@v", [Methane Forecast Mt]), NOT ISBLANK([@v]))
+			VAR mx = MAXX(pts, [@v])
+			VAR mn = MIN(0, MINX(pts, [@v]))
+			VAR poly = CONCATENATEX(pts, FORMAT(ROUND(176 + 104 * (Dim_Year[Year] - 2023) / 7, 0), "0") & "," & FORMAT(ROUND(78 - 34 * DIVIDE([@v] - mn, mx - mn), 0), "0"), " ", Dim_Year[Year], ASC)
+			VAR lastYr = MAXX(pts, Dim_Year[Year])
+			VAR lastV = MAXX(FILTER(pts, Dim_Year[Year] = lastYr), [@v])
+			VAR dot = "<circle cx='" & FORMAT(ROUND(176 + 104 * (lastYr - 2023) / 7, 0), "0") & "' cy='" & FORMAT(ROUND(78 - 34 * DIVIDE(lastV - mn, mx - mn), 0), "0") & "' r='3' fill='%232F6B4F'/>"
+			VAR sp = IF(COUNTROWS(pts) > 1, "<polyline points='" & poly & "' fill='none' stroke='%232F6B4F' stroke-width='2' stroke-linejoin='round'/>" & dot)
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>Methane forecast</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> Mt CO2e</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 3a2e1a85-db97-5213-b4c9-8f54de340813
+		dataCategory: ImageUrl
+
+	measure 'Card Pledge' =
+			VAR y = [Forecast Year]
+			VAR cur = CALCULATE([Pledge Path Mt], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+			VAR prev = CALCULATE([Pledge Path Mt], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y - 1)
+			VAR dTxt = "-30% vs 2020 by 2030"
+			VAR dCol = "%2326241F"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR sp = ""
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>Global Methane Pledge path</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> Mt CO2e</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 1131fda4-ed79-57bc-8c48-4a62dd875d12
+		dataCategory: ImageUrl
+
+	measure 'Card PledgeGap' =
+			VAR y = [Forecast Year]
+			VAR cur = CALCULATE([Forecast Gap to Pledge Mt], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y)
+			VAR prev = CALCULATE([Forecast Gap to Pledge Mt], REMOVEFILTERS(Dim_Year), Dim_Year[Year] = y - 1)
+			VAR dTxt = IF(ISBLANK(cur), "", IF(cur <= 0, "Below the pledge path (on track)", "Above the pledge path (off track)"))
+			VAR dCol = "%2326241F"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "+#,##0;-#,##0;0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR sp = ""
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>Forecast vs pledge path</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> Mt CO2e</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 7ea409ef-3b81-5df0-8518-3e25a6f5ad73
+		dataCategory: ImageUrl
+
+	measure 'Card Trend' =
+			VAR cur = [Forecast Trend Mt per yr]
+			VAR dTxt = "Linear fit to 2016-2023 EPA data"
+			VAR dCol = "%2326241F"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0.0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR dOut = SUBSTITUTE(SUBSTITUTE(dTxt, "%", "%25"), "#", "%23")
+			VAR sp = ""
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='296' height='118' viewBox='0 0 296 118'>"
+			    & "<rect x='0.5' y='0.5' width='295' height='117' rx='10' fill='%23FFFDF8' stroke='%23E6DFD1'/>"
+			    & "<text x='16' y='27' font-family='Segoe UI, sans-serif' font-size='12' fill='%2326241F'>Trend per year</text>"
+			    & "<text x='16' y='72' font-family='Segoe UI Semibold, Segoe UI, sans-serif' font-size='30' font-weight='600' fill='%231D1C1A'>" & vOut & "<tspan font-size='14' font-weight='normal' fill='%2326241F'> Mt CO2e/yr</tspan></text>"
+			    & "<text x='16' y='100' font-family='Segoe UI, sans-serif' font-size='12' fill='" & dCol & "'>" & dOut & "</text>"
+			    & sp & "</svg>"
+		formatString: General
+		displayFolder: 6. Report visuals
+		lineageTag: 5a5b650f-3fcd-5c76-af33-74d5dd2380dc
+		dataCategory: ImageUrl
+
+	column Placeholder
+		dataType: string
+		isHidden
+		lineageTag: 71e9b5cc-f33c-593f-8ae5-3e7266e3585c
+		summarizeBy: none
+		sourceColumn: Placeholder
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '_Measures' = m
+		mode: import
+		source =
+				#table(type table [Placeholder = text], {})
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,119 @@
+table Fact_IEA_Methane
+	lineageTag: f03b8f87-b5b5-599a-abe2-a332301ac8f0
+
+	column Country
+		dataType: string
+		lineageTag: ab431568-43d2-585e-9ab0-a59376988f63
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region_Type
+		dataType: string
+		lineageTag: 8c9c879d-6bbc-51fb-a242-ac26530cca6d
+		summarizeBy: none
+		sourceColumn: Region_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_EU27
+		dataType: boolean
+		lineageTag: 79930131-0fee-56ff-b519-c4a591cdacb3
+		summarizeBy: none
+		sourceColumn: Is_EU27
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 6af02752-0c4c-5716-a407-2b1191f47a65
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hydrocarbon
+		dataType: string
+		lineageTag: f2818179-dd07-547a-89d3-5126935ac95a
+		summarizeBy: none
+		sourceColumn: Hydrocarbon
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sector
+		dataType: string
+		lineageTag: 0074a14f-d260-5a23-a6a8-651e17ce8c38
+		summarizeBy: none
+		sourceColumn: Sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column Production_Source
+		dataType: string
+		lineageTag: be4b7c25-f850-5c53-b7df-7104d3a2215b
+		summarizeBy: none
+		sourceColumn: Production_Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reason
+		dataType: string
+		lineageTag: bdeda270-d577-59b3-b6a1-7b41dc27b209
+		summarizeBy: none
+		sourceColumn: Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Satellite
+		dataType: boolean
+		lineageTag: 23cdf47e-d709-5e6a-ade5-246b3b76a370
+		summarizeBy: none
+		sourceColumn: Is_Satellite
+
+		annotation SummarizationSetBy = Automatic
+
+	column CH4_t
+		dataType: double
+		lineageTag: 01c2808e-38e3-5e58-a27a-04c55219e248
+		summarizeBy: sum
+		sourceColumn: CH4_t
+
+		annotation SummarizationSetBy = Automatic
+
+	column CO2e_AR5_tCO2e
+		dataType: double
+		lineageTag: 45508301-4a39-5678-bf35-c2f4bcc493a8
+		summarizeBy: sum
+		sourceColumn: CO2e_AR5_tCO2e
+
+		annotation SummarizationSetBy = Automatic
+
+	column CO2e_AR6_100_tCO2e
+		dataType: double
+		lineageTag: a8a0bfc7-d32e-5ff9-b771-e519ed8a6b66
+		summarizeBy: sum
+		sourceColumn: CO2e_AR6_100_tCO2e
+
+		annotation SummarizationSetBy = Automatic
+
+	column CO2e_AR6_20_tCO2e
+		dataType: double
+		lineageTag: 5f8f2ab6-53be-539e-89e4-bca9791b239e
+		summarizeBy: sum
+		sourceColumn: CO2e_AR6_20_tCO2e
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_IEA_Methane = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_IEA_Methane.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Country", type text}, {"Region_Type", type text}, {"Is_EU27", type logical}, {"Year", Int64.Type}, {"Hydrocarbon", type text}, {"Sector", type text}, {"Production_Source", type text}, {"Reason", type text}, {"Is_Satellite", type logical}, {"CH4_t", type number}, {"CO2e_AR5_tCO2e", type number}, {"CO2e_AR6_100_tCO2e", type number}, {"CO2e_AR6_20_tCO2e", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

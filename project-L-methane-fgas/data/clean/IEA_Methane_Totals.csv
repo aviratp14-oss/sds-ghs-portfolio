@@ -1,0 +1,57 @@
+Aggregate,Year,Hydrocarbon,Sector,Reason,CH4_t
+European Union,2025,Gas,Conventional,Abandoned facilities,56704.1
+European Union,2025,Gas,Conventional,Fugitive,25824.0
+European Union,2025,Gas,Conventional,Incomplete-flare,0.0
+European Union,2025,Gas,Conventional,Vented,64464.2
+European Union,2025,Gas,Downstream,Fugitive,180572.7
+European Union,2025,Gas,Downstream,Vented,242629.9
+European Union,2025,Gas,Offshore,Fugitive,7087.6
+European Union,2025,Gas,Offshore,Incomplete-flare,0.0
+European Union,2025,Gas,Offshore,Vented,17692.6
+European Union,2025,Gas,Unconventional,Abandoned facilities,0.0
+European Union,2025,Gas,Unconventional,Fugitive,1769.9
+European Union,2025,Gas,Unconventional,Incomplete-flare,0.0
+European Union,2025,Gas,Unconventional,Vented,4418.3
+European Union,2025,Oil,Conventional,Abandoned facilities,24080.5
+European Union,2025,Oil,Conventional,Fugitive,12355.4
+European Union,2025,Oil,Conventional,Incomplete-flare,1629.1
+European Union,2025,Oil,Conventional,Vented,49421.4
+European Union,2025,Oil,Downstream,Fugitive,11807.3
+European Union,2025,Oil,Downstream,Vented,50930.0
+European Union,2025,Oil,Offshore,Fugitive,3325.1
+European Union,2025,Oil,Offshore,Incomplete-flare,645.8
+European Union,2025,Oil,Offshore,Vented,13300.7
+European Union,2025,Oil,Unconventional,Abandoned facilities,0.0
+European Union,2025,Oil,Unconventional,Fugitive,0.0
+European Union,2025,Oil,Unconventional,Incomplete-flare,0.0
+European Union,2025,Oil,Unconventional,Vented,0.0
+European Union,2025,Satellite-detected large emitters,Satellite - downstream,Fugitive,0.0
+European Union,2025,Satellite-detected large emitters,Satellite - upstream,Fugitive,0.0
+World,2025,Gas,Conventional,Abandoned facilities,1424628.5
+World,2025,Gas,Conventional,Fugitive,2122154.9
+World,2025,Gas,Conventional,Incomplete-flare,0.0
+World,2025,Gas,Conventional,Vented,5297576.9
+World,2025,Gas,Downstream,Fugitive,3905555.9
+World,2025,Gas,Downstream,Vented,5247841.9
+World,2025,Gas,Offshore,Fugitive,1086912.9
+World,2025,Gas,Offshore,Incomplete-flare,0.0
+World,2025,Gas,Offshore,Vented,2713222.0
+World,2025,Gas,Unconventional,Abandoned facilities,601759.8
+World,2025,Gas,Unconventional,Fugitive,2654969.3
+World,2025,Gas,Unconventional,Incomplete-flare,0.0
+World,2025,Gas,Unconventional,Vented,6627742.5
+World,2025,Oil,Conventional,Abandoned facilities,1103298.7
+World,2025,Oil,Conventional,Fugitive,4202316.5
+World,2025,Oil,Conventional,Incomplete-flare,6790197.7
+World,2025,Oil,Conventional,Vented,16809262.3
+World,2025,Oil,Downstream,Fugitive,174312.7
+World,2025,Oil,Downstream,Vented,752675.2
+World,2025,Oil,Offshore,Fugitive,1525777.5
+World,2025,Oil,Offshore,Incomplete-flare,1066209.0
+World,2025,Oil,Offshore,Vented,6103111.8
+World,2025,Oil,Unconventional,Abandoned facilities,205592.7
+World,2025,Oil,Unconventional,Fugitive,912533.2
+World,2025,Oil,Unconventional,Incomplete-flare,627749.2
+World,2025,Oil,Unconventional,Vented,3650099.0
+World,2025,Satellite-detected large emitters,Satellite - downstream,Fugitive,2603900.0
+World,2025,Satellite-detected large emitters,Satellite - upstream,Fugitive,2798300.0

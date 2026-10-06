@@ -1,0 +1,55 @@
+table Fact_LNG_Exports_Terminal
+	lineageTag: 9e30d248-61ef-57c9-bee4-03dad4320eee
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: fe8d1b0b-6509-5e4a-a650-c9dcccc57473
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destination
+		dataType: string
+		lineageTag: 5ffb8dd8-d2af-5993-8f3e-fb3d9a832575
+		summarizeBy: none
+		sourceColumn: Destination
+
+		annotation SummarizationSetBy = Automatic
+
+	column Terminal
+		dataType: string
+		lineageTag: bdf54b6c-4e55-52ef-bce3-d972958b6d00
+		summarizeBy: none
+		sourceColumn: Terminal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Volume_bcm
+		dataType: double
+		lineageTag: f9f786d0-e443-5785-b5e6-6f7c966e4e32
+		summarizeBy: sum
+		sourceColumn: Volume_bcm
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destination_Is_EU27
+		dataType: boolean
+		lineageTag: 7f9b1ee0-be13-5eaa-91a3-0d49121aa526
+		summarizeBy: none
+		sourceColumn: Destination_Is_EU27
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_LNG_Exports_Terminal = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_LNG_Exports_Terminal.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Year", Int64.Type}, {"Destination", type text}, {"Terminal", type text}, {"Volume_bcm", type number}, {"Destination_Is_EU27", type logical}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

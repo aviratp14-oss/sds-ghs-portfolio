@@ -1,0 +1,21 @@
+# Raw downloads are big and can be re-downloaded (see data/raw/README.md)
+**/data/raw/*
+!**/data/raw/README.md
+
+# Power BI local files
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+*.pbix.bak
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Office and OS clutter
+~$*
+.DS_Store
+Thumbs.db
+desktop.ini
+*.zip

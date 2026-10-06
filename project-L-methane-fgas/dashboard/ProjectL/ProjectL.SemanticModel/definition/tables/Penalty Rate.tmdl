@@ -1,0 +1,22 @@
+/// What-if: penalty or lost value as a share of the import value at risk
+table 'Penalty Rate'
+	lineageTag: 52b51632-525e-5465-917c-a0b75a195f34
+
+	measure 'Penalty Rate % Value' = SELECTEDVALUE('Penalty Rate'[Penalty Rate %], 5) / 100
+		formatString: 0%
+		lineageTag: 766c630a-e57c-5167-9aa8-aa7407f7e86f
+
+	column 'Penalty Rate %'
+		dataType: int64
+		formatString: 0
+		lineageTag: 726c4d61-9872-5b93-b5d0-5c8fb2192303
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Penalty Rate' = calculated
+		mode: import
+		source = GENERATESERIES(0, 20, 1)
+
+	annotation PBI_Id = 3637bd01192e546ca4c4e9e9e820a895

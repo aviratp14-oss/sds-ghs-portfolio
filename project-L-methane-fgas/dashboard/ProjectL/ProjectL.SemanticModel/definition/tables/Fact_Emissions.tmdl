@@ -1,0 +1,120 @@
+table Fact_Emissions
+	lineageTag: 2b6e992f-f20e-5aba-a47e-208f26e2a31b
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: b184fbd7-9993-5d65-b565-dd37319bdf47
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Facility_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: dc5c9da2-a46f-508b-8d68-1ee63c4a2f13
+		summarizeBy: none
+		sourceColumn: Facility_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: 2de9e6cc-6617-52db-80ab-b4cc7ca393c6
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Basin_Code
+		dataType: string
+		lineageTag: 07688bf0-3085-5ae5-8be5-1d5c6ae4c5e0
+		summarizeBy: none
+		sourceColumn: Basin_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Basin_Name
+		dataType: double
+		lineageTag: 78db11a9-cdda-5329-94ac-f4bc638aec94
+		summarizeBy: sum
+		sourceColumn: Basin_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gas
+		dataType: string
+		lineageTag: 921a7967-6a9c-5df8-8050-6bfc70116c5c
+		summarizeBy: none
+		sourceColumn: Gas
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gas_Group
+		dataType: string
+		lineageTag: 36fa09e5-f35f-5ed2-9ef3-243ebcf55aad
+		summarizeBy: none
+		sourceColumn: Gas_Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column CO2e_AR4_tCO2e
+		dataType: double
+		lineageTag: 80a7512b-4da9-5a83-b513-ef8d18b72847
+		summarizeBy: sum
+		sourceColumn: CO2e_AR4_tCO2e
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gas_t
+		dataType: double
+		lineageTag: dca77f79-bfdd-554b-80fd-d060efe522a9
+		summarizeBy: sum
+		sourceColumn: Gas_t
+
+		annotation SummarizationSetBy = Automatic
+
+	column CO2e_AR5_tCO2e
+		dataType: double
+		lineageTag: 9e6d0c1f-19c0-5a5a-9c57-b005b06974f4
+		summarizeBy: sum
+		sourceColumn: CO2e_AR5_tCO2e
+
+		annotation SummarizationSetBy = Automatic
+
+	column CO2e_AR6_100_tCO2e
+		dataType: double
+		lineageTag: da8e1643-a83e-582c-b2ad-a4ad5a66ac09
+		summarizeBy: sum
+		sourceColumn: CO2e_AR6_100_tCO2e
+
+		annotation SummarizationSetBy = Automatic
+
+	column CO2e_AR6_20_tCO2e
+		dataType: double
+		lineageTag: 6df16ef6-878a-5995-8359-581fd3cadeed
+		summarizeBy: sum
+		sourceColumn: CO2e_AR6_20_tCO2e
+
+		annotation SummarizationSetBy = Automatic
+
+	column GWP_Converted
+		dataType: boolean
+		lineageTag: f799485a-42fe-5b03-9804-033610fec8a4
+		summarizeBy: none
+		sourceColumn: GWP_Converted
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Emissions = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_Emissions.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Year", Int64.Type}, {"Facility_Id", Int64.Type}, {"Segment", type text}, {"Basin_Code", type text}, {"Basin_Name", type number}, {"Gas", type text}, {"Gas_Group", type text}, {"CO2e_AR4_tCO2e", type number}, {"Gas_t", type number}, {"CO2e_AR5_tCO2e", type number}, {"CO2e_AR6_100_tCO2e", type number}, {"CO2e_AR6_20_tCO2e", type number}, {"GWP_Converted", type logical}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

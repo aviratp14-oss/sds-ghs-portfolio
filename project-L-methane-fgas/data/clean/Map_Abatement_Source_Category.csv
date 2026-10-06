@@ -1,0 +1,20 @@
+Measure,Source_Category,Note
+Annual LDAR,Equipment Leaks Surveys and Population Counts,"Analyst mapping, review"
+Biannual LDAR,Equipment Leaks Surveys and Population Counts,"Analyst mapping, review"
+Quarterly LDAR,Equipment Leaks Surveys and Population Counts,"Analyst mapping, review"
+Daily LDAR,Equipment Leaks Surveys and Population Counts,"Analyst mapping, review"
+Continuous LDAR,Equipment Leaks Surveys and Population Counts,"Analyst mapping, review"
+Replace with instrument air systems,Natural Gas Pneumatic Devices,"Analyst mapping, review"
+Replace with instrument air systems,Natural Gas Driven Pneumatic Pumps,"Analyst mapping, review"
+Replace with electric motor,Natural Gas Pneumatic Devices,"Analyst mapping, review"
+Replace with electric motor,Natural Gas Driven Pneumatic Pumps,"Analyst mapping, review"
+Replace pumps,Natural Gas Driven Pneumatic Pumps,"Analyst mapping, review"
+Vapour recovery units,Atmospheric Storage Tanks,"Analyst mapping, review"
+Blowdown capture,Blowdown Vent Stacks,"Analyst mapping, review"
+Replace compressor seal or rod,Centrifugal Compressors,"Analyst mapping, review"
+Replace compressor seal or rod,Reciprocating Compressors,"Analyst mapping, review"
+Associated gas utilisation,Associated Gas Venting and Flaring,"Analyst mapping, review"
+Install plunger,Well Venting for Liquids Unloading,"Analyst mapping, review"
+Improve flaring,Flare Stacks,"Analyst mapping, review"
+Monitor and plug abandoned wells,,No matching Subpart W source (not reported to EPA)
+Other,,No matching Subpart W source (not reported to EPA)

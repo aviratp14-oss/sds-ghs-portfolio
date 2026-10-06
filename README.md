@@ -14,7 +14,7 @@ Each project lives in its own folder with its own README, data, scripts and dash
 
 | Project | What it looks at | Tools |
 |---|---|---|
-| [Methane and F-gas emissions vs EU rules](project-L-methane-fgas/) | How much methane and F-gas US facilities report, where it is heading to 2030, and how exposed US LNG exports are to the new EU Methane Regulation | Python (pandas), Power BI, DAX |
+| [Methane and F-gas emissions vs EU rules](project-L-methane-fgas/) | How much methane and F-gas US facilities report, where it is heading to 2030, and how exposed US LNG exports are to the new EU Methane Regulation | Excel, Python (pandas), Power BI, DAX |
 
 More to come.
 

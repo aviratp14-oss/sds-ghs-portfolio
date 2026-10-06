@@ -1,0 +1,30 @@
+table Dim_Basin
+	lineageTag: 43df9dae-adb6-574f-8a6e-f9f15f486e37
+
+	column Basin_Code
+		dataType: string
+		lineageTag: 3dd44e54-fc1f-56b0-82ca-92e36250b309
+		summarizeBy: none
+		sourceColumn: Basin_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Basin_Name
+		dataType: string
+		lineageTag: f6abceb0-2ac5-578f-988e-b749b903e709
+		summarizeBy: none
+		sourceColumn: Basin_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Basin = m
+		mode: import
+		source =
+				let
+				    Source = Table.SelectColumns(Fact_Emissions, {"Basin_Code", "Basin_Name"}),
+				    NonBlank = Table.SelectRows(Source, each [Basin_Code] <> null and [Basin_Code] <> ""),
+				    Distinct = Table.Distinct(NonBlank, {"Basin_Code"})
+				in
+				    Distinct
+
+	annotation PBI_ResultType = Table

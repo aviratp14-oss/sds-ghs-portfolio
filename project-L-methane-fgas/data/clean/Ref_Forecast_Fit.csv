@@ -1,0 +1,7 @@
+Segment,Fit_Start,Fit_End,n,Slope_Mt_per_yr,Intercept,Residual_SE,R2,Run_Date
+Direct Emitter,2016,2023,8,-3.6565,7539.997,3.5969,0.8785,2026-10-05
+Gathering & Boosting,2016,2023,8,-0.9748,1986.346,0.7248,0.9268,2026-10-05
+Local Distribution,2016,2023,8,-0.3951,811.686,0.1609,0.9769,2026-10-05
+Onshore Production,2016,2023,8,-2.9966,6095.901,4.0211,0.7954,2026-10-05
+Transmission Pipelines,2016,2023,8,-0.202,410.892,0.5339,0.5005,2026-10-05
+All Segments,2016,2023,8,-8.2248,16844.822,7.6164,0.8909,2026-10-05

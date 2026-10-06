@@ -1,0 +1,119 @@
+table Fact_IEA_Abatement
+	lineageTag: 76cf1395-6858-58ea-b887-58333c5587cc
+
+	column Row_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: efb81537-a756-5097-95b3-9731e642561a
+		summarizeBy: none
+		sourceColumn: Row_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 1afbd869-9bdd-5dcb-953d-25430fa1ef09
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 090505bd-fc29-59f6-bc98-a8bc48a827d3
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Production_Source
+		dataType: string
+		lineageTag: aaf54efc-ccd9-54b6-bdea-29eca7ed777f
+		summarizeBy: none
+		sourceColumn: Production_Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: cb32b8d4-7827-5d25-8d94-4415abcdf7ce
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 6c473d61-7f27-5846-a0bf-f0b34a0fa7cd
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Measure
+		dataType: string
+		lineageTag: bed7c404-57dd-5c97-823d-41ae99df23a8
+		summarizeBy: none
+		sourceColumn: Measure
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cost_USD_per_MMBtu
+		dataType: double
+		lineageTag: c01955b6-d540-5cda-9cc7-ae80fe488cd2
+		summarizeBy: none
+		sourceColumn: Cost_USD_per_MMBtu
+
+		annotation SummarizationSetBy = Automatic
+
+	column Savings_CH4_t
+		dataType: double
+		lineageTag: ec93609c-6400-50c7-9f70-5c56c3a0a251
+		summarizeBy: sum
+		sourceColumn: Savings_CH4_t
+
+		annotation SummarizationSetBy = Automatic
+
+	column Savings_CO2e_AR5_tCO2e
+		dataType: double
+		lineageTag: 0d8bdf00-e353-539e-a7b3-577c49229c10
+		summarizeBy: sum
+		sourceColumn: Savings_CO2e_AR5_tCO2e
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cost_USD_per_tCH4
+		dataType: double
+		lineageTag: e480b77f-929f-5178-abd4-4a18b2506f10
+		summarizeBy: none
+		sourceColumn: Cost_USD_per_tCH4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cost_USD_per_tCO2e_AR5
+		dataType: double
+		lineageTag: 8527c444-4181-51f1-ad6e-829641d22310
+		summarizeBy: none
+		sourceColumn: Cost_USD_per_tCO2e_AR5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Net_Saving
+		dataType: boolean
+		lineageTag: 42cb038a-6658-5307-a4c7-c5fade455a32
+		summarizeBy: none
+		sourceColumn: Is_Net_Saving
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_IEA_Abatement = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_IEA_Abatement.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Row_Id", Int64.Type}, {"Region", type text}, {"Country", type text}, {"Production_Source", type text}, {"Segment", type text}, {"Type", type text}, {"Measure", type text}, {"Cost_USD_per_MMBtu", type number}, {"Savings_CH4_t", type number}, {"Savings_CO2e_AR5_tCO2e", type number}, {"Cost_USD_per_tCH4", type number}, {"Cost_USD_per_tCO2e_AR5", type number}, {"Is_Net_Saving", type logical}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

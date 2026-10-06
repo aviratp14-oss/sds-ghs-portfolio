@@ -1,0 +1,112 @@
+table Dim_Facility
+	lineageTag: baf4f6dd-48dc-5366-a388-e0ef24210496
+
+	column Facility_Id
+		dataType: int64
+		formatString: 0
+		lineageTag: d353926d-a121-51e1-8022-f22f0e53f5d5
+		summarizeBy: none
+		sourceColumn: Facility_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Facility_Name
+		dataType: string
+		lineageTag: 8893fa50-f62e-5e96-b864-79e7143f35e3
+		summarizeBy: none
+		sourceColumn: Facility_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: ee418d15-5e86-5743-b200-4fdfc96db386
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: e81eb257-edf7-5adc-a326-9219127b978d
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column County
+		dataType: string
+		lineageTag: c0a36910-8832-5a78-9c6c-0e6498cb0190
+		summarizeBy: none
+		sourceColumn: County
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		lineageTag: f640ec9d-05d3-59d5-84af-e11e491ae93b
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Longitude
+		dataType: double
+		lineageTag: e49465e2-0033-583f-8b0f-295fde48ff4f
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Primary_NAICS_Code
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e90a0e7-e934-5e74-a3d2-0517cdf91945
+		summarizeBy: none
+		sourceColumn: Primary_NAICS_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Industry_Type_Subparts
+		dataType: string
+		lineageTag: 962cde82-d055-54f9-8c2b-9f02a174e52e
+		summarizeBy: none
+		sourceColumn: Industry_Type_Subparts
+
+		annotation SummarizationSetBy = Automatic
+
+	column Industry_Type_Sectors
+		dataType: string
+		lineageTag: c03092ae-0c54-5d8a-b4bc-d5f5680bd420
+		summarizeBy: none
+		sourceColumn: Industry_Type_Sectors
+
+		annotation SummarizationSetBy = Automatic
+
+	column Primary_Sector
+		dataType: string
+		lineageTag: 70a9c0da-70c6-5f4a-94ea-6b6cb887ca8c
+		summarizeBy: none
+		sourceColumn: Primary_Sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column Basin_Code
+		dataType: string
+		lineageTag: f741f8d9-e21d-5e31-b595-7b6bd2e995ab
+		summarizeBy: none
+		sourceColumn: Basin_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Facility = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Dim_Facility.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Facility_Id", Int64.Type}, {"Facility_Name", type text}, {"City", type text}, {"State", type text}, {"County", type text}, {"Latitude", type number}, {"Longitude", type number}, {"Primary_NAICS_Code", Int64.Type}, {"Industry_Type_Subparts", type text}, {"Industry_Type_Sectors", type text}, {"Primary_Sector", type text}, {"Basin_Code", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

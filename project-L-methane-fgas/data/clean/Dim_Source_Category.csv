@@ -1,0 +1,22 @@
+Source_Category,Emission_Type,Source_Category_Citation
+Acid Gas Removal Units,Vented,98.236(d)
+Associated Gas Venting and Flaring,Flared and vented,98.236(m)
+Atmospheric Storage Tanks,Vented,98.236(j)
+Blowdown Vent Stacks,Vented,98.236(i)
+Centrifugal Compressors,Vented,98.236(o)
+Combustion Equipment,Combustion,98.236(z)
+Completions and Workovers (not split by fracturing),Vented,"98.236(g,h)"
+Completions and Workovers with Hydraulic Fracturing,Vented,98.236(g)
+Completions and Workovers without Hydraulic Fracturing,Vented,98.236(h)
+Dehydrators,Vented,98.236(e)
+Enhanced Oil Recovery Hydrocarbon Liquids,Vented,98.236(x)
+Enhanced Oil Recovery Injection Pumps,Vented,98.236(w)
+Equipment Leaks Surveys and Population Counts,Fugitive,"98.236(q,r)"
+Flare Stacks,Incomplete flare,98.236(n)
+Natural Gas Driven Pneumatic Pumps,Vented,98.236(c)
+Natural Gas Pneumatic Devices,Vented,98.236(b)
+Offshore Petroleum and Natural Gas Production,Offshore (mixed),98.236(s)
+Reciprocating Compressors,Vented,98.236(p)
+Transmission Storage Tanks,Vented,98.236(k)
+Well Testing,Flared and vented,98.236(l)
+Well Venting for Liquids Unloading,Vented,98.236(f)

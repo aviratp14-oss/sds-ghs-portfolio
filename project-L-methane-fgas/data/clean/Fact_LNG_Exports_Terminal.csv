@@ -1,0 +1,2137 @@
+Year,Destination,Terminal,Volume_bcm,Destination_Is_EU27
+2020,Antigua and Barbuda,"Fort Lauderdale, FL",0.0,False
+2021,Antigua and Barbuda,"Fort Lauderdale, FL",0.000169901,False
+2022,Antigua and Barbuda,"Fort Lauderdale, FL",0.00062297,False
+2023,Antigua and Barbuda,"Fort Lauderdale, FL",0.00133089,False
+2024,Antigua and Barbuda,"Fort Lauderdale, FL",0.001925542,False
+2025,Antigua and Barbuda,"Fort Lauderdale, FL",0.001189306,False
+2020,Antigua and Barbuda,"Jacksonville, FL",0.0,False
+2021,Antigua and Barbuda,"Jacksonville, FL",5.6634e-05,False
+2022,Antigua and Barbuda,"Jacksonville, FL",0.0,False
+2023,Antigua and Barbuda,"Jacksonville, FL",0.0,False
+2024,Antigua and Barbuda,"Jacksonville, FL",5.6634e-05,False
+2023,Antigua and Barbuda,"Miami, FL",0.0,False
+2024,Antigua and Barbuda,"Miami, FL",2.8317e-05,False
+2022,Argentina,"Cameron (Calcasieu Pass), LA",0.63154959,False
+2023,Argentina,"Cameron (Calcasieu Pass), LA",0.954870813,False
+2024,Argentina,"Cameron (Calcasieu Pass), LA",0.253605261,False
+2025,Argentina,"Cameron (Calcasieu Pass), LA",0.215745699,False
+2019,Argentina,"Cameron, LA",0.0,False
+2020,Argentina,"Cameron, LA",0.114229971,False
+2021,Argentina,"Cameron, LA",0.062863296,False
+2022,Argentina,"Cameron, LA",0.0,False
+2023,Argentina,"Cameron, LA",0.0,False
+2024,Argentina,"Cameron, LA",0.052102912,False
+2025,Argentina,"Cameron, LA",0.058700726,False
+2017,Argentina,"Corpus Christi, TX",0.0,False
+2018,Argentina,"Corpus Christi, TX",0.0,False
+2019,Argentina,"Corpus Christi, TX",0.488974502,False
+2020,Argentina,"Corpus Christi, TX",0.125188573,False
+2021,Argentina,"Corpus Christi, TX",0.240126464,False
+2022,Argentina,"Corpus Christi, TX",0.162566749,False
+2023,Argentina,"Corpus Christi, TX",0.12538679,False
+2024,Argentina,"Corpus Christi, TX",0.23786112,False
+2025,Argentina,"Corpus Christi, TX",0.123319664,False
+2017,Argentina,"Cove Point, MD",0.0,False
+2018,Argentina,"Cove Point, MD",0.230668653,False
+2019,Argentina,"Cove Point, MD",0.181822173,False
+2020,Argentina,"Cove Point, MD",0.061277555,False
+2021,Argentina,"Cove Point, MD",0.156025568,False
+2022,Argentina,"Cove Point, MD",0.118675709,False
+2023,Argentina,"Cove Point, MD",0.197141562,False
+2024,Argentina,"Cove Point, MD",0.099250384,False
+2022,Argentina,"Elba Island, GA",0.0,False
+2023,Argentina,"Elba Island, GA",0.066346262,False
+2024,Argentina,"Elba Island, GA",0.0,False
+2020,Argentina,"Freeport, TX",0.0,False
+2021,Argentina,"Freeport, TX",1.270999568,False
+2022,Argentina,"Freeport, TX",0.307548765,False
+2023,Argentina,"Freeport, TX",0.4920044,False
+2024,Argentina,"Freeport, TX",0.389016198,False
+2025,Argentina,"Freeport, TX",0.199859974,False
+2015,Argentina,"Sabine Pass, LA",0.0,False
+2016,Argentina,"Sabine Pass, LA",0.489116086,False
+2017,Argentina,"Sabine Pass, LA",0.460884237,False
+2018,Argentina,"Sabine Pass, LA",0.549714038,False
+2019,Argentina,"Sabine Pass, LA",0.441855347,False
+2020,Argentina,"Sabine Pass, LA",0.187258998,False
+2021,Argentina,"Sabine Pass, LA",0.632993747,False
+2022,Argentina,"Sabine Pass, LA",0.675185779,False
+2023,Argentina,"Sabine Pass, LA",0.342406746,False
+2024,Argentina,"Sabine Pass, LA",0.436022086,False
+2025,Argentina,"Sabine Pass, LA",0.120714518,False
+2016,Bahamas,"Doral, FL",0.0,False
+2017,Bahamas,"Doral, FL",5.6634e-05,False
+2018,Bahamas,"Doral, FL",0.000113267,False
+2019,Bahamas,"Doral, FL",0.0,False
+2020,Bahamas,"Doral, FL",0.0,False
+2021,Bahamas,"Doral, FL",0.0,False
+2022,Bahamas,"Doral, FL",0.0,False
+2025,Bahamas,"Elba Island, GA",0.009146326,False
+2017,Bahamas,"Fort Lauderdale, FL",0.0,False
+2018,Bahamas,"Fort Lauderdale, FL",0.003766134,False
+2019,Bahamas,"Fort Lauderdale, FL",0.004417421,False
+2020,Bahamas,"Fort Lauderdale, FL",0.007277418,False
+2021,Bahamas,"Fort Lauderdale, FL",0.013761965,False
+2022,Bahamas,"Fort Lauderdale, FL",0.013846915,False
+2023,Bahamas,"Fort Lauderdale, FL",0.014130083,False
+2024,Bahamas,"Fort Lauderdale, FL",0.014045133,False
+2025,Bahamas,"Fort Lauderdale, FL",0.012402758,False
+2025,Bahamas,"West Palm Beach, FL",0.000538019,False
+2025,Bahrain,"Cameron, LA",0.09760801,False
+2025,Bahrain,"Plaquemines, LA",0.399068662,False
+2022,Bangladesh,"Cameron (Calcasieu Pass), LA",0.0,False
+2023,Bangladesh,"Cameron (Calcasieu Pass), LA",0.187655434,False
+2024,Bangladesh,"Cameron (Calcasieu Pass), LA",0.07495457,False
+2025,Bangladesh,"Cameron (Calcasieu Pass), LA",0.294919472,False
+2020,Bangladesh,"Cameron, LA",0.0,False
+2021,Bangladesh,"Cameron, LA",0.103497904,False
+2022,Bangladesh,"Cameron, LA",0.177518019,False
+2023,Bangladesh,"Cameron, LA",0.292654128,False
+2024,Bangladesh,"Cameron, LA",0.185758208,False
+2025,Bangladesh,"Cameron, LA",0.294466403,False
+2019,Bangladesh,"Corpus Christi, TX",0.0,False
+2020,Bangladesh,"Corpus Christi, TX",0.198783936,False
+2021,Bangladesh,"Corpus Christi, TX",0.0,False
+2022,Bangladesh,"Corpus Christi, TX",0.0,False
+2023,Bangladesh,"Corpus Christi, TX",0.0,False
+2024,Bangladesh,"Corpus Christi, TX",0.504435475,False
+2025,Bangladesh,"Corpus Christi, TX",0.296420262,False
+2020,Bangladesh,"Elba Island, GA",0.0,False
+2021,Bangladesh,"Elba Island, GA",0.098910582,False
+2022,Bangladesh,"Elba Island, GA",0.0,False
+2023,Bangladesh,"Elba Island, GA",0.0,False
+2024,Bangladesh,"Elba Island, GA",0.0,False
+2020,Bangladesh,"Freeport, TX",0.0,False
+2021,Bangladesh,"Freeport, TX",0.283196317,False
+2022,Bangladesh,"Freeport, TX",0.0,False
+2023,Bangladesh,"Freeport, TX",0.100836125,False
+2024,Bangladesh,"Freeport, TX",0.096333754,False
+2025,Bangladesh,"Freeport, TX",0.094578112,False
+2025,Bangladesh,"Plaquemines, LA",0.098032762,False
+2017,Bangladesh,"Sabine Pass, LA",0.0,False
+2018,Bangladesh,"Sabine Pass, LA",0.0,False
+2019,Bangladesh,"Sabine Pass, LA",0.096815139,False
+2020,Bangladesh,"Sabine Pass, LA",0.103073152,False
+2021,Bangladesh,"Sabine Pass, LA",0.582901328,False
+2022,Bangladesh,"Sabine Pass, LA",0.181057619,False
+2023,Bangladesh,"Sabine Pass, LA",0.102620083,False
+2024,Bangladesh,"Sabine Pass, LA",0.276145434,False
+2025,Bangladesh,"Sabine Pass, LA",0.576728266,False
+2016,Barbados,"Fort Lauderdale, FL",0.0,False
+2017,Barbados,"Fort Lauderdale, FL",0.00504039,False
+2018,Barbados,"Fort Lauderdale, FL",0.004927123,False
+2019,Barbados,"Fort Lauderdale, FL",0.005974845,False
+2020,Barbados,"Fort Lauderdale, FL",0.006824349,False
+2021,Barbados,"Fort Lauderdale, FL",0.00841009,False
+2022,Barbados,"Fort Lauderdale, FL",0.002605146,False
+2023,Barbados,"Fort Lauderdale, FL",0.000311485,False
+2024,Barbados,"Fort Lauderdale, FL",0.007957021,False
+2025,Barbados,"Fort Lauderdale, FL",0.015885725,False
+2015,Barbados,"Miami, FL",0.0,False
+2016,Barbados,"Miami, FL",0.00283168,False
+2017,Barbados,"Miami, FL",0.00062297,False
+2018,Barbados,"Miami, FL",0.0,False
+2019,Barbados,"Miami, FL",0.0,False
+2020,Barbados,"Miami, FL",0.0,False
+2021,Barbados,"Miami, FL",0.0,False
+2020,Barbados,"Newark, NJ",0.0,False
+2021,Barbados,"Newark, NJ",0.0,False
+2022,Barbados,"Newark, NJ",2.8317e-05,False
+2023,Barbados,"Newark, NJ",0.0,False
+2024,Barbados,"Newark, NJ",0.0,False
+2022,Belgium,"Cameron (Calcasieu Pass), LA",0.099618502,True
+2023,Belgium,"Cameron (Calcasieu Pass), LA",0.186777613,True
+2024,Belgium,"Cameron (Calcasieu Pass), LA",0.0,True
+2025,Belgium,"Cameron (Calcasieu Pass), LA",0.306076291,True
+2019,Belgium,"Cameron, LA",0.0,True
+2020,Belgium,"Cameron, LA",0.093162272,True
+2021,Belgium,"Cameron, LA",0.05946528,True
+2022,Belgium,"Cameron, LA",0.363332861,True
+2023,Belgium,"Cameron, LA",0.307095696,True
+2024,Belgium,"Cameron, LA",0.387090656,True
+2025,Belgium,"Cameron, LA",0.285065226,True
+2019,Belgium,"Corpus Christi, TX",0.0,True
+2020,Belgium,"Corpus Christi, TX",0.497356275,True
+2021,Belgium,"Corpus Christi, TX",0.098655731,True
+2022,Belgium,"Corpus Christi, TX",0.225090243,True
+2023,Belgium,"Corpus Christi, TX",0.526267728,True
+2024,Belgium,"Corpus Christi, TX",0.0,True
+2025,Belgium,"Corpus Christi, TX",0.299789962,True
+2017,Belgium,"Cove Point, MD",0.0,True
+2018,Belgium,"Cove Point, MD",0.0,True
+2019,Belgium,"Cove Point, MD",0.192384339,True
+2020,Belgium,"Cove Point, MD",0.0,True
+2021,Belgium,"Cove Point, MD",0.0,True
+2022,Belgium,"Cove Point, MD",0.099363651,True
+2023,Belgium,"Cove Point, MD",0.0,True
+2024,Belgium,"Cove Point, MD",0.0,True
+2025,Belgium,"Cove Point, MD",0.188844739,True
+2020,Belgium,"Freeport, TX",0.0,True
+2021,Belgium,"Freeport, TX",0.0,True
+2022,Belgium,"Freeport, TX",0.195725722,True
+2023,Belgium,"Freeport, TX",0.322131917,True
+2024,Belgium,"Freeport, TX",0.282035328,True
+2025,Belgium,"Freeport, TX",0.37378176,True
+2025,Belgium,"Plaquemines, LA",2.602342237,True
+2017,Belgium,"Sabine Pass, LA",0.0,True
+2018,Belgium,"Sabine Pass, LA",0.0,True
+2019,Belgium,"Sabine Pass, LA",0.48430223,True
+2020,Belgium,"Sabine Pass, LA",0.314118262,True
+2021,Belgium,"Sabine Pass, LA",0.0,True
+2022,Belgium,"Sabine Pass, LA",1.289178954,True
+2023,Belgium,"Sabine Pass, LA",1.404938032,True
+2024,Belgium,"Sabine Pass, LA",0.487332128,True
+2025,Belgium,"Sabine Pass, LA",1.539697683,True
+2025,Brazil,"Altamira, Tamaulipas",0.088659901,False
+2022,Brazil,"Cameron (Calcasieu Pass), LA",0.17335545,False
+2023,Brazil,"Cameron (Calcasieu Pass), LA",0.16627625,False
+2024,Brazil,"Cameron (Calcasieu Pass), LA",0.320744394,False
+2025,Brazil,"Cameron (Calcasieu Pass), LA",0.207250659,False
+2019,Brazil,"Cameron, LA",0.0,False
+2020,Brazil,"Cameron, LA",0.645368189,False
+2021,Brazil,"Cameron, LA",0.885069901,False
+2022,Brazil,"Cameron, LA",0.583807466,False
+2023,Brazil,"Cameron, LA",0.085913171,False
+2024,Brazil,"Cameron, LA",0.304575501,False
+2017,Brazil,"Corpus Christi, TX",0.0,False
+2018,Brazil,"Corpus Christi, TX",0.0,False
+2019,Brazil,"Corpus Christi, TX",0.320008157,False
+2020,Brazil,"Corpus Christi, TX",0.951614381,False
+2021,Brazil,"Corpus Christi, TX",2.868661741,False
+2022,Brazil,"Corpus Christi, TX",0.345521594,False
+2023,Brazil,"Corpus Christi, TX",0.105338496,False
+2024,Brazil,"Corpus Christi, TX",0.481272333,False
+2025,Brazil,"Corpus Christi, TX",0.183917616,False
+2017,Brazil,"Cove Point, MD",0.0,False
+2018,Brazil,"Cove Point, MD",0.015092854,False
+2019,Brazil,"Cove Point, MD",0.201587299,False
+2020,Brazil,"Cove Point, MD",0.190090678,False
+2021,Brazil,"Cove Point, MD",0.213310454,False
+2022,Brazil,"Cove Point, MD",0.0,False
+2023,Brazil,"Cove Point, MD",0.0,False
+2024,Brazil,"Cove Point, MD",0.139884992,False
+2020,Brazil,"Elba Island, GA",0.0,False
+2021,Brazil,"Elba Island, GA",0.094832963,False
+2022,Brazil,"Elba Island, GA",0.104545626,False
+2023,Brazil,"Elba Island, GA",0.244657152,False
+2024,Brazil,"Elba Island, GA",0.104347408,False
+2007,Brazil,"Freeport, TX",0.0,False
+2008,Brazil,"Freeport, TX",0.0,False
+2009,Brazil,"Freeport, TX",0.0,False
+2010,Brazil,"Freeport, TX",0.0,False
+2011,Brazil,"Freeport, TX",0.073085661,False
+2012,Brazil,"Freeport, TX",0.230555386,False
+2013,Brazil,"Freeport, TX",0.0,False
+2014,Brazil,"Freeport, TX",0.075435955,False
+2015,Brazil,"Freeport, TX",0.156676854,False
+2016,Brazil,"Freeport, TX",0.0,False
+2017,Brazil,"Freeport, TX",0.0,False
+2018,Brazil,"Freeport, TX",0.0,False
+2019,Brazil,"Freeport, TX",0.0,False
+2020,Brazil,"Freeport, TX",0.297213133,False
+2021,Brazil,"Freeport, TX",1.932055264,False
+2022,Brazil,"Freeport, TX",0.461025821,False
+2023,Brazil,"Freeport, TX",0.0,False
+2024,Brazil,"Freeport, TX",0.523492682,False
+2025,Brazil,"Freeport, TX",1.075188896,False
+2025,Brazil,"Plaquemines, LA",0.198019382,False
+2007,Brazil,"Sabine Pass, LA",0.0,False
+2008,Brazil,"Sabine Pass, LA",0.0,False
+2009,Brazil,"Sabine Pass, LA",0.0,False
+2010,Brazil,"Sabine Pass, LA",0.092850787,False
+2011,Brazil,"Sabine Pass, LA",0.239786662,False
+2012,Brazil,"Sabine Pass, LA",0.0,False
+2013,Brazil,"Sabine Pass, LA",0.0,False
+2014,Brazil,"Sabine Pass, LA",0.0,False
+2015,Brazil,"Sabine Pass, LA",0.0,False
+2016,Brazil,"Sabine Pass, LA",0.300979267,False
+2017,Brazil,"Sabine Pass, LA",0.499734886,False
+2018,Brazil,"Sabine Pass, LA",0.994259482,False
+2019,Brazil,"Sabine Pass, LA",1.015921834,False
+2020,Brazil,"Sabine Pass, LA",1.084561757,False
+2021,Brazil,"Sabine Pass, LA",2.719545472,False
+2022,Brazil,"Sabine Pass, LA",0.370497011,False
+2023,Brazil,"Sabine Pass, LA",0.490730144,False
+2024,Brazil,"Sabine Pass, LA",1.122931021,False
+2025,Brazil,"Sabine Pass, LA",0.74190016,False
+2014,Canada,"Babb, MT",0.0,False
+2015,Canada,"Babb, MT",0.000141584,False
+2016,Canada,"Babb, MT",0.0,False
+2017,Canada,"Babb, MT",0.0,False
+2019,Canada,"Babb, MT",0.0,False
+2020,Canada,"Babb, MT",0.0,False
+2021,Canada,"Babb, MT",0.0,False
+2022,Canada,"Babb, MT",0.0,False
+2006,Canada,"Buffalo, NY",0.0,False
+2007,Canada,"Buffalo, NY",5.6634e-05,False
+2008,Canada,"Buffalo, NY",0.0,False
+2009,Canada,"Buffalo, NY",0.0,False
+2010,Canada,"Buffalo, NY",0.0,False
+2014,Canada,"Buffalo, NY",0.0,False
+2015,Canada,"Buffalo, NY",8.495e-05,False
+2016,Canada,"Buffalo, NY",0.0,False
+2017,Canada,"Buffalo, NY",0.0,False
+2018,Canada,"Buffalo, NY",0.0,False
+2019,Canada,"Buffalo, NY",0.0,False
+2017,Canada,"Calais, ME",0.0,False
+2018,Canada,"Calais, ME",0.000396435,False
+2019,Canada,"Calais, ME",0.0,False
+2020,Canada,"Calais, ME",0.0,False
+2021,Canada,"Calais, ME",0.0,False
+2022,Canada,"Calais, ME",0.0,False
+2025,Canada,"Calais, ME",0.001444157,False
+2014,Canada,"Crosby, ND",0.0,False
+2015,Canada,"Crosby, ND",2.8317e-05,False
+2016,Canada,"Crosby, ND",2.8317e-05,False
+2017,Canada,"Crosby, ND",0.0,False
+2018,Canada,"Crosby, ND",0.0,False
+2019,Canada,"Crosby, ND",0.0,False
+2020,Canada,"Crosby, ND",0.0,False
+2019,Canada,"Niagara Falls, NY",0.0,False
+2020,Canada,"Niagara Falls, NY",0.000226534,False
+2021,Canada,"Niagara Falls, NY",0.00362455,False
+2022,Canada,"Niagara Falls, NY",0.002152077,False
+2023,Canada,"Niagara Falls, NY",0.002406928,False
+2024,Canada,"Niagara Falls, NY",0.002406928,False
+2025,Canada,"Niagara Falls, NY",0.003171482,False
+2017,Canada,"Noonan-Estevan, ND",0.0,False
+2018,Canada,"Noonan-Estevan, ND",0.0,False
+2019,Canada,"Noonan-Estevan, ND",2.8317e-05,False
+2020,Canada,"Noonan-Estevan, ND",0.0,False
+2021,Canada,"Noonan-Estevan, ND",0.0,False
+2022,Canada,"Noonan-Estevan, ND",0.0,False
+2023,Canada,"Noonan-Estevan, ND",0.0,False
+2012,Canada,"Port Huron, MI",0.0,False
+2013,Canada,"Port Huron, MI",2.8317e-05,False
+2014,Canada,"Port Huron, MI",0.000283168,False
+2015,Canada,"Port Huron, MI",0.000113267,False
+2016,Canada,"Port Huron, MI",0.0,False
+2017,Canada,"Port Huron, MI",0.0,False
+2018,Canada,"Port Huron, MI",0.0,False
+2019,Canada,"Port Huron, MI",0.0,False
+2014,Canada,"Portal, ND",0.0,False
+2015,Canada,"Portal, ND",5.6634e-05,False
+2016,Canada,"Portal, ND",5.6634e-05,False
+2017,Canada,"Portal, ND",0.000141584,False
+2018,Canada,"Portal, ND",0.000141584,False
+2019,Canada,"Portal, ND",0.00070792,False
+2020,Canada,"Portal, ND",5.6634e-05,False
+2021,Canada,"Portal, ND",0.0,False
+2022,Canada,"Portal, ND",0.0,False
+2023,Canada,"Portal, ND",0.0,False
+2024,Canada,"Portal, ND",0.0,False
+2011,Canada,"Sweetgrass, MT",0.0,False
+2012,Canada,"Sweetgrass, MT",5.6634e-05,False
+2013,Canada,"Sweetgrass, MT",0.002010493,False
+2014,Canada,"Sweetgrass, MT",0.002520195,False
+2015,Canada,"Sweetgrass, MT",0.000764554,False
+2016,Canada,"Sweetgrass, MT",0.0,False
+2017,Canada,"Sweetgrass, MT",0.0,False
+2018,Canada,"Sweetgrass, MT",0.0,False
+2019,Canada,"Sweetgrass, MT",0.0,False
+2023,Chile,"Cameron (Calcasieu Pass), LA",0.0,False
+2024,Chile,"Cameron (Calcasieu Pass), LA",0.306019658,False
+2025,Chile,"Cameron (Calcasieu Pass), LA",0.100354739,False
+2017,Chile,"Cameron, LA",0.0,False
+2018,Chile,"Cameron, LA",0.0,False
+2019,Chile,"Cameron, LA",0.082600106,False
+2020,Chile,"Cameron, LA",0.244402301,False
+2021,Chile,"Cameron, LA",0.331787946,False
+2022,Chile,"Cameron, LA",0.0,False
+2023,Chile,"Cameron, LA",0.093643658,False
+2024,Chile,"Cameron, LA",0.09973177,False
+2025,Chile,"Cameron, LA",0.202521754,False
+2017,Chile,"Corpus Christi, TX",0.0,False
+2018,Chile,"Corpus Christi, TX",0.0,False
+2019,Chile,"Corpus Christi, TX",0.097551376,False
+2020,Chile,"Corpus Christi, TX",0.089339504,False
+2021,Chile,"Corpus Christi, TX",0.589923894,False
+2022,Chile,"Corpus Christi, TX",0.473315312,False
+2023,Chile,"Corpus Christi, TX",0.287104035,False
+2024,Chile,"Corpus Christi, TX",0.105508397,False
+2025,Chile,"Corpus Christi, TX",0.191818003,False
+2017,Chile,"Cove Point, MD",0.0,False
+2018,Chile,"Cove Point, MD",0.092001283,False
+2019,Chile,"Cove Point, MD",0.281270774,False
+2020,Chile,"Cove Point, MD",0.0,False
+2021,Chile,"Cove Point, MD",0.0,False
+2022,Chile,"Cove Point, MD",0.0,False
+2023,Chile,"Cove Point, MD",0.0,False
+2019,Chile,"Elba Island, GA",0.0,False
+2020,Chile,"Elba Island, GA",0.280308003,False
+2021,Chile,"Elba Island, GA",0.450520288,False
+2022,Chile,"Elba Island, GA",0.0,False
+2023,Chile,"Elba Island, GA",0.055500928,False
+2024,Chile,"Elba Island, GA",0.071754771,False
+2019,Chile,"Freeport, TX",0.0,False
+2020,Chile,"Freeport, TX",0.20962927,False
+2021,Chile,"Freeport, TX",0.096560288,False
+2022,Chile,"Freeport, TX",0.089537722,False
+2023,Chile,"Freeport, TX",0.232735779,False
+2024,Chile,"Freeport, TX",0.05176311,False
+2025,Chile,"Freeport, TX",0.278325827,False
+2007,Chile,"Sabine Pass, LA",0.0,False
+2008,Chile,"Sabine Pass, LA",0.0,False
+2009,Chile,"Sabine Pass, LA",0.0,False
+2010,Chile,"Sabine Pass, LA",0.0,False
+2011,Chile,"Sabine Pass, LA",0.082401888,False
+2012,Chile,"Sabine Pass, LA",0.0,False
+2013,Chile,"Sabine Pass, LA",0.0,False
+2014,Chile,"Sabine Pass, LA",0.0,False
+2015,Chile,"Sabine Pass, LA",0.0,False
+2016,Chile,"Sabine Pass, LA",0.832655504,False
+2017,Chile,"Sabine Pass, LA",0.729044333,False
+2018,Chile,"Sabine Pass, LA",1.074226125,False
+2019,Chile,"Sabine Pass, LA",2.097198842,False
+2020,Chile,"Sabine Pass, LA",1.459079754,False
+2021,Chile,"Sabine Pass, LA",1.982515802,False
+2022,Chile,"Sabine Pass, LA",0.29033215,False
+2023,Chile,"Sabine Pass, LA",0.214952829,False
+2024,Chile,"Sabine Pass, LA",0.962034963,False
+2025,Chile,"Sabine Pass, LA",0.398360742,False
+2022,China,"Cameron (Calcasieu Pass), LA",0.502991318,False
+2023,China,"Cameron (Calcasieu Pass), LA",0.496789939,False
+2024,China,"Cameron (Calcasieu Pass), LA",0.307605398,False
+2019,China,"Cameron, LA",0.0,False
+2020,China,"Cameron, LA",0.961950013,False
+2021,China,"Cameron, LA",2.333134419,False
+2022,China,"Cameron, LA",0.401503907,False
+2023,China,"Cameron, LA",0.835855302,False
+2024,China,"Cameron, LA",1.222407939,False
+2025,China,"Cameron, LA",0.015460973,False
+2019,China,"Corpus Christi, TX",0.0,False
+2020,China,"Corpus Christi, TX",0.8990584,False
+2021,China,"Corpus Christi, TX",2.113396051,False
+2022,China,"Corpus Christi, TX",0.671759446,False
+2023,China,"Corpus Christi, TX",0.916444915,False
+2024,China,"Corpus Christi, TX",1.568694086,False
+2019,China,"Cove Point, MD",0.0,False
+2020,China,"Cove Point, MD",0.296873331,False
+2021,China,"Cove Point, MD",0.679801418,False
+2022,China,"Cove Point, MD",0.019283741,False
+2023,China,"Cove Point, MD",0.0,False
+2024,China,"Cove Point, MD",0.20450393,False
+2020,China,"Elba Island, GA",0.0,False
+2021,China,"Elba Island, GA",0.19884057,False
+2022,China,"Elba Island, GA",0.0,False
+2023,China,"Elba Island, GA",0.180491283,False
+2024,China,"Elba Island, GA",0.0,False
+2019,China,"Freeport, TX",0.0,False
+2020,China,"Freeport, TX",1.933074669,False
+2021,China,"Freeport, TX",2.084852717,False
+2022,China,"Freeport, TX",0.108113542,False
+2023,China,"Freeport, TX",1.253924538,False
+2024,China,"Freeport, TX",0.736718186,False
+2007,China,"Kenai, AK",0.0,False
+2008,China,"Kenai, AK",0.0,False
+2009,China,"Kenai, AK",0.0,False
+2010,China,"Kenai, AK",0.0,False
+2011,China,"Kenai, AK",0.031913034,False
+2012,China,"Kenai, AK",0.0,False
+2013,China,"Kenai, AK",0.0,False
+2014,China,"Kenai, AK",0.0,False
+2015,China,"Kenai, AK",0.0,False
+2007,China,"Sabine Pass, LA",0.0,False
+2008,China,"Sabine Pass, LA",0.0,False
+2009,China,"Sabine Pass, LA",0.0,False
+2010,China,"Sabine Pass, LA",0.0,False
+2011,China,"Sabine Pass, LA",0.175592477,False
+2012,China,"Sabine Pass, LA",0.0,False
+2013,China,"Sabine Pass, LA",0.0,False
+2014,China,"Sabine Pass, LA",0.0,False
+2015,China,"Sabine Pass, LA",0.0,False
+2016,China,"Sabine Pass, LA",0.487643613,False
+2017,China,"Sabine Pass, LA",2.928240288,False
+2018,China,"Sabine Pass, LA",2.561905846,False
+2019,China,"Sabine Pass, LA",0.193998397,False
+2020,China,"Sabine Pass, LA",1.980165507,False
+2021,China,"Sabine Pass, LA",5.426065216,False
+2022,China,"Sabine Pass, LA",1.033421616,False
+2023,China,"Sabine Pass, LA",1.222294672,False
+2024,China,"Sabine Pass, LA",1.986933222,False
+2022,Colombia,"Cameron (Calcasieu Pass), LA",0.025824922,False
+2023,Colombia,"Cameron (Calcasieu Pass), LA",0.114484822,False
+2024,Colombia,"Cameron (Calcasieu Pass), LA",0.139318656,False
+2025,Colombia,"Cameron (Calcasieu Pass), LA",0.324057459,False
+2019,Colombia,"Cameron, LA",0.0,False
+2020,Colombia,"Cameron, LA",0.01557424,False
+2021,Colombia,"Cameron, LA",0.0,False
+2022,Colombia,"Cameron, LA",0.0,False
+2023,Colombia,"Cameron, LA",0.0,False
+2024,Colombia,"Cameron, LA",0.274389792,False
+2025,Colombia,"Cameron, LA",0.086592774,False
+2022,Colombia,"Corpus Christi, TX",0.0,False
+2023,Colombia,"Corpus Christi, TX",0.104885427,False
+2024,Colombia,"Corpus Christi, TX",0.103101469,False
+2025,Colombia,"Corpus Christi, TX",0.327115674,False
+2025,Colombia,"Cove Point, MD",0.063995968,False
+2020,Colombia,"Elba Island, GA",0.0,False
+2021,Colombia,"Elba Island, GA",0.0,False
+2022,Colombia,"Elba Island, GA",0.013761965,False
+2023,Colombia,"Elba Island, GA",0.168258426,False
+2024,Colombia,"Elba Island, GA",0.033130656,False
+2025,Colombia,"Elba Island, GA",0.074190016,False
+2019,Colombia,"Freeport, TX",0.0,False
+2020,Colombia,"Freeport, TX",0.072151206,False
+2021,Colombia,"Freeport, TX",0.06362785,False
+2022,Colombia,"Freeport, TX",0.0,False
+2023,Colombia,"Freeport, TX",0.08291159,False
+2024,Colombia,"Freeport, TX",0.430273776,False
+2025,Colombia,"Freeport, TX",0.005946528,False
+2016,Colombia,"Sabine Pass, LA",0.0,False
+2017,Colombia,"Sabine Pass, LA",0.0,False
+2018,Colombia,"Sabine Pass, LA",0.144443997,False
+2019,Colombia,"Sabine Pass, LA",0.184568902,False
+2020,Colombia,"Sabine Pass, LA",0.04326807,False
+2021,Colombia,"Sabine Pass, LA",0.0,False
+2022,Colombia,"Sabine Pass, LA",0.121903824,False
+2023,Colombia,"Sabine Pass, LA",0.435965453,False
+2024,Colombia,"Sabine Pass, LA",0.419032006,False
+2025,Colombia,"Sabine Pass, LA",0.247630416,False
+2025,Croatia,"Altamira, Tamaulipas",0.012799194,True
+2022,Croatia,"Cameron (Calcasieu Pass), LA",0.104290774,True
+2023,Croatia,"Cameron (Calcasieu Pass), LA",0.098853949,True
+2024,Croatia,"Cameron (Calcasieu Pass), LA",0.084270797,True
+2025,Croatia,"Cameron (Calcasieu Pass), LA",0.102676717,True
+2020,Croatia,"Cameron, LA",0.0,True
+2021,Croatia,"Cameron, LA",0.095257715,True
+2022,Croatia,"Cameron, LA",0.47209769,True
+2023,Croatia,"Cameron, LA",0.083024858,True
+2024,Croatia,"Cameron, LA",0.199095421,True
+2025,Croatia,"Cameron, LA",0.40484529,True
+2020,Croatia,"Corpus Christi, TX",0.0,True
+2021,Croatia,"Corpus Christi, TX",0.181510688,True
+2022,Croatia,"Corpus Christi, TX",0.454456323,True
+2023,Croatia,"Corpus Christi, TX",0.270255539,True
+2024,Croatia,"Corpus Christi, TX",0.184625536,True
+2025,Croatia,"Corpus Christi, TX",0.188335037,True
+2019,Croatia,"Cove Point, MD",0.0,True
+2020,Croatia,"Cove Point, MD",0.09273752,True
+2021,Croatia,"Cove Point, MD",0.0,True
+2022,Croatia,"Cove Point, MD",0.176102179,True
+2023,Croatia,"Cove Point, MD",0.0,True
+2024,Croatia,"Cove Point, MD",0.0,True
+2025,Croatia,"Cove Point, MD",0.165143578,True
+2020,Croatia,"Elba Island, GA",0.0,True
+2021,Croatia,"Elba Island, GA",0.0,True
+2022,Croatia,"Elba Island, GA",0.147615478,True
+2023,Croatia,"Elba Island, GA",0.0,True
+2024,Croatia,"Elba Island, GA",0.470795117,True
+2020,Croatia,"Freeport, TX",0.0,True
+2021,Croatia,"Freeport, TX",0.489059453,True
+2022,Croatia,"Freeport, TX",0.178367523,True
+2023,Croatia,"Freeport, TX",0.37511265,True
+2024,Croatia,"Freeport, TX",0.17193961,True
+2025,Croatia,"Freeport, TX",0.463007997,True
+2020,Croatia,"Sabine Pass, LA",0.0,True
+2021,Croatia,"Sabine Pass, LA",0.257314762,True
+2022,Croatia,"Sabine Pass, LA",0.655562237,True
+2023,Croatia,"Sabine Pass, LA",0.74260808,True
+2024,Croatia,"Sabine Pass, LA",0.40359935,True
+2025,Croatia,"Sabine Pass, LA",0.299053725,True
+2022,Dominican Republic,"Cameron (Calcasieu Pass), LA",0.098230979,False
+2023,Dominican Republic,"Cameron (Calcasieu Pass), LA",0.638883642,False
+2024,Dominican Republic,"Cameron (Calcasieu Pass), LA",0.524738621,False
+2025,Dominican Republic,"Cameron (Calcasieu Pass), LA",0.219653418,False
+2019,Dominican Republic,"Cameron, LA",0.0,False
+2020,Dominican Republic,"Cameron, LA",0.50757864,False
+2021,Dominican Republic,"Cameron, LA",0.792558915,False
+2022,Dominican Republic,"Cameron, LA",0.422996358,False
+2023,Dominican Republic,"Cameron, LA",0.294607987,False
+2024,Dominican Republic,"Cameron, LA",0.589923894,False
+2025,Dominican Republic,"Cameron, LA",1.070629891,False
+2017,Dominican Republic,"Corpus Christi, TX",0.0,False
+2018,Dominican Republic,"Corpus Christi, TX",0.0,False
+2019,Dominican Republic,"Corpus Christi, TX",0.080901098,False
+2020,Dominican Republic,"Corpus Christi, TX",0.087923664,False
+2021,Dominican Republic,"Corpus Christi, TX",0.079258723,False
+2022,Dominican Republic,"Corpus Christi, TX",0.814674336,False
+2023,Dominican Republic,"Corpus Christi, TX",0.501660429,False
+2024,Dominican Republic,"Corpus Christi, TX",0.41067855,False
+2025,Dominican Republic,"Corpus Christi, TX",0.369081171,False
+2017,Dominican Republic,"Cove Point, MD",0.0,False
+2018,Dominican Republic,"Cove Point, MD",0.028968086,False
+2019,Dominican Republic,"Cove Point, MD",0.0,False
+2020,Dominican Republic,"Cove Point, MD",0.0,False
+2021,Dominican Republic,"Cove Point, MD",0.0,False
+2022,Dominican Republic,"Cove Point, MD",0.0,False
+2020,Dominican Republic,"Elba Island, GA",0.0,False
+2021,Dominican Republic,"Elba Island, GA",0.078720704,False
+2022,Dominican Republic,"Elba Island, GA",0.0,False
+2023,Dominican Republic,"Elba Island, GA",0.0,False
+2024,Dominican Republic,"Elba Island, GA",0.0,False
+2019,Dominican Republic,"Freeport, TX",0.0,False
+2020,Dominican Republic,"Freeport, TX",0.062750029,False
+2021,Dominican Republic,"Freeport, TX",0.347135651,False
+2022,Dominican Republic,"Freeport, TX",0.0,False
+2023,Dominican Republic,"Freeport, TX",0.372762355,False
+2024,Dominican Republic,"Freeport, TX",0.526890698,False
+2025,Dominican Republic,"Plaquemines, LA",0.612520701,False
+2015,Dominican Republic,"Sabine Pass, LA",0.0,False
+2016,Dominican Republic,"Sabine Pass, LA",0.083392976,False
+2017,Dominican Republic,"Sabine Pass, LA",0.246101309,False
+2018,Dominican Republic,"Sabine Pass, LA",0.136260442,False
+2019,Dominican Republic,"Sabine Pass, LA",0.211724714,False
+2020,Dominican Republic,"Sabine Pass, LA",0.079400307,False
+2021,Dominican Republic,"Sabine Pass, LA",0.205778186,False
+2022,Dominican Republic,"Sabine Pass, LA",0.103214736,False
+2023,Dominican Republic,"Sabine Pass, LA",0.280761072,False
+2024,Dominican Republic,"Sabine Pass, LA",0.513100416,False
+2025,Dominican Republic,"Sabine Pass, LA",0.262071984,False
+2023,Egypt,"Cameron (Calcasieu Pass), LA",0.0,False
+2024,Egypt,"Cameron (Calcasieu Pass), LA",0.412037757,False
+2025,Egypt,"Cameron (Calcasieu Pass), LA",1.64016569,False
+2023,Egypt,"Cameron, LA",0.0,False
+2024,Egypt,"Cameron, LA",0.302225206,False
+2025,Egypt,"Cameron, LA",1.45335976,False
+2023,Egypt,"Corpus Christi, TX",0.0,False
+2024,Egypt,"Corpus Christi, TX",0.320376275,False
+2025,Egypt,"Corpus Christi, TX",1.24089881,False
+2025,Egypt,"Cove Point, MD",0.402863114,False
+2025,Egypt,"Elba Island, GA",0.612945453,False
+2014,Egypt,"Freeport, TX",0.0,False
+2015,Egypt,"Freeport, TX",0.08344961,False
+2016,Egypt,"Freeport, TX",0.0,False
+2017,Egypt,"Freeport, TX",0.0,False
+2018,Egypt,"Freeport, TX",0.0,False
+2019,Egypt,"Freeport, TX",0.0,False
+2023,Egypt,"Freeport, TX",0.0,False
+2024,Egypt,"Freeport, TX",0.799666432,False
+2025,Egypt,"Freeport, TX",0.202181952,False
+2025,Egypt,"Plaquemines, LA",1.71679095,False
+2015,Egypt,"Sabine Pass, LA",0.0,False
+2016,Egypt,"Sabine Pass, LA",0.102110381,False
+2017,Egypt,"Sabine Pass, LA",0.192016221,False
+2018,Egypt,"Sabine Pass, LA",0.185588307,False
+2019,Egypt,"Sabine Pass, LA",0.0,False
+2020,Egypt,"Sabine Pass, LA",0.0,False
+2021,Egypt,"Sabine Pass, LA",0.0,False
+2022,Egypt,"Sabine Pass, LA",0.0,False
+2023,Egypt,"Sabine Pass, LA",0.0,False
+2024,Egypt,"Sabine Pass, LA",1.615898192,False
+2025,Egypt,"Sabine Pass, LA",5.05746543,False
+2025,El Salvador,"Cameron (Calcasieu Pass), LA",0.100779491,False
+2025,El Salvador,"Corpus Christi, TX",0.095965635,False
+2022,El Salvador,"Elba Island, GA",0.0,False
+2023,El Salvador,"Elba Island, GA",2.8317e-05,False
+2024,El Salvador,"Elba Island, GA",0.0,False
+2023,El Salvador,"Sabine Pass, LA",0.0,False
+2024,El Salvador,"Sabine Pass, LA",0.033045706,False
+2022,Finland,"Cameron (Calcasieu Pass), LA",0.0,True
+2023,Finland,"Cameron (Calcasieu Pass), LA",0.479714909,True
+2024,Finland,"Cameron (Calcasieu Pass), LA",0.097183258,True
+2022,Finland,"Cameron, LA",0.0,True
+2023,Finland,"Cameron, LA",0.330711907,True
+2024,Finland,"Cameron, LA",0.0,True
+2025,Finland,"Cameron, LA",0.104347408,True
+2022,Finland,"Corpus Christi, TX",0.0,True
+2023,Finland,"Corpus Christi, TX",0.080136544,True
+2024,Finland,"Corpus Christi, TX",0.276032166,True
+2025,Finland,"Corpus Christi, TX",0.094663062,True
+2022,Finland,"Freeport, TX",0.0,True
+2023,Finland,"Freeport, TX",0.103809389,True
+2024,Finland,"Freeport, TX",0.103497904,True
+2025,Finland,"Freeport, TX",0.472947194,True
+2020,Finland,"Sabine Pass, LA",0.0,True
+2021,Finland,"Sabine Pass, LA",0.0,True
+2022,Finland,"Sabine Pass, LA",0.009316227,True
+2023,Finland,"Sabine Pass, LA",0.09494623,True
+2024,Finland,"Sabine Pass, LA",0.0,True
+2025,Finland,"Sabine Pass, LA",0.297467984,True
+2025,France,"Altamira, Tamaulipas",0.104998694,True
+2022,France,"Cameron (Calcasieu Pass), LA",1.508832371,True
+2023,France,"Cameron (Calcasieu Pass), LA",1.586108918,True
+2024,France,"Cameron (Calcasieu Pass), LA",1.494135952,True
+2025,France,"Cameron (Calcasieu Pass), LA",1.21266696,True
+2017,France,"Cameron, LA",0.0,True
+2018,France,"Cameron, LA",0.0,True
+2019,France,"Cameron, LA",0.2406928,True
+2020,France,"Cameron, LA",0.376670074,True
+2021,France,"Cameron, LA",0.889628906,True
+2022,France,"Cameron, LA",2.120390301,True
+2023,France,"Cameron, LA",2.9980412,True
+2024,France,"Cameron, LA",0.582957962,True
+2025,France,"Cameron, LA",1.528002845,True
+2017,France,"Corpus Christi, TX",0.0,True
+2018,France,"Corpus Christi, TX",0.0,True
+2019,France,"Corpus Christi, TX",0.765204886,True
+2020,France,"Corpus Christi, TX",0.397114803,True
+2021,France,"Corpus Christi, TX",0.896481571,True
+2022,France,"Corpus Christi, TX",3.918025715,True
+2023,France,"Corpus Christi, TX",2.449941219,True
+2024,France,"Corpus Christi, TX",2.288563776,True
+2025,France,"Corpus Christi, TX",2.699355594,True
+2017,France,"Cove Point, MD",0.0,True
+2018,France,"Cove Point, MD",0.095710784,True
+2019,France,"Cove Point, MD",0.286226214,True
+2020,France,"Cove Point, MD",0.37599047,True
+2021,France,"Cove Point, MD",0.285659878,True
+2022,France,"Cove Point, MD",0.830163626,True
+2023,France,"Cove Point, MD",0.161150909,True
+2024,France,"Cove Point, MD",0.430840112,True
+2025,France,"Cove Point, MD",0.516809917,True
+2020,France,"Elba Island, GA",0.0,True
+2021,France,"Elba Island, GA",0.094493162,True
+2022,France,"Elba Island, GA",0.584345485,True
+2023,France,"Elba Island, GA",0.210025706,True
+2024,France,"Elba Island, GA",0.194706317,True
+2025,France,"Elba Island, GA",0.103412954,True
+2019,France,"Freeport, TX",0.0,True
+2020,France,"Freeport, TX",0.565231645,True
+2021,France,"Freeport, TX",0.991314534,True
+2022,France,"Freeport, TX",1.547824605,True
+2023,France,"Freeport, TX",2.671973248,True
+2024,France,"Freeport, TX",1.736216275,True
+2025,France,"Freeport, TX",3.270137331,True
+2025,France,"Plaquemines, LA",2.52240391,True
+2017,France,"Sabine Pass, LA",0.0,True
+2018,France,"Sabine Pass, LA",0.422231805,True
+2019,France,"Sabine Pass, LA",2.043340288,True
+2020,France,"Sabine Pass, LA",0.84021609,True
+2021,France,"Sabine Pass, LA",1.67839337,True
+2022,France,"Sabine Pass, LA",5.670580784,True
+2023,France,"Sabine Pass, LA",3.880251104,True
+2024,France,"Sabine Pass, LA",3.32005985,True
+2025,France,"Sabine Pass, LA",3.136566986,True
+2025,Germany,"Altamira, Tamaulipas",0.09848583,True
+2022,Germany,"Cameron (Calcasieu Pass), LA",0.104375725,True
+2023,Germany,"Cameron (Calcasieu Pass), LA",1.893544416,True
+2024,Germany,"Cameron (Calcasieu Pass), LA",3.966900512,True
+2025,Germany,"Cameron (Calcasieu Pass), LA",0.512675664,True
+2020,Germany,"Cameron, LA",0.0,True
+2021,Germany,"Cameron, LA",0.0,True
+2022,Germany,"Cameron, LA",0.0,True
+2023,Germany,"Cameron, LA",1.007681645,True
+2024,Germany,"Cameron, LA",0.09831593,True
+2025,Germany,"Cameron, LA",0.383182938,True
+2022,Germany,"Corpus Christi, TX",0.0,True
+2023,Germany,"Corpus Christi, TX",0.193800179,True
+2024,Germany,"Corpus Christi, TX",0.30936104,True
+2025,Germany,"Corpus Christi, TX",1.081248691,True
+2022,Germany,"Cove Point, MD",0.0,True
+2023,Germany,"Cove Point, MD",0.569564115,True
+2024,Germany,"Cove Point, MD",0.198868886,True
+2025,Germany,"Cove Point, MD",0.303301245,True
+2022,Germany,"Elba Island, GA",0.0,True
+2023,Germany,"Elba Island, GA",0.085007034,True
+2024,Germany,"Elba Island, GA",0.0,True
+2022,Germany,"Freeport, TX",0.0,True
+2023,Germany,"Freeport, TX",0.768631219,True
+2024,Germany,"Freeport, TX",0.420023094,True
+2025,Germany,"Freeport, TX",2.659768707,True
+2020,Germany,"Jacksonville, FL",0.0,True
+2021,Germany,"Jacksonville, FL",0.0,True
+2022,Germany,"Jacksonville, FL",2.8317e-05,True
+2023,Germany,"Jacksonville, FL",0.0,True
+2024,Germany,"Jacksonville, FL",0.0,True
+2023,Germany,"Plaquemines, LA",0.0,True
+2024,Germany,"Plaquemines, LA",0.103328003,True
+2025,Germany,"Plaquemines, LA",4.493932794,True
+2020,Germany,"Sabine Pass, LA",0.0,True
+2021,Germany,"Sabine Pass, LA",0.0,True
+2022,Germany,"Sabine Pass, LA",0.097013357,True
+2023,Germany,"Sabine Pass, LA",1.275558573,True
+2024,Germany,"Sabine Pass, LA",0.913783136,True
+2025,Germany,"Sabine Pass, LA",0.54359761,True
+2022,Greece,"Cameron (Calcasieu Pass), LA",0.313127174,True
+2023,Greece,"Cameron (Calcasieu Pass), LA",0.0,True
+2024,Greece,"Cameron (Calcasieu Pass), LA",0.404250637,True
+2025,Greece,"Cameron (Calcasieu Pass), LA",0.102705034,True
+2017,Greece,"Cameron, LA",0.0,True
+2018,Greece,"Cameron, LA",0.0,True
+2019,Greece,"Cameron, LA",0.039813421,True
+2020,Greece,"Cameron, LA",0.455164243,True
+2021,Greece,"Cameron, LA",0.11884561,True
+2022,Greece,"Cameron, LA",0.593463494,True
+2023,Greece,"Cameron, LA",0.351156637,True
+2024,Greece,"Cameron, LA",0.620166237,True
+2025,Greece,"Cameron, LA",0.337791107,True
+2017,Greece,"Corpus Christi, TX",0.0,True
+2018,Greece,"Corpus Christi, TX",0.10539513,True
+2019,Greece,"Corpus Christi, TX",0.09902385,True
+2020,Greece,"Corpus Christi, TX",0.100552957,True
+2021,Greece,"Corpus Christi, TX",0.098712365,True
+2022,Greece,"Corpus Christi, TX",0.388987882,True
+2023,Greece,"Corpus Christi, TX",0.097324842,True
+2024,Greece,"Corpus Christi, TX",0.019680176,True
+2017,Greece,"Cove Point, MD",0.0,True
+2018,Greece,"Cove Point, MD",0.0,True
+2019,Greece,"Cove Point, MD",0.096107219,True
+2020,Greece,"Cove Point, MD",0.403854202,True
+2021,Greece,"Cove Point, MD",0.022625123,True
+2022,Greece,"Cove Point, MD",0.191902954,True
+2023,Greece,"Cove Point, MD",0.116863434,True
+2024,Greece,"Cove Point, MD",0.0,True
+2025,Greece,"Cove Point, MD",0.030157392,True
+2022,Greece,"Elba Island, GA",0.0,True
+2023,Greece,"Elba Island, GA",0.083392976,True
+2024,Greece,"Elba Island, GA",0.0,True
+2025,Greece,"Elba Island, GA",0.090443859,True
+2020,Greece,"Freeport, TX",0.0,True
+2021,Greece,"Freeport, TX",0.172760797,True
+2022,Greece,"Freeport, TX",0.133400445,True
+2023,Greece,"Freeport, TX",0.260627827,True
+2024,Greece,"Freeport, TX",0.343511101,True
+2025,Greece,"Freeport, TX",1.039679629,True
+2025,Greece,"Plaquemines, LA",0.610793376,True
+2017,Greece,"Sabine Pass, LA",0.0,True
+2018,Greece,"Sabine Pass, LA",0.0,True
+2019,Greece,"Sabine Pass, LA",0.179698413,True
+2020,Greece,"Sabine Pass, LA",0.411046669,True
+2021,Greece,"Sabine Pass, LA",0.7114596,True
+2022,Greece,"Sabine Pass, LA",0.333826755,True
+2023,Greece,"Sabine Pass, LA",0.207052442,True
+2024,Greece,"Sabine Pass, LA",0.275918899,True
+2025,Greece,"Sabine Pass, LA",0.612747235,True
+2017,Haiti,"Fort Lauderdale, FL",0.0,False
+2018,Haiti,"Fort Lauderdale, FL",0.0,False
+2019,Haiti,"Fort Lauderdale, FL",0.001189306,False
+2020,Haiti,"Fort Lauderdale, FL",0.003341382,False
+2021,Haiti,"Fort Lauderdale, FL",0.003879402,False
+2022,Haiti,"Fort Lauderdale, FL",0.003256432,False
+2023,Haiti,"Fort Lauderdale, FL",0.003199798,False
+2024,Haiti,"Fort Lauderdale, FL",0.002180394,False
+2025,Haiti,"Fort Lauderdale, FL",0.002661779,False
+2025,India,"Altamira, Tamaulipas",0.08220367,False
+2022,India,"Cameron (Calcasieu Pass), LA",0.0,False
+2023,India,"Cameron (Calcasieu Pass), LA",0.394991043,False
+2024,India,"Cameron (Calcasieu Pass), LA",0.305396688,False
+2017,India,"Cameron, LA",0.0,False
+2018,India,"Cameron, LA",0.0,False
+2019,India,"Cameron, LA",0.199265322,False
+2020,India,"Cameron, LA",0.949802106,False
+2021,India,"Cameron, LA",1.522905821,False
+2022,India,"Cameron, LA",1.026965386,False
+2023,India,"Cameron, LA",1.1220532,False
+2024,India,"Cameron, LA",1.771980394,False
+2025,India,"Cameron, LA",1.342074736,False
+2017,India,"Corpus Christi, TX",0.0,False
+2018,India,"Corpus Christi, TX",0.0,False
+2019,India,"Corpus Christi, TX",0.216765104,False
+2020,India,"Corpus Christi, TX",0.606489222,False
+2021,India,"Corpus Christi, TX",0.964385258,False
+2022,India,"Corpus Christi, TX",0.199576806,False
+2023,India,"Corpus Christi, TX",0.0,False
+2024,India,"Corpus Christi, TX",0.587800134,False
+2017,India,"Cove Point, MD",0.0,False
+2018,India,"Cove Point, MD",0.333911706,False
+2019,India,"Cove Point, MD",0.478752138,False
+2020,India,"Cove Point, MD",0.570441936,False
+2021,India,"Cove Point, MD",0.814561069,False
+2022,India,"Cove Point, MD",1.360027587,False
+2023,India,"Cove Point, MD",1.753857642,False
+2024,India,"Cove Point, MD",1.747996064,False
+2025,India,"Cove Point, MD",2.406078496,False
+2019,India,"Elba Island, GA",0.0,False
+2020,India,"Elba Island, GA",0.10548008,False
+2021,India,"Elba Island, GA",0.102874934,False
+2022,India,"Elba Island, GA",0.0,False
+2023,India,"Elba Island, GA",0.08857495,False
+2024,India,"Elba Island, GA",0.265894752,False
+2025,India,"Elba Island, GA",0.0247772,False
+2007,India,"Freeport, TX",0.0,False
+2008,India,"Freeport, TX",0.0,False
+2009,India,"Freeport, TX",0.0,False
+2010,India,"Freeport, TX",0.081354166,False
+2011,India,"Freeport, TX",0.169702582,False
+2012,India,"Freeport, TX",0.085063667,False
+2013,India,"Freeport, TX",0.0,False
+2014,India,"Freeport, TX",0.0,False
+2015,India,"Freeport, TX",0.0,False
+2016,India,"Freeport, TX",0.0,False
+2017,India,"Freeport, TX",0.0,False
+2018,India,"Freeport, TX",0.0,False
+2019,India,"Freeport, TX",0.105083645,False
+2020,India,"Freeport, TX",0.207703728,False
+2021,India,"Freeport, TX",0.403655984,False
+2022,India,"Freeport, TX",0.0,False
+2023,India,"Freeport, TX",0.204164128,False
+2024,India,"Freeport, TX",0.193828496,False
+2025,India,"Freeport, TX",0.095172765,False
+2007,India,"Sabine Pass, LA",0.0,False
+2008,India,"Sabine Pass, LA",0.0,False
+2009,India,"Sabine Pass, LA",0.0,False
+2010,India,"Sabine Pass, LA",0.0,False
+2011,India,"Sabine Pass, LA",0.185446723,False
+2012,India,"Sabine Pass, LA",0.0,False
+2013,India,"Sabine Pass, LA",0.0,False
+2014,India,"Sabine Pass, LA",0.0,False
+2015,India,"Sabine Pass, LA",0.0,False
+2016,India,"Sabine Pass, LA",0.494467962,False
+2017,India,"Sabine Pass, LA",0.592359139,False
+2018,India,"Sabine Pass, LA",1.298070429,False
+2019,India,"Sabine Pass, LA",1.590554656,False
+2020,India,"Sabine Pass, LA",1.082749482,False
+2021,India,"Sabine Pass, LA",1.74785448,False
+2022,India,"Sabine Pass, LA",0.882719606,False
+2023,India,"Sabine Pass, LA",1.089545514,False
+2024,India,"Sabine Pass, LA",2.377478528,False
+2025,India,"Sabine Pass, LA",0.407705286,False
+2022,Indonesia,"Cameron (Calcasieu Pass), LA",0.0,False
+2023,Indonesia,"Cameron (Calcasieu Pass), LA",0.013846915,False
+2024,Indonesia,"Cameron (Calcasieu Pass), LA",0.004927123,False
+2020,Indonesia,"Cameron, LA",0.0,False
+2021,Indonesia,"Cameron, LA",0.046892621,False
+2022,Indonesia,"Cameron, LA",0.04105936,False
+2023,Indonesia,"Cameron, LA",0.022795024,False
+2024,Indonesia,"Cameron, LA",0.042645101,False
+2020,Indonesia,"Corpus Christi, TX",0.0,False
+2021,Indonesia,"Corpus Christi, TX",0.012912461,False
+2022,Indonesia,"Corpus Christi, TX",0.0,False
+2023,Indonesia,"Corpus Christi, TX",0.0,False
+2024,Indonesia,"Corpus Christi, TX",0.01690513,False
+2020,Indonesia,"Cove Point, MD",0.0,False
+2021,Indonesia,"Cove Point, MD",0.0,False
+2022,Indonesia,"Cove Point, MD",0.079881693,False
+2023,Indonesia,"Cove Point, MD",0.0,False
+2024,Indonesia,"Cove Point, MD",0.0,False
+2022,Indonesia,"Freeport, TX",0.0,False
+2023,Indonesia,"Freeport, TX",0.034971248,False
+2024,Indonesia,"Freeport, TX",0.127906986,False
+2020,Indonesia,"Sabine Pass, LA",0.0,False
+2021,Indonesia,"Sabine Pass, LA",0.032734221,False
+2022,Indonesia,"Sabine Pass, LA",0.065355174,False
+2023,Indonesia,"Sabine Pass, LA",0.017811267,False
+2024,Indonesia,"Sabine Pass, LA",0.026844326,False
+2019,Israel,"Corpus Christi, TX",0.0,False
+2020,Israel,"Corpus Christi, TX",0.186720979,False
+2021,Israel,"Corpus Christi, TX",0.0,False
+2022,Israel,"Corpus Christi, TX",0.0,False
+2023,Israel,"Corpus Christi, TX",0.0,False
+2024,Israel,"Corpus Christi, TX",0.0,False
+2019,Israel,"Freeport, TX",0.0,False
+2020,Israel,"Freeport, TX",0.176640198,False
+2021,Israel,"Freeport, TX",0.252189421,False
+2022,Israel,"Freeport, TX",0.0,False
+2023,Israel,"Freeport, TX",0.0,False
+2024,Israel,"Freeport, TX",0.0,False
+2017,Israel,"Sabine Pass, LA",0.0,False
+2018,Israel,"Sabine Pass, LA",0.092595936,False
+2019,Israel,"Sabine Pass, LA",0.0,False
+2020,Israel,"Sabine Pass, LA",0.084978717,False
+2021,Israel,"Sabine Pass, LA",0.0,False
+2022,Israel,"Sabine Pass, LA",0.0,False
+2023,Israel,"Sabine Pass, LA",0.0,False
+2024,Israel,"Sabine Pass, LA",0.0,False
+2022,Italy,"Cameron (Calcasieu Pass), LA",0.620647622,True
+2023,Italy,"Cameron (Calcasieu Pass), LA",0.802299894,True
+2024,Italy,"Cameron (Calcasieu Pass), LA",0.525389907,True
+2025,Italy,"Cameron (Calcasieu Pass), LA",1.428101174,True
+2019,Italy,"Cameron, LA",0.0,True
+2020,Italy,"Cameron, LA",0.36324791,True
+2021,Italy,"Cameron, LA",0.096305437,True
+2022,Italy,"Cameron, LA",0.30015808,True
+2023,Italy,"Cameron, LA",0.590207062,True
+2024,Italy,"Cameron, LA",0.616343469,True
+2025,Italy,"Cameron, LA",1.556687763,True
+2017,Italy,"Corpus Christi, TX",0.0,True
+2018,Italy,"Corpus Christi, TX",0.0,True
+2019,Italy,"Corpus Christi, TX",0.479601642,True
+2020,Italy,"Corpus Christi, TX",0.570215402,True
+2021,Italy,"Corpus Christi, TX",0.09698504,True
+2022,Italy,"Corpus Christi, TX",0.748639558,True
+2023,Italy,"Corpus Christi, TX",1.442769277,True
+2024,Italy,"Corpus Christi, TX",1.070403357,True
+2025,Italy,"Corpus Christi, TX",2.384416144,True
+2017,Italy,"Cove Point, MD",0.0,True
+2018,Italy,"Cove Point, MD",0.0,True
+2019,Italy,"Cove Point, MD",0.090727027,True
+2020,Italy,"Cove Point, MD",0.271784646,True
+2021,Italy,"Cove Point, MD",0.090981878,True
+2022,Italy,"Cove Point, MD",0.184625536,True
+2023,Italy,"Cove Point, MD",0.180208115,True
+2024,Italy,"Cove Point, MD",0.290133933,True
+2025,Italy,"Cove Point, MD",0.209147885,True
+2020,Italy,"Elba Island, GA",0.0,True
+2021,Italy,"Elba Island, GA",0.0,True
+2022,Italy,"Elba Island, GA",0.192865725,True
+2023,Italy,"Elba Island, GA",0.273540288,True
+2024,Italy,"Elba Island, GA",0.175224358,True
+2017,Italy,"Freeport, TX",0.0,True
+2018,Italy,"Freeport, TX",0.0,True
+2019,Italy,"Freeport, TX",0.266036336,True
+2020,Italy,"Freeport, TX",0.0,True
+2021,Italy,"Freeport, TX",0.212885702,True
+2022,Italy,"Freeport, TX",0.283564435,True
+2023,Italy,"Freeport, TX",0.511656259,True
+2024,Italy,"Freeport, TX",0.502453299,True
+2025,Italy,"Freeport, TX",0.798420493,True
+2025,Italy,"Plaquemines, LA",2.027058128,True
+2015,Italy,"Sabine Pass, LA",0.0,True
+2016,Italy,"Sabine Pass, LA",0.09423831,True
+2017,Italy,"Sabine Pass, LA",0.183860982,True
+2018,Italy,"Sabine Pass, LA",0.492429152,True
+2019,Italy,"Sabine Pass, LA",1.107724899,True
+2020,Italy,"Sabine Pass, LA",0.733121952,True
+2021,Italy,"Sabine Pass, LA",0.471587987,True
+2022,Italy,"Sabine Pass, LA",0.955210614,True
+2023,Italy,"Sabine Pass, LA",1.800806896,True
+2024,Italy,"Sabine Pass, LA",2.080548563,True
+2025,Italy,"Sabine Pass, LA",1.578180214,True
+2023,Jamaica,"Altamira, Tamaulipas",0.0,False
+2024,Jamaica,"Altamira, Tamaulipas",0.033102339,False
+2025,Jamaica,"Altamira, Tamaulipas",0.03398016,False
+2023,Jamaica,"Cameron, LA",0.0,False
+2024,Jamaica,"Cameron, LA",0.058077757,False
+2025,Jamaica,"Cameron, LA",0.007730486,False
+2017,Jamaica,"Corpus Christi, TX",0.0,False
+2018,Jamaica,"Corpus Christi, TX",0.0,False
+2019,Jamaica,"Corpus Christi, TX",0.065694976,False
+2020,Jamaica,"Corpus Christi, TX",0.0,False
+2021,Jamaica,"Corpus Christi, TX",0.051791427,False
+2022,Jamaica,"Corpus Christi, TX",0.003681184,False
+2023,Jamaica,"Corpus Christi, TX",0.040804509,False
+2024,Jamaica,"Corpus Christi, TX",0.004190886,False
+2022,Jamaica,"Elba Island, GA",0.0,False
+2023,Jamaica,"Elba Island, GA",0.044060941,False
+2024,Jamaica,"Elba Island, GA",0.010137414,False
+2019,Jamaica,"Fort Lauderdale, FL",0.0,False
+2020,Jamaica,"Fort Lauderdale, FL",2.8317e-05,False
+2021,Jamaica,"Fort Lauderdale, FL",0.006059795,False
+2022,Jamaica,"Fort Lauderdale, FL",0.037944512,False
+2023,Jamaica,"Fort Lauderdale, FL",0.01141167,False
+2024,Jamaica,"Fort Lauderdale, FL",0.0,False
+2019,Jamaica,"Freeport, TX",0.0,False
+2020,Jamaica,"Freeport, TX",0.141159248,False
+2021,Jamaica,"Freeport, TX",0.022143738,False
+2022,Jamaica,"Freeport, TX",0.0,False
+2023,Jamaica,"Freeport, TX",0.0,False
+2024,Jamaica,"Freeport, TX",0.099760086,False
+2020,Jamaica,"Jacksonville, FL",0.0,False
+2021,Jamaica,"Jacksonville, FL",8.495e-05,False
+2022,Jamaica,"Jacksonville, FL",0.0,False
+2023,Jamaica,"Jacksonville, FL",0.0,False
+2024,Jamaica,"Jacksonville, FL",0.0,False
+2020,Jamaica,"Miami, FL",0.0,False
+2021,Jamaica,"Miami, FL",8.495e-05,False
+2022,Jamaica,"Miami, FL",0.001302573,False
+2023,Jamaica,"Miami, FL",0.000736237,False
+2024,Jamaica,"Miami, FL",0.000453069,False
+2017,Jamaica,"Sabine Pass, LA",0.0,False
+2018,Jamaica,"Sabine Pass, LA",0.03689679,False
+2019,Jamaica,"Sabine Pass, LA",0.32768201,False
+2020,Jamaica,"Sabine Pass, LA",0.341698826,False
+2021,Jamaica,"Sabine Pass, LA",0.635542259,False
+2022,Jamaica,"Sabine Pass, LA",0.0,False
+2023,Jamaica,"Sabine Pass, LA",0.15919705,False
+2024,Jamaica,"Sabine Pass, LA",0.168088525,False
+2025,Jamaica,"Sabine Pass, LA",0.057568054,False
+2022,Japan,"Cameron (Calcasieu Pass), LA",0.097721277,False
+2023,Japan,"Cameron (Calcasieu Pass), LA",0.702738026,False
+2024,Japan,"Cameron (Calcasieu Pass), LA",0.407393802,False
+2025,Japan,"Cameron (Calcasieu Pass), LA",0.309955693,False
+2007,Japan,"Cameron, LA",0.0,False
+2008,Japan,"Cameron, LA",0.0,False
+2009,Japan,"Cameron, LA",0.0,False
+2010,Japan,"Cameron, LA",0.0,False
+2011,Japan,"Cameron, LA",0.077616349,False
+2012,Japan,"Cameron, LA",0.0,False
+2013,Japan,"Cameron, LA",0.0,False
+2014,Japan,"Cameron, LA",0.0,False
+2015,Japan,"Cameron, LA",0.0,False
+2017,Japan,"Cameron, LA",0.0,False
+2018,Japan,"Cameron, LA",0.0,False
+2019,Japan,"Cameron, LA",0.99745928,False
+2020,Japan,"Cameron, LA",2.131745338,False
+2021,Japan,"Cameron, LA",3.966872195,False
+2022,Japan,"Cameron, LA",3.462493354,False
+2023,Japan,"Cameron, LA",3.604077354,False
+2024,Japan,"Cameron, LA",3.63012881,False
+2025,Japan,"Cameron, LA",2.534410234,False
+2017,Japan,"Corpus Christi, TX",0.0,False
+2018,Japan,"Corpus Christi, TX",0.0,False
+2019,Japan,"Corpus Christi, TX",0.50412399,False
+2020,Japan,"Corpus Christi, TX",0.791709411,False
+2021,Japan,"Corpus Christi, TX",1.221388534,False
+2022,Japan,"Corpus Christi, TX",0.84525648,False
+2023,Japan,"Corpus Christi, TX",0.104347408,False
+2024,Japan,"Corpus Christi, TX",0.383664323,False
+2025,Japan,"Corpus Christi, TX",0.1982176,False
+2017,Japan,"Cove Point, MD",0.0,False
+2018,Japan,"Cove Point, MD",2.035383267,False
+2019,Japan,"Cove Point, MD",2.466591498,False
+2020,Japan,"Cove Point, MD",1.411139411,False
+2021,Japan,"Cove Point, MD",0.991909187,False
+2022,Japan,"Cove Point, MD",0.676714886,False
+2023,Japan,"Cove Point, MD",1.874260675,False
+2024,Japan,"Cove Point, MD",1.095973427,False
+2025,Japan,"Cove Point, MD",0.716273456,False
+2020,Japan,"Elba Island, GA",0.0,False
+2021,Japan,"Elba Island, GA",0.083987629,False
+2022,Japan,"Elba Island, GA",0.0,False
+2023,Japan,"Elba Island, GA",0.0,False
+2024,Japan,"Elba Island, GA",0.098004445,False
+2025,Japan,"Elba Island, GA",0.104545626,False
+2007,Japan,"Freeport, TX",0.0,False
+2008,Japan,"Freeport, TX",0.0,False
+2009,Japan,"Freeport, TX",0.0,False
+2010,Japan,"Freeport, TX",0.07991001,False
+2011,Japan,"Freeport, TX",0.0,False
+2012,Japan,"Freeport, TX",0.0,False
+2013,Japan,"Freeport, TX",0.0,False
+2014,Japan,"Freeport, TX",0.0,False
+2017,Japan,"Freeport, TX",0.0,False
+2018,Japan,"Freeport, TX",0.0,False
+2019,Japan,"Freeport, TX",0.102138698,False
+2020,Japan,"Freeport, TX",2.92087792,False
+2021,Japan,"Freeport, TX",2.775726003,False
+2022,Japan,"Freeport, TX",0.365824739,False
+2023,Japan,"Freeport, TX",1.910647763,False
+2024,Japan,"Freeport, TX",2.506150067,False
+2025,Japan,"Freeport, TX",1.58565585,False
+1998,Japan,"Kenai, AK",0.0,False
+1999,Japan,"Kenai, AK",1.801146698,False
+2000,Japan,"Kenai, AK",1.857865248,False
+2001,Japan,"Kenai, AK",1.86191455,False
+2002,Japan,"Kenai, AK",1.796389475,False
+2003,Japan,"Kenai, AK",1.860357126,False
+2004,Japan,"Kenai, AK",1.758444963,False
+2005,Japan,"Kenai, AK",1.844103283,False
+2006,Japan,"Kenai, AK",1.720670352,False
+2007,Japan,"Kenai, AK",1.316759517,False
+2008,Japan,"Kenai, AK",1.108999155,False
+2009,Japan,"Kenai, AK",0.864681805,False
+2010,Japan,"Kenai, AK",0.85233568,False
+2011,Japan,"Kenai, AK",0.432425853,False
+2012,Japan,"Kenai, AK",0.264535546,False
+2013,Japan,"Kenai, AK",0.0,False
+2014,Japan,"Kenai, AK",0.376896608,False
+2015,Japan,"Kenai, AK",0.233953402,False
+2016,Japan,"Kenai, AK",0.0,False
+2017,Japan,"Kenai, AK",0.0,False
+2018,Japan,"Kenai, AK",0.0,False
+2019,Japan,"Kenai, AK",0.0,False
+2025,Japan,"Plaquemines, LA",0.397454605,False
+1996,Japan,"Port Nikiski, AK",1.915574886,False
+1997,Japan,"Port Nikiski, AK",1.760936842,False
+1998,Japan,"Port Nikiski, AK",1.867521277,False
+1999,Japan,"Port Nikiski, AK",0.0,False
+2000,Japan,"Port Nikiski, AK",0.0,False
+2001,Japan,"Port Nikiski, AK",0.0,False
+2002,Japan,"Port Nikiski, AK",0.0,False
+2011,Japan,"Sabine Pass, LA",0.0,False
+2012,Japan,"Sabine Pass, LA",0.142631722,False
+2013,Japan,"Sabine Pass, LA",0.0,False
+2014,Japan,"Sabine Pass, LA",0.0,False
+2015,Japan,"Sabine Pass, LA",0.0,False
+2016,Japan,"Sabine Pass, LA",0.315364202,False
+2017,Japan,"Sabine Pass, LA",1.506963462,False
+2018,Japan,"Sabine Pass, LA",1.519337904,False
+2019,Japan,"Sabine Pass, LA",1.623770262,False
+2020,Japan,"Sabine Pass, LA",0.901408694,False
+2021,Japan,"Sabine Pass, LA",1.011107978,False
+2022,Japan,"Sabine Pass, LA",0.47643016,False
+2023,Japan,"Sabine Pass, LA",0.587545283,False
+2024,Japan,"Sabine Pass, LA",1.391544186,False
+2025,Japan,"Sabine Pass, LA",0.46589631,False
+2023,Jordan,"Cameron, LA",0.0,False
+2024,Jordan,"Cameron, LA",0.321169146,False
+2025,Jordan,"Cameron, LA",0.097296525,False
+2017,Jordan,"Corpus Christi, TX",0.0,False
+2018,Jordan,"Corpus Christi, TX",0.0,False
+2019,Jordan,"Corpus Christi, TX",0.097664643,False
+2020,Jordan,"Corpus Christi, TX",0.0,False
+2021,Jordan,"Corpus Christi, TX",0.0,False
+2022,Jordan,"Corpus Christi, TX",0.0,False
+2023,Jordan,"Corpus Christi, TX",0.0,False
+2024,Jordan,"Corpus Christi, TX",0.177149901,False
+2025,Jordan,"Corpus Christi, TX",0.097296525,False
+2017,Jordan,"Cove Point, MD",0.0,False
+2018,Jordan,"Cove Point, MD",0.183889299,False
+2019,Jordan,"Cove Point, MD",0.0,False
+2020,Jordan,"Cove Point, MD",0.0,False
+2021,Jordan,"Cove Point, MD",0.0,False
+2022,Jordan,"Cove Point, MD",0.0,False
+2023,Jordan,"Freeport, TX",0.0,False
+2024,Jordan,"Freeport, TX",0.299931546,False
+2025,Jordan,"Freeport, TX",0.182105341,False
+2025,Jordan,"Plaquemines, LA",0.400173018,False
+2015,Jordan,"Sabine Pass, LA",0.0,False
+2016,Jordan,"Sabine Pass, LA",0.279486816,False
+2017,Jordan,"Sabine Pass, LA",1.028494493,False
+2018,Jordan,"Sabine Pass, LA",0.91463264,False
+2019,Jordan,"Sabine Pass, LA",0.817902451,False
+2020,Jordan,"Sabine Pass, LA",0.19459305,False
+2021,Jordan,"Sabine Pass, LA",0.0,False
+2022,Jordan,"Sabine Pass, LA",0.0,False
+2023,Jordan,"Sabine Pass, LA",0.092935738,False
+2024,Jordan,"Sabine Pass, LA",0.407167267,False
+2025,Jordan,"Sabine Pass, LA",0.095370982,False
+2022,Kuwait,"Cameron (Calcasieu Pass), LA",0.095512566,False
+2023,Kuwait,"Cameron (Calcasieu Pass), LA",0.096815139,False
+2024,Kuwait,"Cameron (Calcasieu Pass), LA",0.0,False
+2019,Kuwait,"Cameron, LA",0.0,False
+2020,Kuwait,"Cameron, LA",0.105338496,False
+2021,Kuwait,"Cameron, LA",0.293107197,False
+2022,Kuwait,"Cameron, LA",0.293333731,False
+2023,Kuwait,"Cameron, LA",0.188363354,False
+2024,Kuwait,"Cameron, LA",0.548892851,False
+2020,Kuwait,"Corpus Christi, TX",0.0,False
+2021,Kuwait,"Corpus Christi, TX",0.0,False
+2022,Kuwait,"Corpus Christi, TX",0.213395405,False
+2023,Kuwait,"Corpus Christi, TX",0.104970378,False
+2024,Kuwait,"Corpus Christi, TX",0.108481661,False
+2025,Kuwait,"Corpus Christi, TX",0.115674128,False
+2017,Kuwait,"Cove Point, MD",0.0,False
+2018,Kuwait,"Cove Point, MD",0.183945933,False
+2019,Kuwait,"Cove Point, MD",0.0,False
+2020,Kuwait,"Cove Point, MD",0.089650989,False
+2021,Kuwait,"Cove Point, MD",0.108198493,False
+2022,Kuwait,"Cove Point, MD",0.098514147,False
+2023,Kuwait,"Cove Point, MD",0.095144448,False
+2024,Kuwait,"Cove Point, MD",0.0,False
+2020,Kuwait,"Elba Island, GA",0.0,False
+2021,Kuwait,"Elba Island, GA",0.0,False
+2022,Kuwait,"Elba Island, GA",0.071839722,False
+2023,Kuwait,"Elba Island, GA",0.0,False
+2024,Kuwait,"Elba Island, GA",0.0,False
+2020,Kuwait,"Freeport, TX",0.0,False
+2021,Kuwait,"Freeport, TX",0.190628698,False
+2022,Kuwait,"Freeport, TX",0.0,False
+2023,Kuwait,"Freeport, TX",0.0,False
+2024,Kuwait,"Freeport, TX",0.0,False
+2015,Kuwait,"Sabine Pass, LA",0.0,False
+2016,Kuwait,"Sabine Pass, LA",0.200143142,False
+2017,Kuwait,"Sabine Pass, LA",0.572367478,False
+2018,Kuwait,"Sabine Pass, LA",0.098684048,False
+2019,Kuwait,"Sabine Pass, LA",0.291889574,False
+2020,Kuwait,"Sabine Pass, LA",0.294692938,False
+2021,Kuwait,"Sabine Pass, LA",0.38431561,False
+2022,Kuwait,"Sabine Pass, LA",0.842000048,False
+2023,Kuwait,"Sabine Pass, LA",0.511061606,False
+2024,Kuwait,"Sabine Pass, LA",0.323321222,False
+2025,Kuwait,"Sabine Pass, LA",0.104970378,False
+2022,Lithuania,"Cameron (Calcasieu Pass), LA",0.098655731,True
+2023,Lithuania,"Cameron (Calcasieu Pass), LA",0.100666224,True
+2024,Lithuania,"Cameron (Calcasieu Pass), LA",0.0,True
+2025,Lithuania,"Cameron (Calcasieu Pass), LA",0.303839264,True
+2019,Lithuania,"Cameron, LA",0.0,True
+2020,Lithuania,"Cameron, LA",0.194479782,True
+2021,Lithuania,"Cameron, LA",0.0,True
+2022,Lithuania,"Cameron, LA",0.58624271,True
+2023,Lithuania,"Cameron, LA",0.179330294,True
+2024,Lithuania,"Cameron, LA",0.104262458,True
+2025,Lithuania,"Cameron, LA",0.484075696,True
+2017,Lithuania,"Corpus Christi, TX",0.0,True
+2018,Lithuania,"Corpus Christi, TX",0.0,True
+2019,Lithuania,"Corpus Christi, TX",0.097834544,True
+2020,Lithuania,"Corpus Christi, TX",0.089141286,True
+2021,Lithuania,"Corpus Christi, TX",0.177744554,True
+2022,Lithuania,"Corpus Christi, TX",0.405694794,True
+2023,Lithuania,"Corpus Christi, TX",0.288661459,True
+2024,Lithuania,"Corpus Christi, TX",0.284753741,True
+2025,Lithuania,"Corpus Christi, TX",0.102365232,True
+2020,Lithuania,"Cove Point, MD",0.0,True
+2021,Lithuania,"Cove Point, MD",0.047487274,True
+2022,Lithuania,"Cove Point, MD",0.014611469,True
+2023,Lithuania,"Cove Point, MD",0.095455933,True
+2024,Lithuania,"Cove Point, MD",0.091746432,True
+2025,Lithuania,"Cove Point, MD",0.104460675,True
+2019,Lithuania,"Elba Island, GA",0.0,True
+2020,Lithuania,"Elba Island, GA",0.086224656,True
+2021,Lithuania,"Elba Island, GA",0.08715911,True
+2022,Lithuania,"Elba Island, GA",0.165058627,True
+2023,Lithuania,"Elba Island, GA",0.0,True
+2024,Lithuania,"Elba Island, GA",0.094408211,True
+2019,Lithuania,"Freeport, TX",0.0,True
+2020,Lithuania,"Freeport, TX",0.177036634,True
+2021,Lithuania,"Freeport, TX",0.28733057,True
+2022,Lithuania,"Freeport, TX",0.29591056,True
+2023,Lithuania,"Freeport, TX",0.099476918,True
+2024,Lithuania,"Freeport, TX",0.103922656,True
+2025,Lithuania,"Freeport, TX",0.461167405,True
+2025,Lithuania,"Plaquemines, LA",0.397907674,True
+2016,Lithuania,"Sabine Pass, LA",0.0,True
+2017,Lithuania,"Sabine Pass, LA",0.193800179,True
+2018,Lithuania,"Sabine Pass, LA",0.0,True
+2019,Lithuania,"Sabine Pass, LA",0.0,True
+2020,Lithuania,"Sabine Pass, LA",0.270850192,True
+2021,Lithuania,"Sabine Pass, LA",0.275805632,True
+2022,Lithuania,"Sabine Pass, LA",0.620279504,True
+2023,Lithuania,"Sabine Pass, LA",0.803234349,True
+2024,Lithuania,"Sabine Pass, LA",0.71720791,True
+2025,Lithuania,"Sabine Pass, LA",0.40634608,True
+2023,Malaysia,"Cameron (Calcasieu Pass), LA",0.0,False
+2024,Malaysia,"Cameron (Calcasieu Pass), LA",0.104602259,False
+2023,Malaysia,"Cameron, LA",0.0,False
+2024,Malaysia,"Cameron, LA",0.2088364,False
+2017,Malaysia,"Sabine Pass, LA",0.0,False
+2018,Malaysia,"Sabine Pass, LA",0.0,False
+2019,Malaysia,"Sabine Pass, LA",0.104715526,False
+2020,Malaysia,"Sabine Pass, LA",0.0,False
+2021,Malaysia,"Sabine Pass, LA",0.0,False
+2022,Malaysia,"Sabine Pass, LA",0.0,False
+2023,Malaysia,"Sabine Pass, LA",0.0,False
+2024,Malaysia,"Sabine Pass, LA",0.202663338,False
+2019,Malta,"Cove Point, MD",0.0,True
+2020,Malta,"Cove Point, MD",0.016140576,True
+2021,Malta,"Cove Point, MD",0.0,True
+2022,Malta,"Cove Point, MD",0.0,True
+2023,Malta,"Cove Point, MD",0.0,True
+2024,Malta,"Cove Point, MD",0.0,True
+2020,Malta,"Elba Island, GA",0.0,True
+2021,Malta,"Elba Island, GA",0.070735366,True
+2022,Malta,"Elba Island, GA",0.149314486,True
+2023,Malta,"Elba Island, GA",0.073397146,True
+2024,Malta,"Elba Island, GA",0.064987056,True
+2025,Malta,"Elba Island, GA",0.186069693,True
+2016,Malta,"Sabine Pass, LA",0.0,True
+2017,Malta,"Sabine Pass, LA",0.024550666,True
+2018,Malta,"Sabine Pass, LA",0.082883274,True
+2019,Malta,"Sabine Pass, LA",0.011694838,True
+2020,Malta,"Sabine Pass, LA",0.058813994,True
+2021,Malta,"Sabine Pass, LA",0.08291159,True
+2022,Malta,"Sabine Pass, LA",0.0,True
+2023,Malta,"Sabine Pass, LA",0.0,True
+2024,Malta,"Sabine Pass, LA",0.066148045,True
+2023,Mauritania,"Corpus Christi, TX",0.0,False
+2024,Mauritania,"Corpus Christi, TX",0.014639786,False
+2023,Mexico,"Altamira, Tamaulipas",0.0,False
+2024,Mexico,"Altamira, Tamaulipas",0.077503082,False
+2025,Mexico,"Altamira, Tamaulipas",0.119865014,False
+2020,Mexico,"Calexico, CA",0.0,False
+2021,Mexico,"Calexico, CA",0.0,False
+2022,Mexico,"Calexico, CA",0.000113267,False
+2023,Mexico,"Calexico, CA",0.0,False
+2024,Mexico,"Calexico, CA",0.0,False
+2022,Mexico,"Cameron (Calcasieu Pass), LA",0.0,False
+2023,Mexico,"Cameron (Calcasieu Pass), LA",0.103639488,False
+2024,Mexico,"Cameron (Calcasieu Pass), LA",0.073680314,False
+2020,Mexico,"Cameron, LA",0.0,False
+2021,Mexico,"Cameron, LA",0.0,False
+2022,Mexico,"Cameron, LA",0.015262755,False
+2023,Mexico,"Cameron, LA",0.0,False
+2024,Mexico,"Cameron, LA",0.07220784,False
+2017,Mexico,"Corpus Christi, TX",0.0,False
+2018,Mexico,"Corpus Christi, TX",0.0,False
+2019,Mexico,"Corpus Christi, TX",0.588621322,False
+2020,Mexico,"Corpus Christi, TX",0.0,False
+2021,Mexico,"Corpus Christi, TX",0.030808678,False
+2022,Mexico,"Corpus Christi, TX",0.0,False
+2023,Mexico,"Corpus Christi, TX",0.055331027,False
+2024,Mexico,"Corpus Christi, TX",0.000934454,False
+2017,Mexico,"Cove Point, MD",0.0,False
+2018,Mexico,"Cove Point, MD",0.189835827,False
+2019,Mexico,"Cove Point, MD",0.27325712,False
+2020,Mexico,"Cove Point, MD",0.0,False
+2021,Mexico,"Cove Point, MD",0.09565415,False
+2022,Mexico,"Cove Point, MD",0.0,False
+2023,Mexico,"Cove Point, MD",0.091151779,False
+2024,Mexico,"Cove Point, MD",0.0,False
+2020,Mexico,"El Paso, TX",0.0,False
+2021,Mexico,"El Paso, TX",0.0,False
+2022,Mexico,"El Paso, TX",2.8317e-05,False
+2023,Mexico,"El Paso, TX",2.8317e-05,False
+2024,Mexico,"El Paso, TX",0.0,False
+2019,Mexico,"Elba Island, GA",0.0,False
+2020,Mexico,"Elba Island, GA",0.104913744,False
+2021,Mexico,"Elba Island, GA",0.0,False
+2022,Mexico,"Elba Island, GA",0.0,False
+2023,Mexico,"Elba Island, GA",0.0,False
+2024,Mexico,"Elba Island, GA",0.0,False
+2025,Mexico,"Elba Island, GA",0.091491581,False
+2012,Mexico,"Freeport, TX",0.0,False
+2013,Mexico,"Freeport, TX",0.07716328,False
+2014,Mexico,"Freeport, TX",0.0,False
+2015,Mexico,"Freeport, TX",0.0,False
+2016,Mexico,"Freeport, TX",0.0,False
+2017,Mexico,"Freeport, TX",0.0,False
+2018,Mexico,"Freeport, TX",0.0,False
+2019,Mexico,"Freeport, TX",0.178225939,False
+2020,Mexico,"Freeport, TX",0.191025133,False
+2021,Mexico,"Freeport, TX",0.095342666,False
+2022,Mexico,"Freeport, TX",0.093218906,False
+2023,Mexico,"Freeport, TX",0.0,False
+2024,Mexico,"Freeport, TX",0.0,False
+2015,Mexico,"Laredo, TX",2.8317e-05,False
+2016,Mexico,"Laredo, TX",0.00574831,False
+2017,Mexico,"Laredo, TX",0.014215034,False
+2018,Mexico,"Laredo, TX",0.015517606,False
+2019,Mexico,"Laredo, TX",0.028826502,False
+2020,Mexico,"Laredo, TX",0.014101766,False
+2021,Mexico,"Laredo, TX",0.030044125,False
+2022,Mexico,"Laredo, TX",0.04185223,False
+2023,Mexico,"Laredo, TX",0.01707503,False
+2024,Mexico,"Laredo, TX",0.003199798,False
+1998,Mexico,"Nogales, AZ",0.000934454,False
+1999,Mexico,"Nogales, AZ",0.006739398,False
+2000,Mexico,"Nogales, AZ",0.007673853,False
+2001,Mexico,"Nogales, AZ",0.011383354,False
+2002,Mexico,"Nogales, AZ",0.009033059,False
+2003,Mexico,"Nogales, AZ",0.008183555,False
+2004,Mexico,"Nogales, AZ",0.007135834,False
+2005,Mexico,"Nogales, AZ",0.00433247,False
+2006,Mexico,"Nogales, AZ",0.002095443,False
+2007,Mexico,"Nogales, AZ",0.000453069,False
+2008,Mexico,"Nogales, AZ",0.0,False
+2009,Mexico,"Nogales, AZ",0.0,False
+2010,Mexico,"Nogales, AZ",0.0,False
+2011,Mexico,"Nogales, AZ",0.0,False
+2012,Mexico,"Nogales, AZ",0.000962771,False
+2013,Mexico,"Nogales, AZ",0.002633462,False
+2014,Mexico,"Nogales, AZ",0.002633462,False
+2015,Mexico,"Nogales, AZ",0.003001581,False
+2016,Mexico,"Nogales, AZ",0.003029898,False
+2017,Mexico,"Nogales, AZ",0.003398016,False
+2018,Mexico,"Nogales, AZ",0.000991088,False
+2019,Mexico,"Nogales, AZ",0.001812275,False
+2020,Mexico,"Nogales, AZ",0.008636624,False
+2021,Mexico,"Nogales, AZ",0.005210291,False
+2022,Mexico,"Nogales, AZ",0.001953859,False
+2023,Mexico,"Nogales, AZ",0.0,False
+2024,Mexico,"Nogales, AZ",0.0,False
+1998,Mexico,"Otay Mesa, CA",0.0,False
+2000,Mexico,"Otay Mesa, CA",0.000736237,False
+2001,Mexico,"Otay Mesa, CA",0.001783958,False
+2002,Mexico,"Otay Mesa, CA",0.002378611,False
+2003,Mexico,"Otay Mesa, CA",0.002491878,False
+2004,Mexico,"Otay Mesa, CA",0.003284749,False
+2005,Mexico,"Otay Mesa, CA",0.002520195,False
+2006,Mexico,"Otay Mesa, CA",0.002803363,False
+2007,Mexico,"Otay Mesa, CA",0.002010493,False
+2008,Mexico,"Otay Mesa, CA",0.00150079,False
+2009,Mexico,"Otay Mesa, CA",0.002378611,False
+2010,Mexico,"Otay Mesa, CA",0.005889894,False
+2011,Mexico,"Otay Mesa, CA",0.006682765,False
+2012,Mexico,"Otay Mesa, CA",0.003369699,False
+2013,Mexico,"Otay Mesa, CA",0.000991088,False
+2014,Mexico,"Otay Mesa, CA",0.002491878,False
+2015,Mexico,"Otay Mesa, CA",0.002491878,False
+2016,Mexico,"Otay Mesa, CA",0.001840592,False
+2017,Mexico,"Otay Mesa, CA",0.001953859,False
+2018,Mexico,"Otay Mesa, CA",0.000141584,False
+2019,Mexico,"Otay Mesa, CA",0.000679603,False
+2020,Mexico,"Otay Mesa, CA",0.000481386,False
+2021,Mexico,"Otay Mesa, CA",0.000169901,False
+2022,Mexico,"Otay Mesa, CA",0.0,False
+2023,Mexico,"Otay Mesa, CA",0.0,False
+2024,Mexico,"Otay Mesa, CA",0.0,False
+2015,Mexico,"Sabine Pass, LA",0.0,False
+2016,Mexico,"Sabine Pass, LA",0.777862496,False
+2017,Mexico,"Sabine Pass, LA",3.985391382,False
+2018,Mexico,"Sabine Pass, LA",4.970816022,False
+2019,Mexico,"Sabine Pass, LA",3.019675235,False
+2020,Mexico,"Sabine Pass, LA",0.678385578,False
+2021,Mexico,"Sabine Pass, LA",0.208609866,False
+2022,Mexico,"Sabine Pass, LA",0.0,False
+2023,Mexico,"Sabine Pass, LA",0.136685194,False
+2024,Mexico,"Sabine Pass, LA",0.092794154,False
+2025,Mexico,"Sabine Pass, LA",0.095852368,False
+1998,Mexico,"San Diego, CA",0.0,False
+1999,Mexico,"San Diego, CA",0.001047722,False
+2000,Mexico,"San Diego, CA",0.003426333,False
+2001,Mexico,"San Diego, CA",0.0,False
+2002,Mexico,"San Diego, CA",0.0,False
+2003,Mexico,"San Diego, CA",0.0,False
+2019,Mexico,"San Luis, AZ",0.0,False
+2020,Mexico,"San Luis, AZ",2.8317e-05,False
+2021,Mexico,"San Luis, AZ",0.0,False
+2022,Mexico,"San Luis, AZ",0.0,False
+2023,Mexico,"San Luis, AZ",0.0,False
+2024,Mexico,"San Luis, AZ",0.0,False
+2023,Netherlands,"Altamira, Tamaulipas",0.0,True
+2024,Netherlands,"Altamira, Tamaulipas",0.083024858,True
+2025,Netherlands,"Altamira, Tamaulipas",0.033923526,True
+2022,Netherlands,"Cameron (Calcasieu Pass), LA",0.70995881,True
+2023,Netherlands,"Cameron (Calcasieu Pass), LA",2.190077946,True
+2024,Netherlands,"Cameron (Calcasieu Pass), LA",1.065079798,True
+2025,Netherlands,"Cameron (Calcasieu Pass), LA",1.926193686,True
+2017,Netherlands,"Cameron, LA",0.0,True
+2018,Netherlands,"Cameron, LA",0.0,True
+2019,Netherlands,"Cameron, LA",0.094436528,True
+2020,Netherlands,"Cameron, LA",0.678470528,True
+2021,Netherlands,"Cameron, LA",0.664906781,True
+2022,Netherlands,"Cameron, LA",1.068562765,True
+2023,Netherlands,"Cameron, LA",1.215442006,True
+2024,Netherlands,"Cameron, LA",1.501328419,True
+2025,Netherlands,"Cameron, LA",0.606630806,True
+2017,Netherlands,"Corpus Christi, TX",0.0,True
+2018,Netherlands,"Corpus Christi, TX",0.0,True
+2019,Netherlands,"Corpus Christi, TX",1.154560886,True
+2020,Netherlands,"Corpus Christi, TX",0.189184541,True
+2021,Netherlands,"Corpus Christi, TX",1.37823529,True
+2022,Netherlands,"Corpus Christi, TX",1.178828384,True
+2023,Netherlands,"Corpus Christi, TX",3.852019254,True
+2024,Netherlands,"Corpus Christi, TX",2.320278592,True
+2025,Netherlands,"Corpus Christi, TX",3.973951395,True
+2017,Netherlands,"Cove Point, MD",0.0,True
+2018,Netherlands,"Cove Point, MD",0.0,True
+2019,Netherlands,"Cove Point, MD",0.183068112,True
+2020,Netherlands,"Cove Point, MD",0.379926506,True
+2021,Netherlands,"Cove Point, MD",0.190911866,True
+2022,Netherlands,"Cove Point, MD",0.779080118,True
+2023,Netherlands,"Cove Point, MD",0.608159914,True
+2024,Netherlands,"Cove Point, MD",0.888014848,True
+2025,Netherlands,"Cove Point, MD",0.407308851,True
+2019,Netherlands,"Elba Island, GA",0.0,True
+2020,Netherlands,"Elba Island, GA",0.09069871,True
+2021,Netherlands,"Elba Island, GA",0.355120989,True
+2022,Netherlands,"Elba Island, GA",0.83755431,True
+2023,Netherlands,"Elba Island, GA",0.774237946,True
+2024,Netherlands,"Elba Island, GA",0.732555616,True
+2025,Netherlands,"Elba Island, GA",0.556963139,True
+2019,Netherlands,"Freeport, TX",0.0,True
+2020,Netherlands,"Freeport, TX",0.202436803,True
+2021,Netherlands,"Freeport, TX",0.532129306,True
+2022,Netherlands,"Freeport, TX",1.006633923,True
+2023,Netherlands,"Freeport, TX",1.301411811,True
+2024,Netherlands,"Freeport, TX",1.626970061,True
+2025,Netherlands,"Freeport, TX",2.676475619,True
+2025,Netherlands,"Plaquemines, LA",2.972895882,True
+2016,Netherlands,"Sabine Pass, LA",0.0,True
+2017,Netherlands,"Sabine Pass, LA",0.086139706,True
+2018,Netherlands,"Sabine Pass, LA",0.345125158,True
+2019,Netherlands,"Sabine Pass, LA",0.871845955,True
+2020,Netherlands,"Sabine Pass, LA",0.882436438,True
+2021,Netherlands,"Sabine Pass, LA",1.815418365,True
+2022,Netherlands,"Sabine Pass, LA",5.132476634,True
+2023,Netherlands,"Sabine Pass, LA",6.724673664,True
+2024,Netherlands,"Sabine Pass, LA",4.915201827,True
+2025,Netherlands,"Sabine Pass, LA",5.133694256,True
+2023,Netherlands,"Savannah, GA",0.0,True
+2024,Netherlands,"Savannah, GA",2.8317e-05,True
+2020,Nicaragua,"Fort Lauderdale, FL",0.0,False
+2021,Nicaragua,"Fort Lauderdale, FL",2.8317e-05,False
+2022,Nicaragua,"Fort Lauderdale, FL",0.0,False
+2023,Nicaragua,"Fort Lauderdale, FL",0.0,False
+2024,Nicaragua,"Fort Lauderdale, FL",0.0,False
+2022,Pakistan,"Cameron (Calcasieu Pass), LA",0.0,False
+2023,Pakistan,"Cameron (Calcasieu Pass), LA",0.088943069,False
+2024,Pakistan,"Cameron (Calcasieu Pass), LA",0.0,False
+2019,Pakistan,"Cameron, LA",0.0,False
+2020,Pakistan,"Cameron, LA",0.19830255,False
+2021,Pakistan,"Cameron, LA",0.09698504,False
+2022,Pakistan,"Cameron, LA",0.0,False
+2023,Pakistan,"Cameron, LA",0.0,False
+2024,Pakistan,"Cameron, LA",0.0,False
+2017,Pakistan,"Corpus Christi, TX",0.0,False
+2018,Pakistan,"Corpus Christi, TX",0.0,False
+2019,Pakistan,"Corpus Christi, TX",0.103526221,False
+2020,Pakistan,"Corpus Christi, TX",0.190034045,False
+2021,Pakistan,"Corpus Christi, TX",0.094096726,False
+2022,Pakistan,"Corpus Christi, TX",0.0,False
+2023,Pakistan,"Corpus Christi, TX",0.0,False
+2024,Pakistan,"Corpus Christi, TX",0.0,False
+2017,Pakistan,"Cove Point, MD",0.0,False
+2018,Pakistan,"Cove Point, MD",0.09123673,False
+2019,Pakistan,"Cove Point, MD",0.092057917,False
+2020,Pakistan,"Cove Point, MD",0.0,False
+2021,Pakistan,"Cove Point, MD",0.10414919,False
+2022,Pakistan,"Cove Point, MD",0.0,False
+2023,Pakistan,"Cove Point, MD",0.0,False
+2024,Pakistan,"Cove Point, MD",0.0,False
+2017,Pakistan,"Elba Island, GA",0.0,False
+2018,Pakistan,"Elba Island, GA",0.0,False
+2019,Pakistan,"Elba Island, GA",0.09627712,False
+2020,Pakistan,"Elba Island, GA",0.0,False
+2021,Pakistan,"Elba Island, GA",0.094096726,False
+2022,Pakistan,"Elba Island, GA",0.0,False
+2023,Pakistan,"Elba Island, GA",0.0,False
+2024,Pakistan,"Elba Island, GA",0.0,False
+2019,Pakistan,"Freeport, TX",0.0,False
+2020,Pakistan,"Freeport, TX",0.284753741,False
+2021,Pakistan,"Freeport, TX",0.736576602,False
+2022,Pakistan,"Freeport, TX",0.0,False
+2023,Pakistan,"Freeport, TX",0.0,False
+2024,Pakistan,"Freeport, TX",0.0,False
+2016,Pakistan,"Sabine Pass, LA",0.0,False
+2017,Pakistan,"Sabine Pass, LA",0.089650989,False
+2018,Pakistan,"Sabine Pass, LA",0.275607414,False
+2019,Pakistan,"Sabine Pass, LA",0.47085175,False
+2020,Pakistan,"Sabine Pass, LA",0.372734038,False
+2021,Pakistan,"Sabine Pass, LA",0.171514858,False
+2022,Pakistan,"Sabine Pass, LA",0.087045843,False
+2023,Pakistan,"Sabine Pass, LA",0.0,False
+2024,Pakistan,"Sabine Pass, LA",0.0,False
+2022,Panama,"Cameron (Calcasieu Pass), LA",0.021492451,False
+2023,Panama,"Cameron (Calcasieu Pass), LA",0.00928791,False
+2024,Panama,"Cameron (Calcasieu Pass), LA",0.171373274,False
+2025,Panama,"Cameron (Calcasieu Pass), LA",0.065553392,False
+2019,Panama,"Cameron, LA",0.0,False
+2020,Panama,"Cameron, LA",0.145180234,False
+2021,Panama,"Cameron, LA",0.159140416,False
+2022,Panama,"Cameron, LA",0.168626544,False
+2023,Panama,"Cameron, LA",0.097353158,False
+2024,Panama,"Cameron, LA",0.176158813,False
+2025,Panama,"Cameron, LA",0.159480218,False
+2020,Panama,"Corpus Christi, TX",0.0,False
+2021,Panama,"Corpus Christi, TX",0.0,False
+2022,Panama,"Corpus Christi, TX",0.177461386,False
+2023,Panama,"Corpus Christi, TX",0.254284864,False
+2024,Panama,"Corpus Christi, TX",0.207760362,False
+2025,Panama,"Corpus Christi, TX",0.22724232,False
+2017,Panama,"Cove Point, MD",0.0,False
+2018,Panama,"Cove Point, MD",0.058813994,False
+2019,Panama,"Cove Point, MD",0.275890582,False
+2020,Panama,"Cove Point, MD",0.09140663,False
+2021,Panama,"Cove Point, MD",0.0,False
+2022,Panama,"Cove Point, MD",0.0,False
+2023,Panama,"Cove Point, MD",0.0,False
+2024,Panama,"Cove Point, MD",0.0,False
+2019,Panama,"Freeport, TX",0.0,False
+2020,Panama,"Freeport, TX",0.086932576,False
+2021,Panama,"Freeport, TX",0.039360352,False
+2022,Panama,"Freeport, TX",0.022002154,False
+2023,Panama,"Freeport, TX",0.099958304,False
+2024,Panama,"Freeport, TX",0.0,False
+2025,Panama,"Plaquemines, LA",0.104035923,False
+2017,Panama,"Sabine Pass, LA",0.0,False
+2018,Panama,"Sabine Pass, LA",0.133372128,False
+2019,Panama,"Sabine Pass, LA",0.01353543,False
+2020,Panama,"Sabine Pass, LA",0.037916195,False
+2021,Panama,"Sabine Pass, LA",0.040408074,False
+2022,Panama,"Sabine Pass, LA",0.0,False
+2023,Panama,"Sabine Pass, LA",0.093133955,False
+2024,Panama,"Sabine Pass, LA",0.0,False
+2025,Panama,"Sabine Pass, LA",0.113408784,False
+2023,Philippines,"Corpus Christi, TX",0.0,False
+2024,Philippines,"Corpus Christi, TX",0.103214736,False
+2022,Philippines,"Freeport, TX",0.0,False
+2023,Philippines,"Freeport, TX",0.193205526,False
+2024,Philippines,"Freeport, TX",0.0,False
+2025,Philippines,"Freeport, TX",0.194508099,False
+2025,Philippines,"Sabine Pass, LA",0.102082064,False
+2022,Poland,"Cameron (Calcasieu Pass), LA",1.270546499,True
+2023,Poland,"Cameron (Calcasieu Pass), LA",0.0,True
+2024,Poland,"Cameron (Calcasieu Pass), LA",0.101628995,True
+2025,Poland,"Cameron (Calcasieu Pass), LA",1.320214166,True
+2019,Poland,"Cameron, LA",0.0,True
+2020,Poland,"Cameron, LA",0.290841853,True
+2021,Poland,"Cameron, LA",0.0,True
+2022,Poland,"Cameron, LA",0.295938877,True
+2023,Poland,"Cameron, LA",0.449359299,True
+2024,Poland,"Cameron, LA",0.312957274,True
+2025,Poland,"Cameron, LA",0.644093933,True
+2019,Poland,"Corpus Christi, TX",0.0,True
+2020,Poland,"Corpus Christi, TX",0.101459094,True
+2021,Poland,"Corpus Christi, TX",0.400739354,True
+2022,Poland,"Corpus Christi, TX",0.511514675,True
+2023,Poland,"Corpus Christi, TX",0.578710442,True
+2024,Poland,"Corpus Christi, TX",0.513355267,True
+2025,Poland,"Corpus Christi, TX",1.041746755,True
+2017,Poland,"Cove Point, MD",0.0,True
+2018,Poland,"Cove Point, MD",0.091491581,True
+2019,Poland,"Cove Point, MD",0.190940182,True
+2020,Poland,"Cove Point, MD",0.0955692,True
+2021,Poland,"Cove Point, MD",0.296137094,True
+2022,Poland,"Cove Point, MD",0.009939197,True
+2023,Poland,"Cove Point, MD",0.099080483,True
+2024,Poland,"Cove Point, MD",0.0,True
+2025,Poland,"Cove Point, MD",0.211215011,True
+2020,Poland,"Elba Island, GA",0.0,True
+2021,Poland,"Elba Island, GA",0.105140278,True
+2022,Poland,"Elba Island, GA",0.0,True
+2023,Poland,"Elba Island, GA",0.0,True
+2024,Poland,"Elba Island, GA",0.0,True
+2019,Poland,"Freeport, TX",0.0,True
+2020,Poland,"Freeport, TX",0.188703155,True
+2021,Poland,"Freeport, TX",0.301602237,True
+2022,Poland,"Freeport, TX",0.208298381,True
+2023,Poland,"Freeport, TX",0.406855782,True
+2024,Poland,"Freeport, TX",0.245421706,True
+2025,Poland,"Freeport, TX",0.295542442,True
+2025,Poland,"Plaquemines, LA",0.317601229,True
+2016,Poland,"Sabine Pass, LA",0.0,True
+2017,Poland,"Sabine Pass, LA",0.097409792,True
+2018,Poland,"Sabine Pass, LA",0.0,True
+2019,Poland,"Sabine Pass, LA",0.886287523,True
+2020,Poland,"Sabine Pass, LA",0.368316618,True
+2021,Poland,"Sabine Pass, LA",0.491183213,True
+2022,Poland,"Sabine Pass, LA",1.311435958,True
+2023,Poland,"Sabine Pass, LA",2.419982045,True
+2024,Poland,"Sabine Pass, LA",2.580538301,True
+2025,Poland,"Sabine Pass, LA",2.666678006,True
+2025,Portugal,"Cameron (Calcasieu Pass), LA",0.102336915,True
+2019,Portugal,"Cameron, LA",0.0,True
+2021,Portugal,"Cameron, LA",0.0,True
+2022,Portugal,"Cameron, LA",0.06362785,True
+2023,Portugal,"Cameron, LA",0.0,True
+2024,Portugal,"Cameron, LA",0.0,True
+2017,Portugal,"Corpus Christi, TX",0.0,True
+2018,Portugal,"Corpus Christi, TX",0.0,True
+2019,Portugal,"Corpus Christi, TX",0.380407891,True
+2020,Portugal,"Corpus Christi, TX",0.504067357,True
+2021,Portugal,"Corpus Christi, TX",1.350739677,True
+2022,Portugal,"Corpus Christi, TX",1.278333619,True
+2023,Portugal,"Corpus Christi, TX",1.387834685,True
+2024,Portugal,"Corpus Christi, TX",1.361924813,True
+2025,Portugal,"Corpus Christi, TX",1.198310342,True
+2017,Portugal,"Cove Point, MD",0.0,True
+2018,Portugal,"Cove Point, MD",0.158432496,True
+2019,Portugal,"Cove Point, MD",0.0,True
+2021,Portugal,"Cove Point, MD",0.151126762,True
+2022,Portugal,"Cove Point, MD",0.0,True
+2023,Portugal,"Cove Point, MD",0.029421155,True
+2024,Portugal,"Cove Point, MD",0.0,True
+2020,Portugal,"Freeport, TX",0.0,True
+2021,Portugal,"Freeport, TX",0.095710784,True
+2022,Portugal,"Freeport, TX",0.0,True
+2023,Portugal,"Freeport, TX",0.0,True
+2024,Portugal,"Freeport, TX",0.0,True
+2011,Portugal,"Sabine Pass, LA",0.0,True
+2012,Portugal,"Sabine Pass, LA",0.074133382,True
+2013,Portugal,"Sabine Pass, LA",0.0,True
+2014,Portugal,"Sabine Pass, LA",0.0,True
+2015,Portugal,"Sabine Pass, LA",0.0,True
+2016,Portugal,"Sabine Pass, LA",0.10477216,True
+2017,Portugal,"Sabine Pass, LA",0.552828886,True
+2018,Portugal,"Sabine Pass, LA",0.195895622,True
+2019,Portugal,"Sabine Pass, LA",1.130066854,True
+2020,Portugal,"Sabine Pass, LA",0.340254669,True
+2021,Portugal,"Sabine Pass, LA",0.26750881,True
+2022,Portugal,"Sabine Pass, LA",0.628406426,True
+2023,Portugal,"Sabine Pass, LA",0.645792941,True
+2024,Portugal,"Sabine Pass, LA",0.555943734,True
+2025,Portugal,"Sabine Pass, LA",0.591481318,True
+2006,Russia,"Kenai, AK",0.0,False
+2007,Russia,"Kenai, AK",0.053660336,False
+2008,Russia,"Kenai, AK",0.0,False
+2009,Russia,"Kenai, AK",0.0,False
+2010,Russia,"Kenai, AK",0.0,False
+2025,Senegal,"Cameron, LA",0.009740979,False
+2023,Senegal,"Corpus Christi, TX",0.0,False
+2024,Senegal,"Corpus Christi, TX",0.014639786,False
+2025,Senegal,"Corpus Christi, TX",0.075322688,False
+2025,Senegal,"Freeport, TX",0.220219754,False
+2022,Singapore,"Cameron (Calcasieu Pass), LA",0.091378314,False
+2023,Singapore,"Cameron (Calcasieu Pass), LA",0.083562877,False
+2024,Singapore,"Cameron (Calcasieu Pass), LA",0.090273958,False
+2020,Singapore,"Cameron, LA",0.0,False
+2021,Singapore,"Cameron, LA",0.087470595,False
+2022,Singapore,"Cameron, LA",0.093247222,False
+2023,Singapore,"Cameron, LA",0.0,False
+2024,Singapore,"Cameron, LA",0.305963024,False
+2017,Singapore,"Corpus Christi, TX",0.0,False
+2018,Singapore,"Corpus Christi, TX",0.0,False
+2019,Singapore,"Corpus Christi, TX",0.0955692,False
+2020,Singapore,"Corpus Christi, TX",0.295146006,False
+2021,Singapore,"Corpus Christi, TX",0.09353039,False
+2022,Singapore,"Corpus Christi, TX",0.0,False
+2023,Singapore,"Corpus Christi, TX",0.099590186,False
+2024,Singapore,"Corpus Christi, TX",0.099986621,False
+2025,Singapore,"Corpus Christi, TX",0.086139706,False
+2017,Singapore,"Cove Point, MD",0.0,False
+2018,Singapore,"Cove Point, MD",0.0,False
+2019,Singapore,"Cove Point, MD",0.097268208,False
+2020,Singapore,"Cove Point, MD",0.0,False
+2021,Singapore,"Cove Point, MD",0.0,False
+2022,Singapore,"Cove Point, MD",0.0,False
+2023,Singapore,"Cove Point, MD",0.0,False
+2024,Singapore,"Cove Point, MD",0.208779766,False
+2020,Singapore,"Elba Island, GA",0.0,False
+2021,Singapore,"Elba Island, GA",0.0,False
+2022,Singapore,"Elba Island, GA",0.08211872,False
+2023,Singapore,"Elba Island, GA",0.183832666,False
+2024,Singapore,"Elba Island, GA",0.188476621,False
+2019,Singapore,"Freeport, TX",0.0,False
+2020,Singapore,"Freeport, TX",0.096730189,False
+2021,Singapore,"Freeport, TX",0.097664643,False
+2022,Singapore,"Freeport, TX",0.0,False
+2023,Singapore,"Freeport, TX",0.10468721,False
+2024,Singapore,"Freeport, TX",0.0,False
+2017,Singapore,"Sabine Pass, LA",0.0,False
+2018,Singapore,"Sabine Pass, LA",0.104177507,False
+2019,Singapore,"Sabine Pass, LA",0.697442784,False
+2020,Singapore,"Sabine Pass, LA",0.410650234,False
+2021,Singapore,"Sabine Pass, LA",0.313636877,False
+2022,Singapore,"Sabine Pass, LA",0.383975808,False
+2023,Singapore,"Sabine Pass, LA",0.188674838,False
+2024,Singapore,"Sabine Pass, LA",0.738813629,False
+2025,Singapore,"Sabine Pass, LA",0.13458975,False
+2025,South Korea,"Altamira, Tamaulipas",0.09565415,False
+2022,South Korea,"Cameron (Calcasieu Pass), LA",0.490333709,False
+2023,South Korea,"Cameron (Calcasieu Pass), LA",0.30998401,False
+2024,South Korea,"Cameron (Calcasieu Pass), LA",0.300866,False
+2025,South Korea,"Cameron (Calcasieu Pass), LA",0.19750968,False
+2017,South Korea,"Cameron, LA",0.0,False
+2018,South Korea,"Cameron, LA",0.0,False
+2019,South Korea,"Cameron, LA",0.096078902,False
+2020,South Korea,"Cameron, LA",0.79791079,False
+2021,South Korea,"Cameron, LA",1.705209379,False
+2022,South Korea,"Cameron, LA",1.202982614,False
+2023,South Korea,"Cameron, LA",1.188031344,False
+2024,South Korea,"Cameron, LA",1.494702288,False
+2025,South Korea,"Cameron, LA",1.245401181,False
+2017,South Korea,"Corpus Christi, TX",0.0,False
+2018,South Korea,"Corpus Christi, TX",0.0,False
+2019,South Korea,"Corpus Christi, TX",1.106903712,False
+2020,South Korea,"Corpus Christi, TX",0.779844672,False
+2021,South Korea,"Corpus Christi, TX",1.971500566,False
+2022,South Korea,"Corpus Christi, TX",0.525786342,False
+2023,South Korea,"Corpus Christi, TX",0.438060896,False
+2024,South Korea,"Corpus Christi, TX",1.025379645,False
+2025,South Korea,"Corpus Christi, TX",0.583864099,False
+2019,South Korea,"Cove Point, MD",0.0,False
+2020,South Korea,"Cove Point, MD",0.283706019,False
+2021,South Korea,"Cove Point, MD",0.67535568,False
+2022,South Korea,"Cove Point, MD",0.29528759,False
+2023,South Korea,"Cove Point, MD",0.0,False
+2024,South Korea,"Cove Point, MD",0.293730166,False
+2025,South Korea,"Cove Point, MD",0.10477216,False
+2020,South Korea,"Elba Island, GA",0.0,False
+2021,South Korea,"Elba Island, GA",0.105111962,False
+2022,South Korea,"Elba Island, GA",0.0,False
+2023,South Korea,"Elba Island, GA",0.0,False
+2024,South Korea,"Elba Island, GA",0.0,False
+2007,South Korea,"Freeport, TX",0.0,False
+2008,South Korea,"Freeport, TX",0.0,False
+2009,South Korea,"Freeport, TX",0.077446448,False
+2010,South Korea,"Freeport, TX",0.081014365,False
+2011,South Korea,"Freeport, TX",0.176753466,False
+2012,South Korea,"Freeport, TX",0.0,False
+2013,South Korea,"Freeport, TX",0.0,False
+2014,South Korea,"Freeport, TX",0.0,False
+2015,South Korea,"Freeport, TX",0.0,False
+2017,South Korea,"Freeport, TX",0.0,False
+2018,South Korea,"Freeport, TX",0.0,False
+2019,South Korea,"Freeport, TX",0.189864144,False
+2020,South Korea,"Freeport, TX",1.463044106,False
+2021,South Korea,"Freeport, TX",2.512946099,False
+2022,South Korea,"Freeport, TX",1.013713123,False
+2023,South Korea,"Freeport, TX",2.421227984,False
+2024,South Korea,"Freeport, TX",1.76838416,False
+2025,South Korea,"Freeport, TX",1.051487734,False
+2025,South Korea,"Plaquemines, LA",0.097806227,False
+2007,South Korea,"Sabine Pass, LA",0.0,False
+2008,South Korea,"Sabine Pass, LA",0.0,False
+2009,South Korea,"Sabine Pass, LA",0.0,False
+2010,South Korea,"Sabine Pass, LA",0.253378726,False
+2011,South Korea,"Sabine Pass, LA",0.082147037,False
+2012,South Korea,"Sabine Pass, LA",0.0,False
+2013,South Korea,"Sabine Pass, LA",0.0,False
+2014,South Korea,"Sabine Pass, LA",0.0,False
+2015,South Korea,"Sabine Pass, LA",0.0,False
+2016,South Korea,"Sabine Pass, LA",0.287868589,False
+2017,South Korea,"Sabine Pass, LA",3.686422608,False
+2018,South Korea,"Sabine Pass, LA",7.142148246,False
+2019,South Korea,"Sabine Pass, LA",6.253397162,False
+2020,South Korea,"Sabine Pass, LA",5.640961411,False
+2021,South Korea,"Sabine Pass, LA",5.871063728,False
+2022,South Korea,"Sabine Pass, LA",4.761186752,False
+2023,South Korea,"Sabine Pass, LA",3.451846237,False
+2024,South Korea,"Sabine Pass, LA",3.307034122,False
+2025,South Korea,"Sabine Pass, LA",3.715758813,False
+2022,Spain,"Cameron (Calcasieu Pass), LA",0.427980115,True
+2023,Spain,"Cameron (Calcasieu Pass), LA",0.950878144,True
+2024,Spain,"Cameron (Calcasieu Pass), LA",0.269462669,True
+2025,Spain,"Cameron (Calcasieu Pass), LA",1.147821488,True
+2007,Spain,"Cameron, LA",0.0,True
+2008,Spain,"Cameron, LA",0.0,True
+2009,Spain,"Cameron, LA",0.0,True
+2010,Spain,"Cameron, LA",0.0,True
+2011,Spain,"Cameron, LA",0.082430205,True
+2012,Spain,"Cameron, LA",0.0,True
+2013,Spain,"Cameron, LA",0.0,True
+2014,Spain,"Cameron, LA",0.0,True
+2015,Spain,"Cameron, LA",0.0,True
+2019,Spain,"Cameron, LA",0.0,True
+2020,Spain,"Cameron, LA",0.697839219,True
+2021,Spain,"Cameron, LA",1.218981606,True
+2022,Spain,"Cameron, LA",1.477598941,True
+2023,Spain,"Cameron, LA",0.886117622,True
+2024,Spain,"Cameron, LA",0.654457882,True
+2025,Spain,"Cameron, LA",1.28337401,True
+2017,Spain,"Corpus Christi, TX",0.0,True
+2018,Spain,"Corpus Christi, TX",0.0,True
+2019,Spain,"Corpus Christi, TX",1.19142936,True
+2020,Spain,"Corpus Christi, TX",1.668539123,True
+2021,Spain,"Corpus Christi, TX",1.976031254,True
+2022,Spain,"Corpus Christi, TX",3.892399011,True
+2023,Spain,"Corpus Christi, TX",2.46984793,True
+2024,Spain,"Corpus Christi, TX",1.448829072,True
+2025,Spain,"Corpus Christi, TX",1.890118083,True
+2017,Spain,"Cove Point, MD",0.0,True
+2018,Spain,"Cove Point, MD",0.0,True
+2019,Spain,"Cove Point, MD",0.483622627,True
+2020,Spain,"Cove Point, MD",0.944563498,True
+2021,Spain,"Cove Point, MD",0.623507619,True
+2022,Spain,"Cove Point, MD",0.671844397,True
+2023,Spain,"Cove Point, MD",0.347532086,True
+2024,Spain,"Cove Point, MD",0.235539142,True
+2025,Spain,"Cove Point, MD",0.772453987,True
+2020,Spain,"Elba Island, GA",0.0,True
+2021,Spain,"Elba Island, GA",0.185106922,True
+2022,Spain,"Elba Island, GA",0.296108778,True
+2023,Spain,"Elba Island, GA",0.0,True
+2024,Spain,"Elba Island, GA",0.09619217,True
+2017,Spain,"Freeport, TX",0.0,True
+2018,Spain,"Freeport, TX",0.0,True
+2019,Spain,"Freeport, TX",0.256380307,True
+2020,Spain,"Freeport, TX",0.813003645,True
+2021,Spain,"Freeport, TX",0.39210273,True
+2022,Spain,"Freeport, TX",0.465783043,True
+2023,Spain,"Freeport, TX",0.523492682,True
+2024,Spain,"Freeport, TX",0.9096772,True
+2025,Spain,"Freeport, TX",1.261400173,True
+2025,Spain,"Plaquemines, LA",0.399465098,True
+2007,Spain,"Sabine Pass, LA",0.0,True
+2008,Spain,"Sabine Pass, LA",0.0,True
+2009,Spain,"Sabine Pass, LA",0.0,True
+2010,Spain,"Sabine Pass, LA",0.116580266,True
+2011,Spain,"Sabine Pass, LA",0.085148618,True
+2012,Spain,"Sabine Pass, LA",0.0,True
+2013,Spain,"Sabine Pass, LA",0.0,True
+2014,Spain,"Sabine Pass, LA",0.0,True
+2015,Spain,"Sabine Pass, LA",0.0,True
+2016,Spain,"Sabine Pass, LA",0.082968224,True
+2017,Spain,"Sabine Pass, LA",0.830503427,True
+2018,Spain,"Sabine Pass, LA",0.291946208,True
+2019,Spain,"Sabine Pass, LA",2.788525197,True
+2020,Spain,"Sabine Pass, LA",1.538451744,True
+2021,Spain,"Sabine Pass, LA",1.69413751,True
+2022,Spain,"Sabine Pass, LA",4.849846653,True
+2023,Spain,"Sabine Pass, LA",2.453622403,True
+2024,Spain,"Sabine Pass, LA",2.35162529,True
+2025,Spain,"Sabine Pass, LA",3.81081831,True
+2023,Taiwan,"Cameron (Calcasieu Pass), LA",0.0,False
+2024,Taiwan,"Cameron (Calcasieu Pass), LA",0.09619217,False
+2025,Taiwan,"Cameron (Calcasieu Pass), LA",0.103016518,False
+2017,Taiwan,"Cameron, LA",0.0,False
+2018,Taiwan,"Cameron, LA",0.0,False
+2019,Taiwan,"Cameron, LA",0.204079178,False
+2020,Taiwan,"Cameron, LA",0.093247222,False
+2021,Taiwan,"Cameron, LA",0.408243306,False
+2022,Taiwan,"Cameron, LA",0.275409197,False
+2023,Taiwan,"Cameron, LA",0.09406841,False
+2024,Taiwan,"Cameron, LA",0.281978694,False
+2025,Taiwan,"Cameron, LA",0.208071846,False
+2017,Taiwan,"Corpus Christi, TX",0.0,False
+2018,Taiwan,"Corpus Christi, TX",0.0,False
+2019,Taiwan,"Corpus Christi, TX",0.103582854,False
+2020,Taiwan,"Corpus Christi, TX",0.429735757,False
+2021,Taiwan,"Corpus Christi, TX",1.199273114,False
+2022,Taiwan,"Corpus Christi, TX",0.963167635,False
+2023,Taiwan,"Corpus Christi, TX",1.138391994,False
+2024,Taiwan,"Corpus Christi, TX",1.229685357,False
+2025,Taiwan,"Corpus Christi, TX",1.066269104,False
+2025,Taiwan,"Cove Point, MD",0.105876515,False
+2019,Taiwan,"Freeport, TX",0.0,False
+2020,Taiwan,"Freeport, TX",0.417446266,False
+2021,Taiwan,"Freeport, TX",0.311116682,False
+2022,Taiwan,"Freeport, TX",0.0,False
+2023,Taiwan,"Freeport, TX",0.0,False
+2024,Taiwan,"Freeport, TX",0.0,False
+2025,Taiwan,"Freeport, TX",0.195329286,False
+2014,Taiwan,"Kenai, AK",0.0,False
+2015,Taiwan,"Kenai, AK",0.233811818,False
+2016,Taiwan,"Kenai, AK",0.0,False
+2017,Taiwan,"Kenai, AK",0.0,False
+2018,Taiwan,"Kenai, AK",0.0,False
+2019,Taiwan,"Kenai, AK",0.0,False
+2025,Taiwan,"Plaquemines, LA",0.098457514,False
+2016,Taiwan,"Sabine Pass, LA",0.0,False
+2017,Taiwan,"Sabine Pass, LA",0.254964467,False
+2018,Taiwan,"Sabine Pass, LA",0.473768381,False
+2019,Taiwan,"Sabine Pass, LA",0.468133338,False
+2020,Taiwan,"Sabine Pass, LA",0.882124954,False
+2021,Taiwan,"Sabine Pass, LA",0.894640979,False
+2022,Taiwan,"Sabine Pass, LA",1.783930083,False
+2023,Taiwan,"Sabine Pass, LA",1.714610557,False
+2024,Taiwan,"Sabine Pass, LA",1.738113501,False
+2025,Taiwan,"Sabine Pass, LA",1.841554771,False
+2022,Thailand,"Cameron (Calcasieu Pass), LA",0.095710784,False
+2023,Thailand,"Cameron (Calcasieu Pass), LA",0.0,False
+2024,Thailand,"Cameron (Calcasieu Pass), LA",0.098712365,False
+2025,Thailand,"Cameron (Calcasieu Pass), LA",0.195017802,False
+2020,Thailand,"Cameron, LA",0.0,False
+2021,Thailand,"Cameron, LA",0.0,False
+2022,Thailand,"Cameron, LA",0.0,False
+2023,Thailand,"Cameron, LA",0.10335632,False
+2024,Thailand,"Cameron, LA",0.188533254,False
+2025,Thailand,"Cameron, LA",0.319413504,False
+2020,Thailand,"Corpus Christi, TX",0.0,False
+2021,Thailand,"Corpus Christi, TX",0.104942061,False
+2022,Thailand,"Corpus Christi, TX",0.0,False
+2023,Thailand,"Corpus Christi, TX",0.57616193,False
+2024,Thailand,"Corpus Christi, TX",0.544078995,False
+2025,Thailand,"Corpus Christi, TX",0.435059315,False
+2017,Thailand,"Cove Point, MD",0.0,False
+2018,Thailand,"Cove Point, MD",0.0,False
+2019,Thailand,"Cove Point, MD",0.096305437,False
+2020,Thailand,"Cove Point, MD",0.0,False
+2021,Thailand,"Cove Point, MD",0.0,False
+2022,Thailand,"Cove Point, MD",0.098825632,False
+2023,Thailand,"Cove Point, MD",0.10556503,False
+2024,Thailand,"Cove Point, MD",0.304773718,False
+2025,Thailand,"Cove Point, MD",0.104007606,False
+2019,Thailand,"Freeport, TX",0.0,False
+2020,Thailand,"Freeport, TX",0.320347958,False
+2021,Thailand,"Freeport, TX",0.202748288,False
+2022,Thailand,"Freeport, TX",0.100213155,False
+2023,Thailand,"Freeport, TX",0.051791427,False
+2024,Thailand,"Freeport, TX",0.241598938,False
+2025,Thailand,"Freeport, TX",0.203852643,False
+2016,Thailand,"Sabine Pass, LA",0.0,False
+2017,Thailand,"Sabine Pass, LA",0.088150198,False
+2018,Thailand,"Sabine Pass, LA",0.0,False
+2019,Thailand,"Sabine Pass, LA",0.091576531,False
+2020,Thailand,"Sabine Pass, LA",0.603402691,False
+2021,Thailand,"Sabine Pass, LA",0.104290774,False
+2022,Thailand,"Sabine Pass, LA",0.441147427,False
+2023,Thailand,"Sabine Pass, LA",0.847351923,False
+2024,Thailand,"Sabine Pass, LA",1.68414168,False
+2025,Thailand,"Sabine Pass, LA",0.631634541,False
+2022,Turkiye,"Cameron (Calcasieu Pass), LA",0.089764256,False
+2023,Turkiye,"Cameron (Calcasieu Pass), LA",0.17972673,False
+2024,Turkiye,"Cameron (Calcasieu Pass), LA",0.674959245,False
+2025,Turkiye,"Cameron (Calcasieu Pass), LA",0.768348051,False
+2017,Turkiye,"Cameron, LA",0.0,False
+2018,Turkiye,"Cameron, LA",0.0,False
+2019,Turkiye,"Cameron, LA",0.10344127,False
+2020,Turkiye,"Cameron, LA",0.287557104,False
+2021,Turkiye,"Cameron, LA",0.622658115,False
+2022,Turkiye,"Cameron, LA",0.667596877,False
+2023,Turkiye,"Cameron, LA",0.839309952,False
+2024,Turkiye,"Cameron, LA",0.960987242,False
+2025,Turkiye,"Cameron, LA",1.17443928,False
+2017,Turkiye,"Corpus Christi, TX",0.0,False
+2018,Turkiye,"Corpus Christi, TX",0.0,False
+2019,Turkiye,"Corpus Christi, TX",0.09990167,False
+2020,Turkiye,"Corpus Christi, TX",0.377066509,False
+2021,Turkiye,"Corpus Christi, TX",1.185567782,False
+2022,Turkiye,"Corpus Christi, TX",0.695205757,False
+2023,Turkiye,"Corpus Christi, TX",0.499593302,False
+2024,Turkiye,"Corpus Christi, TX",1.311096157,False
+2025,Turkiye,"Corpus Christi, TX",1.892666595,False
+2017,Turkiye,"Cove Point, MD",0.0,False
+2018,Turkiye,"Cove Point, MD",0.090217325,False
+2019,Turkiye,"Cove Point, MD",0.0,False
+2020,Turkiye,"Cove Point, MD",0.633786618,False
+2021,Turkiye,"Cove Point, MD",0.528448122,False
+2022,Turkiye,"Cove Point, MD",0.481555501,False
+2023,Turkiye,"Cove Point, MD",0.483282826,False
+2024,Turkiye,"Cove Point, MD",0.203371258,False
+2025,Turkiye,"Cove Point, MD",0.283111366,False
+2019,Turkiye,"Elba Island, GA",0.0,False
+2020,Turkiye,"Elba Island, GA",0.08424248,False
+2021,Turkiye,"Elba Island, GA",0.095286032,False
+2022,Turkiye,"Elba Island, GA",0.101628995,False
+2023,Turkiye,"Elba Island, GA",0.192327706,False
+2024,Turkiye,"Elba Island, GA",0.0,False
+2025,Turkiye,"Elba Island, GA",0.493165389,False
+2014,Turkiye,"Freeport, TX",0.0,False
+2015,Turkiye,"Freeport, TX",0.089056336,False
+2016,Turkiye,"Freeport, TX",0.0,False
+2017,Turkiye,"Freeport, TX",0.0,False
+2018,Turkiye,"Freeport, TX",0.0,False
+2019,Turkiye,"Freeport, TX",0.0,False
+2020,Turkiye,"Freeport, TX",0.489993907,False
+2021,Turkiye,"Freeport, TX",0.956626454,False
+2022,Turkiye,"Freeport, TX",0.940542512,False
+2023,Turkiye,"Freeport, TX",0.612832186,False
+2024,Turkiye,"Freeport, TX",1.119561322,False
+2025,Turkiye,"Freeport, TX",1.74227607,False
+2025,Turkiye,"Plaquemines, LA",1.401823184,False
+2015,Turkiye,"Sabine Pass, LA",0.0,False
+2016,Turkiye,"Sabine Pass, LA",0.248111802,False
+2017,Turkiye,"Sabine Pass, LA",0.703814064,False
+2018,Turkiye,"Sabine Pass, LA",0.566874019,False
+2019,Turkiye,"Sabine Pass, LA",0.663462624,False
+2020,Turkiye,"Sabine Pass, LA",1.637390643,False
+2021,Turkiye,"Sabine Pass, LA",1.958984541,False
+2022,Turkiye,"Sabine Pass, LA",2.462485562,False
+2023,Turkiye,"Sabine Pass, LA",1.621703136,False
+2024,Turkiye,"Sabine Pass, LA",1.825753997,False
+2025,Turkiye,"Sabine Pass, LA",2.520931437,False
+2019,United Arab Emirates,"Cameron, LA",0.0,False
+2020,United Arab Emirates,"Cameron, LA",0.187910285,False
+2021,United Arab Emirates,"Cameron, LA",0.0,False
+2022,United Arab Emirates,"Cameron, LA",0.0,False
+2023,United Arab Emirates,"Cameron, LA",0.0,False
+2024,United Arab Emirates,"Cameron, LA",0.0,False
+2025,United Arab Emirates,"Elba Island, GA",0.060739536,False
+2017,United Arab Emirates,"Freeport, TX",0.0,False
+2018,United Arab Emirates,"Freeport, TX",0.0,False
+2019,United Arab Emirates,"Freeport, TX",0.09415336,False
+2020,United Arab Emirates,"Freeport, TX",0.0,False
+2021,United Arab Emirates,"Freeport, TX",0.0,False
+2022,United Arab Emirates,"Freeport, TX",0.0,False
+2023,United Arab Emirates,"Freeport, TX",0.0,False
+2015,United Arab Emirates,"Sabine Pass, LA",0.0,False
+2016,United Arab Emirates,"Sabine Pass, LA",0.096022269,False
+2017,United Arab Emirates,"Sabine Pass, LA",0.379671654,False
+2018,United Arab Emirates,"Sabine Pass, LA",0.103016518,False
+2019,United Arab Emirates,"Sabine Pass, LA",0.488068365,False
+2020,United Arab Emirates,"Sabine Pass, LA",0.098372563,False
+2021,United Arab Emirates,"Sabine Pass, LA",0.0,False
+2022,United Arab Emirates,"Sabine Pass, LA",0.0,False
+2023,United Arab Emirates,"Sabine Pass, LA",0.0,False
+2024,United Arab Emirates,"Sabine Pass, LA",0.086762675,False
+2025,United Arab Emirates,"Sabine Pass, LA",0.205240166,False
+2025,United Kingdom,"Altamira, Tamaulipas",0.087640496,False
+2022,United Kingdom,"Cameron (Calcasieu Pass), LA",1.328397722,False
+2023,United Kingdom,"Cameron (Calcasieu Pass), LA",1.047608333,False
+2024,United Kingdom,"Cameron (Calcasieu Pass), LA",1.217056064,False
+2025,United Kingdom,"Cameron (Calcasieu Pass), LA",1.627677981,False
+2017,United Kingdom,"Cameron, LA",0.0,False
+2018,United Kingdom,"Cameron, LA",0.0,False
+2019,United Kingdom,"Cameron, LA",0.28891631,False
+2020,United Kingdom,"Cameron, LA",0.187910285,False
+2021,United Kingdom,"Cameron, LA",0.507776858,False
+2022,United Kingdom,"Cameron, LA",2.52594351,False
+2023,United Kingdom,"Cameron, LA",1.3308896,False
+2024,United Kingdom,"Cameron, LA",0.589470826,False
+2025,United Kingdom,"Cameron, LA",1.275728474,False
+2017,United Kingdom,"Corpus Christi, TX",0.0,False
+2018,United Kingdom,"Corpus Christi, TX",0.088971386,False
+2019,United Kingdom,"Corpus Christi, TX",0.711119798,False
+2020,United Kingdom,"Corpus Christi, TX",1.082607898,False
+2021,United Kingdom,"Corpus Christi, TX",0.690448534,False
+2022,United Kingdom,"Corpus Christi, TX",2.237338685,False
+2023,United Kingdom,"Corpus Christi, TX",2.021791203,False
+2024,United Kingdom,"Corpus Christi, TX",1.298919933,False
+2025,United Kingdom,"Corpus Christi, TX",1.226513875,False
+2017,United Kingdom,"Cove Point, MD",0.0,False
+2018,United Kingdom,"Cove Point, MD",0.17352535,False
+2019,United Kingdom,"Cove Point, MD",0.475693923,False
+2020,United Kingdom,"Cove Point, MD",0.295174323,False
+2021,United Kingdom,"Cove Point, MD",0.556934822,False
+2022,United Kingdom,"Cove Point, MD",0.777182893,False
+2023,United Kingdom,"Cove Point, MD",0.290671952,False
+2024,United Kingdom,"Cove Point, MD",0.774804282,False
+2025,United Kingdom,"Cove Point, MD",0.507267155,False
+2019,United Kingdom,"Elba Island, GA",0.0,False
+2020,United Kingdom,"Elba Island, GA",0.275352563,False
+2021,United Kingdom,"Elba Island, GA",0.090189008,False
+2022,United Kingdom,"Elba Island, GA",0.323830925,False
+2023,United Kingdom,"Elba Island, GA",0.354781187,False
+2024,United Kingdom,"Elba Island, GA",0.270397123,False
+2025,United Kingdom,"Elba Island, GA",0.170382186,False
+2007,United Kingdom,"Freeport, TX",0.0,False
+2008,United Kingdom,"Freeport, TX",0.0,False
+2009,United Kingdom,"Freeport, TX",0.0,False
+2010,United Kingdom,"Freeport, TX",0.088206832,False
+2011,United Kingdom,"Freeport, TX",0.0,False
+2012,United Kingdom,"Freeport, TX",0.0,False
+2013,United Kingdom,"Freeport, TX",0.0,False
+2014,United Kingdom,"Freeport, TX",0.0,False
+2017,United Kingdom,"Freeport, TX",0.0,False
+2018,United Kingdom,"Freeport, TX",0.0,False
+2019,United Kingdom,"Freeport, TX",0.196150474,False
+2020,United Kingdom,"Freeport, TX",0.404958557,False
+2021,United Kingdom,"Freeport, TX",1.215696858,False
+2022,United Kingdom,"Freeport, TX",0.706305942,False
+2023,United Kingdom,"Freeport, TX",1.617908685,False
+2024,United Kingdom,"Freeport, TX",0.486001238,False
+2025,United Kingdom,"Freeport, TX",0.629793949,False
+2025,United Kingdom,"Plaquemines, LA",1.720104016,False
+2007,United Kingdom,"Sabine Pass, LA",0.0,False
+2008,United Kingdom,"Sabine Pass, LA",0.0,False
+2009,United Kingdom,"Sabine Pass, LA",0.0,False
+2010,United Kingdom,"Sabine Pass, LA",0.183181379,False
+2011,United Kingdom,"Sabine Pass, LA",0.081042682,False
+2012,United Kingdom,"Sabine Pass, LA",0.0,False
+2013,United Kingdom,"Sabine Pass, LA",0.0,False
+2014,United Kingdom,"Sabine Pass, LA",0.0,False
+2015,United Kingdom,"Sabine Pass, LA",0.0,False
+2016,United Kingdom,"Sabine Pass, LA",0.0,False
+2017,United Kingdom,"Sabine Pass, LA",0.096560288,False
+2018,United Kingdom,"Sabine Pass, LA",1.190070154,False
+2019,United Kingdom,"Sabine Pass, LA",1.688219299,False
+2020,United Kingdom,"Sabine Pass, LA",2.290291101,False
+2021,United Kingdom,"Sabine Pass, LA",2.462032493,False
+2022,United Kingdom,"Sabine Pass, LA",5.253049568,False
+2023,United Kingdom,"Sabine Pass, LA",6.084006064,False
+2024,United Kingdom,"Sabine Pass, LA",2.418367987,False
+2025,United Kingdom,"Sabine Pass, LA",3.294829581,False

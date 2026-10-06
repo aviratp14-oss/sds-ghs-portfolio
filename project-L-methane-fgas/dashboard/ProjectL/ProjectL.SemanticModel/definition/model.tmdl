@@ -1,0 +1,29 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["DataFolder", "Fact_Emissions", "Fact_SubpartW_Source", "Fact_SubpartW_Facility_Production", "Dim_Facility", "Dim_Source_Category", "Fact_Trade_EU_Imports", "Dim_Regulation", "Fact_LNG_Exports_Terminal", "Fact_IEA_Methane", "Fact_IEA_Abatement", "Fact_Forecast_Methane", "Dim_Year", "Dim_Basin", "_Measures"]
+
+ref table Fact_Emissions
+ref table Fact_SubpartW_Source
+ref table Fact_SubpartW_Facility_Production
+ref table Dim_Facility
+ref table Dim_Source_Category
+ref table Fact_Trade_EU_Imports
+ref table Dim_Regulation
+ref table Fact_LNG_Exports_Terminal
+ref table Fact_IEA_Methane
+ref table Fact_IEA_Abatement
+ref table Fact_Forecast_Methane
+ref table Dim_Year
+ref table Dim_Basin
+ref table 'Non-Compliant Share'
+ref table 'Penalty Rate'
+ref table '_Measures'

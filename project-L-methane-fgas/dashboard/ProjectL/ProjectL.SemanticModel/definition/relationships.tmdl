@@ -1,0 +1,48 @@
+relationship 4fdd0ad1-201b-5ade-8d76-a8bbb196b8df
+	fromColumn: Fact_Emissions.Facility_Id
+	toColumn: Dim_Facility.Facility_Id
+
+relationship fc444847-0d01-5d2e-b995-cad2d58137fa
+	fromColumn: Fact_Emissions.Year
+	toColumn: Dim_Year.Year
+
+relationship c129ecab-c50c-52c2-8c06-a1ef12e91d61
+	fromColumn: Fact_SubpartW_Source.Facility_Id
+	toColumn: Dim_Facility.Facility_Id
+
+relationship 019abc62-5431-51de-b26d-65333c93dfa8
+	fromColumn: Fact_SubpartW_Source.Year
+	toColumn: Dim_Year.Year
+
+relationship eb9503d4-0ec2-54ce-9130-2db3dcd5cf0c
+	fromColumn: Fact_SubpartW_Source.Source_Category
+	toColumn: Dim_Source_Category.Source_Category
+
+relationship ecc625ff-f396-5a3f-b52e-2156e5da5fe4
+	fromColumn: Fact_SubpartW_Facility_Production.Facility_Id
+	toColumn: Dim_Facility.Facility_Id
+
+relationship dc6de45e-c8d0-5b7c-9126-d083f9e8e07e
+	fromColumn: Fact_SubpartW_Facility_Production.Year
+	toColumn: Dim_Year.Year
+
+relationship f00c799b-6856-598b-8911-af045905d083
+	fromColumn: Dim_Facility.Basin_Code
+	toColumn: Dim_Basin.Basin_Code
+
+relationship 181b1884-4fc9-5ae9-ac6e-ef02421cfc13
+	fromColumn: Fact_Trade_EU_Imports.Year
+	toColumn: Dim_Year.Year
+
+relationship 7b257398-87cb-5998-be12-bd5f2f578ebb
+	fromColumn: Fact_Trade_EU_Imports.Regulation
+	toColumn: Dim_Regulation.Regulation
+
+relationship 3ef7355e-4415-56d1-bf4c-43e0207dd315
+	fromColumn: Fact_LNG_Exports_Terminal.Year
+	toColumn: Dim_Year.Year
+
+relationship 1022588d-9c64-5168-a199-82c824b46946
+	fromColumn: Fact_Forecast_Methane.Year
+	toColumn: Dim_Year.Year
+

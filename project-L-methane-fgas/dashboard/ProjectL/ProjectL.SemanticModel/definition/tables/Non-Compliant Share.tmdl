@@ -1,0 +1,22 @@
+/// What-if: share of US oil and gas exports to the EU that fail the EU Methane Regulation equivalence test
+table 'Non-Compliant Share'
+	lineageTag: 5645270f-cd3b-5498-9e6b-acdfa8e476fc
+
+	measure 'Non-Compliant Share % Value' = SELECTEDVALUE('Non-Compliant Share'[Non-Compliant Share %], 50) / 100
+		formatString: 0%
+		lineageTag: 7110f868-261a-5e9f-add7-0379501f71b3
+
+	column 'Non-Compliant Share %'
+		dataType: int64
+		formatString: 0
+		lineageTag: fd222a54-4cc8-58d7-9082-d13f9b6f2973
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Non-Compliant Share' = calculated
+		mode: import
+		source = GENERATESERIES(0, 100, 1)
+
+	annotation PBI_Id = 75b32ff8e9a853d69df8f52dc33627d1

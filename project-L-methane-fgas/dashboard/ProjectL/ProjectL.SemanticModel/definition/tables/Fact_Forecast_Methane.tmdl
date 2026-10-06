@@ -1,0 +1,79 @@
+table Fact_Forecast_Methane
+	lineageTag: 9a9a516a-3b32-50af-b497-2ea075b06005
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 535a904d-feba-5392-9ec2-e274a5c5d1a3
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: 1d9dba62-2413-54f4-9fca-14f9a5fccb57
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Series
+		dataType: string
+		lineageTag: a17778c7-6a96-5102-b37c-706c6fc81df6
+		summarizeBy: none
+		sourceColumn: Series
+
+		annotation SummarizationSetBy = Automatic
+
+	column Methane_MtCO2e
+		dataType: double
+		lineageTag: 6d31b0e9-dc44-5ca7-a977-39b73fbc610d
+		summarizeBy: sum
+		sourceColumn: Methane_MtCO2e
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lower_90_MtCO2e
+		dataType: double
+		lineageTag: 3fb44ffa-aa5f-50a0-8ca4-6ea956295abb
+		summarizeBy: sum
+		sourceColumn: Lower_90_MtCO2e
+
+		annotation SummarizationSetBy = Automatic
+
+	column Upper_90_MtCO2e
+		dataType: double
+		lineageTag: bfcfb680-7c57-5f2b-8f93-360d40d36353
+		summarizeBy: sum
+		sourceColumn: Upper_90_MtCO2e
+
+		annotation SummarizationSetBy = Automatic
+
+	column Method
+		dataType: string
+		lineageTag: 94b6a730-7ded-53ee-b7ec-3d0cecdb67e2
+		summarizeBy: none
+		sourceColumn: Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column Run_Date
+		dataType: string
+		lineageTag: 46054ca6-e082-5f9d-9eb2-252e1c0306f1
+		summarizeBy: none
+		sourceColumn: Run_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Forecast_Methane = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_Forecast_Methane.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Year", Int64.Type}, {"Segment", type text}, {"Series", type text}, {"Methane_MtCO2e", type number}, {"Lower_90_MtCO2e", type number}, {"Upper_90_MtCO2e", type number}, {"Method", type text}, {"Run_Date", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

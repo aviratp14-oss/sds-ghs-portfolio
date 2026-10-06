@@ -1,0 +1,5 @@
+Region,Sector,Segment,Reason,Base_Year,Source,Notes_Short,CH4_t
+World,Agriculture,Total,All,2022-2023,IEA,"Estimates for emissions from end-uses (including for related emissions from bioenergy, other from oil and gas, other from coal) are for 2022 or 2023 (IEA, Greenhouse gas emissions from energy, 2024, h",146754060.0
+World,Energy,Total,All,2023-2025,IEA,"Estimates from end-uses (Bioenergy, Other from oil and gas, Other from coal) are for 2023 (IEA, Greenhouse gas emissions from energy, 2025, https://www.iea.org/data-and-statistics/data-product/greenho",147732590.0
+World,Other,Total,All,2022-2023,IEA,"Estimates for emissions from end-uses (including for related emissions from bioenergy, other from oil and gas, other from coal) are for 2022 or 2023 (IEA, Greenhouse gas emissions from energy, 2024, h",7785130.0
+World,Waste,Total,All,2022-2023,IEA,"Estimates for emissions from end-uses (including for related emissions from bioenergy, other from oil and gas, other from coal) are for 2022 or 2023 (IEA, Greenhouse gas emissions from energy, 2024, h",61152390.0

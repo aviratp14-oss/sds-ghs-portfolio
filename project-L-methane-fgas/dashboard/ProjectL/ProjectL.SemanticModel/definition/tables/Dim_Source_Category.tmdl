@@ -1,0 +1,38 @@
+table Dim_Source_Category
+	lineageTag: 40e903cc-d89a-5de5-991b-88311ede0346
+
+	column Source_Category
+		dataType: string
+		lineageTag: 24fc5910-432d-5138-8fdf-a56981357183
+		summarizeBy: none
+		sourceColumn: Source_Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Emission_Type
+		dataType: string
+		lineageTag: 464cc232-adf9-5722-9f8c-99c4d33a0f70
+		summarizeBy: none
+		sourceColumn: Emission_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source_Category_Citation
+		dataType: string
+		lineageTag: 79ba1be5-1a57-5088-8bc3-35809d3f405f
+		summarizeBy: none
+		sourceColumn: Source_Category_Citation
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Source_Category = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Dim_Source_Category.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Source_Category", type text}, {"Emission_Type", type text}, {"Source_Category_Citation", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

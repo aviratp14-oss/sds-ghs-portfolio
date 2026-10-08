@@ -1,0 +1,678 @@
+table _Measures
+	lineageTag: 113f9a5d-b97f-50be-a4d8-53409033e085
+
+	measure 'Revenue USD' = SUM(Fact_Sales[Net_Value_USD])
+		formatString: \$#,##0
+		displayFolder: 1. Sales
+		lineageTag: b484b928-d3ad-5c8c-9f2e-08151820b33b
+
+	measure 'Revenue M' = DIVIDE([Revenue USD], 1e6)
+		formatString: \$#,##0.0
+		displayFolder: 1. Sales
+		lineageTag: dee07b74-5e3c-5ac1-bad7-f3665ecb7844
+
+	measure 'Margin USD' = SUM(Fact_Sales[Margin_USD])
+		formatString: \$#,##0
+		displayFolder: 1. Sales
+		lineageTag: fd168e2e-f24a-56ec-bc51-4e253f0d58cd
+
+	measure 'Gross Margin %' = DIVIDE([Margin USD], [Revenue USD])
+		formatString: 0.0%
+		displayFolder: 1. Sales
+		lineageTag: 5bb57f94-60a8-5092-a0e4-fa35ba381fb2
+
+	measure 'Volume kt' = DIVIDE(SUM(Fact_Sales[Qty_kg]), 1e6)
+		formatString: #,##0.0
+		displayFolder: 1. Sales
+		lineageTag: aca2ffd5-37c8-5dbc-b3cd-9cadcaf6e676
+
+	measure 'Active Customers' = CALCULATE(DISTINCTCOUNT(Fact_Sales[Customer_Id]), Fact_Sales[Is_Return] = FALSE(), Dim_Customer[Customer_Type] = "Regular")
+		formatString: #,##0
+		displayFolder: 1. Sales
+		lineageTag: d599c5bf-dd46-58dc-b066-ff345be70414
+
+	measure 'Selected Year' =
+			IF(
+			    HASONEVALUE(Dim_Date[Year]),
+			    VALUES(Dim_Date[Year]),
+			    YEAR(CALCULATE(MAX(Fact_Sales[Order_Date]), REMOVEFILTERS()))
+			)
+		formatString: 0
+		displayFolder: 1. Sales
+		lineageTag: a441825e-5136-5b79-9e2f-a9d69c677d4b
+
+	measure 'Last Month In Year' =
+			-- last month with sales in the selected year, so a part year is compared with the same months a year earlier
+			VAR y = [Selected Year]
+			RETURN MONTH(CALCULATE(MAX(Fact_Sales[Order_Date]), REMOVEFILTERS(), Dim_Date[Year] = y))
+		formatString: 0
+		displayFolder: 1. Sales
+		lineageTag: 6e28b450-1e8b-5f0c-b33a-ea46bed9de1f
+
+	measure 'Prior Period Label' =
+			VAR y = [Selected Year]
+			VAR lm = [Last Month In Year]
+			RETURN IF(lm = 12, FORMAT(y - 1, "0"), "Jan-" & FORMAT(DATE(y - 1, lm, 1), "mmm") & " " & FORMAT(y - 1, "0"))
+		formatString: General
+		displayFolder: 1. Sales
+		lineageTag: f427161f-f4c6-51fe-bcd5-ed89dc057921
+
+	measure 'Revenue M (Year)' =
+			VAR y = [Selected Year]
+			RETURN CALCULATE([Revenue M], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y)
+		formatString: \$#,##0.0
+		displayFolder: 1. Sales
+		lineageTag: eb4cbb83-c2bf-56f9-8e6a-b4c21b188595
+
+	measure 'DOTP kg' = CALCULATE(SUM(Fact_Sales[Qty_kg]), Fact_Sales[Material_Id] = "30000101")
+		formatString: #,##0
+		displayFolder: 2. Product mix
+		lineageTag: a2013f77-e5e9-5d0f-a609-6f0ccf7c01fe
+
+	measure 'DINP kg' = CALCULATE(SUM(Fact_Sales[Qty_kg]), Fact_Sales[Material_Id] = "30000102")
+		formatString: #,##0
+		displayFolder: 2. Product mix
+		lineageTag: 49a37d71-aa89-5771-9382-c5a7471211c5
+
+	measure 'DOTP Share %' = DIVIDE([DOTP kg], [DOTP kg] + [DINP kg])
+		formatString: 0%
+		displayFolder: 2. Product mix
+		lineageTag: d702fb30-9e44-588b-be05-ba449c74f51e
+
+	measure 'DINP Share %' = DIVIDE([DINP kg], [DOTP kg] + [DINP kg])
+		formatString: 0%
+		displayFolder: 2. Product mix
+		lineageTag: be3a8263-2827-578d-b370-a92a032b755f
+
+	measure 'DOTP Margin per kg' = DIVIDE(CALCULATE(SUM(Fact_Sales[Margin_USD]), Fact_Sales[Material_Id] = "30000101"), [DOTP kg])
+		formatString: \$0.00
+		displayFolder: 2. Product mix
+		lineageTag: 5c160087-e1ba-52a5-8e19-68fd57358e69
+
+	measure 'DINP Margin per kg' = DIVIDE(CALCULATE(SUM(Fact_Sales[Margin_USD]), Fact_Sales[Material_Id] = "30000102"), [DINP kg])
+		formatString: \$0.00
+		displayFolder: 2. Product mix
+		lineageTag: 3b9eb0ee-49d3-5f76-aebe-cdb147a4cdbc
+
+	measure 'Margin Gap per kg' =
+			-- DOTP minus DINP margin per kg over all data, so the gap does not move with the filters
+			CALCULATE([DOTP Margin per kg] - [DINP Margin per kg], REMOVEFILTERS())
+		formatString: \$0.00
+		displayFolder: 2. Product mix
+		lineageTag: 534aa21a-8bda-5b5a-96e5-58ee5f315133
+
+	measure 'Switched Customers' = CALCULATE(COUNTROWS(Dim_Customer), Dim_Customer[Plasticizer_Profile] = "Switched A to B")
+		formatString: #,##0
+		displayFolder: 2. Product mix
+		lineageTag: 5141b8d9-31c3-5f1a-9830-f2cd33291838
+
+	measure 'Plasticizer Customers' = CALCULATE(COUNTROWS(Dim_Customer), Dim_Customer[Plasticizer_Profile] <> "No plasticizer" && Dim_Customer[Plasticizer_Profile] <> "" && NOT ISBLANK(Dim_Customer[Plasticizer_Profile]))
+		formatString: #,##0
+		displayFolder: 2. Product mix
+		lineageTag: 349ae34b-e82b-5c65-91d8-cbd5b0cd3af9
+
+	measure 'Margin Lost to Switching M' =
+			-- DINP bought by customers who switched, times what the same kg would have earned as DOTP
+			DIVIDE(CALCULATE([DINP kg], Dim_Customer[Plasticizer_Profile] = "Switched A to B") * [Margin Gap per kg], 1e6)
+		formatString: \$#,##0.0
+		displayFolder: 2. Product mix
+		lineageTag: b771ee59-c407-5e3e-bf5a-27bb3a440133
+
+	measure 'DINP Avg Discount %' = CALCULATE(AVERAGE(Fact_Sales[Discount_Share]), Fact_Sales[Material_Id] = "30000102", Fact_Sales[Is_Return] = FALSE())
+		formatString: 0.0%
+		displayFolder: 2. Product mix
+		lineageTag: cb046bc1-5f7d-5071-924a-045db8436a89
+
+	measure 'Spend on Own Chemicals M' = DIVIDE(SUM(Fact_Make_vs_Buy[Spend_USD]), 1e6)
+		formatString: \$#,##0.0
+		displayFolder: 3. Internal sourcing
+		lineageTag: c8cef619-caf1-5bb5-a0c5-676d3605a1d4
+
+	measure 'Avoidable Cost M' = DIVIDE(SUM(Fact_Make_vs_Buy[Avoidable_Cost_USD]), 1e6)
+		formatString: \$#,##0.00
+		displayFolder: 3. Internal sourcing
+		lineageTag: 2ecfa077-1b02-5680-98e8-f880b07d2519
+
+	measure 'Avoidable Cost M (Year)' =
+			VAR y = [Selected Year]
+			RETURN CALCULATE([Avoidable Cost M], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y)
+		formatString: \$#,##0.00"M"
+		displayFolder: 3. Internal sourcing
+		lineageTag: 5f506af9-b48a-5b41-9dc4-512c932e1d79
+
+	measure '2-EH Bought t' = CALCULATE(DIVIDE(SUM(Fact_Make_vs_Buy[Bought_kg]), 1000), REMOVEFILTERS(Map_Make_vs_Buy), Fact_Make_vs_Buy[Bought_Material_Id] = "10000209")
+		formatString: #,##0
+		displayFolder: 3. Internal sourcing
+		lineageTag: 140091e8-ece6-5b91-b1a9-8e88bd29b131
+
+	measure '2-EH Surplus Sold t' = CALCULATE(DIVIDE(SUM(Fact_Make_vs_Buy[Surplus_Sold_Spot_kg]), 1000), REMOVEFILTERS(Map_Make_vs_Buy), Fact_Make_vs_Buy[Bought_Material_Id] = "10000209")
+		formatString: #,##0
+		displayFolder: 3. Internal sourcing
+		lineageTag: b4831a76-041e-55c4-a0cf-31fbf79314ee
+
+	measure 'Duplicate Material Pairs' = CALCULATE(COUNTROWS(Map_Make_vs_Buy), REMOVEFILTERS(Map_Make_vs_Buy))
+		formatString: 0
+		displayFolder: 3. Internal sourcing
+		lineageTag: 4dd02d0a-d78a-5670-b2f8-e5c36c558e05
+
+	measure 'Spot Discount vs List %' =
+			-- price the trader paid for our 2-EH vs the list price regular customers were quoted
+			VAR TraderPrice = DIVIDE(
+			    CALCULATE(SUM(Fact_Sales[Net_Value_USD]), Fact_Sales[Customer_Id] = "1009990", Fact_Sales[Material_Id] = "30000201", Fact_Sales[Is_Return] = FALSE()),
+			    CALCULATE(SUM(Fact_Sales[Qty_kg]), Fact_Sales[Customer_Id] = "1009990", Fact_Sales[Material_Id] = "30000201", Fact_Sales[Is_Return] = FALSE()))
+			VAR ListPrice = DIVIDE(
+			    CALCULATE(SUMX(Fact_Sales, Fact_Sales[Qty_kg] * Fact_Sales[List_Price_USD_per_kg]), Fact_Sales[Customer_Id] <> "1009990", Fact_Sales[Material_Id] = "30000201", Fact_Sales[Is_Return] = FALSE()),
+			    CALCULATE(SUM(Fact_Sales[Qty_kg]), Fact_Sales[Customer_Id] <> "1009990", Fact_Sales[Material_Id] = "30000201", Fact_Sales[Is_Return] = FALSE()))
+			RETURN IF(NOT ISBLANK(TraderPrice), 1 - DIVIDE(TraderPrice, ListPrice))
+		formatString: 0%
+		displayFolder: 3. Internal sourcing
+		lineageTag: 319aa50c-bf33-553d-ad7d-4bd340dd3747
+
+	measure 'Regular Customers' = COUNTROWS(Fact_Customer_Health)
+		formatString: #,##0
+		displayFolder: 4. Customer health
+		lineageTag: 4c81c5ec-0c91-518d-bf35-d26a49f859c9
+
+	measure 'Healthy Customers' = CALCULATE(COUNTROWS(Fact_Customer_Health), Fact_Customer_Health[Status] = "Active")
+		formatString: #,##0
+		displayFolder: 4. Customer health
+		lineageTag: 95deaa86-9e75-57f3-9f8d-244a95a0fe93
+
+	measure 'At Risk Customers' = CALCULATE(COUNTROWS(Fact_Customer_Health), Fact_Customer_Health[Status] = "At risk")
+		formatString: #,##0
+		displayFolder: 4. Customer health
+		lineageTag: 76bb744d-f137-5ab2-b2b3-7eb50ee664ae
+
+	measure 'Lapsed Customers' = CALCULATE(COUNTROWS(Fact_Customer_Health), Fact_Customer_Health[Status] = "Lapsed")
+		formatString: #,##0
+		displayFolder: 4. Customer health
+		lineageTag: 0b913bee-9043-550a-89ad-8c76072bd196
+
+	measure 'Lapsed Last 12m' = CALCULATE(COUNTROWS(Fact_Customer_Health), Fact_Customer_Health[Lapsed_In_Last_12m] = TRUE())
+		formatString: #,##0
+		displayFolder: 4. Customer health
+		lineageTag: 1d450833-afbc-5b9e-8108-902e68da1692
+
+	measure 'Revenue at Risk M' = DIVIDE(SUM(Fact_Customer_Health[Revenue_at_Risk_USD]), 1e6)
+		formatString: \$#,##0.0
+		displayFolder: 4. Customer health
+		lineageTag: 12b0d3b5-df3d-5eaf-963a-2fbca9ad8d2a
+
+	measure 'Recent Lost Revenue M' = DIVIDE(CALCULATE(SUM(Fact_Customer_Health[Lost_Revenue_USD]), Fact_Customer_Health[Lapsed_In_Last_12m] = TRUE()), 1e6)
+		formatString: \$#,##0.0
+		displayFolder: 4. Customer health
+		lineageTag: e3fdcdd1-05c9-50ff-a657-19d941befbe3
+
+	measure 'At Risk or Lapsed %' = DIVIDE([At Risk Customers] + [Lapsed Customers], [Regular Customers])
+		formatString: 0%
+		displayFolder: 4. Customer health
+		lineageTag: db85b152-db11-528e-9fe8-edc41e4d75b1
+
+	measure 'Shell Bar' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1280' height='48' viewBox='0 0 1280 48' preserveAspectRatio='none'>"
+			    & "<rect width='1280' height='48' fill='%23354A5F'/>"
+			    & "<text x='18' y='30' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='16' font-weight='bold' fill='%23FFFFFF'>Gulfport Oxo Chemicals</text>"
+			    & "<text x='228' y='30' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='15' fill='%23FFFFFF'>Chemical Portfolio Analytics</text>"
+			    & "<circle cx='1247' cy='24' r='14' fill='%230A6ED1'/>"
+			    & "<text x='1247' y='29' text-anchor='middle' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='13' fill='%23FFFFFF'>AP</text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: a4680aff-fcee-5e97-ba72-dd6d5729d3c5
+		dataCategory: ImageUrl
+
+	measure 'Nav Overview' = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='672' viewBox='0 0 200 672'>" & "<rect width='200' height='672' fill='%23FFFFFF'/><line x1='199.5' y1='0' x2='199.5' y2='672' stroke='%23E5E5E5'/><rect x='0' y='10' width='199' height='44' fill='%23E5F0FA'/><rect x='0' y='10' width='3' height='44' fill='%230A6ED1'/><text x='18' y='37' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%230A6ED1'>◧</text><text x='44' y='37' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' font-weight='bold' fill='%230A6ED1'>Overview</text><text x='18' y='81' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>◑</text><text x='44' y='81' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Product mix</text><text x='18' y='125' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>⇄</text><text x='44' y='125' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Internal sourcing</text><text x='18' y='169' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>☺</text><text x='44' y='169' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Customer health</text>" & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 058d6026-ba82-5361-92c9-c96207f8c64f
+		dataCategory: ImageUrl
+
+	measure 'Nav ProductMix' = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='672' viewBox='0 0 200 672'>" & "<rect width='200' height='672' fill='%23FFFFFF'/><line x1='199.5' y1='0' x2='199.5' y2='672' stroke='%23E5E5E5'/><text x='18' y='37' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>◧</text><text x='44' y='37' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Overview</text><rect x='0' y='54' width='199' height='44' fill='%23E5F0FA'/><rect x='0' y='54' width='3' height='44' fill='%230A6ED1'/><text x='18' y='81' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%230A6ED1'>◑</text><text x='44' y='81' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' font-weight='bold' fill='%230A6ED1'>Product mix</text><text x='18' y='125' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>⇄</text><text x='44' y='125' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Internal sourcing</text><text x='18' y='169' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>☺</text><text x='44' y='169' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Customer health</text>" & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 36b31143-a1ed-5a95-9cf8-11c25b3fd3ad
+		dataCategory: ImageUrl
+
+	measure 'Nav InternalSourcing' = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='672' viewBox='0 0 200 672'>" & "<rect width='200' height='672' fill='%23FFFFFF'/><line x1='199.5' y1='0' x2='199.5' y2='672' stroke='%23E5E5E5'/><text x='18' y='37' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>◧</text><text x='44' y='37' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Overview</text><text x='18' y='81' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>◑</text><text x='44' y='81' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Product mix</text><rect x='0' y='98' width='199' height='44' fill='%23E5F0FA'/><rect x='0' y='98' width='3' height='44' fill='%230A6ED1'/><text x='18' y='125' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%230A6ED1'>⇄</text><text x='44' y='125' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' font-weight='bold' fill='%230A6ED1'>Internal sourcing</text><text x='18' y='169' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>☺</text><text x='44' y='169' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Customer health</text>" & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 2e805199-a21e-53b6-92f7-cc8c8258508d
+		dataCategory: ImageUrl
+
+	measure 'Nav CustomerHealth' = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='672' viewBox='0 0 200 672'>" & "<rect width='200' height='672' fill='%23FFFFFF'/><line x1='199.5' y1='0' x2='199.5' y2='672' stroke='%23E5E5E5'/><text x='18' y='37' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>◧</text><text x='44' y='37' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Overview</text><text x='18' y='81' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>◑</text><text x='44' y='81' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Product mix</text><text x='18' y='125' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>⇄</text><text x='44' y='125' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Internal sourcing</text><rect x='0' y='142' width='199' height='44' fill='%23E5F0FA'/><rect x='0' y='142' width='3' height='44' fill='%230A6ED1'/><text x='18' y='169' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%230A6ED1'>☺</text><text x='44' y='169' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' font-weight='bold' fill='%230A6ED1'>Customer health</text>" & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 18a45cde-6231-5f0e-9b6b-0de65c7fe0f0
+		dataCategory: ImageUrl
+
+	measure 'Title Overview' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='560' height='44' viewBox='0 0 560 44'>"
+			    & "<text x='0' y='30' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='20' fill='%2332363A'>Overview</text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: d84b82e3-230b-568e-a2eb-d351a72d2539
+		dataCategory: ImageUrl
+
+	measure 'Card Revenue' =
+			VAR y = [Selected Year]
+			VAR lm = [Last Month In Year]
+			VAR pl = [Prior Period Label]
+			VAR cur = CALCULATE([Revenue M], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y)
+			VAR prev = CALCULATE([Revenue M], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y - 1, Dim_Date[Month_No] <= lm)
+			VAR chg = DIVIDE(cur - prev, prev)
+			VAR sub = IF(ISBLANK(prev), FORMAT(y, "0"), IF(chg >= 0, "▲ +", "▼ -") & FORMAT(ABS(chg), "0%") & " vs " & pl)
+			VAR clr = IF(chg >= 0, "%230A6ED1", "%23BB0000")
+			VAR unit = "M"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "$#,##0.0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Revenue</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 40a0a25a-67e7-5368-aaed-cae9bce8eefc
+		dataCategory: ImageUrl
+
+	measure 'Card Margin' =
+			VAR y = [Selected Year]
+			VAR lm = [Last Month In Year]
+			VAR pl = [Prior Period Label]
+			VAR cur = CALCULATE([Gross Margin %], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y)
+			VAR prev = CALCULATE([Gross Margin %], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y - 1, Dim_Date[Month_No] <= lm)
+			VAR chg = (cur - prev) * 100
+			VAR sub = IF(ISBLANK(prev), FORMAT(y, "0"), IF(chg >= 0, "▲ +", "▼ -") & FORMAT(ABS(chg), "0.0") & " pts vs " & pl)
+			VAR clr = IF(chg >= 0, "%230A6ED1", "%23BB0000")
+			VAR unit = ""
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "0.0%"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Gross margin</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 0e39d57c-49b8-58c4-b2ac-b41a0f9823df
+		dataCategory: ImageUrl
+
+	measure 'Card Volume' =
+			VAR y = [Selected Year]
+			VAR lm = [Last Month In Year]
+			VAR pl = [Prior Period Label]
+			VAR cur = CALCULATE([Volume kt], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y)
+			VAR prev = CALCULATE([Volume kt], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y - 1, Dim_Date[Month_No] <= lm)
+			VAR chg = DIVIDE(cur - prev, prev)
+			VAR sub = IF(ISBLANK(prev), FORMAT(y, "0"), IF(chg >= 0, "▲ +", "▼ -") & FORMAT(ABS(chg), "0%") & " vs " & pl)
+			VAR clr = IF(chg >= 0, "%230A6ED1", "%23BB0000")
+			VAR unit = "kt"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0.0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Volume sold</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 881da296-6ad3-547a-ae51-a2b2bfa6beaf
+		dataCategory: ImageUrl
+
+	measure 'Card Customers' =
+			VAR y = [Selected Year]
+			VAR lm = [Last Month In Year]
+			VAR pl = [Prior Period Label]
+			VAR cur = CALCULATE([Active Customers], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y)
+			VAR prev = CALCULATE([Active Customers], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y - 1, Dim_Date[Month_No] <= lm)
+			VAR chg = cur - prev
+			VAR sub = IF(ISBLANK(prev), FORMAT(y, "0"), IF(chg >= 0, "▲ " & FORMAT(chg, "0") & " more than ", "▼ " & FORMAT(ABS(chg), "0") & " fewer than ") & pl)
+			VAR clr = IF(chg >= 0, "%230A6ED1", "%23BB0000")
+			VAR unit = ""
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Active customers</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: abbd626c-a92c-5ee7-98a5-e6aa64a012be
+		dataCategory: ImageUrl
+
+	measure 'Title ProductMix' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='560' height='44' viewBox='0 0 560 44'>"
+			    & "<text x='0' y='30' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='20' fill='%2332363A'>Product Mix: DOTP (A) vs DINP (B)</text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 571cbc23-185d-5c0b-a495-949680417bc3
+		dataCategory: ImageUrl
+
+	measure 'Card DOTPShare' =
+			VAR y = [Selected Year]
+			VAR cur = CALCULATE([DOTP Share %], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y)
+			VAR sub = FORMAT(y, "0") & " · was " & FORMAT(CALCULATE([DOTP Share %], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = 2022), "0%") & " in 2022"
+			VAR clr = "%23BB0000"
+			VAR unit = ""
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "0%"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>DOTP share of plasticizer kg</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 2104886e-16b7-5f5d-83c0-3062fd3cb78e
+		dataCategory: ImageUrl
+
+	measure 'Card MarginKg' =
+			VAR cur = CALCULATE([DOTP Margin per kg], REMOVEFILTERS(Dim_Date))
+			VAR sub = "At standard cost, since 2022"
+			VAR clr = "%230A6ED1"
+			VAR unit = "vs " & FORMAT(CALCULATE([DINP Margin per kg], REMOVEFILTERS(Dim_Date)), "$0.00") & " DINP"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "$0.00"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Margin per kg, DOTP</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 9fd9ce3e-9dbd-5bab-a2b5-f86dc8458226
+		dataCategory: ImageUrl
+
+	measure 'Card Switched' =
+			VAR cur = [Switched Customers]
+			VAR sub = "Of " & FORMAT([Plasticizer Customers], "0") & " plasticizer customers"
+			VAR clr = "%23BB0000"
+			VAR unit = ""
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Customers who switched A to B</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: a0b8a04a-70b0-51a0-aac7-94ccffcfc171
+		dataCategory: ImageUrl
+
+	measure 'Card MarginLost' =
+			VAR y = [Selected Year]
+			VAR cur = CALCULATE([Margin Lost to Switching M], REMOVEFILTERS(Dim_Date))
+			VAR sub = "Since 2022 · " & FORMAT(CALCULATE([Margin Lost to Switching M], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y), "$0.0") & "M in " & FORMAT(y, "0")
+			VAR clr = "%23BB0000"
+			VAR unit = "M"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "$#,##0.0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Margin lost to switching</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: a3701237-f937-5ca5-aeab-2069a52de701
+		dataCategory: ImageUrl
+
+	measure 'Title InternalSourcing' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='560' height='44' viewBox='0 0 560 44'>"
+			    & "<text x='0' y='30' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='20' fill='%2332363A'>Internal Sourcing</text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 5524a4d9-69df-5107-881a-540b90ad8f1a
+		dataCategory: ImageUrl
+
+	measure 'Card Spend' =
+			VAR y = [Selected Year]
+			VAR cur = CALCULATE([Spend on Own Chemicals M], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y)
+			VAR sub = FORMAT(y, "0") & " · 2-EH, n-butanol, PM"
+			VAR clr = "%230A6ED1"
+			VAR unit = "M"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "$#,##0.0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Spent buying chemicals we make</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: aa9b81de-54c2-577d-a85c-bf829e797110
+		dataCategory: ImageUrl
+
+	measure 'Card Avoidable' =
+			VAR y = [Selected Year]
+			VAR cur = CALCULATE([Avoidable Cost M], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y)
+			VAR sub = FORMAT(y, "0") & " · " & FORMAT(CALCULATE([Avoidable Cost M], REMOVEFILTERS(Dim_Date)), "$0.0") & "M since 2022"
+			VAR clr = "%23BB0000"
+			VAR unit = "M"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "$#,##0.0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Avoidable cost</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 6eb725e1-65c0-5e44-b166-cd8ab6bd577c
+		dataCategory: ImageUrl
+
+	measure 'Card Surplus' =
+			VAR y = [Selected Year]
+			VAR cur = CALCULATE([2-EH Surplus Sold t], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y)
+			VAR sub = FORMAT(y, "0") & " · " & FORMAT(CALCULATE([Spot Discount vs List %], REMOVEFILTERS(Dim_Date), Dim_Date[Year] = y), "0%") & " below list price"
+			VAR clr = "%23BB0000"
+			VAR unit = "t"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>2-EH surplus sold to a trader</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: cae98e80-1aaa-5ba4-9b85-2b22cb57cea8
+		dataCategory: ImageUrl
+
+	measure 'Card Duplicates' =
+			VAR cur = [Duplicate Material Pairs]
+			VAR sub = "Same CAS number, two material numbers"
+			VAR clr = "%230A6ED1"
+			VAR unit = ""
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Duplicate material records</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: dbadc354-e293-519d-8315-d6aecfe677ef
+		dataCategory: ImageUrl
+
+	measure 'Title CustomerHealth' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='560' height='44' viewBox='0 0 560 44'>"
+			    & "<text x='0' y='30' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='20' fill='%2332363A'>Customer Health</text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 5d253cf6-8249-5093-b5d6-417d918345dd
+		dataCategory: ImageUrl
+
+	measure 'Card Active' =
+			VAR cur = [Healthy Customers]
+			VAR sub = "Of " & FORMAT([Regular Customers], "0") & " regular customers, as of 30 Sep 2026"
+			VAR clr = "%230A6ED1"
+			VAR unit = ""
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Active customers</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 7a48c48b-8392-5072-8e94-fdbede6d593b
+		dataCategory: ImageUrl
+
+	measure 'Card AtRisk' =
+			VAR cur = [At Risk Customers]
+			VAR sub = FORMAT([Revenue at Risk M], "$0.0") & "M a year of revenue at risk"
+			VAR clr = "%23BB0000"
+			VAR unit = ""
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>At risk</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 4f85b530-95de-592a-aa1c-3d9fbdfda969
+		dataCategory: ImageUrl
+
+	measure 'Card Lapsed12' =
+			VAR cur = [Lapsed Last 12m]
+			VAR sub = FORMAT([Lapsed Customers], "0") & " lapsed since 2022"
+			VAR clr = "%23BB0000"
+			VAR unit = ""
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "#,##0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Lapsed in the last 12 months</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 7756604b-74fd-59dc-a173-6f701f75767e
+		dataCategory: ImageUrl
+
+	measure 'Card Lost' =
+			VAR cur = [Recent Lost Revenue M]
+			VAR sub = "Annual revenue of those " & FORMAT([Lapsed Last 12m], "0") & " customers"
+			VAR clr = "%23BB0000"
+			VAR unit = "M/yr"
+			VAR vTxt = IF(ISBLANK(cur), "–", FORMAT(cur, "$#,##0.0"))
+			VAR vOut = SUBSTITUTE(SUBSTITUTE(vTxt, "%", "%25"), "#", "%23")
+			VAR sOut = SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(sub, "&", "&amp;"), "%", "%25"), "#", "%23")
+			VAR uOut = SUBSTITUTE(SUBSTITUTE(unit, "%", "%25"), "#", "%23")
+			RETURN
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='254' height='110' viewBox='0 0 254 110'>"
+			    & "<rect x='0.5' y='0.5' width='253' height='109' rx='4' fill='%23FFFFFF' stroke='%23E5E5E5'/>"
+			    & "<text x='16' y='26' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='14' fill='%2332363A'>Revenue lost to recent lapses</text>"
+			    & "<text x='16' y='44' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='11' fill='%236A6D70'>" & sOut & "</text>"
+			    & "<text x='16' y='90' font-family=""'72', Segoe UI, Arial, sans-serif"" font-size='32' font-weight='300' fill='" & clr & "'>" & vOut & "<tspan font-size='14' fill='%236A6D70'> " & uOut & "</tspan></text>"
+			    & "</svg>"
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 0413c892-5b83-5217-b90e-5bc0e8ec2c10
+		dataCategory: ImageUrl
+
+	measure 'Color Discount' = IF([DINP Avg Discount %] > 0.06, "#BB0000", "#91C8F6")
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 423237f4-d749-50f6-adc9-43f30ab0e712
+
+	measure 'Color Pair' = IF(LEFT(SELECTEDVALUE(Map_Make_vs_Buy[Pair_Label]), 4) = "2-EH", "#BB0000", "#E9B3B3")
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: d66fb777-2ed0-5baa-b223-0a7ac9fdb371
+
+	measure 'Color Profile' =
+			SWITCH(SELECTEDVALUE(Fact_Customer_Health[Plasticizer_Profile]),
+			    "Switched A to B", "#BB0000",
+			    "Loyal to A", "#0A6ED1",
+			    "#B8C3CC")
+		formatString: General
+		displayFolder: 5. Report visuals
+		lineageTag: 9dfdbb73-b0e7-5c5e-8c41-75ad836d268a
+
+	column Placeholder
+		dataType: string
+		isHidden
+		lineageTag: a8bd5e30-eab6-5011-a60a-46d706407941
+		summarizeBy: none
+		sourceColumn: Placeholder
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '_Measures' = m
+		mode: import
+		source =
+				#table(type table [Placeholder = text], {})
+
+	annotation PBI_ResultType = Table

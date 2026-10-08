@@ -1,0 +1,119 @@
+table Dim_Customer
+	lineageTag: 38ffb402-ab20-557a-91f9-7cbdab10f85d
+
+	column Customer_Id
+		dataType: string
+		lineageTag: 27efda84-5da3-5123-8853-dd55dd1ff463
+		summarizeBy: none
+		sourceColumn: Customer_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Name
+		dataType: string
+		lineageTag: 1fae584e-dad4-5022-9b65-3486396cf04b
+		summarizeBy: none
+		sourceColumn: Customer_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country_Code
+		dataType: string
+		lineageTag: 808e592d-e668-5b46-9e12-3dbbc80d41b0
+		summarizeBy: none
+		sourceColumn: Country_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 845af263-d4c9-50a1-93c5-161a3d2e8148
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: fa16f8ee-5169-50c8-b56a-38922c987da3
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State_Region
+		dataType: string
+		lineageTag: 7b78b670-1ace-5667-8d33-d5fc1c027531
+		summarizeBy: none
+		sourceColumn: State_Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Industry
+		dataType: string
+		lineageTag: 1cce7d0c-16de-5b2f-a602-283d8fc98cb2
+		summarizeBy: none
+		sourceColumn: Industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales_Rep_Id
+		dataType: string
+		lineageTag: 25dcd1d5-ad8c-50d1-815f-b244a3394b36
+		summarizeBy: none
+		sourceColumn: Sales_Rep_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Since
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: c8d0cdc0-e96b-5251-a91d-cb418abf02e4
+		summarizeBy: none
+		sourceColumn: Customer_Since
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payment_Terms
+		dataType: string
+		lineageTag: 4e1fb9a0-6c30-5b03-8f77-4945233c773b
+		summarizeBy: none
+		sourceColumn: Payment_Terms
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Type
+		dataType: string
+		lineageTag: 21c87b9b-2d01-5f11-95ea-a0fafe5771a8
+		summarizeBy: none
+		sourceColumn: Customer_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Health_Status
+		dataType: string
+		lineageTag: 01e1f9bf-cb39-59fc-a0cc-6015e5c49b84
+		summarizeBy: none
+		sourceColumn: Health_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plasticizer_Profile
+		dataType: string
+		lineageTag: 6f626630-358f-5369-af1d-b696c625fc08
+		summarizeBy: none
+		sourceColumn: Plasticizer_Profile
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Customer = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Dim_Customer.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Customer_Id", type text}, {"Customer_Name", type text}, {"Country_Code", type text}, {"Country", type text}, {"City", type text}, {"State_Region", type text}, {"Industry", type text}, {"Sales_Rep_Id", type text}, {"Customer_Since", type date}, {"Payment_Terms", type text}, {"Customer_Type", type text}, {"Health_Status", type text}, {"Plasticizer_Profile", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

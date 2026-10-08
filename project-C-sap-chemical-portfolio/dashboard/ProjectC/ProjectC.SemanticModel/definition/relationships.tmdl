@@ -1,0 +1,80 @@
+relationship 9e0fd636-6081-559f-a2e1-a6d717c89109
+	fromColumn: Fact_Sales.Customer_Id
+	toColumn: Dim_Customer.Customer_Id
+
+relationship ac1d0bc2-a0ad-55e4-b17a-1396b802f4cb
+	fromColumn: Fact_Sales.Material_Id
+	toColumn: Dim_Material.Material_Id
+
+relationship 2d0e5954-8590-57ad-ae52-abddce2574fd
+	fromColumn: Fact_Sales.Plant
+	toColumn: Dim_Plant.Plant
+
+relationship 31324a92-50f4-5acf-b04b-1088ee57dc86
+	fromColumn: Fact_Sales.Order_Date
+	toColumn: Dim_Date.Date
+
+relationship c016dd9c-9f8a-5483-a5ea-ac64eae37e2a
+	fromColumn: Dim_Customer.Sales_Rep_Id
+	toColumn: Dim_Sales_Rep.Sales_Rep_Id
+
+relationship 609ec668-ff7d-5b70-9140-ebaaa029c43a
+	fromColumn: Fact_Purchases.Supplier_Id
+	toColumn: Dim_Supplier.Supplier_Id
+
+relationship c5701c2e-4ed5-560e-a938-b3c569970a15
+	fromColumn: Fact_Purchases.Material_Id
+	toColumn: Dim_Material.Material_Id
+
+relationship e17d31b4-e681-5e37-8a94-8ac9304cd0a8
+	fromColumn: Fact_Purchases.Plant
+	toColumn: Dim_Plant.Plant
+
+relationship f957c6fd-cb3e-5054-87d9-43bddf8ef18d
+	fromColumn: Fact_Purchases.PO_Date
+	toColumn: Dim_Date.Date
+
+relationship f01630ca-4b4b-5174-ba61-90f90678c170
+	fromColumn: Fact_Production.Material_Id
+	toColumn: Dim_Material.Material_Id
+
+relationship 2696add6-5918-54c5-858a-7ea3948a34c9
+	fromColumn: Fact_Production.Plant
+	toColumn: Dim_Plant.Plant
+
+relationship f3045058-cd36-5250-b0ad-2ab30d2932c2
+	fromColumn: Fact_Production.Start_Date
+	toColumn: Dim_Date.Date
+
+relationship f2afba0a-691d-59df-9325-87f43ed4bfc1
+	fromColumn: Fact_Stock.Material_Id
+	toColumn: Dim_Material.Material_Id
+
+relationship 26d3e038-5f79-5c7f-83d1-b293dee54780
+	fromColumn: Fact_Stock.Plant
+	toColumn: Dim_Plant.Plant
+
+relationship 9851d070-d455-5040-a51d-e921b5b73a4b
+	fromColumn: Fact_Stock.Month
+	toColumn: Dim_Date.Date
+
+relationship 19fc814e-dc51-504f-b8b1-fbf4bbeddbe0
+	fromColumn: Fact_Std_Cost.Material_Id
+	toColumn: Dim_Material.Material_Id
+
+relationship 484435fa-786f-5189-94df-d4a4b1ba4568
+	fromColumn: Fact_Make_vs_Buy.Month
+	toColumn: Dim_Date.Date
+
+relationship e867ae63-4425-5350-9541-50f02312e80f
+	fromColumn: Fact_Make_vs_Buy.Bought_Material_Id
+	toColumn: Map_Make_vs_Buy.Bought_Material_Id
+
+relationship fcc8fa2d-9f3b-5580-9649-d3f1922efaa8
+	fromColumn: Fact_Customer_Health.Customer_Id
+	toColumn: Dim_Customer.Customer_Id
+
+relationship 6f839f50-e88f-5182-a3d2-eac839cd3b67
+	fromColumn: Ref_PPI.Month
+	toColumn: Dim_Date.Date
+

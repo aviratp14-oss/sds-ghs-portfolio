@@ -6,7 +6,7 @@ At Knowde I'm a PoC Specialist in Data and Sales Operations. I build data proofs
 
 Before Knowde I did an M.Tech at IIT (ISM) Dhanbad. I spent six months at RWTH Aachen in Germany as a DAAD scholar, developing a biocoke fuel for blast furnaces and using regression and emissions accounting to compare it with conventional coke.
 
-This repo is for side projects built on public data. Each one starts with a real question, usually about what a regulation or market shift means in numbers. From there I clean the data, model it and turn it into a dashboard.
+This repo is for side projects built on public or simulated business data. Each one starts with a real question, usually about what a regulation, a market shift or a business problem means in numbers. From there I clean the data, model it and turn it into a dashboard.
 
 Each project lives in its own folder with its own README, data, scripts and dashboard.
 
@@ -15,9 +15,10 @@ Each project lives in its own folder with its own README, data, scripts and dash
 | Project | What it looks at | Tools |
 |---|---|---|
 | [Methane and F-gas emissions vs EU rules](project-L-methane-fgas/) | How much methane and F-gas US facilities report, where it is heading to 2030, and how exposed US LNG exports are to the new EU Methane Regulation | Excel, Python (pandas), Power BI, DAX |
+| [Chemical portfolio analytics on SAP data](project-C-sap-chemical-portfolio/) | A chemical maker's SAP sales, purchasing and production data: why its priority plasticizer is losing to a cheaper one, why one plant buys a chemical another plant makes, and which customers are quietly drifting away | SAP S/4HANA data model, Excel, Python (pandas), Power BI, DAX |
 
 More to come.
 
 ## Licence
 
-Code and write-ups are MIT licensed (see [LICENSE](LICENSE)). The data comes from EPA, EIA, Eurostat and the IEA, and each source keeps its own terms. Those are listed in each project's `data/README.md`.
+Code and write-ups are MIT licensed (see [LICENSE](LICENSE)). Project L uses public data from EPA, EIA, Eurostat and the IEA, and each source keeps its own terms. Project C runs on simulated SAP data that I generated myself, plus one public price index from FRED. The details are in each project's `data/README.md`.

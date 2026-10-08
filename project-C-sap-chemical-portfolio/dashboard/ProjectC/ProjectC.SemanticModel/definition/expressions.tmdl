@@ -1,0 +1,5 @@
+/// Folder holding the Project C CSV files. Keep the backslash at the end.
+expression DataFolder = "C:\ProjectC\data\clean\" meta [IsParameterQuery = true, Type = "Text", IsParameterQueryRequired = true]
+	lineageTag: 09601280-128c-5045-98fb-355249f3259a
+
+	annotation PBI_ResultType = Text

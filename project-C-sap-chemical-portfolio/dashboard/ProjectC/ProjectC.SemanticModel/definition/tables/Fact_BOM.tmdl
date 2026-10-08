@@ -1,0 +1,46 @@
+table Fact_BOM
+	lineageTag: f07953a0-b9df-5606-869a-ce337239ada2
+
+	column Parent_Material_Id
+		dataType: string
+		lineageTag: cec6ad85-df2b-5a8b-9be7-2be5bd8917b7
+		summarizeBy: none
+		sourceColumn: Parent_Material_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plant
+		dataType: string
+		lineageTag: 95c5a38e-bd7b-5630-a294-7fee8c969b87
+		summarizeBy: none
+		sourceColumn: Plant
+
+		annotation SummarizationSetBy = Automatic
+
+	column Component_Material_Id
+		dataType: string
+		lineageTag: 019bd91f-5ea1-555c-9d08-64a0da52ef1d
+		summarizeBy: none
+		sourceColumn: Component_Material_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Component_kg_per_kg
+		dataType: double
+		lineageTag: c2649751-7286-5d4f-932a-928b1b815db5
+		summarizeBy: none
+		sourceColumn: Component_kg_per_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_BOM = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_BOM.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Parent_Material_Id", type text}, {"Plant", type text}, {"Component_Material_Id", type text}, {"Component_kg_per_kg", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

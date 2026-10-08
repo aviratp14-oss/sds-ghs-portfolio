@@ -1,0 +1,82 @@
+table Dim_Date
+	lineageTag: 9a14d577-5185-58c0-83a3-2ba8689795ce
+
+	column Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 847c85bd-74e7-58ae-b67c-e4505d7c6953
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: da5f6f61-76a9-5f54-ba97-4ca772f39273
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		lineageTag: ffc8424f-9294-5c99-b4a4-7402602ae8eb
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_Start
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: af2df440-6085-5898-bd5d-3132f418eccc
+		summarizeBy: none
+		sourceColumn: Month_Start
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_Name
+		dataType: string
+		lineageTag: 7c8297f9-8f31-590b-8eec-3887a3443356
+		summarizeBy: none
+		sourceColumn: Month_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month_No
+		dataType: int64
+		formatString: 0
+		lineageTag: 8b96e993-600e-5870-9d29-3f11af16bda4
+		summarizeBy: none
+		sourceColumn: Month_No
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_Month
+		dataType: string
+		lineageTag: 7e42b713-5a31-500f-815f-ee2016dc826d
+		summarizeBy: none
+		sourceColumn: Year_Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year_Quarter
+		dataType: string
+		lineageTag: 85760e21-bd7c-51d1-aafa-ab4d9959ec54
+		summarizeBy: none
+		sourceColumn: Year_Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Date = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Dim_Date.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Date", type date}, {"Year", Int64.Type}, {"Quarter", type text}, {"Month_Start", type date}, {"Month_Name", type text}, {"Month_No", Int64.Type}, {"Year_Month", type text}, {"Year_Quarter", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

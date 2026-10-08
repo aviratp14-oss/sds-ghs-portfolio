@@ -1,0 +1,97 @@
+table Fact_Purchases
+	lineageTag: ec564d44-7446-5943-8fe2-4a014cdfc5ac
+
+	column PO_Number
+		dataType: string
+		lineageTag: 163a4f1a-d7c0-579c-997c-134f64176972
+		summarizeBy: none
+		sourceColumn: PO_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Item
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f790fe8-2543-50aa-ab6a-71e4e29b482c
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column PO_Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: f831ec5c-5542-54fb-8320-08b2e24a4183
+		summarizeBy: none
+		sourceColumn: PO_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Delivery_Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: b8e6f6fd-3d35-56c4-ac56-84d20f0b765f
+		summarizeBy: none
+		sourceColumn: Delivery_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supplier_Id
+		dataType: string
+		lineageTag: 4ffdb6b7-1ff3-502d-bdd0-45ebab2e44fd
+		summarizeBy: none
+		sourceColumn: Supplier_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material_Id
+		dataType: string
+		lineageTag: 30f02ca4-559b-57c9-815e-d885fe65fa94
+		summarizeBy: none
+		sourceColumn: Material_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plant
+		dataType: string
+		lineageTag: 372bd74e-bdb6-5fb4-bb0c-730f62cf4df9
+		summarizeBy: none
+		sourceColumn: Plant
+
+		annotation SummarizationSetBy = Automatic
+
+	column Qty_kg
+		dataType: double
+		lineageTag: 6ab86c75-b2ef-5116-a3ee-cf678478d7f4
+		summarizeBy: sum
+		sourceColumn: Qty_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Price_USD_per_kg
+		dataType: double
+		lineageTag: 3f18b295-01ff-5e76-91d6-95c565bb4bc5
+		summarizeBy: none
+		sourceColumn: Price_USD_per_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value_USD
+		dataType: double
+		lineageTag: 0df55953-31b6-5d35-bcae-f6e80cb189e1
+		summarizeBy: sum
+		sourceColumn: Value_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Purchases = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_Purchases.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"PO_Number", type text}, {"Item", Int64.Type}, {"PO_Date", type date}, {"Delivery_Date", type date}, {"Supplier_Id", type text}, {"Material_Id", type text}, {"Plant", type text}, {"Qty_kg", type number}, {"Price_USD_per_kg", type number}, {"Value_USD", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

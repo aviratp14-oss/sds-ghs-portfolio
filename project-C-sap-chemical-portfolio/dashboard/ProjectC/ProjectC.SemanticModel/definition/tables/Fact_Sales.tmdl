@@ -1,0 +1,153 @@
+table Fact_Sales
+	lineageTag: e942877f-148c-5b05-b9c3-89b996831a4d
+
+	column Sales_Doc
+		dataType: string
+		lineageTag: 18d36e92-e00c-5aed-90e4-f88581aa20d9
+		summarizeBy: none
+		sourceColumn: Sales_Doc
+
+		annotation SummarizationSetBy = Automatic
+
+	column Item
+		dataType: int64
+		formatString: 0
+		lineageTag: 76aacb23-21ac-5acf-ba97-a9d0fb5a4d10
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order_Type
+		dataType: string
+		lineageTag: a8f863ad-6b58-5b2b-9bc4-59fd2a0888c6
+		summarizeBy: none
+		sourceColumn: Order_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Is_Return
+		dataType: boolean
+		lineageTag: 80042098-6dc5-5e8f-af33-e8fd0121955f
+		summarizeBy: none
+		sourceColumn: Is_Return
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order_Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 2bb7fc2c-46ab-57a0-b6ce-6fe1a9f9534d
+		summarizeBy: none
+		sourceColumn: Order_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Billing_Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: e4018584-e7d5-5555-8d3e-f85675f38017
+		summarizeBy: none
+		sourceColumn: Billing_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Id
+		dataType: string
+		lineageTag: 6b257cee-9ec3-589f-91d4-26b6a604e9dc
+		summarizeBy: none
+		sourceColumn: Customer_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material_Id
+		dataType: string
+		lineageTag: 2452db5e-2d39-5c77-acab-35adc8d8a3d2
+		summarizeBy: none
+		sourceColumn: Material_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plant
+		dataType: string
+		lineageTag: f3b49290-f47e-5127-871d-d333533ad450
+		summarizeBy: none
+		sourceColumn: Plant
+
+		annotation SummarizationSetBy = Automatic
+
+	column Qty_kg
+		dataType: double
+		lineageTag: dcb15266-5f93-5731-8cf7-fe408b17293e
+		summarizeBy: sum
+		sourceColumn: Qty_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column List_Price_USD_per_kg
+		dataType: double
+		lineageTag: 1b7f0630-940d-5888-8c0c-0e4dfc8ab2be
+		summarizeBy: none
+		sourceColumn: List_Price_USD_per_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discount_Share
+		dataType: double
+		lineageTag: 2c2c8839-0b74-5618-8bb5-a47864820dec
+		summarizeBy: none
+		sourceColumn: Discount_Share
+
+		annotation SummarizationSetBy = Automatic
+
+	column Net_Value_USD
+		dataType: double
+		lineageTag: c7e2699c-11ec-5dcc-bf43-ddb0005a29cb
+		summarizeBy: sum
+		sourceColumn: Net_Value_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Net_Price_USD_per_kg
+		dataType: double
+		lineageTag: 3deff893-2893-58d9-aa0f-0e4c84f1747a
+		summarizeBy: none
+		sourceColumn: Net_Price_USD_per_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Std_Cost_USD_per_kg
+		dataType: double
+		lineageTag: 894cde3c-1026-514d-8661-a20420b942e7
+		summarizeBy: none
+		sourceColumn: Std_Cost_USD_per_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cost_USD
+		dataType: double
+		lineageTag: 52b781fd-6394-5213-babe-7d6211af4423
+		summarizeBy: sum
+		sourceColumn: Cost_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Margin_USD
+		dataType: double
+		lineageTag: 08c57c62-19be-585f-91ed-b8cb9f5c7314
+		summarizeBy: sum
+		sourceColumn: Margin_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Sales = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_Sales.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Sales_Doc", type text}, {"Item", Int64.Type}, {"Order_Type", type text}, {"Is_Return", type logical}, {"Order_Date", type date}, {"Billing_Date", type date}, {"Customer_Id", type text}, {"Material_Id", type text}, {"Plant", type text}, {"Qty_kg", type number}, {"List_Price_USD_per_kg", type number}, {"Discount_Share", type number}, {"Net_Value_USD", type number}, {"Net_Price_USD_per_kg", type number}, {"Std_Cost_USD_per_kg", type number}, {"Cost_USD", type number}, {"Margin_USD", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,166 @@
+table Fact_Customer_Health
+	lineageTag: c1a4176b-0aae-5900-852a-f9234be35cfe
+
+	column Customer_Id
+		dataType: string
+		lineageTag: 6b0a710b-6729-5456-8370-da3804d66ff2
+		summarizeBy: none
+		sourceColumn: Customer_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column First_Order_Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: de9a6b96-710b-5aa4-bf6e-efdf593d1b55
+		summarizeBy: none
+		sourceColumn: First_Order_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Order_Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 6203fded-3617-516f-a17a-f92143cf8088
+		summarizeBy: none
+		sourceColumn: Last_Order_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Orders
+		dataType: int64
+		formatString: 0
+		lineageTag: 83529f5b-b344-54d4-9dbb-eedf86dba8fc
+		summarizeBy: none
+		sourceColumn: Orders
+
+		annotation SummarizationSetBy = Automatic
+
+	column Median_Reorder_Gap_days
+		dataType: double
+		formatString: 0
+		lineageTag: 313f0a83-bfa5-5240-8583-8a263f10ee59
+		summarizeBy: none
+		sourceColumn: Median_Reorder_Gap_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column Recent_Reorder_Gap_days
+		dataType: double
+		formatString: 0
+		lineageTag: 2e5a861d-3a25-5323-a8aa-038208d3f9cf
+		summarizeBy: none
+		sourceColumn: Recent_Reorder_Gap_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column Days_Since_Last_Order
+		dataType: int64
+		formatString: 0
+		lineageTag: 19a62009-d00c-53f6-82c5-9f753c38fbc9
+		summarizeBy: none
+		sourceColumn: Days_Since_Last_Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Overdue_Ratio
+		dataType: double
+		lineageTag: 0eb589dc-07db-5db0-a805-ab7436307e2c
+		summarizeBy: none
+		sourceColumn: Overdue_Ratio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 77695f57-00ed-5ced-afca-ab879518f880
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Annual_Revenue_USD
+		dataType: double
+		formatString: \$#,##0
+		lineageTag: f04cbe5f-817d-56c3-a248-e1e834480ae1
+		summarizeBy: none
+		sourceColumn: Annual_Revenue_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Revenue_at_Risk_USD
+		dataType: double
+		lineageTag: 3379d063-2bc0-5947-9e0c-1350be6ee863
+		summarizeBy: none
+		sourceColumn: Revenue_at_Risk_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lapsed_In_Last_12m
+		dataType: boolean
+		lineageTag: e08cbdd5-4fd6-5984-988f-d137add977ba
+		summarizeBy: none
+		sourceColumn: Lapsed_In_Last_12m
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lost_Revenue_USD
+		dataType: double
+		lineageTag: d56504a4-09b6-5b25-86d9-a6f17a696f7f
+		summarizeBy: none
+		sourceColumn: Lost_Revenue_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plasticizer_Profile
+		dataType: string
+		lineageTag: 99e67b3c-4ed8-5b0f-aa81-6d1a35b6233d
+		summarizeBy: none
+		sourceColumn: Plasticizer_Profile
+
+		annotation SummarizationSetBy = Automatic
+
+	column B_Share_First_12m
+		dataType: double
+		lineageTag: da2466d1-1568-5985-ab23-0954760558e4
+		summarizeBy: none
+		sourceColumn: B_Share_First_12m
+
+		annotation SummarizationSetBy = Automatic
+
+	column B_Share_Last_12m
+		dataType: double
+		lineageTag: 75b40cdf-f30a-57df-882d-c962949644f5
+		summarizeBy: none
+		sourceColumn: B_Share_Last_12m
+
+		annotation SummarizationSetBy = Automatic
+
+	column Call_First
+		dataType: boolean
+		lineageTag: 7be15d1a-7f7c-5b24-bef3-b05c613e62f1
+		summarizeBy: none
+		sourceColumn: Call_First
+
+		annotation SummarizationSetBy = Automatic
+
+	column Revenue_Exposure_USD
+		dataType: double
+		formatString: \$#,##0
+		lineageTag: f73d00c7-cbcb-57ef-8d97-3a5cda48dd3c
+		summarizeBy: none
+		sourceColumn: Revenue_Exposure_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Customer_Health = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_Customer_Health.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Customer_Id", type text}, {"First_Order_Date", type date}, {"Last_Order_Date", type date}, {"Orders", Int64.Type}, {"Median_Reorder_Gap_days", type number}, {"Recent_Reorder_Gap_days", type number}, {"Days_Since_Last_Order", Int64.Type}, {"Overdue_Ratio", type number}, {"Status", type text}, {"Annual_Revenue_USD", type number}, {"Revenue_at_Risk_USD", type number}, {"Lapsed_In_Last_12m", type logical}, {"Lost_Revenue_USD", type number}, {"Plasticizer_Profile", type text}, {"B_Share_First_12m", type number}, {"B_Share_Last_12m", type number}, {"Call_First", type logical}, {"Revenue_Exposure_USD", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

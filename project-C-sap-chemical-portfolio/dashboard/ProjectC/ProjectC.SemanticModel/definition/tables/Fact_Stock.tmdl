@@ -1,0 +1,55 @@
+table Fact_Stock
+	lineageTag: 560d80ff-55b1-568e-8e07-cec24f4d13be
+
+	column Month
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 16aba87f-a977-52c2-aeb7-5f13c6c9413a
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material_Id
+		dataType: string
+		lineageTag: 14867899-3755-5309-b96e-1d64c8e06ddf
+		summarizeBy: none
+		sourceColumn: Material_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plant
+		dataType: string
+		lineageTag: e48b3cbc-ec71-5d6f-8710-7dedcc1e7f56
+		summarizeBy: none
+		sourceColumn: Plant
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stock_kg
+		dataType: double
+		lineageTag: ca2ed1c8-e851-5ebe-badb-da56915dfef9
+		summarizeBy: sum
+		sourceColumn: Stock_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stock_Value_USD
+		dataType: double
+		lineageTag: a60a5970-0e7a-5673-83a1-c19db5f8f01c
+		summarizeBy: sum
+		sourceColumn: Stock_Value_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Stock = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_Stock.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Month", type date}, {"Material_Id", type text}, {"Plant", type text}, {"Stock_kg", type number}, {"Stock_Value_USD", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,94 @@
+table Map_Make_vs_Buy
+	lineageTag: 39f12663-5cef-5f29-9832-77b9106b43c0
+
+	column CAS_No
+		dataType: string
+		lineageTag: 3d5293ad-8bdb-5c93-8e92-bc46538d939a
+		summarizeBy: none
+		sourceColumn: CAS_No
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bought_Material_Id
+		dataType: string
+		lineageTag: 4af83a09-e0a2-5a88-9f54-37240af4ee9c
+		summarizeBy: none
+		sourceColumn: Bought_Material_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bought_Material_Name
+		dataType: string
+		lineageTag: eba9472d-8b8d-5d57-ae28-a2fb22089f10
+		summarizeBy: none
+		sourceColumn: Bought_Material_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Buying_Plant
+		dataType: string
+		lineageTag: 20627960-ce6b-5d27-8380-484fa8fc4f0d
+		summarizeBy: none
+		sourceColumn: Buying_Plant
+
+		annotation SummarizationSetBy = Automatic
+
+	column Made_Material_Id
+		dataType: string
+		lineageTag: ca0b4693-9009-5462-8057-d1128c497555
+		summarizeBy: none
+		sourceColumn: Made_Material_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Made_Material_Name
+		dataType: string
+		lineageTag: 59b5e60e-95a2-5480-a22f-4bfdbe01af8c
+		summarizeBy: none
+		sourceColumn: Made_Material_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Making_Plant
+		dataType: string
+		lineageTag: 704048d7-c1ca-5a92-ae15-98c26039e22d
+		summarizeBy: none
+		sourceColumn: Making_Plant
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_Spend_USD
+		dataType: double
+		lineageTag: d5e5cc2b-49c1-5d20-ba34-028529b49b74
+		summarizeBy: sum
+		sourceColumn: Total_Spend_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_Avoidable_Cost_USD
+		dataType: double
+		lineageTag: 5e77d665-2c0c-576d-83f6-1a79bd473965
+		summarizeBy: sum
+		sourceColumn: Total_Avoidable_Cost_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pair_Label
+		dataType: string
+		lineageTag: 06f9d674-5ce6-5af0-8df5-ce03ed88f8de
+		summarizeBy: none
+		sourceColumn: Pair_Label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Map_Make_vs_Buy = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Map_Make_vs_Buy.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"CAS_No", type text}, {"Bought_Material_Id", type text}, {"Bought_Material_Name", type text}, {"Buying_Plant", type text}, {"Made_Material_Id", type text}, {"Made_Material_Name", type text}, {"Making_Plant", type text}, {"Total_Spend_USD", type number}, {"Total_Avoidable_Cost_USD", type number}, {"Pair_Label", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

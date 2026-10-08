@@ -1,6 +1,8 @@
 # Raw downloads are big and can be re-downloaded (see data/raw/README.md)
 **/data/raw/*
 !**/data/raw/README.md
+# Project C's raw files are small simulated SAP exports, so they stay in the repo
+!project-C-sap-chemical-portfolio/data/raw/*.csv
 
 # Power BI local files
 **/.pbi/localSettings.json

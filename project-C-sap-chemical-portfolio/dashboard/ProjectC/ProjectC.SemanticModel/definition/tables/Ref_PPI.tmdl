@@ -1,0 +1,31 @@
+table Ref_PPI
+	lineageTag: 95b16513-e101-53f6-b251-e4dfb8c7af49
+
+	column Month
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: fab4ba84-a145-5cf4-a8be-5b94e8e3203d
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column PPI_Basic_Organic_Chemicals_Index
+		dataType: double
+		lineageTag: 814ab04f-c049-5e00-8120-dc8786bd1d37
+		summarizeBy: none
+		sourceColumn: PPI_Basic_Organic_Chemicals_Index
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Ref_PPI = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Ref_PPI.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Month", type date}, {"PPI_Basic_Organic_Chemicals_Index", type number}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

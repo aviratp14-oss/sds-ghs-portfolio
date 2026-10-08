@@ -1,0 +1,38 @@
+table Dim_Plant
+	lineageTag: ec300a7f-7f55-5def-9020-a0fe9f0a5f40
+
+	column Plant
+		dataType: string
+		lineageTag: 7fe35677-1c5d-54fa-8d78-80c9d8009b49
+		summarizeBy: none
+		sourceColumn: Plant
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plant_Name
+		dataType: string
+		lineageTag: 223a6e10-c81f-5989-b42a-ee056fdc3bff
+		summarizeBy: none
+		sourceColumn: Plant_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plant_Role
+		dataType: string
+		lineageTag: e71de541-476a-5096-b8f2-0a0d604d7c2c
+		summarizeBy: none
+		sourceColumn: Plant_Role
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Plant = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Dim_Plant.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Plant", type text}, {"Plant_Name", type text}, {"Plant_Role", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

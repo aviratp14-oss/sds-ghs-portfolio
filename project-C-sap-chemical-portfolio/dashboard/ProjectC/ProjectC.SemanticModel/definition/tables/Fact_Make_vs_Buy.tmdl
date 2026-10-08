@@ -1,0 +1,143 @@
+table Fact_Make_vs_Buy
+	lineageTag: 39f543e5-79f2-52f1-b520-e66bf2970570
+
+	column Month
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 8f3d5bb5-af36-5a03-a4ef-aef502cfb94d
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAS_No
+		dataType: string
+		lineageTag: 06fd70f2-63df-5cc5-ba46-c997eacbea37
+		summarizeBy: none
+		sourceColumn: CAS_No
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bought_Material_Id
+		dataType: string
+		lineageTag: 2bbb168c-f662-579b-9629-df3e07db97f4
+		summarizeBy: none
+		sourceColumn: Bought_Material_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Made_Material_Id
+		dataType: string
+		lineageTag: 8cfb2112-096b-5e08-97a6-a7e9d330becc
+		summarizeBy: none
+		sourceColumn: Made_Material_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Buying_Plant
+		dataType: string
+		lineageTag: 4a74ac53-13b0-5f80-9021-fd5fe7a3cfc3
+		summarizeBy: none
+		sourceColumn: Buying_Plant
+
+		annotation SummarizationSetBy = Automatic
+
+	column Making_Plant
+		dataType: string
+		lineageTag: 3f29f0e8-c90e-54cf-a5d5-ec09b38521bf
+		summarizeBy: none
+		sourceColumn: Making_Plant
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bought_kg
+		dataType: double
+		lineageTag: 19ecff7c-487a-56d3-8a8e-79003ce1a7d9
+		summarizeBy: sum
+		sourceColumn: Bought_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Spend_USD
+		dataType: double
+		lineageTag: 96fafe5a-81b9-5905-af70-19cc470ace50
+		summarizeBy: sum
+		sourceColumn: Spend_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Buy_Price_USD_per_kg
+		dataType: double
+		lineageTag: f00a6f9b-7802-53be-a36a-71952bce4fba
+		summarizeBy: none
+		sourceColumn: Buy_Price_USD_per_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column InHouse_Cost_USD_per_kg
+		dataType: double
+		lineageTag: fa32725d-068c-588a-a1bd-b30fd9c6b9cf
+		summarizeBy: none
+		sourceColumn: InHouse_Cost_USD_per_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Own_Stock_kg
+		dataType: double
+		lineageTag: 77eafb1a-fc22-5468-967d-55280698794d
+		summarizeBy: sum
+		sourceColumn: Own_Stock_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Surplus_Sold_Spot_kg
+		dataType: double
+		lineageTag: 860025c5-e0a9-5209-9364-022878abf122
+		summarizeBy: sum
+		sourceColumn: Surplus_Sold_Spot_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Available_InHouse_kg
+		dataType: double
+		lineageTag: fac9e62f-5661-513c-b9a0-f5b0975b8e16
+		summarizeBy: sum
+		sourceColumn: Available_InHouse_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Coverable_kg
+		dataType: double
+		lineageTag: dfe62a71-61ad-5e55-81bc-71977e085e8f
+		summarizeBy: sum
+		sourceColumn: Coverable_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Avoidable_Cost_USD
+		dataType: double
+		lineageTag: e0ff19b3-53b5-584d-9d16-654f2b962331
+		summarizeBy: sum
+		sourceColumn: Avoidable_Cost_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pair_Label
+		dataType: string
+		lineageTag: 12c57717-f7fe-5300-8e1b-8f101b6c59f7
+		summarizeBy: none
+		sourceColumn: Pair_Label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Make_vs_Buy = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_Make_vs_Buy.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Month", type date}, {"CAS_No", type text}, {"Bought_Material_Id", type text}, {"Made_Material_Id", type text}, {"Buying_Plant", type text}, {"Making_Plant", type text}, {"Bought_kg", type number}, {"Spend_USD", type number}, {"Buy_Price_USD_per_kg", type number}, {"InHouse_Cost_USD_per_kg", type number}, {"Own_Stock_kg", type number}, {"Surplus_Sold_Spot_kg", type number}, {"Available_InHouse_kg", type number}, {"Coverable_kg", type number}, {"Avoidable_Cost_USD", type number}, {"Pair_Label", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

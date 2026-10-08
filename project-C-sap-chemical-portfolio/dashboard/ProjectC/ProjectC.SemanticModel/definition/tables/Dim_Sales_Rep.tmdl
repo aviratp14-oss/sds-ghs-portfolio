@@ -1,0 +1,38 @@
+table Dim_Sales_Rep
+	lineageTag: c7b437d5-36be-5de7-83c4-597097e95a74
+
+	column Sales_Rep_Id
+		dataType: string
+		lineageTag: 6bd62f93-6a22-50a8-9485-170391aa4e40
+		summarizeBy: none
+		sourceColumn: Sales_Rep_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rep_Name
+		dataType: string
+		lineageTag: be962fed-543b-5903-8dc2-6ab251009b00
+		summarizeBy: none
+		sourceColumn: Rep_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales_Region
+		dataType: string
+		lineageTag: 473dcd27-a922-5304-9274-ec79cff6bf33
+		summarizeBy: none
+		sourceColumn: Sales_Region
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Sales_Rep = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Dim_Sales_Rep.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Sales_Rep_Id", type text}, {"Rep_Name", type text}, {"Sales_Region", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

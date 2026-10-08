@@ -1,0 +1,54 @@
+table Dim_Supplier
+	lineageTag: e2570fb7-0d28-50c1-a11f-6b1cb5dd0326
+
+	column Supplier_Id
+		dataType: string
+		lineageTag: 5bd9f65f-607a-575d-904f-46cccbae7c93
+		summarizeBy: none
+		sourceColumn: Supplier_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supplier_Name
+		dataType: string
+		lineageTag: 18526dc7-736c-5c4d-9292-46873df6b0ca
+		summarizeBy: none
+		sourceColumn: Supplier_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country_Code
+		dataType: string
+		lineageTag: 7bdd47b0-388c-5452-bdd6-e9cd7c261cd3
+		summarizeBy: none
+		sourceColumn: Country_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 2471a5a7-acf7-5844-abf6-0a2980e3e710
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 2c92206b-8494-5088-a0b0-dfe11a2464c5
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Supplier = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Dim_Supplier.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Supplier_Id", type text}, {"Supplier_Name", type text}, {"Country_Code", type text}, {"City", type text}, {"Country", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

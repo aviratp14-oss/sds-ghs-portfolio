@@ -1,0 +1,80 @@
+table Fact_Production
+	lineageTag: f577f94f-3b6a-562f-8946-a4d789c2535d
+
+	column Production_Order
+		dataType: string
+		lineageTag: 58b56434-2cee-538c-9dac-2148cd31d423
+		summarizeBy: none
+		sourceColumn: Production_Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material_Id
+		dataType: string
+		lineageTag: 7033608b-6067-516a-8d8c-a600f48a8aa4
+		summarizeBy: none
+		sourceColumn: Material_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Plant
+		dataType: string
+		lineageTag: 3d86272e-ba9d-5a3e-879c-a902f56eaca5
+		summarizeBy: none
+		sourceColumn: Plant
+
+		annotation SummarizationSetBy = Automatic
+
+	column Start_Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 18c157cf-dbec-54c5-a7de-81b2a8e10a08
+		summarizeBy: none
+		sourceColumn: Start_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Finish_Date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: ea3b61e7-a865-5725-8149-b817776cad69
+		summarizeBy: none
+		sourceColumn: Finish_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Planned_Qty_kg
+		dataType: double
+		lineageTag: eb7f7e54-b26d-5afa-aaad-96b34018ae35
+		summarizeBy: sum
+		sourceColumn: Planned_Qty_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Confirmed_Qty_kg
+		dataType: double
+		lineageTag: b9228424-0a9b-5efa-bc0b-ca17b354d7c2
+		summarizeBy: sum
+		sourceColumn: Confirmed_Qty_kg
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: f1d6897c-fc8f-59df-b45b-978c018093cf
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Production = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_Production.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Production_Order", type text}, {"Material_Id", type text}, {"Plant", type text}, {"Start_Date", type date}, {"Finish_Date", type date}, {"Planned_Qty_kg", type number}, {"Confirmed_Qty_kg", type number}, {"Status", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

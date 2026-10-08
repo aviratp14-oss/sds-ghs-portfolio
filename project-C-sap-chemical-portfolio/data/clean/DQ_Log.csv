@@ -1,0 +1,25 @@
+ID,Dataset,Issue,Example,Rows_Affected,Fix
+1,01 Material master,Descriptions in mixed case,Dipropylene Glycol Methyl Ether (Dpm),3,Upper-cased all descriptions
+2,03 Classification,CAS number badly formatted,'CAS 80-62-6',1,Normalised to 80-62-6 (material 40000107)
+3,03 Classification,CAS number badly formatted,'104767',1,Normalised to 104-76-7 (material 10000209)
+4,03 Classification,CAS number badly formatted,' 71-36-3 ',1,Normalised to 71-36-3 (material 10000210)
+5,03 Classification,CAS number badly formatted,'107-98-2 (mixture)',1,Normalised to 107-98-2 (material 10000109)
+6,03 Classification,CAS number missing,"40000103, 40000111",2,"Left blank; these traded goods are not produced in-house, so they cannot affect the make-vs-buy check"
+7,03 Classification,CAS check digit,all non-blank values,44,Validated every cleaned CAS number with the CAS check-digit rule; all pass
+8,01+03 Material master,"Same chemical under two material numbers (one made, one bought)",10000209 = 30000201 (CAS 104-76-7); 10000210 = 30000202 (CAS 71-36-3); 10000109 = 30000403 (CAS 107-98-2),3,Kept both records (the duplicate is the finding); flagged in Dim_Material and listed in Map_Make_vs_Buy
+9,02/09/12 prices,"Prices stored per 1,000 kg (SAP price unit)",Standard_Price 1385.10 per 1000 KG,230,Divided by Price_Unit to get USD per kg
+10,05 Customers,Country written several ways,"BE, BR, Brazil, CA, Canada, DE, Germany, IN",105,Mapped to ISO 2-letter code + country name
+11,05 Customers,"Duplicate customer records (same name, upper case, no punctuation)",9000001 = 1000716; 9000002 = 1000653; 9000003 = 1000359; 9000004 = 1000765,4,Removed the copies (no orders were booked on them); mapping kept in Map_Customer_Duplicates
+12,05 Customers,Sales rep missing,Sales_Rep blank,3,Set to 'Unassigned'
+13,07 Suppliers,Country written several ways,"USA, U.S.A., United States",19,Mapped to ISO code + name
+14,08 Sales orders,Exact duplicate rows,same Sales_Document + Item twice,41,Dropped the copies
+15,08 Sales orders,Created_On: two date formats in one column,01.01.2022 and 2022-01-01,1151,Parsed DD.MM.YYYY and YYYY-MM-DD separately; stored as ISO yyyy-mm-dd
+16,08 Sales orders,Lines keyed in MT instead of KG,Sales_Unit = MT,659,"Converted quantity and price per unit to kg (1 MT = 1,000 kg; 1 kg = 2.20462 lb)"
+17,08 Sales orders,Lines keyed in LB instead of KG,Sales_Unit = LB,156,"Converted quantity and price per unit to kg (1 MT = 1,000 kg; 1 kg = 2.20462 lb)"
+18,08 Sales orders,Net value check after unit conversion,qty x price x (1 - discount) vs Net_Value,62,Recomputed for every line; differences above USD 1 counted here (rounding only)
+19,08 Sales orders,Returns (credit memo requests) with negative qty and value,Order_Type = RE,96,"Kept, flagged Is_Return = TRUE; volumes and revenue are net of returns"
+20,08 Sales orders,No cost or margin in the export,-,13846,"Added standard cost per kg for the order year (file 12), Cost_USD and Margin_USD"
+21,09 Purchase orders,Document_Date: two date formats in one column,01.01.2022 and 2022-01-01,408,Parsed DD.MM.YYYY and YYYY-MM-DD separately; stored as ISO yyyy-mm-dd
+22,04 BOM,"Component quantities per 1,000 kg of output",Component_Qty 680 / Base_Qty 1000,44,Converted to kg of component per kg of product
+23,11 Stock,Period stored as YYYYMM text,202201,2622,Converted to the first day of the month; added stock value at standard cost
+24,Derived: Customer health,Churn status is not stored in SAP,-,160,"Lapsed = no order for 3x the customer's usual reorder gap (min 120 days) as of 2026-09-30; At risk = more than 2x, or last 3 gaps more than 2x the usual; spot trader and returns excluded. Annual revenue = net revenue / active years; Revenue_at_Risk_USD for At risk only, Lost_Revenue_USD for Lapsed; Lapsed_In_Last_12m = last order within a year plus one usual gap"

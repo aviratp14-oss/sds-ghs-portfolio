@@ -1,0 +1,30 @@
+table Map_Customer_Duplicates
+	lineageTag: 6b685294-3eb3-5405-88d0-d3aac2c78662
+
+	column Duplicate_Customer_Id
+		dataType: string
+		lineageTag: b1dbc68c-c29e-567f-805d-58e2d7315952
+		summarizeBy: none
+		sourceColumn: Duplicate_Customer_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Master_Customer_Id
+		dataType: string
+		lineageTag: cea4563c-6f32-579b-9560-fe30efb96741
+		summarizeBy: none
+		sourceColumn: Master_Customer_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Map_Customer_Duplicates = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Map_Customer_Duplicates.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Duplicate_Customer_Id", type text}, {"Master_Customer_Id", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

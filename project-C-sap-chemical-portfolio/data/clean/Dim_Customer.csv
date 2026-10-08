@@ -1,0 +1,162 @@
+Customer_Id,Customer_Name,Country_Code,Country,City,State_Region,Industry,Sales_Rep_Id,Customer_Since,Payment_Terms,Customer_Type,Health_Status,Plasticizer_Profile
+1000100,Riverbend Cable Compounds NV,BE,Belgium,Antwerp,VAN,PVC & Vinyl,R07,2019-01-04,NT30,Regular,Active,Switched A to B
+1000107,Falcon Vinyl Products LLC,US,United States,Grand Rapids,MI,PVC & Vinyl,R04,2017-01-14,NT45,Regular,Active,Loyal to A
+1000114,Pioneer Polymer Compounders LLC,US,United States,Los Angeles,CA,PVC & Vinyl,R06,2022-04-11,NT60,Regular,Active,Switched A to B
+1000121,Nordsee PVC Compounds Ltda.,BR,Brazil,Sao Paulo,SP,PVC & Vinyl,R08,2022-07-28,NT30,Regular,Active,Loyal to B
+1000128,Lone Star Coatings LLC,US,United States,Newark,NJ,Paints & Coatings,R05,2017-05-05,NT30,Regular,Active,No plasticizer
+1000135,Frontier Bonding Solutions Corp.,US,United States,Grand Rapids,MI,Adhesives & Sealants,R04,2020-06-02,NT30,Regular,Active,No plasticizer
+1000142,Alpen Hose & Tubing LLC,US,United States,Charlotte,NC,PVC & Vinyl,R05,2018-10-04,NT30,Regular,Active,Switched A to B
+1000149,Canyon Life Sciences B.V.,NL,Netherlands,Rotterdam,ZH,Pharmaceuticals,R07,2023-10-17,NT45,Regular,Active,No plasticizer
+1000156,Andes Cable Compounds Ltda.,BR,Brazil,Sao Paulo,SP,PVC & Vinyl,R08,2015-02-08,NT45,Regular,Active,Switched A to B
+1000163,Brabant Polymer Compounders LLC,US,United States,Charlotte,NC,PVC & Vinyl,R05,2024-04-11,NT30,Regular,At risk,Loyal to B
+1000170,Atlas Specialty Chemicals Inc.,US,United States,Charlotte,NC,Chemicals,R05,2016-11-06,NT60,Regular,Active,No plasticizer
+1000177,Vanguard Bonding Solutions Corp.,US,United States,Memphis,TN,Adhesives & Sealants,R02,2014-01-25,NT60,Regular,Active,No plasticizer
+1000184,Magnolia Bonding Solutions LLC,US,United States,Houston,TX,Adhesives & Sealants,R01,2022-03-27,NT45,Regular,Active,No plasticizer
+1000191,Rio Grande Hose & Tubing Corp.,US,United States,Kansas City,MO,PVC & Vinyl,R04,2023-05-22,NT45,Regular,Active,Loyal to B
+1000198,Falcon Flooring Corp.,US,United States,Dallas,TX,PVC & Vinyl,R01,2021-05-28,NT60,Regular,Active,Switched A to B
+1000205,Tidewater Chemical Distribution Ltda.,BR,Brazil,Sao Paulo,SP,Distribution,R08,2018-01-04,NT30,Regular,Lapsed,No plasticizer
+1000212,Liberty Protective Coatings Inc.,CA,Canada,Toronto,ON,Paints & Coatings,R04,2024-04-11,NT30,Regular,Active,No plasticizer
+1000219,Redwood Printing Inks GmbH,DE,Germany,Cologne,NW,Printing Inks,R07,2020-02-29,NT30,Regular,Lapsed,No plasticizer
+1000226,Redwood Hose & Tubing GmbH,DE,Germany,Ludwigshafen,RP,PVC & Vinyl,R07,2021-08-23,NT60,Regular,Active,Loyal to A
+1000233,Andes Polymer Compounders Inc.,US,United States,Los Angeles,CA,PVC & Vinyl,R06,2016-07-12,NT60,Regular,Active,Mixed
+1000240,Highland Adhesives LLC,US,United States,Charlotte,NC,Adhesives & Sealants,R05,2020-02-01,NT60,Regular,Active,No plasticizer
+1000247,Rio Grande PVC Compounds B.V.,NL,Netherlands,Rotterdam,ZH,PVC & Vinyl,R07,2016-08-18,NT60,Regular,Lapsed,Mixed
+1000254,Brabant Flooring Corp.,US,United States,Akron,OH,PVC & Vinyl,R03,2014-12-08,NT60,Regular,Active,Mixed
+1000261,Nordsee Hose & Tubing S.A. de C.V.,MX,Mexico,Monterrey,NL,PVC & Vinyl,R08,2018-06-24,NT60,Regular,Active,Loyal to B
+1000268,Coastal Polymer Compounders GmbH,DE,Germany,Cologne,NW,PVC & Vinyl,R07,2021-04-11,NT60,Regular,Active,Loyal to B
+1000275,Evergreen Cable Compounds Inc.,CA,Canada,Toronto,ON,PVC & Vinyl,R04,2016-08-23,NT45,Regular,Lapsed,Loyal to B
+1000282,Bluewater Chemical Intermediates Ltda.,BR,Brazil,Sao Paulo,SP,Chemicals,R08,2016-08-19,NT60,Regular,At risk,No plasticizer
+1000289,Liberty Bonding Solutions LLC,US,United States,Houston,TX,Adhesives & Sealants,R01,2020-11-20,NT45,Regular,Active,No plasticizer
+1000296,Atlas Protective Coatings LLC,US,United States,Kansas City,MO,Paints & Coatings,R04,2017-10-14,NT45,Regular,Active,No plasticizer
+1000303,Ozark Protective Coatings Corp.,US,United States,Akron,OH,Paints & Coatings,R03,2017-06-01,NT60,Regular,Active,No plasticizer
+1000310,Delta Industrial Finishes LLC,US,United States,Akron,OH,Paints & Coatings,R03,2023-03-22,NT30,Regular,Active,No plasticizer
+1000317,Copperfield Solvents Supply Corp.,US,United States,Newark,NJ,Distribution,R05,2018-11-06,NT30,Regular,Active,No plasticizer
+1000324,Ironbridge Industrial Finishes S.A. de C.V.,MX,Mexico,Monterrey,NL,Paints & Coatings,R08,2022-01-18,NT30,Regular,Active,No plasticizer
+1000331,Bluewater Flooring Corp.,US,United States,Grand Rapids,MI,PVC & Vinyl,R04,2022-07-19,NT45,Regular,Active,Mixed
+1000338,Oakridge Printing Inks Inc.,US,United States,Atlanta,GA,Printing Inks,R02,2022-05-29,NT45,Regular,Active,No plasticizer
+1000345,Maple Industrial Finishes Corp.,US,United States,Grand Rapids,MI,Paints & Coatings,R04,2018-03-11,NT60,Regular,Active,No plasticizer
+1000352,Summit Pharma Solutions B.V.,NL,Netherlands,Rotterdam,ZH,Pharmaceuticals,R07,2019-11-29,NT45,Regular,Active,No plasticizer
+1000359,Cascade Solvents Supply Inc.,US,United States,Newark,NJ,Distribution,R05,2018-05-10,NT60,Regular,Active,No plasticizer
+1000366,Heartland Lubricant Additives Inc.,US,United States,Grand Rapids,MI,Chemicals,R04,2022-11-03,NT60,Regular,Active,No plasticizer
+1000373,Evergreen Protective Coatings Ltda.,BR,Brazil,Sao Paulo,SP,Paints & Coatings,R08,2021-09-01,NT45,Regular,Lapsed,No plasticizer
+1000380,Crescent Printing Inks GmbH,DE,Germany,Ludwigshafen,RP,Printing Inks,R07,2016-03-07,NT45,Regular,Active,No plasticizer
+1000387,Meridian Life Sciences GmbH,DE,Germany,Cologne,NW,Pharmaceuticals,R07,2022-04-21,NT60,Regular,Active,No plasticizer
+1000394,Granite PVC Compounds Inc.,US,United States,Cleveland,OH,PVC & Vinyl,R03,2019-08-14,NT30,Regular,Active,Mixed
+1000401,Granite Chemical Intermediates LLC,US,United States,Houston,TX,Chemicals,R01,2013-11-08,NT60,Regular,Active,No plasticizer
+1000408,Westbrook Vinyl Products LLC,US,United States,Chicago,IL,PVC & Vinyl,R04,2017-08-31,NT30,Regular,At risk,Switched A to B
+1000415,Coastal Hose & Tubing LLC,US,United States,Louisville,KY,PVC & Vinyl,R03,2023-08-20,NT30,Regular,Active,Mixed
+1000422,Coastal Tapes & Labels Corp.,US,United States,Grand Rapids,MI,Adhesives & Sealants,R04,2021-07-17,NT30,Regular,Active,No plasticizer
+1000429,Ozark Graphic Inks Corp.,US,United States,Cleveland,OH,Printing Inks,R03,2014-12-08,NT30,Regular,Active,No plasticizer
+1000436,Delta Polymer Compounders Corp.,US,United States,Baton Rouge,LA,PVC & Vinyl,R02,2016-11-25,NT60,Regular,Lapsed,Mixed
+1000443,Rhein Vinyl Products Ltd.,CA,Canada,Montreal,QC,PVC & Vinyl,R04,2019-09-06,NT30,Regular,Active,Switched A to B
+1000450,Cascade Lubricant Additives LLC,US,United States,Memphis,TN,Chemicals,R02,2021-08-27,NT30,Regular,Active,No plasticizer
+1000457,Evergreen Flooring Corp.,US,United States,Memphis,TN,PVC & Vinyl,R02,2022-08-25,NT60,Regular,Active,Mixed
+1000464,Canyon Coatings Corp.,US,United States,Akron,OH,Paints & Coatings,R03,2020-06-06,NT45,Regular,Lapsed,No plasticizer
+1000471,Sunbelt Printing Inks Corp.,US,United States,Grand Rapids,MI,Printing Inks,R04,2018-07-27,NT60,Regular,At risk,No plasticizer
+1000478,Lone Star Pharma Solutions Inc.,US,United States,Grand Rapids,MI,Pharmaceuticals,R04,2020-03-30,NT30,Regular,Lapsed,No plasticizer
+1000485,Redwood Vinyl Products Inc.,US,United States,Atlanta,GA,PVC & Vinyl,R02,2016-11-15,NT45,Regular,Active,Loyal to A
+1000492,Atlas Hose & Tubing LLC,US,United States,Grand Rapids,MI,PVC & Vinyl,R04,2014-09-23,NT45,Regular,Active,Mixed
+1000499,Keystone Lubricant Additives Corp.,US,United States,Akron,OH,Chemicals,R03,2021-06-06,NT60,Regular,Active,No plasticizer
+1000506,Evergreen Vinyl Products S.A. de C.V.,MX,Mexico,Queretaro,QRO,PVC & Vinyl,R08,2021-04-10,NT45,Regular,Active,Switched A to B
+1000513,Bluewater Hose & Tubing NV,BE,Belgium,Antwerp,VAN,PVC & Vinyl,R07,2019-01-11,NT45,Regular,Active,Loyal to A
+1000520,Riverbend Printing Inks LLC,US,United States,Cleveland,OH,Printing Inks,R03,2024-06-17,NT45,Regular,Active,No plasticizer
+1000527,Meridian Pharma Solutions B.V.,NL,Netherlands,Rotterdam,ZH,Pharmaceuticals,R07,2013-12-22,NT60,Regular,Active,No plasticizer
+1000534,Sierra Chemical Intermediates LLC,US,United States,Chicago,IL,Chemicals,R04,2021-04-16,NT30,Regular,Active,No plasticizer
+1000541,Nordsee Chemical Distribution GmbH,DE,Germany,Ludwigshafen,RP,Distribution,R07,2019-08-29,NT60,Regular,Active,No plasticizer
+1000548,Prairie Protective Coatings LLC,US,United States,Kansas City,MO,Paints & Coatings,R04,2016-05-15,NT30,Regular,Active,No plasticizer
+1000555,Riverbend Sealants LLC,US,United States,Kansas City,MO,Adhesives & Sealants,R04,2020-12-30,NT30,Regular,Lapsed,No plasticizer
+1000562,Delta Paint Works Inc.,US,United States,Dallas,TX,Paints & Coatings,R01,2022-01-20,NT30,Regular,Active,No plasticizer
+1000569,Lone Star Pharma Solutions Corp.,US,United States,Cleveland,OH,Pharmaceuticals,R03,2020-03-11,NT45,Regular,Lapsed,No plasticizer
+1000576,Sierra Chemical Distribution S.A. de C.V.,MX,Mexico,Queretaro,QRO,Distribution,R08,2013-11-08,NT30,Regular,Active,No plasticizer
+1000583,Silverline Chemical Distribution Ltda.,BR,Brazil,Sao Paulo,SP,Distribution,R08,2023-05-02,NT30,Regular,At risk,No plasticizer
+1000590,Oakridge Specialty Chemicals LLC,US,United States,Newark,NJ,Chemicals,R05,2015-12-04,NT60,Regular,Active,No plasticizer
+1000597,Delta Graphic Inks Inc.,CA,Canada,Montreal,QC,Printing Inks,R04,2022-05-12,NT45,Regular,Active,No plasticizer
+1000604,Evergreen Chemical Intermediates Inc.,US,United States,Baton Rouge,LA,Chemicals,R02,2018-04-06,NT30,Regular,Active,No plasticizer
+1000611,Evergreen Industrial Finishes LLC,US,United States,Kansas City,MO,Paints & Coatings,R04,2022-01-03,NT60,Regular,Active,No plasticizer
+1000618,Ganges Vinyl Products Inc.,US,United States,Houston,TX,PVC & Vinyl,R01,2023-11-24,NT45,Regular,Active,Loyal to B
+1000625,Sierra Cable Compounds Inc.,US,United States,Houston,TX,PVC & Vinyl,Unassigned,2017-12-11,NT60,Regular,Active,Loyal to A
+1000632,Lone Star PVC Compounds Corp.,US,United States,Louisville,KY,PVC & Vinyl,R03,2019-03-31,NT60,Regular,Active,Mixed
+1000639,Great Lakes Lubricant Additives Inc.,US,United States,Grand Rapids,MI,Chemicals,R04,2019-10-25,NT30,Regular,Active,No plasticizer
+1000646,Granite Specialty Chemicals S.A. de C.V.,MX,Mexico,Monterrey,NL,Chemicals,R08,2014-08-29,NT30,Regular,Active,No plasticizer
+1000653,Alpen Bonding Solutions Corp.,US,United States,Los Angeles,CA,Adhesives & Sealants,R06,2019-09-25,NT60,Regular,Active,No plasticizer
+1000660,Maple Polymer Compounders Pvt. Ltd.,IN,India,Mumbai,MH,PVC & Vinyl,R08,2017-11-08,NT45,Regular,Active,Switched A to B
+1000667,Heartland Flooring LLC,US,United States,Cleveland,OH,PVC & Vinyl,R03,2022-09-06,NT60,Regular,Active,Switched A to B
+1000674,Falcon Vinyl Products Corp.,US,United States,Chicago,IL,PVC & Vinyl,R04,2018-12-06,NT60,Regular,Lapsed,Loyal to B
+1000681,Alpen Specialty Chemicals Corp.,US,United States,Kansas City,MO,Chemicals,R04,2018-11-26,NT30,Regular,Active,No plasticizer
+1000688,Lone Star Tapes & Labels S.A. de C.V.,MX,Mexico,Queretaro,QRO,Adhesives & Sealants,R08,2014-03-20,NT45,Regular,Active,No plasticizer
+1000695,Rio Grande Paint Works LLC,US,United States,Baton Rouge,LA,Paints & Coatings,R02,2014-03-18,NT45,Regular,Active,No plasticizer
+1000702,Heartland Coatings S.A. de C.V.,MX,Mexico,Queretaro,QRO,Paints & Coatings,R08,2020-11-29,NT60,Regular,Active,No plasticizer
+1000709,Liberty Hose & Tubing Corp.,US,United States,Atlanta,GA,PVC & Vinyl,R02,2020-09-15,NT45,Regular,Lapsed,Switched A to B
+1000716,Brabant Life Sciences Inc.,US,United States,Atlanta,GA,Pharmaceuticals,R02,2015-10-18,NT30,Regular,Lapsed,No plasticizer
+1000723,Silverline Industrial Finishes Corp.,US,United States,Houston,TX,Paints & Coatings,R01,2022-04-02,NT45,Regular,Active,No plasticizer
+1000730,Granite Printing Inks Ltd.,CA,Canada,Toronto,ON,Printing Inks,R04,2019-01-06,NT30,Regular,Active,No plasticizer
+1000737,Lone Star Adhesives Ltd.,CA,Canada,Montreal,QC,Adhesives & Sealants,R04,2023-07-30,NT30,Regular,Active,No plasticizer
+1000744,Atlas Pharma Solutions Corp.,US,United States,Akron,OH,Pharmaceuticals,R03,2020-06-08,NT45,Regular,Active,No plasticizer
+1000751,Andes Solvents Supply S.A. de C.V.,MX,Mexico,Monterrey,NL,Distribution,R08,2014-05-31,NT30,Regular,Active,No plasticizer
+1000758,Cascade Printing Inks Ltd.,CA,Canada,Toronto,ON,Printing Inks,R04,2015-08-02,NT60,Regular,Lapsed,No plasticizer
+1000765,Westbrook PVC Compounds Corp.,US,United States,Pittsburgh,PA,PVC & Vinyl,R05,2016-06-29,NT30,Regular,Active,Switched A to B
+1000772,Silverline Sealants Inc.,US,United States,Houston,TX,Adhesives & Sealants,R01,2018-09-20,NT45,Regular,Active,No plasticizer
+1000779,Maple Polymer Compounders LLC,US,United States,Cleveland,OH,PVC & Vinyl,R03,2016-08-31,NT30,Regular,Active,Loyal to B
+1000786,Sunbelt Flooring S.A. de C.V.,MX,Mexico,Monterrey,NL,PVC & Vinyl,R08,2020-08-15,NT30,Regular,Active,Switched A to B
+1000793,Silverline Cable Compounds Ltd.,CA,Canada,Toronto,ON,PVC & Vinyl,R04,2023-11-22,NT45,Regular,Active,Loyal to A
+1000800,Atlas Protective Coatings Inc.,US,United States,Charlotte,NC,Paints & Coatings,R05,2024-02-03,NT45,Regular,Active,No plasticizer
+1000807,Brabant Paint Works GmbH,DE,Germany,Cologne,NW,Paints & Coatings,R07,2016-11-13,NT45,Regular,Active,No plasticizer
+1000814,Evergreen Chemical Intermediates S.A. de C.V.,MX,Mexico,Queretaro,QRO,Chemicals,R08,2018-05-01,NT30,Regular,Active,No plasticizer
+1000821,Brabant Chemical Intermediates Corp.,US,United States,Baton Rouge,LA,Chemicals,R02,2023-10-25,NT60,Regular,Lapsed,No plasticizer
+1000828,Granite Chemical Intermediates B.V.,NL,Netherlands,Rotterdam,ZH,Chemicals,R07,2015-08-12,NT60,Regular,Active,No plasticizer
+1000835,Frontier Sealants Corp.,US,United States,Atlanta,GA,Adhesives & Sealants,R02,2016-06-30,NT60,Regular,Active,No plasticizer
+1000842,Ironbridge Paint Works S.A. de C.V.,MX,Mexico,Queretaro,QRO,Paints & Coatings,R08,2019-08-19,NT60,Regular,Active,No plasticizer
+1000849,Bluewater Solvents Supply Ltd.,CA,Canada,Montreal,QC,Distribution,R04,2023-08-05,NT45,Regular,Active,No plasticizer
+1000856,Oakridge Cable Compounds LLC,US,United States,Pittsburgh,PA,PVC & Vinyl,R05,2016-04-19,NT60,Regular,Active,Switched A to B
+1000863,Sunbelt Flooring Corp.,US,United States,Houston,TX,PVC & Vinyl,R01,2018-07-19,NT30,Regular,Active,Loyal to A
+1000870,Ironbridge Life Sciences Inc.,CA,Canada,Montreal,QC,Pharmaceuticals,R04,2019-12-04,NT30,Regular,Active,No plasticizer
+1000877,Bayou PVC Compounds Inc.,US,United States,Grand Rapids,MI,PVC & Vinyl,R04,2014-06-16,NT45,Regular,Active,Loyal to B
+1000884,Nordsee Chemical Intermediates S.A. de C.V.,MX,Mexico,Queretaro,QRO,Chemicals,R08,2020-10-01,NT30,Regular,Active,No plasticizer
+1000891,Copperfield Paint Works LLC,US,United States,Akron,OH,Paints & Coatings,R03,2016-06-21,NT60,Regular,Active,No plasticizer
+1000898,Vanguard PVC Compounds LLC,US,United States,Newark,NJ,PVC & Vinyl,R05,2020-09-25,NT30,Regular,Active,Switched A to B
+1000905,Ozark Lubricant Additives S.A. de C.V.,MX,Mexico,Queretaro,QRO,Chemicals,R08,2021-09-04,NT30,Regular,Lapsed,No plasticizer
+1000912,Highland Pharma Solutions S.A. de C.V.,MX,Mexico,Queretaro,QRO,Pharmaceuticals,R08,2020-10-19,NT60,Regular,Lapsed,No plasticizer
+1000919,Sierra Coatings Corp.,US,United States,Atlanta,GA,Paints & Coatings,R02,2022-09-09,NT45,Regular,Active,No plasticizer
+1000926,Sierra Chemical Distribution Corp.,US,United States,Memphis,TN,Distribution,R02,2023-09-13,NT45,Regular,At risk,No plasticizer
+1000933,Riverbend Bonding Solutions Corp.,US,United States,Memphis,TN,Adhesives & Sealants,Unassigned,2014-10-23,NT60,Regular,Active,No plasticizer
+1000940,Maple Industrial Finishes LLC,US,United States,Cleveland,OH,Paints & Coatings,R03,2023-03-29,NT45,Regular,Active,No plasticizer
+1000947,Delta Vinyl Products B.V.,NL,Netherlands,Rotterdam,ZH,PVC & Vinyl,R07,2024-06-08,NT60,Regular,Active,Loyal to B
+1000954,Rio Grande Pharma Solutions B.V.,NL,Netherlands,Rotterdam,ZH,Pharmaceuticals,R07,2013-11-20,NT45,Regular,Active,No plasticizer
+1000961,Frontier Polymer Compounders LLC,US,United States,Los Angeles,CA,PVC & Vinyl,R06,2023-10-03,NT60,Regular,At risk,Switched A to B
+1000968,Ganges Life Sciences Inc.,US,United States,Cleveland,OH,Pharmaceuticals,R03,2024-03-28,NT30,Regular,Active,No plasticizer
+1000975,Magnolia Lubricant Additives LLC,US,United States,Memphis,TN,Chemicals,R02,2016-08-12,NT45,Regular,Active,No plasticizer
+1000982,Vanguard Sealants Corp.,US,United States,Atlanta,GA,Adhesives & Sealants,R02,2019-11-02,NT60,Regular,Active,No plasticizer
+1000989,Tidewater Vinyl Products LLC,US,United States,Atlanta,GA,PVC & Vinyl,R02,2021-12-14,NT60,Regular,Active,Switched A to B
+1000996,Pioneer Life Sciences Inc.,US,United States,Houston,TX,Pharmaceuticals,R01,2018-09-30,NT45,Regular,Active,No plasticizer
+1001003,Cascade Lubricant Additives Inc.,US,United States,Cleveland,OH,Chemicals,R03,2017-03-21,NT60,Regular,Active,No plasticizer
+1001010,Meridian Hose & Tubing Inc.,US,United States,Kansas City,MO,PVC & Vinyl,R04,2023-05-30,NT60,Regular,Active,Loyal to B
+1001017,Silverline Sealants B.V.,NL,Netherlands,Rotterdam,ZH,Adhesives & Sealants,R07,2016-10-17,NT60,Regular,Lapsed,No plasticizer
+1001024,Atlas Adhesives LLC,US,United States,Baton Rouge,LA,Adhesives & Sealants,R02,2021-01-19,NT45,Regular,Active,No plasticizer
+1001031,Aurora Industrial Finishes LLC,US,United States,Pittsburgh,PA,Paints & Coatings,R05,2023-09-19,NT60,Regular,Active,No plasticizer
+1001038,Brabant Vinyl Products LLC,US,United States,Atlanta,GA,PVC & Vinyl,R02,2023-10-06,NT30,Regular,Active,Loyal to A
+1001045,Heartland Tapes & Labels S.A. de C.V.,MX,Mexico,Monterrey,NL,Adhesives & Sealants,R08,2019-03-14,NT30,Regular,Active,No plasticizer
+1001052,Bluewater Hose & Tubing GmbH,DE,Germany,Cologne,NW,PVC & Vinyl,R07,2018-11-22,NT60,Regular,Lapsed,Loyal to A
+1001059,Heartland Hose & Tubing Inc.,US,United States,Houston,TX,PVC & Vinyl,R01,2018-05-30,NT60,Regular,Active,Mixed
+1001066,Brabant Solvents Supply Corp.,US,United States,Kansas City,MO,Distribution,R04,2016-01-11,NT30,Regular,Active,No plasticizer
+1001073,Sierra Polymer Compounders B.V.,NL,Netherlands,Rotterdam,ZH,PVC & Vinyl,R07,2015-03-12,NT45,Regular,At risk,Switched A to B
+1001080,Vanguard Chemical Intermediates S.A. de C.V.,MX,Mexico,Monterrey,NL,Chemicals,R08,2020-05-16,NT30,Regular,Active,No plasticizer
+1001087,Westbrook Specialty Chemicals LLC,US,United States,Los Angeles,CA,Chemicals,R06,2020-11-03,NT45,Regular,Active,No plasticizer
+1001094,Summit Industrial Finishes Inc.,US,United States,Grand Rapids,MI,Paints & Coatings,R04,2020-04-21,NT30,Regular,Active,No plasticizer
+1001101,Tidewater Coatings Corp.,US,United States,Kansas City,MO,Paints & Coatings,R04,2017-04-18,NT45,Regular,Active,No plasticizer
+1001108,Pioneer Paint Works LLC,US,United States,Los Angeles,CA,Paints & Coatings,R06,2018-05-21,NT60,Regular,Active,No plasticizer
+1001115,Delta Bonding Solutions S.A. de C.V.,MX,Mexico,Monterrey,NL,Adhesives & Sealants,Unassigned,2020-07-05,NT30,Regular,Active,No plasticizer
+1001122,Nordsee Protective Coatings LLC,US,United States,Baton Rouge,LA,Paints & Coatings,R02,2013-12-23,NT45,Regular,Active,No plasticizer
+1001129,Bayou Bonding Solutions LLC,US,United States,Cleveland,OH,Adhesives & Sealants,R03,2020-04-27,NT30,Regular,Active,No plasticizer
+1001136,Evergreen PVC Compounds Corp.,US,United States,Grand Rapids,MI,PVC & Vinyl,R04,2022-12-22,NT30,Regular,Active,Loyal to B
+1001143,Copperfield Adhesives Inc.,CA,Canada,Montreal,QC,Adhesives & Sealants,R04,2013-10-27,NT30,Regular,Active,No plasticizer
+1001150,Redwood Tapes & Labels B.V.,NL,Netherlands,Rotterdam,ZH,Adhesives & Sealants,R07,2017-11-10,NT30,Regular,Active,No plasticizer
+1001157,Magnolia Coatings Inc.,US,United States,Newark,NJ,Paints & Coatings,R05,2017-02-03,NT30,Regular,Active,No plasticizer
+1001164,Rhein Cable Compounds Corp.,US,United States,Pittsburgh,PA,PVC & Vinyl,R05,2020-12-25,NT30,Regular,Lapsed,Mixed
+1001171,Vanguard Vinyl Products Inc.,CA,Canada,Montreal,QC,PVC & Vinyl,R04,2014-09-26,NT45,Regular,Active,Switched A to B
+1001178,Delta Cable Compounds Corp.,US,United States,Memphis,TN,PVC & Vinyl,R02,2018-01-13,NT60,Regular,Lapsed,Switched A to B
+1001185,Redwood PVC Compounds LLC,US,United States,Akron,OH,PVC & Vinyl,R03,2016-03-24,NT45,Regular,Active,Switched A to B
+1001192,Harbor Lubricant Additives Corp.,US,United States,Cleveland,OH,Chemicals,R03,2021-06-29,NT60,Regular,Lapsed,No plasticizer
+1001199,Silverline Lubricant Additives NV,BE,Belgium,Antwerp,VAN,Chemicals,R07,2019-05-05,NT45,Regular,Lapsed,No plasticizer
+1001206,Evergreen Specialty Chemicals LLC,US,United States,Memphis,TN,Chemicals,R02,2018-05-08,NT60,Regular,Lapsed,No plasticizer
+1001213,Northgate Chemical Distribution Inc.,US,United States,Chicago,IL,Distribution,R04,2016-04-10,NT45,Regular,Active,No plasticizer
+1009990,Gulf Coast Spot Trading LLC,US,United States,Houston,TX,Distribution,R01,2023-04-17,NT45,Spot trader,,

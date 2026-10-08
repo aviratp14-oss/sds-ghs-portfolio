@@ -1,0 +1,135 @@
+table Dim_Material
+	lineageTag: a2a58228-a52d-5785-b5c7-7d99708a2e46
+
+	column Material_Id
+		dataType: string
+		lineageTag: d9a7c381-fa76-5894-ae62-9102a3c8c6d8
+		summarizeBy: none
+		sourceColumn: Material_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material_Name
+		dataType: string
+		lineageTag: bd829759-9042-5a4b-9ebb-6a0281c53b70
+		summarizeBy: none
+		sourceColumn: Material_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material_Type
+		dataType: string
+		lineageTag: 41efba48-ffa5-5228-b6a3-e7b94f2bc236
+		summarizeBy: none
+		sourceColumn: Material_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material_Type_Name
+		dataType: string
+		lineageTag: ee5b3258-6a1c-59e7-b082-13e9637be26b
+		summarizeBy: none
+		sourceColumn: Material_Type_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Material_Group
+		dataType: string
+		lineageTag: 1b3f1d5e-6922-57da-9f75-c3ee58e9f980
+		summarizeBy: none
+		sourceColumn: Material_Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Home_Plant
+		dataType: string
+		lineageTag: 6881c975-50db-5a6d-bb22-923e7d6e39df
+		summarizeBy: none
+		sourceColumn: Home_Plant
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAS_No
+		dataType: string
+		lineageTag: 121841b6-4e78-5d7b-a4aa-93ed2f240d33
+		summarizeBy: none
+		sourceColumn: CAS_No
+
+		annotation SummarizationSetBy = Automatic
+
+	column CAS_Raw
+		dataType: string
+		lineageTag: 66cffb5e-0dac-56d4-91b7-b0f292e145e6
+		summarizeBy: none
+		sourceColumn: CAS_Raw
+
+		annotation SummarizationSetBy = Automatic
+
+	column GHS_Signal_Word
+		dataType: string
+		lineageTag: 713b44d8-111f-526c-b432-99637f195537
+		summarizeBy: none
+		sourceColumn: GHS_Signal_Word
+
+		annotation SummarizationSetBy = Automatic
+
+	column Scenario_Role
+		dataType: string
+		lineageTag: d81d9591-7a8b-59f2-b9bf-2c952320ea47
+		summarizeBy: none
+		sourceColumn: Scenario_Role
+
+		annotation SummarizationSetBy = Automatic
+
+	column Created_On
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 7878167b-b67d-5ed4-9d2e-5650c05467f7
+		summarizeBy: none
+		sourceColumn: Created_On
+
+		annotation SummarizationSetBy = Automatic
+
+	column Created_By
+		dataType: string
+		lineageTag: 8d9dc69b-bd58-5419-9efd-6c9a0c29cf18
+		summarizeBy: none
+		sourceColumn: Created_By
+
+		annotation SummarizationSetBy = Automatic
+
+	column Short_Name
+		dataType: string
+		lineageTag: 86820756-a42a-55d2-b43a-cd5c7cb7c244
+		summarizeBy: none
+		sourceColumn: Short_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Group
+		dataType: string
+		lineageTag: c49556a1-ff09-5e75-9bd4-e9a2006a38ce
+		summarizeBy: none
+		sourceColumn: Product_Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Same_CAS_As
+		dataType: string
+		lineageTag: fa8e2310-5950-55fb-8e45-9bfd1881cc53
+		summarizeBy: none
+		sourceColumn: Same_CAS_As
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Material = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Dim_Material.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Material_Id", type text}, {"Material_Name", type text}, {"Material_Type", type text}, {"Material_Type_Name", type text}, {"Material_Group", type text}, {"Home_Plant", type text}, {"CAS_No", type text}, {"CAS_Raw", type text}, {"GHS_Signal_Word", type text}, {"Scenario_Role", type text}, {"Created_On", type date}, {"Created_By", type text}, {"Short_Name", type text}, {"Product_Group", type text}, {"Same_CAS_As", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

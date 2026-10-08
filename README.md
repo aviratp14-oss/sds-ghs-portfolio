@@ -4,7 +4,7 @@ Hi, I'm Avirat Puranik. I'm a data analyst who works where chemicals, energy and
 
 At Knowde I'm a PoC Specialist in Data and Sales Operations. I build data proofs of concept for enterprise customers. Day to day that means pulling messy ERP and supplier data (material masters, vendor records, order-to-cash) into one governed master data model, writing the mapping rules that keep it consistent, and building SQL, Python and Power BI tooling to check it. One example is an automated audit covering 20,000+ data points, which cut manual review time in half. I also handle the regulatory side of product data: SDS normalisation, GHS hazard classification, and inventory status under REACH, TSCA and DSL.
 
-Before Knowde I did an M.Tech at IIT (ISM) Dhanbad. I spent six months at RWTH Aachen in Germany as a DAAD scholar, developing a biocoke fuel for blast furnaces and using regression and emissions accounting to compare it with conventional coke.
+Before Knowde I did an M.Tech at IIT (ISM) Dhanbad. I spent seven months at RWTH Aachen in Germany as a DAAD scholar, developing a biocoke fuel for blast furnaces and using regression and emissions accounting to compare it with conventional coke.
 
 This repo is for side projects built on public or simulated business data. Each one starts with a real question, usually about what a regulation, a market shift or a business problem means in numbers. From there I clean the data, model it and turn it into a dashboard.
 

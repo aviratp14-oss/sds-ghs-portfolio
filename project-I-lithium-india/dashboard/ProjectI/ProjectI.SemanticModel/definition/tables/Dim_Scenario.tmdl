@@ -1,0 +1,41 @@
+table Dim_Scenario
+	lineageTag: c46fab73-1a7c-5044-a065-ed279fc60ffe
+
+	column Scenario
+		dataType: string
+		lineageTag: dd85ef17-e918-5c43-8d31-8b08cc7aef38
+		summarizeBy: none
+		sourceColumn: Scenario
+		sortByColumn: Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort
+		dataType: int64
+		formatString: 0
+		lineageTag: 56e97d8d-2e3f-52bd-a2a9-e9d4d3474675
+		summarizeBy: none
+		sourceColumn: Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 130b9f27-387b-5c48-8c42-c6c96d0523d8
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Scenario = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Dim_Scenario.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Scenario", type text}, {"Sort", Int64.Type}, {"Description", type text}}, "en-US"),
+				    Result = Typed
+				in
+				    Result
+
+	annotation PBI_ResultType = Table

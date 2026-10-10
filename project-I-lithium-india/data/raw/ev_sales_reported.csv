@@ -1,0 +1,51 @@
+Source_ID,Period_As_Reported,Segment_As_Reported,Value_As_Reported,Unit_As_Reported,Note
+S07,FY2025,Total EVs,"1,964,831",units,Vahan retail
+S07,FY2025,Electric two-wheelers (e2W),"1,149,307",units,
+S07,FY2025,Electric three-wheelers (e3W),"699,062",units,
+S07,FY2025,"Electric passenger vehicles (cars, SUVs, MPVs)","107,462",units,
+S07,FY2025,"Electric commercial vehicles (buses, heavy and light goods)","8,726",units,
+S07,FY2024,Total EVs,"1,681,241",units,
+S07,FY2024,Electric three-wheelers (e3W),"632,798",units,
+S07,FY2024,Electric passenger vehicles,"91,321",units,
+S07,FY2024,e2W,56,% of EV sales,share only
+S08,FY 2024-25,Total EV,"20,37,831",units,Indian digit grouping
+S08,FY 2024-25,e-2W (high-speed),"12,09,772",units,
+S08,FY 2024-25,e-rickshaw,"4,74,503",units,
+S08,FY 2024-25,e-cart,"65,060",units,
+S08,FY 2024-25,e-4W,"1,15,800",units,
+S08,FY 2023-24,Total EV,"17,61,520",units,
+S08,FY 2022-23,Total EV,"12,46,634",units,
+S08,FY 2024-25,e-3W L5M,6.6,% of EV sales,
+S08,FY 2024-25,e-2W,6.2,% penetration,EV share of segment sales
+S08,FY 2024-25,e-4W,2.7,% penetration,
+S08,FY 2024-25,e-3W L5M,22.8,% penetration,
+S08,FY 2024-25,e-3W L5N,21.5,% penetration,
+S08,FY 2024-25,Total EV,7.8,% penetration,
+S09,FY2026,Total EV,>25 lakh,units,"text says 'surpassed 25 lakh'"
+S09,FY2026,Electric 2W,57.8,% of EV sales,
+S09,FY2026,E3W passenger,~29,% of EV sales,
+S09,FY2026,Cars (4W),~86,% YoY growth,
+S09,FY2026,Buses,~48,% YoY growth,
+S10,FY2025-26,Total EV,2.55,million,
+S10,FY2025-26,All vehicles,30.84,million,total registrations
+S10,CY2025,Total EV,2.6,million,IESA/CES market report
+S10,CY2024,Total EV,2.0,million,
+S10,CY2025,Electric two-wheelers,60.1,% of EV sales,
+S10,CY2025,Electric three-wheelers,31.6,% of EV sales,
+S10,CY2025,Electric four-wheelers,7.7,% of EV sales,
+S10,CY2025,Electric buses,0.2,% of EV sales,
+S10,CY2025,Electric trucks,0.4,% of EV sales,
+S10,CY2025,Battery demand,19,GWh,all EV segments
+S10,CY2024,Battery demand,13,GWh,
+S10,CY2025,Four-wheelers battery share,40,% of GWh,
+S10,CY2025,Three-wheelers battery share,27,% of GWh,
+S10,CY2025,Two-wheelers battery share,23,% of GWh,
+S10,CY2025,Buses battery share,7.8,% of GWh,
+S27,FY2022-23,e-rickshaw Li-ion share,almost 10,% of e-rickshaw market,rest lead-acid
+S27,FY2022-23,e-rickshaw Li-ion battery life,3,years,lead-acid 8-24 months
+S25,2030 target,Private cars,30,% of sales,NITI Aayog/RMI 2019 ambition
+S25,2030 target,Commercial cars,70,% of sales,
+S25,2030 target,Buses,40,% of sales,
+S25,2030 target,Two- and three-wheelers,80,% of sales,
+S29,CY2025,EV battery demand,17.7,GWh,CES; differs from IESA 19 GWh
+S29,CY2032,EV battery demand,256.3,GWh,CES forecast

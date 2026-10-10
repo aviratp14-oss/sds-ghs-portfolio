@@ -1,0 +1,379 @@
+table _Measures
+	lineageTag: 2cf6ec5d-a5a8-512c-a407-cc72815f21e5
+
+	measure 'World Share' = SELECTEDVALUE(World_Share[Share], 0.03)
+		formatString: 0%
+		displayFolder: 1. Lithium balance
+		lineageTag: af0c520d-26ca-5a75-b0c1-3bb43d53599a
+
+	measure 'Scenario Name' = SELECTEDVALUE(Dim_Scenario[Scenario], "Base")
+		formatString: General
+		displayFolder: 1. Lithium balance
+		lineageTag: c80dc60d-4005-572e-8199-3c65732d04dd
+
+	measure 'Demand t' = SUM(Fact_Balance[Demand_t_LCE])
+		formatString: #,##0
+		displayFolder: 1. Lithium balance
+		lineageTag: 5fe9e798-27d8-5de6-b593-8a4fd7a91310
+
+	measure 'Energy Demand t' = SUM(Fact_Balance[Energy_Demand_t_LCE])
+		formatString: #,##0
+		displayFolder: 1. Lithium balance
+		lineageTag: 26d0df3a-b654-5695-9a87-74afee9cc654
+
+	measure 'Non-energy Demand t' = SUM(Fact_Balance[NonEnergy_Demand_t_LCE])
+		formatString: #,##0
+		displayFolder: 1. Lithium balance
+		lineageTag: 3dd2a61d-01b6-5d90-8aa5-c4de1e8b871e
+
+	measure 'Recycling t' = SUM(Fact_Balance[Recycling_t_LCE])
+		formatString: #,##0
+		displayFolder: 1. Lithium balance
+		lineageTag: dd94c69f-8d4b-5c60-8b52-cb5fea67478f
+
+	measure 'Mining t' = SUM(Fact_Balance[Domestic_Mining_t_LCE])
+		formatString: #,##0
+		displayFolder: 1. Lithium balance
+		lineageTag: 0c8457f9-2e2e-56e5-9c96-930e77141c5b
+
+	measure 'Overseas t' = SUM(Fact_Balance[Overseas_Equity_t_LCE])
+		formatString: #,##0
+		displayFolder: 1. Lithium balance
+		lineageTag: 48c60631-b361-5466-abe5-0fcfc551b3ef
+
+	measure 'Imports in Reach t' =
+			-- open-market imports are capped at India's share of world supply (the slicer)
+			VAR sh = [World Share]
+			RETURN SUMX(Fact_Balance, Fact_Balance[Global_Supply_t_LCE] * sh)
+		formatString: #,##0
+		displayFolder: 1. Lithium balance
+		lineageTag: 1ea3d7cd-09cc-5245-aeba-13f3b0f2dc15
+
+	measure 'Supply in Reach t' = [Recycling t] + [Mining t] + [Overseas t] + [Imports in Reach t]
+		formatString: #,##0
+		displayFolder: 1. Lithium balance
+		lineageTag: 4bc6fcbe-01ac-5789-af2b-64fcdf5087a0
+
+	measure 'Shortfall t' =
+			VAR sh = [World Share]
+			RETURN SUMX(Fact_Balance,
+			    VAR avail = Fact_Balance[Recycling_t_LCE] + Fact_Balance[Domestic_Mining_t_LCE] + Fact_Balance[Overseas_Equity_t_LCE] + Fact_Balance[Global_Supply_t_LCE] * sh
+			    RETURN MAX(0, Fact_Balance[Demand_t_LCE] - avail))
+		formatString: #,##0
+		displayFolder: 1. Lithium balance
+		lineageTag: aa845145-91ca-5b15-b320-b18d7fc80a0a
+
+	measure 'Energy Coverage' =
+			-- non-energy uses are served first; EVs and storage get what is left
+			VAR sh = [World Share]
+			VAR met = SUMX(Fact_Balance,
+			    VAR avail = Fact_Balance[Recycling_t_LCE] + Fact_Balance[Domestic_Mining_t_LCE] + Fact_Balance[Overseas_Equity_t_LCE] + Fact_Balance[Global_Supply_t_LCE] * sh
+			    RETURN MIN(Fact_Balance[Energy_Demand_t_LCE], MAX(0, avail - Fact_Balance[NonEnergy_Demand_t_LCE])))
+			RETURN DIVIDE(met, [Energy Demand t])
+		formatString: 0%
+		displayFolder: 1. Lithium balance
+		lineageTag: 396d39c4-22c3-5077-9cb7-126b761c79df
+
+	measure 'Import Dependence' = DIVIDE(SUM(Fact_Balance[Net_Import_Need_t_LCE]), [Demand t])
+		formatString: 0%
+		displayFolder: 1. Lithium balance
+		lineageTag: fe1aa113-9e29-56f4-ae01-8d9044fe00f5
+
+	measure 'Recycled Content' = AVERAGE(Fact_Balance[Recycled_Content_Share])
+		formatString: 0%
+		displayFolder: 1. Lithium balance
+		lineageTag: 903b2b70-a206-5dbf-b0f0-c2983de2ec3c
+
+	measure 'Non-energy Share' = DIVIDE([Non-energy Demand t], [Demand t])
+		formatString: 0%
+		displayFolder: 1. Lithium balance
+		lineageTag: 01f66efa-6d6b-5f27-af34-86b2961ae187
+
+	measure 'First Gap Year' =
+			MINX(
+			    FILTER(CALCULATETABLE(VALUES(Dim_Year[Year]), REMOVEFILTERS(Dim_Year)), [Shortfall t] > 1),
+			    Dim_Year[Year])
+		formatString: 0
+		displayFolder: 1. Lithium balance
+		lineageTag: 81a7610d-4981-5c78-929e-2267492f7512
+
+	measure 'Demand kt' = DIVIDE([Demand t], 1000)
+		formatString: #,##0.0
+		displayFolder: 2. Charts (kt)
+		lineageTag: 7766ad01-92a7-5354-9983-6b51b5c0d079
+
+	measure 'Supply in Reach kt' = DIVIDE([Supply in Reach t], 1000)
+		formatString: #,##0.0
+		displayFolder: 2. Charts (kt)
+		lineageTag: 8151d66e-bc50-51d5-98ec-3c5ac72cd97b
+
+	measure 'Shortfall kt' = DIVIDE([Shortfall t], 1000)
+		formatString: #,##0.0
+		displayFolder: 2. Charts (kt)
+		lineageTag: 958e2da4-3ebb-5938-9fb7-0ad23a20bebf
+
+	measure 'Recycling kt' = DIVIDE([Recycling t], 1000)
+		formatString: #,##0.0
+		displayFolder: 2. Charts (kt)
+		lineageTag: 649cd532-a962-5a1f-b336-694f6a10b362
+
+	measure 'Mining kt' = DIVIDE([Mining t], 1000)
+		formatString: #,##0.0
+		displayFolder: 2. Charts (kt)
+		lineageTag: 80912754-ed38-5066-ac69-a495d7aa0e4c
+
+	measure 'Overseas kt' = DIVIDE([Overseas t], 1000)
+		formatString: #,##0.0
+		displayFolder: 2. Charts (kt)
+		lineageTag: 2aa6fd50-8840-5835-9434-6e852c292d7e
+
+	measure 'Imports in Reach kt' = DIVIDE([Imports in Reach t], 1000)
+		formatString: #,##0.0
+		displayFolder: 2. Charts (kt)
+		lineageTag: 73b8b1d8-6091-51bf-a5a3-a1f3f8a6b91c
+
+	measure 'Sector Demand kt' = DIVIDE(SUM(Fact_Demand[Demand_t_LCE]), 1000)
+		formatString: #,##0.0
+		displayFolder: 2. Charts (kt)
+		lineageTag: cb42b3c8-6f6f-52f9-912e-0d3617a91a98
+
+	measure 'Gap Left kt' =
+			-- shortfall in the selected year for each lever; the lever slicer is ignored on purpose
+			DIVIDE(CALCULATE([Shortfall t], REMOVEFILTERS(Dim_Lever), VALUES(Dim_Lever[Lever])), 1000)
+		formatString: #,##0
+		displayFolder: 2. Charts (kt)
+		lineageTag: b8f5a35a-7944-5d68-ae70-3887b25bcf18
+
+	measure 'Gap Colour' =
+			VAR lv = SELECTEDVALUE(Dim_Lever[Lever])
+			VAR none = CALCULATE([Gap Left kt], REMOVEFILTERS(Dim_Lever), Dim_Lever[Lever] = "None")
+			RETURN IF(lv = "None", "#6B6B6B", IF([Gap Left kt] < none / 2, "#1F4E79", "#9BB3CC"))
+		formatString: General
+		displayFolder: 2. Charts (kt)
+		lineageTag: 93f1a628-46d3-5274-8dc8-fe8a0d26f140
+
+	measure 'Growth to 2040' = DIVIDE(CALCULATE([Demand t], Dim_Year[Year] = 2040), CALCULATE([Demand t], Dim_Year[Year] = 2025))
+		formatString: 0
+		displayFolder: 3. Page text
+		lineageTag: a404251a-593e-583c-bea9-786d723a94d4
+
+	measure 'Page Year' = SELECTEDVALUE(Dim_Year[Year], 2040)
+		formatString: 0
+		displayFolder: 3. Page text
+		lineageTag: 521ac750-52e0-51ee-b8d2-efccebd53e8e
+
+	measure 'No Lever Gap t' =
+			VAR yr = [Page Year]
+			RETURN CALCULATE([Shortfall t], Dim_Lever[Lever] = "None", Dim_Year[Year] = yr)
+		formatString: #,##0
+		displayFolder: 3. Page text
+		lineageTag: 2986a57b-152e-5718-956c-6e42f484a668
+
+	measure 'Best Lever' =
+			-- the single lever (not the bundle) that closes the most of the gap in the page year
+			VAR yr = [Page Year]
+			VAR base = [No Lever Gap t]
+			VAR t = ADDCOLUMNS(
+			    FILTER(ALL(Dim_Lever[Lever]), NOT Dim_Lever[Lever] IN {"None", "All four levers"}),
+			    "@closed", base - CALCULATE([Shortfall t], Dim_Year[Year] = yr))
+			RETURN MAXX(TOPN(1, t, [@closed], DESC), Dim_Lever[Lever])
+		formatString: General
+		displayFolder: 3. Page text
+		lineageTag: 3b4e1610-070c-5ded-bdd0-eae63733bbfd
+
+	measure 'Best Lever Closed t' =
+			VAR yr = [Page Year]
+			VAR lv = [Best Lever]
+			RETURN [No Lever Gap t] - CALCULATE([Shortfall t], Dim_Lever[Lever] = lv, Dim_Year[Year] = yr)
+		formatString: #,##0
+		displayFolder: 3. Page text
+		lineageTag: a765b868-f5c7-5be5-8d4b-fe7e08a9b6fb
+
+	measure 'Mining Lever Closed t' =
+			VAR yr = [Page Year]
+			RETURN [No Lever Gap t] - CALCULATE([Shortfall t], Dim_Lever[Lever] = "Exploration fast-track", Dim_Year[Year] = yr)
+		formatString: #,##0
+		displayFolder: 3. Page text
+		lineageTag: 1ba3be36-d949-5746-b0a8-428a9e93a9ae
+
+	measure 'Sub-sector 2025 t' = CALCULATE(SUM(Fact_Demand[Demand_t_LCE]), Dim_Year[Year] = 2025)
+		formatString: #,##0
+		displayFolder: 3. Page text
+		lineageTag: 27c5be6b-e9d3-5b7b-8b43-7f1e41641d62
+
+	measure 'Top Overview' = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='34' viewBox='0 0 1200 34'><text x='0' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12' font-weight='bold' fill='%23C0392B' text-anchor='start' letter-spacing='1'>INDIA LITHIUM OUTLOOK, 2025 TO 2040</text><text x='769' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='600' fill='%23222222' text-anchor='end'>Overview</text><rect x='710' y='29' width='59' height='2' fill='%23C0392B'/><text x='873' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='normal' fill='%236B6B6B' text-anchor='end'>Who uses it</text><text x='1035' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='normal' fill='%236B6B6B' text-anchor='end'>Where it comes from</text><text x='1198' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='normal' fill='%236B6B6B' text-anchor='end'>What closes the gap</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: f865081a-a5e5-577a-985e-7bbb6ed34f4b
+		dataCategory: ImageUrl
+
+	measure 'Headline Overview' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1060' height='104' viewBox='0 0 1060 104'><text x='0' y='28' font-family='Segoe UI, Arial, sans-serif' font-size='27' font-weight='bold' fill='%23222222' text-anchor='start'>India will need "
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT([Growth to 2040], "0"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & " times more lithium by 2040.</text><text x='0' y='62' font-family='Segoe UI, Arial, sans-serif' font-size='27' font-weight='bold' fill='%23222222' text-anchor='start'>"
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(IF(ISBLANK([First Gap Year]), "At this share of world supply, there is enough to go round.", "From " & [First Gap Year] & ", there isn't enough for EVs and storage."), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & "</text><text x='0' y='92' font-family='Segoe UI, Arial, sans-serif' font-size='14' font-weight='normal' fill='%236B6B6B' text-anchor='start'>Thousand tonnes of lithium carbonate equivalent (kt LCE) a year. "
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE([Scenario Name], "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & " case. India gets "
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT([World Share], "0%"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & " of the world's lithium.</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: c384dd87-6836-591e-8c66-dfb38fb84711
+		dataCategory: ImageUrl
+
+	measure 'Things Overview' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='370' height='400' viewBox='0 0 370 400'><text x='0' y='14' font-family='Segoe UI, Arial, sans-serif' font-size='12' font-weight='600' fill='%236B6B6B' text-anchor='start' letter-spacing='0.8'>THREE THINGS TO KNOW</text><rect x='0' y='30' width='366' height='1' fill='%23DDDDDD'/><text x='0' y='63' font-family='Segoe UI, Arial, sans-serif' font-size='24' font-weight='bold' fill='%23222222' text-anchor='start'>"
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(CALCULATE([Non-energy Share], Dim_Year[Year] = 2025), "0%"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & "</text><text x='0' y='85' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>of India's lithium in 2025 went to phones, laptops,</text><text x='0' y='103' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>grease, glass and defence, not clean energy.</text><text x='0' y='121' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>Worldwide it is 12%25.</text><rect x='0' y='149' width='366' height='1' fill='%23DDDDDD'/><text x='0' y='182' font-family='Segoe UI, Arial, sans-serif' font-size='24' font-weight='bold' fill='%23222222' text-anchor='start'>"
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(CALCULATE([Energy Coverage], Dim_Year[Year] = 2040), "0%"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & "</text><text x='0' y='204' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>of EV and storage demand can be met in 2040.</text><text x='0' y='222' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>Phones and grease are served first because</text><text x='0' y='240' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>they can pay more.</text><rect x='0' y='268' width='366' height='1' fill='%23DDDDDD'/><text x='0' y='301' font-family='Segoe UI, Arial, sans-serif' font-size='24' font-weight='bold' fill='%23222222' text-anchor='start'>"
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(IF([No Lever Gap t] < 1, "No gap", [Best Lever]), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & "</text><text x='0' y='323' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>"
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(IF([No Lever Gap t] < 1, "With these settings India has enough lithium", "is the biggest single fix. It closes " & FORMAT(DIVIDE([Best Lever Closed t], 1000), "#,0") & " of the"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & "</text><text x='0' y='341' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>"
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(IF([No Lever Gap t] < 1, "through 2040.", FORMAT(DIVIDE([No Lever Gap t], 1000), "#,0") & " kt gap in 2040."), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & "</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: 980f6ccf-b788-5101-bbd4-3172ad517e35
+		dataCategory: ImageUrl
+
+	measure 'Footer Overview' = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='24' viewBox='0 0 1200 24'><rect x='0' y='0' width='1200' height='1' fill='%23EEEEEE'/><text x='0' y='17' font-family='Segoe UI, Arial, sans-serif' font-size='11' font-weight='normal' fill='%236B6B6B' text-anchor='start'>Source: model built on USGS, IEA, CEA, IESA, IDC and UN Comtrade data. ""Supply India can reach"" = recycling + mining in India + overseas mines + India's share of world output.</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: 466f1fd5-e467-5c83-86e5-7c8263ae396d
+		dataCategory: ImageUrl
+
+	measure 'Top WhoUsesIt' = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='34' viewBox='0 0 1200 34'><text x='0' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12' font-weight='bold' fill='%23C0392B' text-anchor='start' letter-spacing='1'>WHO USES INDIA'S LITHIUM</text><text x='769' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='normal' fill='%236B6B6B' text-anchor='end'>Overview</text><text x='873' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='600' fill='%23222222' text-anchor='end'>Who uses it</text><rect x='791' y='29' width='81' height='2' fill='%23C0392B'/><text x='1035' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='normal' fill='%236B6B6B' text-anchor='end'>Where it comes from</text><text x='1198' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='normal' fill='%236B6B6B' text-anchor='end'>What closes the gap</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: a85a1b56-98c4-58f6-be15-fef02cb7d654
+		dataCategory: ImageUrl
+
+	measure 'Headline WhoUsesIt' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1060' height='104' viewBox='0 0 1060 104'><text x='0' y='28' font-family='Segoe UI, Arial, sans-serif' font-size='27' font-weight='bold' fill='%23222222' text-anchor='start'>In 2025, "
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(CALCULATE([Non-energy Share], Dim_Year[Year] = 2025), "0%"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & " of India's lithium went to phones, grease and other</text><text x='0' y='62' font-family='Segoe UI, Arial, sans-serif' font-size='27' font-weight='bold' fill='%23222222' text-anchor='start'>non-energy uses. By 2040, EVs take "
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(CALCULATE(DIVIDE([Sector Demand kt], [Demand kt]), Dim_Year[Year] = 2040, Dim_Sector[Sector] = "EVs"), "0%"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & ".</text><text x='0' y='92' font-family='Segoe UI, Arial, sans-serif' font-size='14' font-weight='normal' fill='%236B6B6B' text-anchor='start'>Share of lithium demand by use, "
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE([Scenario Name], "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & " case.</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: c1c5cab4-67b7-5536-aa7f-e8c06e42766e
+		dataCategory: ImageUrl
+
+	measure 'Things WhoUsesIt' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='370' height='400' viewBox='0 0 370 400'><text x='0' y='14' font-family='Segoe UI, Arial, sans-serif' font-size='12' font-weight='600' fill='%236B6B6B' text-anchor='start' letter-spacing='0.8'>THREE THINGS TO KNOW</text><rect x='0' y='30' width='366' height='1' fill='%23DDDDDD'/><text x='0' y='63' font-family='Segoe UI, Arial, sans-serif' font-size='24' font-weight='bold' fill='%23222222' text-anchor='start'>"
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(DIVIDE(CALCULATE([Sub-sector 2025 t], Dim_Sector[Sub_Sector] = "ELEC_ExportAssembly"), 1000), "0.0"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & " kt</text><text x='0' y='85' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>a year goes into phones assembled in India for</text><text x='0' y='103' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>export. That lithium leaves the country and never</text><text x='0' y='121' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>comes back for recycling.</text><rect x='0' y='149' width='366' height='1' fill='%23DDDDDD'/><text x='0' y='182' font-family='Segoe UI, Arial, sans-serif' font-size='24' font-weight='bold' fill='%23222222' text-anchor='start'>"
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(DIVIDE(CALCULATE([Sub-sector 2025 t], Dim_Sector[Sub_Sector] = "IND_Grease"), 1000), "0.0"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & " kt</text><text x='0' y='204' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>goes into lubricating grease. 77%25 of the lithium</text><text x='0' y='222' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>hydroxide behind it came from Russia in 2023.</text><rect x='0' y='250' width='366' height='1' fill='%23DDDDDD'/><text x='0' y='283' font-family='Segoe UI, Arial, sans-serif' font-size='24' font-weight='bold' fill='%23222222' text-anchor='start'>12%25</text><text x='0' y='305' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>is the non-energy share worldwide (USGS). India is</text><text x='0' y='323' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>higher because its EV fleet is still small. It drops to</text><text x='0' y='341' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>"
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(CALCULATE([Non-energy Share], Dim_Year[Year] = 2040), "0%"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & " by 2040.</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: 3068088b-f2ba-5ed2-87d2-3447f3fed82d
+		dataCategory: ImageUrl
+
+	measure 'Footer WhoUsesIt' = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='24' viewBox='0 0 1200 24'><rect x='0' y='0' width='1200' height='1' fill='%23EEEEEE'/><text x='0' y='17' font-family='Segoe UI, Arial, sans-serif' font-size='11' font-weight='normal' fill='%236B6B6B' text-anchor='start'>Source: model built on USGS, IEA, CEA, IESA, IDC and UN Comtrade data. Defence is an estimate, since no public data exists.</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: b84e5e34-bd2b-5569-af07-ce884b15a637
+		dataCategory: ImageUrl
+
+	measure 'Top WhereFrom' = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='34' viewBox='0 0 1200 34'><text x='0' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12' font-weight='bold' fill='%23C0392B' text-anchor='start' letter-spacing='1'>WHERE INDIA'S LITHIUM COULD COME FROM</text><text x='769' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='normal' fill='%236B6B6B' text-anchor='end'>Overview</text><text x='873' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='normal' fill='%236B6B6B' text-anchor='end'>Who uses it</text><text x='1035' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='600' fill='%23222222' text-anchor='end'>Where it comes from</text><rect x='895' y='29' width='141' height='2' fill='%23C0392B'/><text x='1198' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='normal' fill='%236B6B6B' text-anchor='end'>What closes the gap</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: f9ffa738-9846-5239-ab21-54496e27d481
+		dataCategory: ImageUrl
+
+	measure 'Headline WhereFrom' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1060' height='104' viewBox='0 0 1060 104'><text x='0' y='28' font-family='Segoe UI, Arial, sans-serif' font-size='27' font-weight='bold' fill='%23222222' text-anchor='start'>Recycling becomes India's biggest home source of lithium,</text><text x='0' y='62' font-family='Segoe UI, Arial, sans-serif' font-size='27' font-weight='bold' fill='%23222222' text-anchor='start'>but only from the mid-2030s.</text><text x='0' y='92' font-family='Segoe UI, Arial, sans-serif' font-size='14' font-weight='normal' fill='%236B6B6B' text-anchor='start'>Supply India can reach by source, against demand (kt LCE a year). "
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE([Scenario Name], "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & " case, "
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT([World Share], "0%"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & " of world supply.</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: 84d921e9-2bc1-54ce-8930-e58e5b564765
+		dataCategory: ImageUrl
+
+	measure 'Things WhereFrom' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='370' height='400' viewBox='0 0 370 400'><text x='0' y='14' font-family='Segoe UI, Arial, sans-serif' font-size='12' font-weight='600' fill='%236B6B6B' text-anchor='start' letter-spacing='0.8'>THREE THINGS TO KNOW</text><rect x='0' y='30' width='366' height='1' fill='%23DDDDDD'/><text x='0' y='63' font-family='Segoe UI, Arial, sans-serif' font-size='24' font-weight='bold' fill='%23222222' text-anchor='start'>"
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(CALCULATE([Recycled Content], Dim_Year[Year] = 2030), "0%"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & "</text><text x='0' y='85' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>is the recycled content India's own scrap can supply</text><text x='0' y='103' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>in 2030. The battery rules ask for 20%25. Most</text><text x='0' y='121' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>batteries sold today retire after 2032.</text><rect x='0' y='149' width='366' height='1' fill='%23DDDDDD'/><text x='0' y='182' font-family='Segoe UI, Arial, sans-serif' font-size='24' font-weight='bold' fill='%23222222' text-anchor='start'>18 kt</text><text x='0' y='204' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>is all the lithium in Reasi, India's only proven find</text><text x='0' y='222' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>(583 ppm, Lok Sabha 2024). That is about seven</text><text x='0' y='240' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>weeks of 2035 demand in the Base case.</text><rect x='0' y='268' width='366' height='1' fill='%23DDDDDD'/><text x='0' y='301' font-family='Segoe UI, Arial, sans-serif' font-size='24' font-weight='bold' fill='%23222222' text-anchor='start'>"
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(CALCULATE([Import Dependence], Dim_Year[Year] = 2040), "0%"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & "</text><text x='0' y='323' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>of India's lithium is still imported in 2040, down</text><text x='0' y='341' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>from "
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(CALCULATE([Import Dependence], Dim_Year[Year] = 2025), "0%"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & " in 2025.</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: c2846252-75a7-5377-9414-4d80f151b6d8
+		dataCategory: ImageUrl
+
+	measure 'Footer WhereFrom' = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='24' viewBox='0 0 1200 24'><rect x='0' y='0' width='1200' height='1' fill='%23EEEEEE'/><text x='0' y='17' font-family='Segoe UI, Arial, sans-serif' font-size='11' font-weight='normal' fill='%236B6B6B' text-anchor='start'>Source: model built on USGS, IEA, CEA, IESA, IDC and UN Comtrade data. Imports are capped at India's share of world output, set with the slicer.</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: d77155cd-4eba-51be-a428-c9d3ceb969c2
+		dataCategory: ImageUrl
+
+	measure 'Top ClosingGap' = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='34' viewBox='0 0 1200 34'><text x='0' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12' font-weight='bold' fill='%23C0392B' text-anchor='start' letter-spacing='1'>WHAT CLOSES THE GAP</text><text x='769' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='normal' fill='%236B6B6B' text-anchor='end'>Overview</text><text x='873' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='normal' fill='%236B6B6B' text-anchor='end'>Who uses it</text><text x='1035' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='normal' fill='%236B6B6B' text-anchor='end'>Where it comes from</text><text x='1198' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='12.5' font-weight='600' fill='%23222222' text-anchor='end'>What closes the gap</text><rect x='1057' y='29' width='141' height='2' fill='%23C0392B'/></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: 4925df1d-ee16-526a-8d89-64c7893d28e3
+		dataCategory: ImageUrl
+
+	measure 'Headline ClosingGap' =
+			"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1060' height='104' viewBox='0 0 1060 104'><text x='0' y='28' font-family='Segoe UI, Arial, sans-serif' font-size='27' font-weight='bold' fill='%23222222' text-anchor='start'>"
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(IF([No Lever Gap t] < 1, "With these settings there is no gap to close in " & [Page Year] & ".", SWITCH([Best Lever], "Overseas assets", "Buying into overseas mines", "Sodium-ion push", "Switching to sodium-ion batteries", "Recycling push", "Recycling more", "Exploration fast-track", "Fast-tracking mines at home", [Best Lever]) & IF([Best Lever Closed t] >= [No Lever Gap t] / 2, " closes most of the gap.", " closes more of the gap than any other step.")), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & "</text><text x='0' y='62' font-family='Segoe UI, Arial, sans-serif' font-size='27' font-weight='bold' fill='%23222222' text-anchor='start'>"
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(IF([No Lever Gap t] < 1, "Try the High case or a lower share of world supply.", "Mining at home closes only " & FORMAT(DIVIDE([Mining Lever Closed t], 1000), "0.0") & " kt of it."), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & "</text><text x='0' y='92' font-family='Segoe UI, Arial, sans-serif' font-size='14' font-weight='normal' fill='%236B6B6B' text-anchor='start'>Lithium gap left in "
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE([Page Year], "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & " with each policy lever (kt LCE). "
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE([Scenario Name], "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & " case, "
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT([World Share], "0%"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & " of world supply. Gap with no new policy: "
+			    & SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(FORMAT(DIVIDE([No Lever Gap t], 1000), "#,0"), "&", "&amp;"), "%", "%25"), "#", "%23"), "<", "&lt;")
+			    & " kt.</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: 9e8aa3f6-7c5f-5d3c-802e-ede6467d29c6
+		dataCategory: ImageUrl
+
+	measure 'Things ClosingGap' = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='370' height='24' viewBox='0 0 370 24'><text x='0' y='14' font-family='Segoe UI, Arial, sans-serif' font-size='12' font-weight='600' fill='%236B6B6B' text-anchor='start' letter-spacing='0.8'>INDIA'S VALUE CHAIN TODAY</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: 6b02a59e-29f6-5ca0-84d2-b3e82eb6ff1f
+		dataCategory: ImageUrl
+
+	measure 'Note ClosingGap' = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='370' height='90' viewBox='0 0 370 90'><rect x='0' y='0' width='366' height='1' fill='%23DDDDDD'/><text x='0' y='22' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>India is missing almost every step between the mine</text><text x='0' y='41' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>and the cell. Lithium is only about $5 of each kWh of</text><text x='0' y='60' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>battery, so the money is in cathode and cell making,</text><text x='0' y='79' font-family='Segoe UI, Arial, sans-serif' font-size='13' font-weight='normal' fill='%23444444' text-anchor='start'>not in mining.</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: 187c2047-8e14-565d-a267-1e811354d4de
+		dataCategory: ImageUrl
+
+	measure 'Footer ClosingGap' = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='24' viewBox='0 0 1200 24'><rect x='0' y='0' width='1200' height='1' fill='%23EEEEEE'/><text x='0' y='17' font-family='Segoe UI, Arial, sans-serif' font-size='11' font-weight='normal' fill='%236B6B6B' text-anchor='start'>Source: model built on USGS, IEA, CEA, IESA, IDC and UN Comtrade data. Levers: Recycling push, Overseas assets, Sodium-ion push and Exploration fast-track are defined in the model workbook.</text></svg>"
+		formatString: General
+		displayFolder: 4. Report visuals
+		lineageTag: 53e51a47-c568-5449-86dc-f7b10c3e53fc
+		dataCategory: ImageUrl
+
+	column Placeholder
+		dataType: string
+		isHidden
+		lineageTag: ab2f686c-154c-560d-acf6-b95bc42102fd
+		summarizeBy: none
+		sourceColumn: Placeholder
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '_Measures' = m
+		mode: import
+		source =
+				#table(type table [Placeholder = text], {})
+
+	annotation PBI_ResultType = Table

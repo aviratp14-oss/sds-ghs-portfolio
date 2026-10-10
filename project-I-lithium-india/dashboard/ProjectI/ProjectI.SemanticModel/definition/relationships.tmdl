@@ -1,0 +1,28 @@
+relationship 40d3dbaf-f018-565d-af5c-35d980e1565e
+	fromColumn: Fact_Balance.Scenario
+	toColumn: Dim_Scenario.Scenario
+
+relationship b69e5ecb-4f22-57ba-adc4-7358bb5d1a4a
+	fromColumn: Fact_Balance.Lever
+	toColumn: Dim_Lever.Lever
+
+relationship ac622852-757e-5109-a49e-f4200a06bca7
+	fromColumn: Fact_Balance.Year
+	toColumn: Dim_Year.Year
+
+relationship fbf6758c-c3fd-5753-b285-4c46008a6f0f
+	fromColumn: Fact_Demand.Scenario
+	toColumn: Dim_Scenario.Scenario
+
+relationship 139da2cf-147a-5319-a863-7580a8078c7a
+	fromColumn: Fact_Demand.Lever
+	toColumn: Dim_Lever.Lever
+
+relationship e1f60706-08e3-5ac1-a78d-0aec1036663f
+	fromColumn: Fact_Demand.Year
+	toColumn: Dim_Year.Year
+
+relationship c3e0dbe7-5eec-5edc-b0c6-92d69c92120b
+	fromColumn: Fact_Demand.Sub_Sector
+	toColumn: Dim_Sector.Sub_Sector
+

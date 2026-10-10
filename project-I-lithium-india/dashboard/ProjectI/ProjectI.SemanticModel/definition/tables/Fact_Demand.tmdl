@@ -1,0 +1,84 @@
+table Fact_Demand
+	lineageTag: 754b5eb9-5616-53e7-ac10-609e7a319f86
+
+	column Scenario
+		dataType: string
+		lineageTag: eecff0f1-3a69-5244-a7ea-1f87ae5fc03c
+		summarizeBy: none
+		sourceColumn: Scenario
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lever
+		dataType: string
+		lineageTag: 7e0fa665-e8aa-535e-b508-071940264c51
+		summarizeBy: none
+		sourceColumn: Lever
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 4101e72c-1a1e-589d-8362-05d730b10420
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sub_Sector
+		dataType: string
+		lineageTag: 433d89b7-dfcd-5dc8-b038-ec9aea0a8a05
+		summarizeBy: none
+		sourceColumn: Sub_Sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column Units
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: a8ac8026-16b6-59ad-99b1-eb3a7975ea31
+		summarizeBy: none
+		sourceColumn: Units
+
+		annotation SummarizationSetBy = Automatic
+
+	column GWh
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 9012f2ef-e828-565b-bbca-4621bce60248
+		summarizeBy: none
+		sourceColumn: GWh
+
+		annotation SummarizationSetBy = Automatic
+
+	column kg_LCE_per_kWh
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: dadb5d56-29b3-5f2a-a4e7-8278569c428c
+		summarizeBy: none
+		sourceColumn: kg_LCE_per_kWh
+
+		annotation SummarizationSetBy = Automatic
+
+	column Demand_t_LCE
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: e788d305-3d1a-587e-9623-dcbcd4899508
+		summarizeBy: sum
+		sourceColumn: Demand_t_LCE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Demand = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_Demand.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Scenario", type text}, {"Lever", type text}, {"Year", Int64.Type}, {"Sub_Sector", type text}, {"Units", type number}, {"GWh", type number}, {"kg_LCE_per_kWh", type number}, {"Demand_t_LCE", type number}}, "en-US"),
+				    Result = Typed
+				in
+				    Result
+
+	annotation PBI_ResultType = Table

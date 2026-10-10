@@ -1,0 +1,50 @@
+table Dim_Lever
+	lineageTag: 4b28a9f1-b2f0-56e1-ab8d-120154b7fb6a
+
+	column Lever
+		dataType: string
+		lineageTag: 9ad74fab-432f-591c-a24b-098457b80940
+		summarizeBy: none
+		sourceColumn: Lever
+		sortByColumn: Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort
+		dataType: int64
+		formatString: 0
+		lineageTag: 75b0345d-286c-57d7-996f-7bcacedb5bff
+		summarizeBy: none
+		sourceColumn: Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 6af01b20-99c5-5898-b3d0-e2121ae844f7
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lever_Label
+		dataType: string
+		lineageTag: bb22d5eb-869c-50f4-a0e9-859739505070
+		summarizeBy: none
+		sourceColumn: Lever_Label
+		sortByColumn: Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Lever = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Dim_Lever.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Lever", type text}, {"Sort", Int64.Type}, {"Description", type text}}, "en-US"),
+				    Result = Table.AddColumn(Typed, "Lever_Label", each if [Lever] = "None" then "No new policy" else [Lever], type text)
+				in
+				    Result
+
+	annotation PBI_ResultType = Table

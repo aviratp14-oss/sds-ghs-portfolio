@@ -1,0 +1,5 @@
+Chemistry,Formula_Mass_g_mol,Practical_Capacity_mAh_g,Nominal_Voltage_V,kg_CAM_per_kWh,Li_Mass_Fraction,kg_Li_per_kWh_Cathode,kg_LCE_per_kWh_Cell
+LFP,157.756,160,3.2,1.9531,0.044,0.0859,0.5102
+NMC811,97.281,195,3.7,1.386,0.07135,0.0989,0.5852
+LCO,97.872,165,3.85,1.5742,0.07092,0.1116,0.659
+Sodium-ion,,,,,0,0,0

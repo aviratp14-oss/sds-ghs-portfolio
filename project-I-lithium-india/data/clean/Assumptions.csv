@@ -1,0 +1,112 @@
+Param,Sub_Sector,Scenario,Y2025,Y2030,Y2035,Y2040,Unit,Source_ID,Note
+Market_Units,EV_2W,All,20033000.0,24373207.593779203,29653733.759769194,36078301.24582006,vehicles/yr,S07; S08; S10; A00,2025 from Ref_Base_Year_2025; grows 4%/yr
+Market_Units,EV_3W_L5,All,822000.0,952923.2890746001,1104699.2638208685,1280649.216445829,vehicles/yr,S07; S08; S10; A00,2025 from Ref_Base_Year_2025; grows 3%/yr
+Market_Units,EV_3W_L3,All,616000.0,680113.7747712,750900.5627167706,829054.896407664,vehicles/yr,S07; S08; S10; A00,2025 from Ref_Base_Year_2025; grows 2%/yr
+Market_Units,EV_4W,All,4449000.0,5678176.671562501,7246952.19453284,9249151.47020118,vehicles/yr,S07; S08; S10; A00,2025 from Ref_Base_Year_2025; grows 5%/yr
+Market_Units,EV_Bus,All,100000.0,121665.29024000002,148024.42849183443,180094.35055069166,vehicles/yr,S07; S08; S10; A00,2025 from Ref_Base_Year_2025; grows 4%/yr
+Market_Units,EV_Truck,All,945000.0,1206086.0765625003,1539305.4223046827,1964587.1295437436,vehicles/yr,S07; S08; S10; A00,2025 from Ref_Base_Year_2025; grows 5%/yr
+EV_Share,EV_2W,Low,0.078,0.15,0.25,0.4,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_2W,Base,0.078,0.3,0.55,0.75,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_2W,High,0.078,0.55,0.8,0.95,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_3W_L5,Low,0.25,0.4,0.55,0.7,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_3W_L5,Base,0.25,0.55,0.75,0.9,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_3W_L5,High,0.25,0.75,0.9,1.0,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_3W_L3,Low,1.0,1,1,1,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_3W_L3,Base,1.0,1,1,1,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_3W_L3,High,1.0,1,1,1,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_4W,Low,0.045,0.08,0.14,0.25,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_4W,Base,0.045,0.13,0.28,0.45,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_4W,High,0.045,0.3,0.55,0.8,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_Bus,Low,0.052,0.12,0.25,0.4,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_Bus,Base,0.052,0.25,0.5,0.75,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_Bus,High,0.052,0.4,0.7,0.95,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_Truck,Low,0.011,0.03,0.07,0.15,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_Truck,Base,0.011,0.06,0.15,0.3,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+EV_Share,EV_Truck,High,0.011,0.12,0.3,0.55,share of sales,S08; S25; A00,"High tracks the NITI Aayog 2030 ambition (80% 2W/3W, 30% private cars, 40% buses)"
+LiIon_Share,EV_3W_L3,Low,0.25,0.4,0.55,0.7,share of L3 sales,S27; A00,~10% of e-rickshaws were Li-ion in FY2023; rest lead-acid
+LiIon_Share,EV_3W_L3,Base,0.25,0.6,0.85,1.0,share of L3 sales,S27; A00,~10% of e-rickshaws were Li-ion in FY2023; rest lead-acid
+LiIon_Share,EV_3W_L3,High,0.25,0.85,1.0,1.0,share of L3 sales,S27; A00,~10% of e-rickshaws were Li-ion in FY2023; rest lead-acid
+LiIon_Share,EV_2W,All,1,1,1,1,share,A00,
+LiIon_Share,EV_3W_L5,All,1,1,1,1,share,A00,
+LiIon_Share,EV_4W,All,1,1,1,1,share,A00,
+LiIon_Share,EV_Bus,All,1,1,1,1,share,A00,
+LiIon_Share,EV_Truck,All,1,1,1,1,share,A00,
+kWh_per_Unit,EV_2W,All,2.8,3.2,3.5,3.8,kWh,S10; A00,"2025 sizes calibrated so segment GWh shares match IESA CY2025 (4W 40%, 3W 27%, 2W 23%, bus 7.8%)"
+kWh_per_Unit,EV_3W_L5,All,8,10,11,12,kWh,S10; A00,"2025 sizes calibrated so segment GWh shares match IESA CY2025 (4W 40%, 3W 27%, 2W 23%, bus 7.8%)"
+kWh_per_Unit,EV_3W_L3,All,5,6,6.5,7,kWh,S10; A00,"2025 sizes calibrated so segment GWh shares match IESA CY2025 (4W 40%, 3W 27%, 2W 23%, bus 7.8%)"
+kWh_per_Unit,EV_4W,All,38,42,45,48,kWh,S10; A00,"2025 sizes calibrated so segment GWh shares match IESA CY2025 (4W 40%, 3W 27%, 2W 23%, bus 7.8%)"
+kWh_per_Unit,EV_Bus,All,280,320,350,380,kWh,S10; A00,"2025 sizes calibrated so segment GWh shares match IESA CY2025 (4W 40%, 3W 27%, 2W 23%, bus 7.8%)"
+kWh_per_Unit,EV_Truck,All,40,60,90,120,kWh,S10; A00,"2025 sizes calibrated so segment GWh shares match IESA CY2025 (4W 40%, 3W 27%, 2W 23%, bus 7.8%)"
+LFP_Share,EV_2W,All,0.6,0.7,0.75,0.8,share of Li-ion kWh (rest NMC),A00,
+LFP_Share,EV_3W_L5,All,0.9,0.95,0.95,0.95,share of Li-ion kWh (rest NMC),A00,
+LFP_Share,EV_3W_L3,All,1,1,1,1,share of Li-ion kWh (rest NMC),A00,
+LFP_Share,EV_4W,All,0.45,0.6,0.65,0.7,share of Li-ion kWh (rest NMC),A00,
+LFP_Share,EV_Bus,All,0.9,0.95,0.95,0.95,share of Li-ion kWh (rest NMC),A00,
+LFP_Share,EV_Truck,All,0.8,0.85,0.9,0.9,share of Li-ion kWh (rest NMC),A00,
+LFP_Share,BESS,All,1,1,1,1,share of Li-ion kWh (rest NMC),A00,
+NaIon_Share,EV_2W,All,0,0.03,0.08,0.12,share of kWh,A00,Sodium-ion enters low-range 2W/3W and storage first
+NaIon_Share,EV_3W_L5,All,0,0.03,0.08,0.12,share of kWh,A00,Sodium-ion enters low-range 2W/3W and storage first
+NaIon_Share,EV_3W_L3,All,0,0.03,0.08,0.12,share of kWh,A00,Sodium-ion enters low-range 2W/3W and storage first
+NaIon_Share,BESS,All,0,0.03,0.08,0.12,share of kWh,A00,Sodium-ion enters low-range 2W/3W and storage first
+BESS_Cumulative_GWh,BESS,Low,4,60,200,320,GWh installed,S11; S12; A00,CEA NEP: 193-335 GWh by FY2032 (base 236); 4.7 GWh operating and 35 GWh awarded by May 2026
+BESS_Cumulative_GWh,BESS,Base,4,110,300,500,GWh installed,S11; S12; A00,CEA NEP: 193-335 GWh by FY2032 (base 236); 4.7 GWh operating and 35 GWh awarded by May 2026
+BESS_Cumulative_GWh,BESS,High,4,180,420,750,GWh installed,S11; S12; A00,CEA NEP: 193-335 GWh by FY2032 (base 236); 4.7 GWh operating and 35 GWh awarded by May 2026
+Units,ELEC_Phone,Low,152000000.0,144550487.58479998,137466075.40133828,130728869.90547584,devices/yr,S13,grows -1%/yr
+Units,ELEC_Phone,Base,152000000.0,159753527.6152,167902563.0625031,176467281.2162398,devices/yr,S13,grows 1%/yr
+Units,ELEC_Phone,High,152000000.0,176209659.29360002,204275289.66030657,236811047.3233163,devices/yr,S13,grows 3%/yr
+Units,ELEC_PC,Low,15900000.0,17554884.77088,19382011.27791664,21399306.579353664,devices/yr,S14,grows 2%/yr
+Units,ELEC_PC,Base,15900000.0,19344781.148160003,23535884.130201675,28635001.737559974,devices/yr,S14,grows 4%/yr
+Units,ELEC_PC,High,15900000.0,21277786.683840003,28474478.37503139,38105275.27028509,devices/yr,S14,grows 6%/yr
+Units,ELEC_Tablet,Low,4500000.0,4500000.0,4500000.0,4500000.0,devices/yr,A00,grows 0%/yr
+Units,ELEC_Tablet,Base,4500000.0,5216733.33435,6047623.70704855,7010853.374703443,devices/yr,A00,grows 3%/yr
+Units,ELEC_Tablet,High,4500000.0,5743267.031250002,7330025.820498489,9355176.807351159,devices/yr,A00,grows 5%/yr
+Units,ELEC_Wearable,Low,114200000.0,103227754.99455999,93309714.54655783,84344591.52210511,devices/yr,S15,grows -2%/yr
+Units,ELEC_Wearable,Base,114200000.0,120025347.72142002,126147846.72195956,132582654.70325385,devices/yr,S15,grows 1%/yr
+Units,ELEC_Wearable,High,114200000.0,138941761.45408002,169043897.33767492,205667748.32888988,devices/yr,S15,grows 4%/yr
+Units,ELEC_PowerBank,Low,25000000.0,25000000.0,25000000.0,25000000.0,devices/yr,A00,grows 0%/yr
+Units,ELEC_PowerBank,Base,25000000.0,27602020.080000002,30474860.499868933,33646708.45810325,devices/yr,A00,grows 2%/yr
+Units,ELEC_PowerBank,High,25000000.0,30416322.560000002,37006107.12295861,45023587.637672916,devices/yr,A00,grows 4%/yr
+Units,ELEC_ExportAssembly,Low,90000000.0,104334666.687,120952474.140971,140217067.49406886,devices/yr,S28; A00,grows 3%/yr; export phones = ICEA Rs 2 lakh cr / ~Rs 22k per phone
+Units,ELEC_ExportAssembly,Base,90000000.0,126229655.76300004,177043622.156061,248312838.66438025,devices/yr,S28; A00,grows 7%/yr; export phones = ICEA Rs 2 lakh cr / ~Rs 22k per phone
+Units,ELEC_ExportAssembly,High,90000000.0,144945900.00000006,233436821.40900022,375952335.24740905,devices/yr,S28; A00,grows 10%/yr; export phones = ICEA Rs 2 lakh cr / ~Rs 22k per phone
+Wh_per_Unit,ELEC_Phone,All,19.4,21,23,24,Wh,A00,"5,000 mAh x 3.87 V = 19.4 Wh for a phone"
+Wh_per_Unit,ELEC_PC,All,50,52,55,55,Wh,A00,"5,000 mAh x 3.87 V = 19.4 Wh for a phone"
+Wh_per_Unit,ELEC_Tablet,All,28,30,32,32,Wh,A00,"5,000 mAh x 3.87 V = 19.4 Wh for a phone"
+Wh_per_Unit,ELEC_Wearable,All,0.75,0.8,0.9,0.9,Wh,A00,"5,000 mAh x 3.87 V = 19.4 Wh for a phone"
+Wh_per_Unit,ELEC_PowerBank,All,37,40,40,40,Wh,A00,"5,000 mAh x 3.87 V = 19.4 Wh for a phone"
+Wh_per_Unit,ELEC_ExportAssembly,All,19.4,21,23,24,Wh,A00,"5,000 mAh x 3.87 V = 19.4 Wh for a phone"
+t_LCE,DEF_Defence,Low,150,191.44223437500006,244.3341940166163,311.83922691170534,t LCE,A00,"No public data; band for drones, missiles, submarines, space cells and Al-Li alloy; grows 5%/yr"
+t_LCE,DEF_Defence,Base,150,220.39921152000008,323.8387495909182,475.8253671297408,t LCE,A00,"No public data; band for drones, missiles, submarines, space cells and Al-Li alloy; grows 8%/yr"
+t_LCE,DEF_Defence,High,150,264.3512524800001,465.8772312516318,821.0348638885569,t LCE,A00,"No public data; band for drones, missiles, submarines, space cells and Al-Li alloy; grows 12%/yr"
+t_LCE,IND_Grease,Low,1080.5,1252.5956372811502,1452.101647881324,1683.3837936371267,t LCE,S06; S26,2025 from cleaned trade data; grows 3%/yr
+t_LCE,IND_Grease,Base,1080.5,1379.0222282812504,1760.0206442330261,2246.281897853984,t LCE,S06; S26,2025 from cleaned trade data; grows 5%/yr
+t_LCE,IND_Grease,High,1080.5,1515.4571450213505,2125.5070415513765,2981.133579742921,t LCE,S06; S26,2025 from cleaned trade data; grows 7%/yr
+t_LCE,IND_GlassCeramics,Low,251.7,291.78928450131,338.26375268091556,392.1403987584126,t LCE,S06; S26,2025 from cleaned trade data; grows 3%/yr
+t_LCE,IND_GlassCeramics,Base,251.7,321.2400692812501,409.99277755988214,523.2662227578415,t LCE,S06; S26,2025 from cleaned trade data; grows 5%/yr
+t_LCE,IND_GlassCeramics,High,251.7,353.0222706171901,495.1319966297839,694.4482387980502,t LCE,S06; S26,2025 from cleaned trade data; grows 7%/yr
+t_LCE,IND_Pharma_Other,Low,371.8,431.01810082474003,499.66810984014467,579.2522854921644,t LCE,S06; S26,2025 from cleaned trade data; grows 3%/yr
+t_LCE,IND_Pharma_Other,Base,371.8,474.52148493750013,605.623022235853,772.945497105147,t LCE,S06; S26,2025 from cleaned trade data; grows 5%/yr
+t_LCE,IND_Pharma_Other,High,371.8,521.4687334742601,731.3868746402609,1025.807926837962,t LCE,S06; S26,2025 from cleaned trade data; grows 7%/yr
+Domestic_Mining_t_LCE,Supply,Low,0,0,0,0,t LCE,S02; S20; S24; A00,"start none; Reasi holds ~18,300 t LCE in total; IEA lead time >16 yrs"
+Domestic_Mining_Start,Supply,Low,2099,2099,2099,2099,year,S24; A00,
+Domestic_Mining_t_LCE,Supply,Base,0,0,0,600,t LCE,S02; S20; S24; A00,"start 2039; Reasi holds ~18,300 t LCE in total; IEA lead time >16 yrs"
+Domestic_Mining_Start,Supply,Base,2039,2039,2039,2039,year,S24; A00,
+Domestic_Mining_t_LCE,Supply,High,0,0,800,2500,t LCE,S02; S20; S24; A00,"start 2033; Reasi holds ~18,300 t LCE in total; IEA lead time >16 yrs"
+Domestic_Mining_Start,Supply,High,2033,2033,2033,2033,year,S24; A00,
+Overseas_Equity_t_LCE,Supply,Low,0,0,0,0,t LCE,S19; A00,KABIL Catamarca first output targeted Dec 2030
+Overseas_Equity_Start,Supply,Low,2099,2099,2099,2099,year,S19; A00,
+Overseas_Equity_t_LCE,Supply,Base,0,0,6000,12000,t LCE,S19; A00,KABIL Catamarca first output targeted Dec 2030
+Overseas_Equity_Start,Supply,Base,2032,2032,2032,2032,year,S19; A00,
+Overseas_Equity_t_LCE,Supply,High,0,0,15000,30000,t LCE,S19; A00,KABIL Catamarca first output targeted Dec 2030
+Overseas_Equity_Start,Supply,High,2031,2031,2031,2031,year,S19; A00,
+Collection_Rate,EV_BESS,Low,0.2,0.45,0.6,0.7,share of retired,S17; A00,BWMR: 70% EV collection by 2027-28
+Collection_Rate,EV_BESS,Base,0.3,0.7,0.85,0.9,share of retired,S17; A00,BWMR: 70% EV collection by 2027-28
+Collection_Rate,EV_BESS,High,0.4,0.85,0.95,0.95,share of retired,S17; A00,BWMR: 70% EV collection by 2027-28
+Collection_Rate,Electronics,Low,0.1,0.2,0.35,0.45,share of retired,A00,informal sector handles most e-waste today
+Collection_Rate,Electronics,Base,0.15,0.35,0.55,0.7,share of retired,A00,informal sector handles most e-waste today
+Collection_Rate,Electronics,High,0.2,0.5,0.75,0.85,share of retired,A00,informal sector handles most e-waste today
+Li_Recovery,Recycling,Low,0.7,0.8,0.85,0.85,share of Li recovered,S17; A00,hydrometallurgy
+Li_Recovery,Recycling,Base,0.8,0.9,0.92,0.92,share of Li recovered,S17; A00,hydrometallurgy
+Li_Recovery,Recycling,High,0.85,0.95,0.95,0.95,share of Li recovered,S17; A00,hydrometallurgy
+Global_Supply_t_LCE,Supply,All,1544000.0,2600000.0,3400000.0,4300000.0,t LCE,S01; S22; S23; A00,2025 = 290 kt Li (USGS); IEA sees demand x3 to 2040 with a narrowing gap
+India_Accessible_Share,Supply,All,0.03,0.03,0.03,0.03,share of global supply,A00,stress-test lever; India is ~3.5% of world GDP and ~1% of lithium use today

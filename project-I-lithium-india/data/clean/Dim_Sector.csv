@@ -1,0 +1,18 @@
+Sub_Sector,Label,Sector,Group,Sort
+EV_2W,Electric two-wheelers,EVs,Energy transition,0
+EV_3W_L5,Electric 3W (L5 autos and cargo),EVs,Energy transition,1
+EV_3W_L3,E-rickshaws and e-carts (L3),EVs,Energy transition,2
+EV_4W,Electric cars,EVs,Energy transition,3
+EV_Bus,Electric buses,EVs,Energy transition,4
+EV_Truck,Electric trucks and goods carriers,EVs,Energy transition,5
+BESS,Grid battery storage,Grid storage,Energy transition,6
+ELEC_Phone,Smartphones (domestic sales),Electronics,Non-energy,7
+ELEC_PC,Laptops and PCs,Electronics,Non-energy,8
+ELEC_Tablet,Tablets,Electronics,Non-energy,9
+ELEC_Wearable,Wearables,Electronics,Non-energy,10
+ELEC_PowerBank,Power banks,Electronics,Non-energy,11
+ELEC_ExportAssembly,Phones assembled for export,Electronics,Non-energy,12
+DEF_Defence,Defence and aerospace,Defence and aerospace,Non-energy,13
+IND_Grease,Lubricating greases,Industry,Non-energy,14
+IND_GlassCeramics,Glass and ceramics,Industry,Non-energy,15
+IND_Pharma_Other,"Pharma, air treatment and other",Industry,Non-energy,16

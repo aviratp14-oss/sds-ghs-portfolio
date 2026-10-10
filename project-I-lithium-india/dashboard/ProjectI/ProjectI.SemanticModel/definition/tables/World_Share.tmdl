@@ -1,0 +1,37 @@
+table World_Share
+	lineageTag: 6dfef5eb-7183-5f3d-a9d6-35c497a59006
+
+	column Share_Label
+		dataType: string
+		lineageTag: 8f6bbc9a-e5af-5a3a-8415-1783e9444e9a
+		summarizeBy: none
+		sourceColumn: Share_Label
+		sortByColumn: Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Share
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: b678a874-d406-5f82-90f7-5dcb528246cd
+		summarizeBy: sum
+		sourceColumn: Share
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 96e03847-c50c-524c-b822-1b10d1a8c3a7
+		summarizeBy: none
+		sourceColumn: Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition World_Share = m
+		mode: import
+		source =
+				#table(type table [Share_Label = text, Share = number, Sort = Int64.Type], {{"1%", 0.01, 0}, {"2%", 0.02, 1}, {"3%", 0.03, 2}, {"4%", 0.04, 3}, {"5%", 0.05, 4}, {"6%", 0.06, 5}})
+
+	annotation PBI_ResultType = Table

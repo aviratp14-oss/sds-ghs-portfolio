@@ -1,0 +1,47 @@
+table Ref_Value_Chain
+	lineageTag: 0c20b302-4c15-5fd0-a620-ab16319f7c18
+
+	column Stage
+		dataType: string
+		lineageTag: 2acea18b-4c9a-50b4-a7e4-d69207975b29
+		summarizeBy: none
+		sourceColumn: Stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column India_Status
+		dataType: string
+		lineageTag: 1ab5c454-b00e-5ba9-a0a2-1d525e64a274
+		summarizeBy: none
+		sourceColumn: India_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Evidence
+		dataType: string
+		lineageTag: fd301234-c0e9-5766-92fa-0a5c2c4f2fa0
+		summarizeBy: none
+		sourceColumn: Evidence
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source_ID
+		dataType: string
+		lineageTag: 4c13789e-2e20-5b15-be87-8b84396fc1c7
+		summarizeBy: none
+		sourceColumn: Source_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Ref_Value_Chain = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Ref_Value_Chain.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Stage", type text}, {"India_Status", type text}, {"Evidence", type text}, {"Source_ID", type text}}, "en-US"),
+				    Result = Typed
+				in
+				    Result
+
+	annotation PBI_ResultType = Table

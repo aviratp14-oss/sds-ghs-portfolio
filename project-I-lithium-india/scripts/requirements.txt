@@ -1,0 +1,2 @@
+pandas>=2.2      # Power BI build script reads the clean CSVs
+openpyxl>=3.1    # writes the two Excel workbooks

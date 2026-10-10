@@ -1,0 +1,6 @@
+Asset,Type,Deposit_Style,Stage,Ore_Mt,Grade_ppm_Li,Contained_t_Li,Contained_t_LCE,Status_2026,Source_ID
+"Salal-Haimana, Reasi (J&K)",Domestic block,Lithium in bauxite / clay,G3 inferred,5.9,583,3440,18310,Auction called off twice; no qualified bids,S02; S21
+Katghora (Chhattisgarh),Domestic block,Hard rock (lithium and REE),Composite licence (exploration then mining),,,,,Awarded Jun 2024 to Maiki South Mining at 76.05% premium; resource not published,S20; S21
+KABIL Catamarca (Argentina),Overseas equity,Brine,"Exploration, 5 blocks, 15,703 ha",,,,,First production targeted Dec 2030 (not binding),S19
+Typical spodumene pegmatite (benchmark),Benchmark,Hard rock,Producing (Australia),,5800,,,"1.25% Li2O x 0.4645 = ~5,800 ppm Li",A00
+Brine (benchmark range),Benchmark,Brine,"Producing (Chile, Argentina)",,200-2000,,,,S03

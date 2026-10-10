@@ -1,0 +1,51 @@
+Source_ID,Period,Std_Segment,Measure,Value,Segment_As_Reported,Value_As_Reported
+S07,FY2025,Total,Units,1964831.0,Total EVs,"1,964,831"
+S07,FY2025,2W,Units,1149307.0,Electric two-wheelers (e2W),"1,149,307"
+S07,FY2025,3W,Units,699062.0,Electric three-wheelers (e3W),"699,062"
+S07,FY2025,4W,Units,107462.0,"Electric passenger vehicles (cars, SUVs, MPVs)","107,462"
+S07,FY2025,CV,Units,8726.0,"Electric commercial vehicles (buses, heavy and light goods)","8,726"
+S07,FY2024,Total,Units,1681241.0,Total EVs,"1,681,241"
+S07,FY2024,3W,Units,632798.0,Electric three-wheelers (e3W),"632,798"
+S07,FY2024,4W,Units,91321.0,Electric passenger vehicles,"91,321"
+S07,FY2024,2W,Share_of_EV_Sales,56.0,e2W,56
+S08,FY2025,Total,Units,2037831.0,Total EV,"20,37,831"
+S08,FY2025,2W,Units,1209772.0,e-2W (high-speed),"12,09,772"
+S08,FY2025,3W_L3,Units,474503.0,e-rickshaw,"4,74,503"
+S08,FY2025,3W_L3,Units,65060.0,e-cart,"65,060"
+S08,FY2025,4W,Units,115800.0,e-4W,"1,15,800"
+S08,FY2024,Total,Units,1761520.0,Total EV,"17,61,520"
+S08,FY2023,Total,Units,1246634.0,Total EV,"12,46,634"
+S08,FY2025,3W_L5,Share_of_EV_Sales,6.6,e-3W L5M,6.6
+S08,FY2025,2W,EV_Penetration,6.2,e-2W,6.2
+S08,FY2025,4W,EV_Penetration,2.7,e-4W,2.7
+S08,FY2025,3W_L5,EV_Penetration,22.8,e-3W L5M,22.8
+S08,FY2025,3W_L5,EV_Penetration,21.5,e-3W L5N,21.5
+S08,FY2025,Total,EV_Penetration,7.8,Total EV,7.8
+S09,FY2026,Total,Units,2500000.0,Total EV,>25 lakh
+S09,FY2026,2W,Share_of_EV_Sales,57.8,Electric 2W,57.8
+S09,FY2026,3W_Passenger,Share_of_EV_Sales,29.0,E3W passenger,~29
+S09,FY2026,4W,YoY_Growth,86.0,Cars (4W),~86
+S09,FY2026,Bus,YoY_Growth,48.0,Buses,~48
+S10,FY2026,Total,Units,2550000.0,Total EV,2.55
+S10,FY2026,All_Vehicles,Units,30840000.0,All vehicles,30.84
+S10,CY2025,Total,Units,2600000.0,Total EV,2.6
+S10,CY2024,Total,Units,2000000.0,Total EV,2.0
+S10,CY2025,2W,Share_of_EV_Sales,60.1,Electric two-wheelers,60.1
+S10,CY2025,3W,Share_of_EV_Sales,31.6,Electric three-wheelers,31.6
+S10,CY2025,4W,Share_of_EV_Sales,7.7,Electric four-wheelers,7.7
+S10,CY2025,Bus,Share_of_EV_Sales,0.2,Electric buses,0.2
+S10,CY2025,Truck,Share_of_EV_Sales,0.4,Electric trucks,0.4
+S10,CY2025,Battery,GWh,19.0,Battery demand,19
+S10,CY2024,Battery,GWh,13.0,Battery demand,13
+S10,CY2025,4W,Share_of_EV_GWh,40.0,Four-wheelers battery share,40
+S10,CY2025,3W,Share_of_EV_GWh,27.0,Three-wheelers battery share,27
+S10,CY2025,2W,Share_of_EV_GWh,23.0,Two-wheelers battery share,23
+S10,CY2025,Bus,Share_of_EV_GWh,7.8,Buses battery share,7.8
+S27,FY2023,3W_L3,Share_LiIon_in_L3,10.0,e-rickshaw Li-ion share,almost 10
+S27,FY2023,3W_L3,Years,3.0,e-rickshaw Li-ion battery life,3
+S25,Target2030,4W,Target_Share_of_Sales,30.0,Private cars,30
+S25,Target2030,4W_Commercial,Target_Share_of_Sales,70.0,Commercial cars,70
+S25,Target2030,Bus,Target_Share_of_Sales,40.0,Buses,40
+S25,Target2030,2W_3W,Target_Share_of_Sales,80.0,Two- and three-wheelers,80
+S29,CY2025,Battery,GWh,17.7,EV battery demand,17.7
+S29,CY2032,Battery,GWh,256.3,EV battery demand,256.3

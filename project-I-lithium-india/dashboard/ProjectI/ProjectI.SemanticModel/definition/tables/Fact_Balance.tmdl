@@ -1,0 +1,211 @@
+table Fact_Balance
+	lineageTag: e48260f2-1faf-5e51-be25-74508fba5ae4
+
+	column Scenario
+		dataType: string
+		lineageTag: 24c7a187-3aa5-5c78-b519-3dbde7215388
+		summarizeBy: none
+		sourceColumn: Scenario
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lever
+		dataType: string
+		lineageTag: a588b613-7214-520d-9382-d1eb2f17efcf
+		summarizeBy: none
+		sourceColumn: Lever
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e0c9c36-aeaa-582f-b254-fcfc855f9b22
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Demand_t_LCE
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 1ae2f865-9430-51d6-87c1-fb2ba3c2739e
+		summarizeBy: sum
+		sourceColumn: Demand_t_LCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Energy_Demand_t_LCE
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 151892f2-63dc-5cfc-a99a-30fa69a3115e
+		summarizeBy: sum
+		sourceColumn: Energy_Demand_t_LCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column NonEnergy_Demand_t_LCE
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 0454bdc0-12b5-59bc-bd93-292ffcb2bf72
+		summarizeBy: sum
+		sourceColumn: NonEnergy_Demand_t_LCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Recycling_t_LCE
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 8e28cb81-22de-5875-952b-87f5931fc8c1
+		summarizeBy: sum
+		sourceColumn: Recycling_t_LCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Domestic_Mining_t_LCE
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 15be42b5-3f9e-5407-ab0a-c2099dfe1594
+		summarizeBy: sum
+		sourceColumn: Domestic_Mining_t_LCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Overseas_Equity_t_LCE
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: ad531c69-a853-56d1-82b6-aee63f22d997
+		summarizeBy: sum
+		sourceColumn: Overseas_Equity_t_LCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Import_Ceiling_t_LCE
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 537e3ebf-a3f2-523f-b48f-15e60c3cf518
+		summarizeBy: sum
+		sourceColumn: Import_Ceiling_t_LCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Global_Supply_t_LCE
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: ab09ee3c-1606-5000-ad47-76a1a432735a
+		summarizeBy: sum
+		sourceColumn: Global_Supply_t_LCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Net_Import_Need_t_LCE
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: d3494350-9d92-56e7-897c-9a8165fa0e80
+		summarizeBy: sum
+		sourceColumn: Net_Import_Need_t_LCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Open_Market_Import_Need_t_LCE
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 0cbdf2b2-a1da-5244-9d8d-2a4169708734
+		summarizeBy: sum
+		sourceColumn: Open_Market_Import_Need_t_LCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Available_Supply_t_LCE
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 6cbd5b37-c079-5438-b77f-8ac7523df081
+		summarizeBy: sum
+		sourceColumn: Available_Supply_t_LCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Shortfall_t_LCE
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: c3cc189e-38f3-5a28-830a-639f9ec43a4d
+		summarizeBy: sum
+		sourceColumn: Shortfall_t_LCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Energy_Coverage_Ratio
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: b2de01bc-6dba-57df-a0f3-ee25822d2035
+		summarizeBy: none
+		sourceColumn: Energy_Coverage_Ratio
+
+		annotation SummarizationSetBy = Automatic
+
+	column Energy_Shortfall_t_LCE
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: ae41037b-2e8c-5ca1-abd6-c3c7ef57b694
+		summarizeBy: sum
+		sourceColumn: Energy_Shortfall_t_LCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Import_Dependence
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 766f0ce2-30b9-53c2-8998-bb943faa942e
+		summarizeBy: none
+		sourceColumn: Import_Dependence
+
+		annotation SummarizationSetBy = Automatic
+
+	column Domestic_Share
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 750007fe-dfd9-511e-8376-17ca3165e68b
+		summarizeBy: none
+		sourceColumn: Domestic_Share
+
+		annotation SummarizationSetBy = Automatic
+
+	column Recycled_Content_Share
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 1a8d2c07-7dfb-5a3a-8cf7-4edc794188ac
+		summarizeBy: none
+		sourceColumn: Recycled_Content_Share
+
+		annotation SummarizationSetBy = Automatic
+
+	column Recycled_Content_Mandate
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 0b8b0059-4080-5027-88ed-0d00a5b4ed09
+		summarizeBy: none
+		sourceColumn: Recycled_Content_Mandate
+
+		annotation SummarizationSetBy = Automatic
+
+	column India_Share_of_Global_Supply
+		dataType: double
+		formatString: #,##0.0
+		lineageTag: 87e6e8ee-0643-5ea1-989e-3326859f854d
+		summarizeBy: none
+		sourceColumn: India_Share_of_Global_Supply
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Balance = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Fact_Balance.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Scenario", type text}, {"Lever", type text}, {"Year", Int64.Type}, {"Demand_t_LCE", type number}, {"Energy_Demand_t_LCE", type number}, {"NonEnergy_Demand_t_LCE", type number}, {"Recycling_t_LCE", type number}, {"Domestic_Mining_t_LCE", type number}, {"Overseas_Equity_t_LCE", type number}, {"Import_Ceiling_t_LCE", type number}, {"Global_Supply_t_LCE", type number}, {"Net_Import_Need_t_LCE", type number}, {"Open_Market_Import_Need_t_LCE", type number}, {"Available_Supply_t_LCE", type number}, {"Shortfall_t_LCE", type number}, {"Energy_Coverage_Ratio", type number}, {"Energy_Shortfall_t_LCE", type number}, {"Import_Dependence", type number}, {"Domestic_Share", type number}, {"Recycled_Content_Share", type number}, {"Recycled_Content_Mandate", type number}, {"India_Share_of_Global_Supply", type number}}, "en-US"),
+				    Result = Typed
+				in
+				    Result
+
+	annotation PBI_ResultType = Table

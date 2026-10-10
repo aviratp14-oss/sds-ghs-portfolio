@@ -3,6 +3,8 @@
 !**/data/raw/README.md
 # Project C's raw files are small simulated SAP exports, so they stay in the repo
 !project-C-sap-chemical-portfolio/data/raw/*.csv
+# Project I's raw files are small public-source tables I typed up or downloaded, so they stay too
+!project-I-lithium-india/data/raw/*.csv
 
 # Power BI local files
 **/.pbi/localSettings.json

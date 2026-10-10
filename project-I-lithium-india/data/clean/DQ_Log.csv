@@ -1,0 +1,13 @@
+Table,Rule,Rows_Affected,Action,Note
+Fact_Trade_Lithium_Chemicals,Numbers stored as text with thousands separators,189,Converted to numbers; value from USD thousand to USD,
+Fact_Trade_Lithium_Chemicals,World total rows mixed with partner rows,14,Kept only for reconciliation; excluded from partner table,
+Fact_Trade_Lithium_Chemicals,Unit value below 3.0 USD/kg,16,Quantity re-estimated as value / clean unit value of that year and HS code,"Ireland shows up every year at ~0.55 USD/kg (e.g. 600 t for USD 354k in 2023), far below any lithium carbonate price; most likely a different product booked under 283691"
+Fact_Trade_Lithium_Chemicals,India listed as its own partner (re-import),1,"Kept in value, flagged",
+Summary_Trade_by_Year,World row vs sum of partners,0,Checked; differences are rounding only,
+Fact_EV_Sales_Reported,36 different segment labels across 7 sources,50,Mapped to 2W / 3W_L3 / 3W_L5 / 4W / Bus / Truck / CV / Total via Map_Segment,0 unmapped
+Fact_EV_Sales_Reported,"Indian digit grouping (20,37,831) and words (lakh, ~, >, almost)",11,Parsed to plain numbers,
+Fact_EV_Sales_Reported,"Period labels mixed (FY2025, FY 2024-25, FY2025-26, CY2025)",50,Standardised to FYyyyy (year the fiscal year ends) or CYyyyy,
+Fact_EV_Sales_Reported,"Sources disagree on FY2025 total EV sales (1,964,831 vs 2,037,831)",2,"Kept both; Vahan retail (S07) used for history, IESA CY2025 (S10) for the base year",EVreporter counts e-carts and some low-speed models; gap is 3.7%
+Ref_Base_Year_2025,No single source gives CY2025 units by segment,6,Units = IESA CY2025 total (2.6m) x IESA segment shares; market = EV units / penetration,"Penetration from EVreporter FY2025 (2W 6.2%, 4W 2.7%, L5 ~22%) rolled forward one year"
+Ref_Industry_Baseline,Cross-check of grease share,1,"Grease survey implies ~1,031 t LCE vs 1,080 t LCE from hydroxide imports","190m lb grease (NLGI 2020) x 85% lithium soap x ~1.6% LiOH.H2O; survey covers 16 of 31 makers, so actual is higher"
+Ref_Sources,Every number in the model carries a Source_ID; A00 marks my own assumption,32,Register,

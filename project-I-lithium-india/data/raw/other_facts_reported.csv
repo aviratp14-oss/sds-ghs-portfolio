@@ -1,0 +1,67 @@
+Source_ID,Topic,Item,Period,Value_As_Reported,Unit_As_Reported,Quote_Or_Note
+S11,Grid storage,BESS requirement (base),FY2026-27,8.68 GW / 34.72 GWh,GW / GWh,"the BESS requirement is expected to be 8.68 GW/34.72 GWh by 2026-27"
+S11,Grid storage,BESS requirement (base),FY2031-32,47.24 GW / 236.22 GWh,GW / GWh,"the BESS capacity is estimated to go up to 47.24 GW/236.22 GWh by 2031-32"
+S11,Grid storage,BESS sensitivity low,FY2031-32,38.7 GW / 193.55 GWh,GW / GWh,sensitivity range
+S11,Grid storage,BESS sensitivity high,FY2031-32,67.04 GW / 335.2 GWh,GW / GWh,sensitivity range
+S12,Grid storage,Operational standalone BESS,May 2026,"4,700",MWh,"exceeded 4,700 MWh"
+S12,Grid storage,Awarded standalone BESS (cumulative),May 2026,"35,000",MWh,"crossed 35,000 MWh"
+S12,Grid storage,Cancelled standalone BESS,May 2026,"5,300",MWh,
+S12,Grid storage,CEA NGAP battery storage requirement,FY2035-36,80,GW,"around 80 GW of battery storage" within 174 GW storage
+S13,Electronics,Smartphone shipments,2025,152,million units,"growing marginally by 0.5% year-over-year to reach 152 million units"
+S14,Electronics,PC shipments,2025,15.9,million units,record year
+S15,Electronics,Wearables total,2025,114.2,million units,"fell 4.0% YoY"
+S15,Electronics,Earwear,2025,84.7,million units,
+S15,Electronics,Smartwatch,2025,28.9,million units,"falling 17.6% YoY"
+S28,Electronics,Mobile phone production value,FY2025,"5,25,000",INR crore,ICEA
+S28,Electronics,Mobile phone exports value,FY2025,"2,00,000",INR crore,"crossing"; lower bound
+S01,Global supply,World mine production (ex US),2024,"222,000",t Li,
+S01,Global supply,World mine production (ex US),2025,"290,000",t Li,
+S01,Global supply,World consumption,2025,"263,000",t Li,"rose about 20%"
+S01,Global supply,World reserves,2025,"37,000,000",t Li,
+S01,Global supply,End use: batteries,2025,88,%,
+S01,Global supply,End use: ceramics and glass,2025,4,%,
+S01,Global supply,End use: lubricating greases,2025,2,%,
+S01,Global supply,End use: air treatment,2025,1,%,
+S01,Global supply,End use: continuous casting mold flux,2025,1,%,
+S01,Global supply,End use: medical,2025,1,%,
+S01,Global supply,End use: other,2025,3,%,
+S01,Prices,Battery-grade lithium carbonate,2021,"11,700",USD/t,
+S01,Prices,Battery-grade lithium carbonate,2022,"63,700",USD/t,
+S01,Prices,Battery-grade lithium carbonate,2023,"39,000",USD/t,
+S01,Prices,Battery-grade lithium carbonate,2024,"11,800",USD/t,
+S01,Prices,Battery-grade lithium carbonate,2025,"9,000",USD/t,estimate
+S22,Global supply,Implied lithium deficit vs STEPS demand,2035,40,%,"implied deficits of 30% for copper and 40% for lithium in the STEPS"
+S22,Global supply,China share of refined lithium,2035,>60,%,
+S23,Global supply,Lithium demand growth to 2040 (STEPS),2040,over threefold,x,"Lithium experiences the strongest growth, rising over threefold to 2040"
+S23,Global supply,Supply gap note,2026,narrowed,text,"gaps for copper and lithium have narrowed"
+S03,Global supply,China share of lithium chemicals processing,2024,~70,%,
+S02,Domestic resource,Reasi (Salal-Haimana) inferred resource,2024,5.9,million tonnes ore,"inferred resource (G3) of 5.9 million tonnes of lithium ore"
+S02,Domestic resource,Reasi average grade,2024,583,ppm Li,"average grade 583 ppm, 200 ppm Li cutoff, within bauxite"
+S31,Domestic resource,Reasi grade (earlier reporting),2023,332 to 500,ppm Li,"anomalous Lithium, between 332 ppm to 500 ppm"
+S03,Domestic resource,J&K deposit average grade,2025,583,ppm,
+S03,Domestic resource,Brine lithium grade range,2025,200-2000,ppm,
+S03,Domestic resource,Hard rock share of global supply,2023,63,%,
+S21,Exploration pipeline,Salal-Haimana block auction,Tranche 3 (Mar 2024),called off,text,"lower-than-required number of bidders"; clay-type deposit
+S20,Exploration pipeline,Katghora lithium-REE block (Chhattisgarh),Jun 2024,awarded,text,"Maiki South Mining, auction premium 76.05%"; composite licence; hard rock
+S24,Exploration pipeline,Average lead time discovery to first production,2023,>16,years,"more than 16 years on average"
+S19,Overseas assets,KABIL Catamarca blocks,Jan 2024,5 blocks / 15703 ha,count / ha,"about 15,703 hectares"
+S19,Overseas assets,KABIL investment,Jan 2024,~21,USD million,"₹2 billion, about US$21 million"
+S19,Overseas assets,KABIL expected first production,2026,Dec 2030,date,parliamentary panel; "not a binding project schedule"
+S16,Manufacturing,ACC PLI target,2021,50,GWh,
+S16,Manufacturing,ACC PLI commissioned,Oct 2025,1.4,GWh,Ola Electric only
+S16,Manufacturing,Cell import dependence,2025,close to 100,%,
+S16,Manufacturing,Domestic battery demand (cumulative),FY2030,~272,GWh,36.5% CAGR
+S16,Manufacturing,Battery capacity under development outside PLI,2025,~178,GWh,
+S17,Recycling,EV battery recovery target,2024-25,70,% by dry weight,
+S17,Recycling,EV battery recovery target,2026-27,90,% by dry weight,
+S17,Recycling,Recycled content in new batteries,2027-28,5,%,
+S17,Recycling,Recycled content in new batteries,2030-31,20,%,
+S17,Recycling,EV battery collection target,2027-28,70,% of placed on market,
+S18,Recycling,Recycling incentive scheme outlay,FY2026-FY2031,"1,500",INR crore,
+S18,Recycling,Target recycling capacity,2031,270,kt per year,feedstock incl e-waste and LIB scrap
+S18,Recycling,Target critical mineral output,2031,40,kt per year,
+S26,Industry,India grease production,2020,190,million lb,16 of 31 companies surveyed
+S26,Industry,Lithium-thickened share of grease,2020,85,%,
+S26,Industry,Lithium-thickened share of grease,2019,82,%,
+S03,Policy,National Critical Mineral Mission outlay,FY2025-FY2031,"34,300",INR crore,
+S30,Policy,EV battery demand 2030,2030,110-130,GWh,Grant Thornton

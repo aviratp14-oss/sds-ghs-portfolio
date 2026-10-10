@@ -1,0 +1,1153 @@
+Scenario,Lever,Year,Supply_Source,Supply_t_LCE
+Low,None,2025,Recycling,252.6
+Low,None,2025,Domestic mining,0
+Low,None,2025,Overseas equity,0
+Low,None,2025,Import ceiling (open market),46320.0
+Low,None,2026,Recycling,325.5
+Low,None,2026,Domestic mining,0
+Low,None,2026,Overseas equity,0
+Low,None,2026,Import ceiling (open market),52656.0
+Low,None,2027,Recycling,460.2
+Low,None,2027,Domestic mining,0
+Low,None,2027,Overseas equity,0
+Low,None,2027,Import ceiling (open market),58992.0
+Low,None,2028,Recycling,761.6
+Low,None,2028,Domestic mining,0
+Low,None,2028,Overseas equity,0
+Low,None,2028,Import ceiling (open market),65328.0
+Low,None,2029,Recycling,1080.4
+Low,None,2029,Domestic mining,0
+Low,None,2029,Overseas equity,0
+Low,None,2029,Import ceiling (open market),71664.0
+Low,None,2030,Recycling,1574.1
+Low,None,2030,Domestic mining,0
+Low,None,2030,Overseas equity,0
+Low,None,2030,Import ceiling (open market),78000.0
+Low,None,2031,Recycling,2388.6
+Low,None,2031,Domestic mining,0
+Low,None,2031,Overseas equity,0
+Low,None,2031,Import ceiling (open market),82800.0
+Low,None,2032,Recycling,3224.3
+Low,None,2032,Domestic mining,0
+Low,None,2032,Overseas equity,0
+Low,None,2032,Import ceiling (open market),87600.0
+Low,None,2033,Recycling,4463.1
+Low,None,2033,Domestic mining,0
+Low,None,2033,Overseas equity,0
+Low,None,2033,Import ceiling (open market),92400.0
+Low,None,2034,Recycling,5667.3
+Low,None,2034,Domestic mining,0
+Low,None,2034,Overseas equity,0
+Low,None,2034,Import ceiling (open market),97200.0
+Low,None,2035,Recycling,8107.5
+Low,None,2035,Domestic mining,0
+Low,None,2035,Overseas equity,0
+Low,None,2035,Import ceiling (open market),102000.0
+Low,None,2036,Recycling,9976.4
+Low,None,2036,Domestic mining,0
+Low,None,2036,Overseas equity,0
+Low,None,2036,Import ceiling (open market),107400.0
+Low,None,2037,Recycling,12553.5
+Low,None,2037,Domestic mining,0
+Low,None,2037,Overseas equity,0
+Low,None,2037,Import ceiling (open market),112800.0
+Low,None,2038,Recycling,15718.3
+Low,None,2038,Domestic mining,0
+Low,None,2038,Overseas equity,0
+Low,None,2038,Import ceiling (open market),118200.0
+Low,None,2039,Recycling,19498.3
+Low,None,2039,Domestic mining,0
+Low,None,2039,Overseas equity,0
+Low,None,2039,Import ceiling (open market),123600.0
+Low,None,2040,Recycling,23696.9
+Low,None,2040,Domestic mining,0
+Low,None,2040,Overseas equity,0
+Low,None,2040,Import ceiling (open market),129000.0
+Low,Recycling push,2025,Recycling,252.6
+Low,Recycling push,2025,Domestic mining,0
+Low,Recycling push,2025,Overseas equity,0
+Low,Recycling push,2025,Import ceiling (open market),46320.0
+Low,Recycling push,2026,Recycling,592.8
+Low,Recycling push,2026,Domestic mining,0
+Low,Recycling push,2026,Overseas equity,0
+Low,Recycling push,2026,Import ceiling (open market),52656.0
+Low,Recycling push,2027,Recycling,1082.7
+Low,Recycling push,2027,Domestic mining,0
+Low,Recycling push,2027,Overseas equity,0
+Low,Recycling push,2027,Import ceiling (open market),58992.0
+Low,Recycling push,2028,Recycling,1972.6
+Low,Recycling push,2028,Domestic mining,0
+Low,Recycling push,2028,Overseas equity,0
+Low,Recycling push,2028,Import ceiling (open market),65328.0
+Low,Recycling push,2029,Recycling,3034.6
+Low,Recycling push,2029,Domestic mining,0
+Low,Recycling push,2029,Overseas equity,0
+Low,Recycling push,2029,Import ceiling (open market),71664.0
+Low,Recycling push,2030,Recycling,4631.0
+Low,Recycling push,2030,Domestic mining,0
+Low,Recycling push,2030,Overseas equity,0
+Low,Recycling push,2030,Import ceiling (open market),78000.0
+Low,Recycling push,2031,Recycling,6061.1
+Low,Recycling push,2031,Domestic mining,0
+Low,Recycling push,2031,Overseas equity,0
+Low,Recycling push,2031,Import ceiling (open market),82800.0
+Low,Recycling push,2032,Recycling,7325.2
+Low,Recycling push,2032,Domestic mining,0
+Low,Recycling push,2032,Overseas equity,0
+Low,Recycling push,2032,Import ceiling (open market),87600.0
+Low,Recycling push,2033,Recycling,9179.7
+Low,Recycling push,2033,Domestic mining,0
+Low,Recycling push,2033,Overseas equity,0
+Low,Recycling push,2033,Import ceiling (open market),92400.0
+Low,Recycling push,2034,Recycling,10724.7
+Low,Recycling push,2034,Domestic mining,0
+Low,Recycling push,2034,Overseas equity,0
+Low,Recycling push,2034,Import ceiling (open market),97200.0
+Low,Recycling push,2035,Recycling,14140.8
+Low,Recycling push,2035,Domestic mining,0
+Low,Recycling push,2035,Overseas equity,0
+Low,Recycling push,2035,Import ceiling (open market),102000.0
+Low,Recycling push,2036,Recycling,16701.9
+Low,Recycling push,2036,Domestic mining,0
+Low,Recycling push,2036,Overseas equity,0
+Low,Recycling push,2036,Import ceiling (open market),107400.0
+Low,Recycling push,2037,Recycling,20215.6
+Low,Recycling push,2037,Domestic mining,0
+Low,Recycling push,2037,Overseas equity,0
+Low,Recycling push,2037,Import ceiling (open market),112800.0
+Low,Recycling push,2038,Recycling,24411.4
+Low,Recycling push,2038,Domestic mining,0
+Low,Recycling push,2038,Overseas equity,0
+Low,Recycling push,2038,Import ceiling (open market),118200.0
+Low,Recycling push,2039,Recycling,29267.8
+Low,Recycling push,2039,Domestic mining,0
+Low,Recycling push,2039,Overseas equity,0
+Low,Recycling push,2039,Import ceiling (open market),123600.0
+Low,Recycling push,2040,Recycling,34448.0
+Low,Recycling push,2040,Domestic mining,0
+Low,Recycling push,2040,Overseas equity,0
+Low,Recycling push,2040,Import ceiling (open market),129000.0
+Low,Overseas assets,2025,Recycling,252.6
+Low,Overseas assets,2025,Domestic mining,0
+Low,Overseas assets,2025,Overseas equity,0
+Low,Overseas assets,2025,Import ceiling (open market),46320.0
+Low,Overseas assets,2026,Recycling,325.5
+Low,Overseas assets,2026,Domestic mining,0
+Low,Overseas assets,2026,Overseas equity,0
+Low,Overseas assets,2026,Import ceiling (open market),52656.0
+Low,Overseas assets,2027,Recycling,460.2
+Low,Overseas assets,2027,Domestic mining,0
+Low,Overseas assets,2027,Overseas equity,0
+Low,Overseas assets,2027,Import ceiling (open market),58992.0
+Low,Overseas assets,2028,Recycling,761.6
+Low,Overseas assets,2028,Domestic mining,0
+Low,Overseas assets,2028,Overseas equity,0
+Low,Overseas assets,2028,Import ceiling (open market),65328.0
+Low,Overseas assets,2029,Recycling,1080.4
+Low,Overseas assets,2029,Domestic mining,0
+Low,Overseas assets,2029,Overseas equity,0
+Low,Overseas assets,2029,Import ceiling (open market),71664.0
+Low,Overseas assets,2030,Recycling,1574.1
+Low,Overseas assets,2030,Domestic mining,0
+Low,Overseas assets,2030,Overseas equity,0
+Low,Overseas assets,2030,Import ceiling (open market),78000.0
+Low,Overseas assets,2031,Recycling,2388.6
+Low,Overseas assets,2031,Domestic mining,0
+Low,Overseas assets,2031,Overseas equity,14000.0
+Low,Overseas assets,2031,Import ceiling (open market),82800.0
+Low,Overseas assets,2032,Recycling,3224.3
+Low,Overseas assets,2032,Domestic mining,0
+Low,Overseas assets,2032,Overseas equity,18000.0
+Low,Overseas assets,2032,Import ceiling (open market),87600.0
+Low,Overseas assets,2033,Recycling,4463.1
+Low,Overseas assets,2033,Domestic mining,0
+Low,Overseas assets,2033,Overseas equity,22000.0
+Low,Overseas assets,2033,Import ceiling (open market),92400.0
+Low,Overseas assets,2034,Recycling,5667.3
+Low,Overseas assets,2034,Domestic mining,0
+Low,Overseas assets,2034,Overseas equity,26000.0
+Low,Overseas assets,2034,Import ceiling (open market),97200.0
+Low,Overseas assets,2035,Recycling,8107.5
+Low,Overseas assets,2035,Domestic mining,0
+Low,Overseas assets,2035,Overseas equity,30000.0
+Low,Overseas assets,2035,Import ceiling (open market),102000.0
+Low,Overseas assets,2036,Recycling,9976.4
+Low,Overseas assets,2036,Domestic mining,0
+Low,Overseas assets,2036,Overseas equity,34000.0
+Low,Overseas assets,2036,Import ceiling (open market),107400.0
+Low,Overseas assets,2037,Recycling,12553.5
+Low,Overseas assets,2037,Domestic mining,0
+Low,Overseas assets,2037,Overseas equity,38000.0
+Low,Overseas assets,2037,Import ceiling (open market),112800.0
+Low,Overseas assets,2038,Recycling,15718.3
+Low,Overseas assets,2038,Domestic mining,0
+Low,Overseas assets,2038,Overseas equity,42000.0
+Low,Overseas assets,2038,Import ceiling (open market),118200.0
+Low,Overseas assets,2039,Recycling,19498.3
+Low,Overseas assets,2039,Domestic mining,0
+Low,Overseas assets,2039,Overseas equity,46000.0
+Low,Overseas assets,2039,Import ceiling (open market),123600.0
+Low,Overseas assets,2040,Recycling,23696.9
+Low,Overseas assets,2040,Domestic mining,0
+Low,Overseas assets,2040,Overseas equity,50000.0
+Low,Overseas assets,2040,Import ceiling (open market),129000.0
+Low,Sodium-ion push,2025,Recycling,252.6
+Low,Sodium-ion push,2025,Domestic mining,0
+Low,Sodium-ion push,2025,Overseas equity,0
+Low,Sodium-ion push,2025,Import ceiling (open market),46320.0
+Low,Sodium-ion push,2026,Recycling,325.5
+Low,Sodium-ion push,2026,Domestic mining,0
+Low,Sodium-ion push,2026,Overseas equity,0
+Low,Sodium-ion push,2026,Import ceiling (open market),52656.0
+Low,Sodium-ion push,2027,Recycling,460.2
+Low,Sodium-ion push,2027,Domestic mining,0
+Low,Sodium-ion push,2027,Overseas equity,0
+Low,Sodium-ion push,2027,Import ceiling (open market),58992.0
+Low,Sodium-ion push,2028,Recycling,761.6
+Low,Sodium-ion push,2028,Domestic mining,0
+Low,Sodium-ion push,2028,Overseas equity,0
+Low,Sodium-ion push,2028,Import ceiling (open market),65328.0
+Low,Sodium-ion push,2029,Recycling,1076.0
+Low,Sodium-ion push,2029,Domestic mining,0
+Low,Sodium-ion push,2029,Overseas equity,0
+Low,Sodium-ion push,2029,Import ceiling (open market),71664.0
+Low,Sodium-ion push,2030,Recycling,1562.3
+Low,Sodium-ion push,2030,Domestic mining,0
+Low,Sodium-ion push,2030,Overseas equity,0
+Low,Sodium-ion push,2030,Import ceiling (open market),78000.0
+Low,Sodium-ion push,2031,Recycling,2366.4
+Low,Sodium-ion push,2031,Domestic mining,0
+Low,Sodium-ion push,2031,Overseas equity,0
+Low,Sodium-ion push,2031,Import ceiling (open market),82800.0
+Low,Sodium-ion push,2032,Recycling,3137.1
+Low,Sodium-ion push,2032,Domestic mining,0
+Low,Sodium-ion push,2032,Overseas equity,0
+Low,Sodium-ion push,2032,Import ceiling (open market),87600.0
+Low,Sodium-ion push,2033,Recycling,4274.6
+Low,Sodium-ion push,2033,Domestic mining,0
+Low,Sodium-ion push,2033,Overseas equity,0
+Low,Sodium-ion push,2033,Import ceiling (open market),92400.0
+Low,Sodium-ion push,2034,Recycling,5332.1
+Low,Sodium-ion push,2034,Domestic mining,0
+Low,Sodium-ion push,2034,Overseas equity,0
+Low,Sodium-ion push,2034,Import ceiling (open market),97200.0
+Low,Sodium-ion push,2035,Recycling,7568.3
+Low,Sodium-ion push,2035,Domestic mining,0
+Low,Sodium-ion push,2035,Overseas equity,0
+Low,Sodium-ion push,2035,Import ceiling (open market),102000.0
+Low,Sodium-ion push,2036,Recycling,9185.0
+Low,Sodium-ion push,2036,Domestic mining,0
+Low,Sodium-ion push,2036,Overseas equity,0
+Low,Sodium-ion push,2036,Import ceiling (open market),107400.0
+Low,Sodium-ion push,2037,Recycling,11418.6
+Low,Sodium-ion push,2037,Domestic mining,0
+Low,Sodium-ion push,2037,Overseas equity,0
+Low,Sodium-ion push,2037,Import ceiling (open market),112800.0
+Low,Sodium-ion push,2038,Recycling,14101.6
+Low,Sodium-ion push,2038,Domestic mining,0
+Low,Sodium-ion push,2038,Overseas equity,0
+Low,Sodium-ion push,2038,Import ceiling (open market),118200.0
+Low,Sodium-ion push,2039,Recycling,17248.6
+Low,Sodium-ion push,2039,Domestic mining,0
+Low,Sodium-ion push,2039,Overseas equity,0
+Low,Sodium-ion push,2039,Import ceiling (open market),123600.0
+Low,Sodium-ion push,2040,Recycling,20636.8
+Low,Sodium-ion push,2040,Domestic mining,0
+Low,Sodium-ion push,2040,Overseas equity,0
+Low,Sodium-ion push,2040,Import ceiling (open market),129000.0
+Low,Exploration fast-track,2025,Recycling,252.6
+Low,Exploration fast-track,2025,Domestic mining,0
+Low,Exploration fast-track,2025,Overseas equity,0
+Low,Exploration fast-track,2025,Import ceiling (open market),46320.0
+Low,Exploration fast-track,2026,Recycling,325.5
+Low,Exploration fast-track,2026,Domestic mining,0
+Low,Exploration fast-track,2026,Overseas equity,0
+Low,Exploration fast-track,2026,Import ceiling (open market),52656.0
+Low,Exploration fast-track,2027,Recycling,460.2
+Low,Exploration fast-track,2027,Domestic mining,0
+Low,Exploration fast-track,2027,Overseas equity,0
+Low,Exploration fast-track,2027,Import ceiling (open market),58992.0
+Low,Exploration fast-track,2028,Recycling,761.6
+Low,Exploration fast-track,2028,Domestic mining,0
+Low,Exploration fast-track,2028,Overseas equity,0
+Low,Exploration fast-track,2028,Import ceiling (open market),65328.0
+Low,Exploration fast-track,2029,Recycling,1080.4
+Low,Exploration fast-track,2029,Domestic mining,0
+Low,Exploration fast-track,2029,Overseas equity,0
+Low,Exploration fast-track,2029,Import ceiling (open market),71664.0
+Low,Exploration fast-track,2030,Recycling,1574.1
+Low,Exploration fast-track,2030,Domestic mining,0
+Low,Exploration fast-track,2030,Overseas equity,0
+Low,Exploration fast-track,2030,Import ceiling (open market),78000.0
+Low,Exploration fast-track,2031,Recycling,2388.6
+Low,Exploration fast-track,2031,Domestic mining,0
+Low,Exploration fast-track,2031,Overseas equity,0
+Low,Exploration fast-track,2031,Import ceiling (open market),82800.0
+Low,Exploration fast-track,2032,Recycling,3224.3
+Low,Exploration fast-track,2032,Domestic mining,375.0
+Low,Exploration fast-track,2032,Overseas equity,0
+Low,Exploration fast-track,2032,Import ceiling (open market),87600.0
+Low,Exploration fast-track,2033,Recycling,4463.1
+Low,Exploration fast-track,2033,Domestic mining,750.0
+Low,Exploration fast-track,2033,Overseas equity,0
+Low,Exploration fast-track,2033,Import ceiling (open market),92400.0
+Low,Exploration fast-track,2034,Recycling,5667.3
+Low,Exploration fast-track,2034,Domestic mining,1125.0
+Low,Exploration fast-track,2034,Overseas equity,0
+Low,Exploration fast-track,2034,Import ceiling (open market),97200.0
+Low,Exploration fast-track,2035,Recycling,8107.5
+Low,Exploration fast-track,2035,Domestic mining,1500.0
+Low,Exploration fast-track,2035,Overseas equity,0
+Low,Exploration fast-track,2035,Import ceiling (open market),102000.0
+Low,Exploration fast-track,2036,Recycling,9976.4
+Low,Exploration fast-track,2036,Domestic mining,2000.0
+Low,Exploration fast-track,2036,Overseas equity,0
+Low,Exploration fast-track,2036,Import ceiling (open market),107400.0
+Low,Exploration fast-track,2037,Recycling,12553.5
+Low,Exploration fast-track,2037,Domestic mining,2500.0
+Low,Exploration fast-track,2037,Overseas equity,0
+Low,Exploration fast-track,2037,Import ceiling (open market),112800.0
+Low,Exploration fast-track,2038,Recycling,15718.3
+Low,Exploration fast-track,2038,Domestic mining,3000.0
+Low,Exploration fast-track,2038,Overseas equity,0
+Low,Exploration fast-track,2038,Import ceiling (open market),118200.0
+Low,Exploration fast-track,2039,Recycling,19498.3
+Low,Exploration fast-track,2039,Domestic mining,3500.0
+Low,Exploration fast-track,2039,Overseas equity,0
+Low,Exploration fast-track,2039,Import ceiling (open market),123600.0
+Low,Exploration fast-track,2040,Recycling,23696.9
+Low,Exploration fast-track,2040,Domestic mining,4000.0
+Low,Exploration fast-track,2040,Overseas equity,0
+Low,Exploration fast-track,2040,Import ceiling (open market),129000.0
+Low,All four levers,2025,Recycling,252.6
+Low,All four levers,2025,Domestic mining,0
+Low,All four levers,2025,Overseas equity,0
+Low,All four levers,2025,Import ceiling (open market),46320.0
+Low,All four levers,2026,Recycling,592.8
+Low,All four levers,2026,Domestic mining,0
+Low,All four levers,2026,Overseas equity,0
+Low,All four levers,2026,Import ceiling (open market),52656.0
+Low,All four levers,2027,Recycling,1082.7
+Low,All four levers,2027,Domestic mining,0
+Low,All four levers,2027,Overseas equity,0
+Low,All four levers,2027,Import ceiling (open market),58992.0
+Low,All four levers,2028,Recycling,1972.6
+Low,All four levers,2028,Domestic mining,0
+Low,All four levers,2028,Overseas equity,0
+Low,All four levers,2028,Import ceiling (open market),65328.0
+Low,All four levers,2029,Recycling,3025.1
+Low,All four levers,2029,Domestic mining,0
+Low,All four levers,2029,Overseas equity,0
+Low,All four levers,2029,Import ceiling (open market),71664.0
+Low,All four levers,2030,Recycling,4602.9
+Low,All four levers,2030,Domestic mining,0
+Low,All four levers,2030,Overseas equity,0
+Low,All four levers,2030,Import ceiling (open market),78000.0
+Low,All four levers,2031,Recycling,6012.2
+Low,All four levers,2031,Domestic mining,0
+Low,All four levers,2031,Overseas equity,14000.0
+Low,All four levers,2031,Import ceiling (open market),82800.0
+Low,All four levers,2032,Recycling,7147.0
+Low,All four levers,2032,Domestic mining,375.0
+Low,All four levers,2032,Overseas equity,18000.0
+Low,All four levers,2032,Import ceiling (open market),87600.0
+Low,All four levers,2033,Recycling,8820.1
+Low,All four levers,2033,Domestic mining,750.0
+Low,All four levers,2033,Overseas equity,22000.0
+Low,All four levers,2033,Import ceiling (open market),92400.0
+Low,All four levers,2034,Recycling,10126.2
+Low,All four levers,2034,Domestic mining,1125.0
+Low,All four levers,2034,Overseas equity,26000.0
+Low,All four levers,2034,Import ceiling (open market),97200.0
+Low,All four levers,2035,Recycling,13236.8
+Low,All four levers,2035,Domestic mining,1500.0
+Low,All four levers,2035,Overseas equity,30000.0
+Low,All four levers,2035,Import ceiling (open market),102000.0
+Low,All four levers,2036,Recycling,15417.9
+Low,All four levers,2036,Domestic mining,2000.0
+Low,All four levers,2036,Overseas equity,34000.0
+Low,All four levers,2036,Import ceiling (open market),107400.0
+Low,All four levers,2037,Recycling,18431.9
+Low,All four levers,2037,Domestic mining,2500.0
+Low,All four levers,2037,Overseas equity,38000.0
+Low,All four levers,2037,Import ceiling (open market),112800.0
+Low,All four levers,2038,Recycling,21947.5
+Low,All four levers,2038,Domestic mining,3000.0
+Low,All four levers,2038,Overseas equity,42000.0
+Low,All four levers,2038,Import ceiling (open market),118200.0
+Low,All four levers,2039,Recycling,25939.9
+Low,All four levers,2039,Domestic mining,3500.0
+Low,All four levers,2039,Overseas equity,46000.0
+Low,All four levers,2039,Import ceiling (open market),123600.0
+Low,All four levers,2040,Recycling,30050.7
+Low,All four levers,2040,Domestic mining,4000.0
+Low,All four levers,2040,Overseas equity,50000.0
+Low,All four levers,2040,Import ceiling (open market),129000.0
+Base,None,2025,Recycling,433.1
+Base,None,2025,Domestic mining,0
+Base,None,2025,Overseas equity,0
+Base,None,2025,Import ceiling (open market),46320.0
+Base,None,2026,Recycling,582.8
+Base,None,2026,Domestic mining,0
+Base,None,2026,Overseas equity,0
+Base,None,2026,Import ceiling (open market),52656.0
+Base,None,2027,Recycling,840.8
+Base,None,2027,Domestic mining,0
+Base,None,2027,Overseas equity,0
+Base,None,2027,Import ceiling (open market),58992.0
+Base,None,2028,Recycling,1391.6
+Base,None,2028,Domestic mining,0
+Base,None,2028,Overseas equity,0
+Base,None,2028,Import ceiling (open market),65328.0
+Base,None,2029,Recycling,2025.1
+Base,None,2029,Domestic mining,0
+Base,None,2029,Overseas equity,0
+Base,None,2029,Import ceiling (open market),71664.0
+Base,None,2030,Recycling,2987.4
+Base,None,2030,Domestic mining,0
+Base,None,2030,Overseas equity,0
+Base,None,2030,Import ceiling (open market),78000.0
+Base,None,2031,Recycling,4378.5
+Base,None,2031,Domestic mining,0
+Base,None,2031,Overseas equity,0
+Base,None,2031,Import ceiling (open market),82800.0
+Base,None,2032,Recycling,6498.5
+Base,None,2032,Domestic mining,0
+Base,None,2032,Overseas equity,2400.0
+Base,None,2032,Import ceiling (open market),87600.0
+Base,None,2033,Recycling,9388.0
+Base,None,2033,Domestic mining,0
+Base,None,2033,Overseas equity,3600.0
+Base,None,2033,Import ceiling (open market),92400.0
+Base,None,2034,Recycling,12707.6
+Base,None,2034,Domestic mining,0
+Base,None,2034,Overseas equity,4800.0
+Base,None,2034,Import ceiling (open market),97200.0
+Base,None,2035,Recycling,18169.1
+Base,None,2035,Domestic mining,0
+Base,None,2035,Overseas equity,6000.0
+Base,None,2035,Import ceiling (open market),102000.0
+Base,None,2036,Recycling,23591.4
+Base,None,2036,Domestic mining,0
+Base,None,2036,Overseas equity,7200.0
+Base,None,2036,Import ceiling (open market),107400.0
+Base,None,2037,Recycling,30247.9
+Base,None,2037,Domestic mining,0
+Base,None,2037,Overseas equity,8400.0
+Base,None,2037,Import ceiling (open market),112800.0
+Base,None,2038,Recycling,39384.3
+Base,None,2038,Domestic mining,0
+Base,None,2038,Overseas equity,9600.0
+Base,None,2038,Import ceiling (open market),118200.0
+Base,None,2039,Recycling,49799.1
+Base,None,2039,Domestic mining,480.0
+Base,None,2039,Overseas equity,10800.0
+Base,None,2039,Import ceiling (open market),123600.0
+Base,None,2040,Recycling,61140.3
+Base,None,2040,Domestic mining,600.0
+Base,None,2040,Overseas equity,12000.0
+Base,None,2040,Import ceiling (open market),129000.0
+Base,Recycling push,2025,Recycling,433.1
+Base,Recycling push,2025,Domestic mining,0
+Base,Recycling push,2025,Overseas equity,0
+Base,Recycling push,2025,Import ceiling (open market),46320.0
+Base,Recycling push,2026,Recycling,780.2
+Base,Recycling push,2026,Domestic mining,0
+Base,Recycling push,2026,Overseas equity,0
+Base,Recycling push,2026,Import ceiling (open market),52656.0
+Base,Recycling push,2027,Recycling,1276.2
+Base,Recycling push,2027,Domestic mining,0
+Base,Recycling push,2027,Overseas equity,0
+Base,Recycling push,2027,Import ceiling (open market),58992.0
+Base,Recycling push,2028,Recycling,2172.8
+Base,Recycling push,2028,Domestic mining,0
+Base,Recycling push,2028,Overseas equity,0
+Base,Recycling push,2028,Import ceiling (open market),65328.0
+Base,Recycling push,2029,Recycling,3245.8
+Base,Recycling push,2029,Domestic mining,0
+Base,Recycling push,2029,Overseas equity,0
+Base,Recycling push,2029,Import ceiling (open market),71664.0
+Base,Recycling push,2030,Recycling,4824.6
+Base,Recycling push,2030,Domestic mining,0
+Base,Recycling push,2030,Overseas equity,0
+Base,Recycling push,2030,Import ceiling (open market),78000.0
+Base,Recycling push,2031,Recycling,6369.7
+Base,Recycling push,2031,Domestic mining,0
+Base,Recycling push,2031,Overseas equity,0
+Base,Recycling push,2031,Import ceiling (open market),82800.0
+Base,Recycling push,2032,Recycling,8677.2
+Base,Recycling push,2032,Domestic mining,0
+Base,Recycling push,2032,Overseas equity,2400.0
+Base,Recycling push,2032,Import ceiling (open market),87600.0
+Base,Recycling push,2033,Recycling,11697.3
+Base,Recycling push,2033,Domestic mining,0
+Base,Recycling push,2033,Overseas equity,3600.0
+Base,Recycling push,2033,Import ceiling (open market),92400.0
+Base,Recycling push,2034,Recycling,14954.0
+Base,Recycling push,2034,Domestic mining,0
+Base,Recycling push,2034,Overseas equity,4800.0
+Base,Recycling push,2034,Import ceiling (open market),97200.0
+Base,Recycling push,2035,Recycling,20287.8
+Base,Recycling push,2035,Domestic mining,0
+Base,Recycling push,2035,Overseas equity,6000.0
+Base,Recycling push,2035,Import ceiling (open market),102000.0
+Base,Recycling push,2036,Recycling,25838.5
+Base,Recycling push,2036,Domestic mining,0
+Base,Recycling push,2036,Overseas equity,7200.0
+Base,Recycling push,2036,Import ceiling (open market),107400.0
+Base,Recycling push,2037,Recycling,32574.9
+Base,Recycling push,2037,Domestic mining,0
+Base,Recycling push,2037,Overseas equity,8400.0
+Base,Recycling push,2037,Import ceiling (open market),112800.0
+Base,Recycling push,2038,Recycling,41771.8
+Base,Recycling push,2038,Domestic mining,0
+Base,Recycling push,2038,Overseas equity,9600.0
+Base,Recycling push,2038,Import ceiling (open market),118200.0
+Base,Recycling push,2039,Recycling,52091.5
+Base,Recycling push,2039,Domestic mining,480.0
+Base,Recycling push,2039,Overseas equity,10800.0
+Base,Recycling push,2039,Import ceiling (open market),123600.0
+Base,Recycling push,2040,Recycling,63134.0
+Base,Recycling push,2040,Domestic mining,600.0
+Base,Recycling push,2040,Overseas equity,12000.0
+Base,Recycling push,2040,Import ceiling (open market),129000.0
+Base,Overseas assets,2025,Recycling,433.1
+Base,Overseas assets,2025,Domestic mining,0
+Base,Overseas assets,2025,Overseas equity,0
+Base,Overseas assets,2025,Import ceiling (open market),46320.0
+Base,Overseas assets,2026,Recycling,582.8
+Base,Overseas assets,2026,Domestic mining,0
+Base,Overseas assets,2026,Overseas equity,0
+Base,Overseas assets,2026,Import ceiling (open market),52656.0
+Base,Overseas assets,2027,Recycling,840.8
+Base,Overseas assets,2027,Domestic mining,0
+Base,Overseas assets,2027,Overseas equity,0
+Base,Overseas assets,2027,Import ceiling (open market),58992.0
+Base,Overseas assets,2028,Recycling,1391.6
+Base,Overseas assets,2028,Domestic mining,0
+Base,Overseas assets,2028,Overseas equity,0
+Base,Overseas assets,2028,Import ceiling (open market),65328.0
+Base,Overseas assets,2029,Recycling,2025.1
+Base,Overseas assets,2029,Domestic mining,0
+Base,Overseas assets,2029,Overseas equity,0
+Base,Overseas assets,2029,Import ceiling (open market),71664.0
+Base,Overseas assets,2030,Recycling,2987.4
+Base,Overseas assets,2030,Domestic mining,0
+Base,Overseas assets,2030,Overseas equity,0
+Base,Overseas assets,2030,Import ceiling (open market),78000.0
+Base,Overseas assets,2031,Recycling,4378.5
+Base,Overseas assets,2031,Domestic mining,0
+Base,Overseas assets,2031,Overseas equity,14000.0
+Base,Overseas assets,2031,Import ceiling (open market),82800.0
+Base,Overseas assets,2032,Recycling,6498.5
+Base,Overseas assets,2032,Domestic mining,0
+Base,Overseas assets,2032,Overseas equity,20400.0
+Base,Overseas assets,2032,Import ceiling (open market),87600.0
+Base,Overseas assets,2033,Recycling,9388.0
+Base,Overseas assets,2033,Domestic mining,0
+Base,Overseas assets,2033,Overseas equity,25600.0
+Base,Overseas assets,2033,Import ceiling (open market),92400.0
+Base,Overseas assets,2034,Recycling,12707.6
+Base,Overseas assets,2034,Domestic mining,0
+Base,Overseas assets,2034,Overseas equity,30800.0
+Base,Overseas assets,2034,Import ceiling (open market),97200.0
+Base,Overseas assets,2035,Recycling,18169.1
+Base,Overseas assets,2035,Domestic mining,0
+Base,Overseas assets,2035,Overseas equity,36000.0
+Base,Overseas assets,2035,Import ceiling (open market),102000.0
+Base,Overseas assets,2036,Recycling,23591.4
+Base,Overseas assets,2036,Domestic mining,0
+Base,Overseas assets,2036,Overseas equity,41200.0
+Base,Overseas assets,2036,Import ceiling (open market),107400.0
+Base,Overseas assets,2037,Recycling,30247.9
+Base,Overseas assets,2037,Domestic mining,0
+Base,Overseas assets,2037,Overseas equity,46400.0
+Base,Overseas assets,2037,Import ceiling (open market),112800.0
+Base,Overseas assets,2038,Recycling,39384.3
+Base,Overseas assets,2038,Domestic mining,0
+Base,Overseas assets,2038,Overseas equity,51600.0
+Base,Overseas assets,2038,Import ceiling (open market),118200.0
+Base,Overseas assets,2039,Recycling,49799.1
+Base,Overseas assets,2039,Domestic mining,480.0
+Base,Overseas assets,2039,Overseas equity,56800.0
+Base,Overseas assets,2039,Import ceiling (open market),123600.0
+Base,Overseas assets,2040,Recycling,61140.3
+Base,Overseas assets,2040,Domestic mining,600.0
+Base,Overseas assets,2040,Overseas equity,62000.0
+Base,Overseas assets,2040,Import ceiling (open market),129000.0
+Base,Sodium-ion push,2025,Recycling,433.1
+Base,Sodium-ion push,2025,Domestic mining,0
+Base,Sodium-ion push,2025,Overseas equity,0
+Base,Sodium-ion push,2025,Import ceiling (open market),46320.0
+Base,Sodium-ion push,2026,Recycling,582.8
+Base,Sodium-ion push,2026,Domestic mining,0
+Base,Sodium-ion push,2026,Overseas equity,0
+Base,Sodium-ion push,2026,Import ceiling (open market),52656.0
+Base,Sodium-ion push,2027,Recycling,840.8
+Base,Sodium-ion push,2027,Domestic mining,0
+Base,Sodium-ion push,2027,Overseas equity,0
+Base,Sodium-ion push,2027,Import ceiling (open market),58992.0
+Base,Sodium-ion push,2028,Recycling,1391.6
+Base,Sodium-ion push,2028,Domestic mining,0
+Base,Sodium-ion push,2028,Overseas equity,0
+Base,Sodium-ion push,2028,Import ceiling (open market),65328.0
+Base,Sodium-ion push,2029,Recycling,2016.4
+Base,Sodium-ion push,2029,Domestic mining,0
+Base,Sodium-ion push,2029,Overseas equity,0
+Base,Sodium-ion push,2029,Import ceiling (open market),71664.0
+Base,Sodium-ion push,2030,Recycling,2961.3
+Base,Sodium-ion push,2030,Domestic mining,0
+Base,Sodium-ion push,2030,Overseas equity,0
+Base,Sodium-ion push,2030,Import ceiling (open market),78000.0
+Base,Sodium-ion push,2031,Recycling,4327.4
+Base,Sodium-ion push,2031,Domestic mining,0
+Base,Sodium-ion push,2031,Overseas equity,0
+Base,Sodium-ion push,2031,Import ceiling (open market),82800.0
+Base,Sodium-ion push,2032,Recycling,6306.0
+Base,Sodium-ion push,2032,Domestic mining,0
+Base,Sodium-ion push,2032,Overseas equity,2400.0
+Base,Sodium-ion push,2032,Import ceiling (open market),87600.0
+Base,Sodium-ion push,2033,Recycling,8939.9
+Base,Sodium-ion push,2033,Domestic mining,0
+Base,Sodium-ion push,2033,Overseas equity,3600.0
+Base,Sodium-ion push,2033,Import ceiling (open market),92400.0
+Base,Sodium-ion push,2034,Recycling,11867.3
+Base,Sodium-ion push,2034,Domestic mining,0
+Base,Sodium-ion push,2034,Overseas equity,4800.0
+Base,Sodium-ion push,2034,Import ceiling (open market),97200.0
+Base,Sodium-ion push,2035,Recycling,16761.3
+Base,Sodium-ion push,2035,Domestic mining,0
+Base,Sodium-ion push,2035,Overseas equity,6000.0
+Base,Sodium-ion push,2035,Import ceiling (open market),102000.0
+Base,Sodium-ion push,2036,Recycling,21461.6
+Base,Sodium-ion push,2036,Domestic mining,0
+Base,Sodium-ion push,2036,Overseas equity,7200.0
+Base,Sodium-ion push,2036,Import ceiling (open market),107400.0
+Base,Sodium-ion push,2037,Recycling,27170.2
+Base,Sodium-ion push,2037,Domestic mining,0
+Base,Sodium-ion push,2037,Overseas equity,8400.0
+Base,Sodium-ion push,2037,Import ceiling (open market),112800.0
+Base,Sodium-ion push,2038,Recycling,35004.1
+Base,Sodium-ion push,2038,Domestic mining,0
+Base,Sodium-ion push,2038,Overseas equity,9600.0
+Base,Sodium-ion push,2038,Import ceiling (open market),118200.0
+Base,Sodium-ion push,2039,Recycling,43712.1
+Base,Sodium-ion push,2039,Domestic mining,480.0
+Base,Sodium-ion push,2039,Overseas equity,10800.0
+Base,Sodium-ion push,2039,Import ceiling (open market),123600.0
+Base,Sodium-ion push,2040,Recycling,52877.2
+Base,Sodium-ion push,2040,Domestic mining,600.0
+Base,Sodium-ion push,2040,Overseas equity,12000.0
+Base,Sodium-ion push,2040,Import ceiling (open market),129000.0
+Base,Exploration fast-track,2025,Recycling,433.1
+Base,Exploration fast-track,2025,Domestic mining,0
+Base,Exploration fast-track,2025,Overseas equity,0
+Base,Exploration fast-track,2025,Import ceiling (open market),46320.0
+Base,Exploration fast-track,2026,Recycling,582.8
+Base,Exploration fast-track,2026,Domestic mining,0
+Base,Exploration fast-track,2026,Overseas equity,0
+Base,Exploration fast-track,2026,Import ceiling (open market),52656.0
+Base,Exploration fast-track,2027,Recycling,840.8
+Base,Exploration fast-track,2027,Domestic mining,0
+Base,Exploration fast-track,2027,Overseas equity,0
+Base,Exploration fast-track,2027,Import ceiling (open market),58992.0
+Base,Exploration fast-track,2028,Recycling,1391.6
+Base,Exploration fast-track,2028,Domestic mining,0
+Base,Exploration fast-track,2028,Overseas equity,0
+Base,Exploration fast-track,2028,Import ceiling (open market),65328.0
+Base,Exploration fast-track,2029,Recycling,2025.1
+Base,Exploration fast-track,2029,Domestic mining,0
+Base,Exploration fast-track,2029,Overseas equity,0
+Base,Exploration fast-track,2029,Import ceiling (open market),71664.0
+Base,Exploration fast-track,2030,Recycling,2987.4
+Base,Exploration fast-track,2030,Domestic mining,0
+Base,Exploration fast-track,2030,Overseas equity,0
+Base,Exploration fast-track,2030,Import ceiling (open market),78000.0
+Base,Exploration fast-track,2031,Recycling,4378.5
+Base,Exploration fast-track,2031,Domestic mining,0
+Base,Exploration fast-track,2031,Overseas equity,0
+Base,Exploration fast-track,2031,Import ceiling (open market),82800.0
+Base,Exploration fast-track,2032,Recycling,6498.5
+Base,Exploration fast-track,2032,Domestic mining,375.0
+Base,Exploration fast-track,2032,Overseas equity,2400.0
+Base,Exploration fast-track,2032,Import ceiling (open market),87600.0
+Base,Exploration fast-track,2033,Recycling,9388.0
+Base,Exploration fast-track,2033,Domestic mining,750.0
+Base,Exploration fast-track,2033,Overseas equity,3600.0
+Base,Exploration fast-track,2033,Import ceiling (open market),92400.0
+Base,Exploration fast-track,2034,Recycling,12707.6
+Base,Exploration fast-track,2034,Domestic mining,1125.0
+Base,Exploration fast-track,2034,Overseas equity,4800.0
+Base,Exploration fast-track,2034,Import ceiling (open market),97200.0
+Base,Exploration fast-track,2035,Recycling,18169.1
+Base,Exploration fast-track,2035,Domestic mining,1500.0
+Base,Exploration fast-track,2035,Overseas equity,6000.0
+Base,Exploration fast-track,2035,Import ceiling (open market),102000.0
+Base,Exploration fast-track,2036,Recycling,23591.4
+Base,Exploration fast-track,2036,Domestic mining,2000.0
+Base,Exploration fast-track,2036,Overseas equity,7200.0
+Base,Exploration fast-track,2036,Import ceiling (open market),107400.0
+Base,Exploration fast-track,2037,Recycling,30247.9
+Base,Exploration fast-track,2037,Domestic mining,2500.0
+Base,Exploration fast-track,2037,Overseas equity,8400.0
+Base,Exploration fast-track,2037,Import ceiling (open market),112800.0
+Base,Exploration fast-track,2038,Recycling,39384.3
+Base,Exploration fast-track,2038,Domestic mining,3000.0
+Base,Exploration fast-track,2038,Overseas equity,9600.0
+Base,Exploration fast-track,2038,Import ceiling (open market),118200.0
+Base,Exploration fast-track,2039,Recycling,49799.1
+Base,Exploration fast-track,2039,Domestic mining,3500.0
+Base,Exploration fast-track,2039,Overseas equity,10800.0
+Base,Exploration fast-track,2039,Import ceiling (open market),123600.0
+Base,Exploration fast-track,2040,Recycling,61140.3
+Base,Exploration fast-track,2040,Domestic mining,4000.0
+Base,Exploration fast-track,2040,Overseas equity,12000.0
+Base,Exploration fast-track,2040,Import ceiling (open market),129000.0
+Base,All four levers,2025,Recycling,433.1
+Base,All four levers,2025,Domestic mining,0
+Base,All four levers,2025,Overseas equity,0
+Base,All four levers,2025,Import ceiling (open market),46320.0
+Base,All four levers,2026,Recycling,780.2
+Base,All four levers,2026,Domestic mining,0
+Base,All four levers,2026,Overseas equity,0
+Base,All four levers,2026,Import ceiling (open market),52656.0
+Base,All four levers,2027,Recycling,1276.2
+Base,All four levers,2027,Domestic mining,0
+Base,All four levers,2027,Overseas equity,0
+Base,All four levers,2027,Import ceiling (open market),58992.0
+Base,All four levers,2028,Recycling,2172.8
+Base,All four levers,2028,Domestic mining,0
+Base,All four levers,2028,Overseas equity,0
+Base,All four levers,2028,Import ceiling (open market),65328.0
+Base,All four levers,2029,Recycling,3234.3
+Base,All four levers,2029,Domestic mining,0
+Base,All four levers,2029,Overseas equity,0
+Base,All four levers,2029,Import ceiling (open market),71664.0
+Base,All four levers,2030,Recycling,4789.2
+Base,All four levers,2030,Domestic mining,0
+Base,All four levers,2030,Overseas equity,0
+Base,All four levers,2030,Import ceiling (open market),78000.0
+Base,All four levers,2031,Recycling,6303.6
+Base,All four levers,2031,Domestic mining,0
+Base,All four levers,2031,Overseas equity,14000.0
+Base,All four levers,2031,Import ceiling (open market),82800.0
+Base,All four levers,2032,Recycling,8438.8
+Base,All four levers,2032,Domestic mining,375.0
+Base,All four levers,2032,Overseas equity,20400.0
+Base,All four levers,2032,Import ceiling (open market),87600.0
+Base,All four levers,2033,Recycling,11165.5
+Base,All four levers,2033,Domestic mining,750.0
+Base,All four levers,2033,Overseas equity,25600.0
+Base,All four levers,2033,Import ceiling (open market),92400.0
+Base,All four levers,2034,Recycling,13997.4
+Base,All four levers,2034,Domestic mining,1125.0
+Base,All four levers,2034,Overseas equity,30800.0
+Base,All four levers,2034,Import ceiling (open market),97200.0
+Base,All four levers,2035,Recycling,18748.6
+Base,All four levers,2035,Domestic mining,1500.0
+Base,All four levers,2035,Overseas equity,36000.0
+Base,All four levers,2035,Import ceiling (open market),102000.0
+Base,All four levers,2036,Recycling,23537.0
+Base,All four levers,2036,Domestic mining,2000.0
+Base,All four levers,2036,Overseas equity,41200.0
+Base,All four levers,2036,Import ceiling (open market),107400.0
+Base,All four levers,2037,Recycling,29287.2
+Base,All four levers,2037,Domestic mining,2500.0
+Base,All four levers,2037,Overseas equity,46400.0
+Base,All four levers,2037,Import ceiling (open market),112800.0
+Base,All four levers,2038,Recycling,37146.0
+Base,All four levers,2038,Domestic mining,3000.0
+Base,All four levers,2038,Overseas equity,51600.0
+Base,All four levers,2038,Import ceiling (open market),118200.0
+Base,All four levers,2039,Recycling,45735.3
+Base,All four levers,2039,Domestic mining,3500.0
+Base,All four levers,2039,Overseas equity,56800.0
+Base,All four levers,2039,Import ceiling (open market),123600.0
+Base,All four levers,2040,Recycling,54601.4
+Base,All four levers,2040,Domestic mining,4000.0
+Base,All four levers,2040,Overseas equity,62000.0
+Base,All four levers,2040,Import ceiling (open market),129000.0
+High,None,2025,Recycling,613.5
+High,None,2025,Domestic mining,0
+High,None,2025,Overseas equity,0
+High,None,2025,Import ceiling (open market),46320.0
+High,None,2026,Recycling,837.6
+High,None,2026,Domestic mining,0
+High,None,2026,Overseas equity,0
+High,None,2026,Import ceiling (open market),52656.0
+High,None,2027,Recycling,1205.7
+High,None,2027,Domestic mining,0
+High,None,2027,Overseas equity,0
+High,None,2027,Import ceiling (open market),58992.0
+High,None,2028,Recycling,1954.2
+High,None,2028,Domestic mining,0
+High,None,2028,Overseas equity,0
+High,None,2028,Import ceiling (open market),65328.0
+High,None,2029,Recycling,2882.7
+High,None,2029,Domestic mining,0
+High,None,2029,Overseas equity,0
+High,None,2029,Import ceiling (open market),71664.0
+High,None,2030,Recycling,4258.1
+High,None,2030,Domestic mining,0
+High,None,2030,Overseas equity,0
+High,None,2030,Import ceiling (open market),78000.0
+High,None,2031,Recycling,6083.7
+High,None,2031,Domestic mining,0
+High,None,2031,Overseas equity,3000.0
+High,None,2031,Import ceiling (open market),82800.0
+High,None,2032,Recycling,10244.8
+High,None,2032,Domestic mining,0
+High,None,2032,Overseas equity,6000.0
+High,None,2032,Import ceiling (open market),87600.0
+High,None,2033,Recycling,15512.1
+High,None,2033,Domestic mining,480.0
+High,None,2033,Overseas equity,9000.0
+High,None,2033,Import ceiling (open market),92400.0
+High,None,2034,Recycling,21986.1
+High,None,2034,Domestic mining,640.0
+High,None,2034,Overseas equity,12000.0
+High,None,2034,Import ceiling (open market),97200.0
+High,None,2035,Recycling,31262.5
+High,None,2035,Domestic mining,800.0
+High,None,2035,Overseas equity,15000.0
+High,None,2035,Import ceiling (open market),102000.0
+High,None,2036,Recycling,43671.3
+High,None,2036,Domestic mining,1140.0
+High,None,2036,Overseas equity,18000.0
+High,None,2036,Import ceiling (open market),107400.0
+High,None,2037,Recycling,55964.2
+High,None,2037,Domestic mining,1480.0
+High,None,2037,Overseas equity,21000.0
+High,None,2037,Import ceiling (open market),112800.0
+High,None,2038,Recycling,73598.0
+High,None,2038,Domestic mining,1820.0
+High,None,2038,Overseas equity,24000.0
+High,None,2038,Import ceiling (open market),118200.0
+High,None,2039,Recycling,92989.4
+High,None,2039,Domestic mining,2160.0
+High,None,2039,Overseas equity,27000.0
+High,None,2039,Import ceiling (open market),123600.0
+High,None,2040,Recycling,113848.8
+High,None,2040,Domestic mining,2500.0
+High,None,2040,Overseas equity,30000.0
+High,None,2040,Import ceiling (open market),129000.0
+High,Recycling push,2025,Recycling,613.5
+High,Recycling push,2025,Domestic mining,0
+High,Recycling push,2025,Overseas equity,0
+High,Recycling push,2025,Import ceiling (open market),46320.0
+High,Recycling push,2026,Recycling,948.0
+High,Recycling push,2026,Domestic mining,0
+High,Recycling push,2026,Overseas equity,0
+High,Recycling push,2026,Import ceiling (open market),52656.0
+High,Recycling push,2027,Recycling,1436.9
+High,Recycling push,2027,Domestic mining,0
+High,Recycling push,2027,Overseas equity,0
+High,Recycling push,2027,Import ceiling (open market),58992.0
+High,Recycling push,2028,Recycling,2331.5
+High,Recycling push,2028,Domestic mining,0
+High,Recycling push,2028,Overseas equity,0
+High,Recycling push,2028,Import ceiling (open market),65328.0
+High,Recycling push,2029,Recycling,3444.7
+High,Recycling push,2029,Domestic mining,0
+High,Recycling push,2029,Overseas equity,0
+High,Recycling push,2029,Import ceiling (open market),71664.0
+High,Recycling push,2030,Recycling,5053.6
+High,Recycling push,2030,Domestic mining,0
+High,Recycling push,2030,Overseas equity,0
+High,Recycling push,2030,Import ceiling (open market),78000.0
+High,Recycling push,2031,Recycling,6734.3
+High,Recycling push,2031,Domestic mining,0
+High,Recycling push,2031,Overseas equity,3000.0
+High,Recycling push,2031,Import ceiling (open market),82800.0
+High,Recycling push,2032,Recycling,10689.7
+High,Recycling push,2032,Domestic mining,0
+High,Recycling push,2032,Overseas equity,6000.0
+High,Recycling push,2032,Import ceiling (open market),87600.0
+High,Recycling push,2033,Recycling,15697.8
+High,Recycling push,2033,Domestic mining,480.0
+High,Recycling push,2033,Overseas equity,9000.0
+High,Recycling push,2033,Import ceiling (open market),92400.0
+High,Recycling push,2034,Recycling,21986.1
+High,Recycling push,2034,Domestic mining,640.0
+High,Recycling push,2034,Overseas equity,12000.0
+High,Recycling push,2034,Import ceiling (open market),97200.0
+High,Recycling push,2035,Recycling,31262.5
+High,Recycling push,2035,Domestic mining,800.0
+High,Recycling push,2035,Overseas equity,15000.0
+High,Recycling push,2035,Import ceiling (open market),102000.0
+High,Recycling push,2036,Recycling,43671.3
+High,Recycling push,2036,Domestic mining,1140.0
+High,Recycling push,2036,Overseas equity,18000.0
+High,Recycling push,2036,Import ceiling (open market),107400.0
+High,Recycling push,2037,Recycling,55964.2
+High,Recycling push,2037,Domestic mining,1480.0
+High,Recycling push,2037,Overseas equity,21000.0
+High,Recycling push,2037,Import ceiling (open market),112800.0
+High,Recycling push,2038,Recycling,73598.0
+High,Recycling push,2038,Domestic mining,1820.0
+High,Recycling push,2038,Overseas equity,24000.0
+High,Recycling push,2038,Import ceiling (open market),118200.0
+High,Recycling push,2039,Recycling,92989.4
+High,Recycling push,2039,Domestic mining,2160.0
+High,Recycling push,2039,Overseas equity,27000.0
+High,Recycling push,2039,Import ceiling (open market),123600.0
+High,Recycling push,2040,Recycling,113848.8
+High,Recycling push,2040,Domestic mining,2500.0
+High,Recycling push,2040,Overseas equity,30000.0
+High,Recycling push,2040,Import ceiling (open market),129000.0
+High,Overseas assets,2025,Recycling,613.5
+High,Overseas assets,2025,Domestic mining,0
+High,Overseas assets,2025,Overseas equity,0
+High,Overseas assets,2025,Import ceiling (open market),46320.0
+High,Overseas assets,2026,Recycling,837.6
+High,Overseas assets,2026,Domestic mining,0
+High,Overseas assets,2026,Overseas equity,0
+High,Overseas assets,2026,Import ceiling (open market),52656.0
+High,Overseas assets,2027,Recycling,1205.7
+High,Overseas assets,2027,Domestic mining,0
+High,Overseas assets,2027,Overseas equity,0
+High,Overseas assets,2027,Import ceiling (open market),58992.0
+High,Overseas assets,2028,Recycling,1954.2
+High,Overseas assets,2028,Domestic mining,0
+High,Overseas assets,2028,Overseas equity,0
+High,Overseas assets,2028,Import ceiling (open market),65328.0
+High,Overseas assets,2029,Recycling,2882.7
+High,Overseas assets,2029,Domestic mining,0
+High,Overseas assets,2029,Overseas equity,0
+High,Overseas assets,2029,Import ceiling (open market),71664.0
+High,Overseas assets,2030,Recycling,4258.1
+High,Overseas assets,2030,Domestic mining,0
+High,Overseas assets,2030,Overseas equity,0
+High,Overseas assets,2030,Import ceiling (open market),78000.0
+High,Overseas assets,2031,Recycling,6083.7
+High,Overseas assets,2031,Domestic mining,0
+High,Overseas assets,2031,Overseas equity,17000.0
+High,Overseas assets,2031,Import ceiling (open market),82800.0
+High,Overseas assets,2032,Recycling,10244.8
+High,Overseas assets,2032,Domestic mining,0
+High,Overseas assets,2032,Overseas equity,24000.0
+High,Overseas assets,2032,Import ceiling (open market),87600.0
+High,Overseas assets,2033,Recycling,15512.1
+High,Overseas assets,2033,Domestic mining,480.0
+High,Overseas assets,2033,Overseas equity,31000.0
+High,Overseas assets,2033,Import ceiling (open market),92400.0
+High,Overseas assets,2034,Recycling,21986.1
+High,Overseas assets,2034,Domestic mining,640.0
+High,Overseas assets,2034,Overseas equity,38000.0
+High,Overseas assets,2034,Import ceiling (open market),97200.0
+High,Overseas assets,2035,Recycling,31262.5
+High,Overseas assets,2035,Domestic mining,800.0
+High,Overseas assets,2035,Overseas equity,45000.0
+High,Overseas assets,2035,Import ceiling (open market),102000.0
+High,Overseas assets,2036,Recycling,43671.3
+High,Overseas assets,2036,Domestic mining,1140.0
+High,Overseas assets,2036,Overseas equity,52000.0
+High,Overseas assets,2036,Import ceiling (open market),107400.0
+High,Overseas assets,2037,Recycling,55964.2
+High,Overseas assets,2037,Domestic mining,1480.0
+High,Overseas assets,2037,Overseas equity,59000.0
+High,Overseas assets,2037,Import ceiling (open market),112800.0
+High,Overseas assets,2038,Recycling,73598.0
+High,Overseas assets,2038,Domestic mining,1820.0
+High,Overseas assets,2038,Overseas equity,66000.0
+High,Overseas assets,2038,Import ceiling (open market),118200.0
+High,Overseas assets,2039,Recycling,92989.4
+High,Overseas assets,2039,Domestic mining,2160.0
+High,Overseas assets,2039,Overseas equity,73000.0
+High,Overseas assets,2039,Import ceiling (open market),123600.0
+High,Overseas assets,2040,Recycling,113848.8
+High,Overseas assets,2040,Domestic mining,2500.0
+High,Overseas assets,2040,Overseas equity,80000.0
+High,Overseas assets,2040,Import ceiling (open market),129000.0
+High,Sodium-ion push,2025,Recycling,613.5
+High,Sodium-ion push,2025,Domestic mining,0
+High,Sodium-ion push,2025,Overseas equity,0
+High,Sodium-ion push,2025,Import ceiling (open market),46320.0
+High,Sodium-ion push,2026,Recycling,837.6
+High,Sodium-ion push,2026,Domestic mining,0
+High,Sodium-ion push,2026,Overseas equity,0
+High,Sodium-ion push,2026,Import ceiling (open market),52656.0
+High,Sodium-ion push,2027,Recycling,1205.7
+High,Sodium-ion push,2027,Domestic mining,0
+High,Sodium-ion push,2027,Overseas equity,0
+High,Sodium-ion push,2027,Import ceiling (open market),58992.0
+High,Sodium-ion push,2028,Recycling,1954.2
+High,Sodium-ion push,2028,Domestic mining,0
+High,Sodium-ion push,2028,Overseas equity,0
+High,Sodium-ion push,2028,Import ceiling (open market),65328.0
+High,Sodium-ion push,2029,Recycling,2869.7
+High,Sodium-ion push,2029,Domestic mining,0
+High,Sodium-ion push,2029,Overseas equity,0
+High,Sodium-ion push,2029,Import ceiling (open market),71664.0
+High,Sodium-ion push,2030,Recycling,4216.2
+High,Sodium-ion push,2030,Domestic mining,0
+High,Sodium-ion push,2030,Overseas equity,0
+High,Sodium-ion push,2030,Import ceiling (open market),78000.0
+High,Sodium-ion push,2031,Recycling,5998.9
+High,Sodium-ion push,2031,Domestic mining,0
+High,Sodium-ion push,2031,Overseas equity,3000.0
+High,Sodium-ion push,2031,Import ceiling (open market),82800.0
+High,Sodium-ion push,2032,Recycling,9924.1
+High,Sodium-ion push,2032,Domestic mining,0
+High,Sodium-ion push,2032,Overseas equity,6000.0
+High,Sodium-ion push,2032,Import ceiling (open market),87600.0
+High,Sodium-ion push,2033,Recycling,14710.8
+High,Sodium-ion push,2033,Domestic mining,480.0
+High,Sodium-ion push,2033,Overseas equity,9000.0
+High,Sodium-ion push,2033,Import ceiling (open market),92400.0
+High,Sodium-ion push,2034,Recycling,20438.1
+High,Sodium-ion push,2034,Domestic mining,640.0
+High,Sodium-ion push,2034,Overseas equity,12000.0
+High,Sodium-ion push,2034,Import ceiling (open market),97200.0
+High,Sodium-ion push,2035,Recycling,28620.6
+High,Sodium-ion push,2035,Domestic mining,800.0
+High,Sodium-ion push,2035,Overseas equity,15000.0
+High,Sodium-ion push,2035,Import ceiling (open market),102000.0
+High,Sodium-ion push,2036,Recycling,39607.7
+High,Sodium-ion push,2036,Domestic mining,1140.0
+High,Sodium-ion push,2036,Overseas equity,18000.0
+High,Sodium-ion push,2036,Import ceiling (open market),107400.0
+High,Sodium-ion push,2037,Recycling,50444.2
+High,Sodium-ion push,2037,Domestic mining,1480.0
+High,Sodium-ion push,2037,Overseas equity,21000.0
+High,Sodium-ion push,2037,Import ceiling (open market),112800.0
+High,Sodium-ion push,2038,Recycling,66151.7
+High,Sodium-ion push,2038,Domestic mining,1820.0
+High,Sodium-ion push,2038,Overseas equity,24000.0
+High,Sodium-ion push,2038,Import ceiling (open market),118200.0
+High,Sodium-ion push,2039,Recycling,83049.4
+High,Sodium-ion push,2039,Domestic mining,2160.0
+High,Sodium-ion push,2039,Overseas equity,27000.0
+High,Sodium-ion push,2039,Import ceiling (open market),123600.0
+High,Sodium-ion push,2040,Recycling,100781.2
+High,Sodium-ion push,2040,Domestic mining,2500.0
+High,Sodium-ion push,2040,Overseas equity,30000.0
+High,Sodium-ion push,2040,Import ceiling (open market),129000.0
+High,Exploration fast-track,2025,Recycling,613.5
+High,Exploration fast-track,2025,Domestic mining,0
+High,Exploration fast-track,2025,Overseas equity,0
+High,Exploration fast-track,2025,Import ceiling (open market),46320.0
+High,Exploration fast-track,2026,Recycling,837.6
+High,Exploration fast-track,2026,Domestic mining,0
+High,Exploration fast-track,2026,Overseas equity,0
+High,Exploration fast-track,2026,Import ceiling (open market),52656.0
+High,Exploration fast-track,2027,Recycling,1205.7
+High,Exploration fast-track,2027,Domestic mining,0
+High,Exploration fast-track,2027,Overseas equity,0
+High,Exploration fast-track,2027,Import ceiling (open market),58992.0
+High,Exploration fast-track,2028,Recycling,1954.2
+High,Exploration fast-track,2028,Domestic mining,0
+High,Exploration fast-track,2028,Overseas equity,0
+High,Exploration fast-track,2028,Import ceiling (open market),65328.0
+High,Exploration fast-track,2029,Recycling,2882.7
+High,Exploration fast-track,2029,Domestic mining,0
+High,Exploration fast-track,2029,Overseas equity,0
+High,Exploration fast-track,2029,Import ceiling (open market),71664.0
+High,Exploration fast-track,2030,Recycling,4258.1
+High,Exploration fast-track,2030,Domestic mining,0
+High,Exploration fast-track,2030,Overseas equity,0
+High,Exploration fast-track,2030,Import ceiling (open market),78000.0
+High,Exploration fast-track,2031,Recycling,6083.7
+High,Exploration fast-track,2031,Domestic mining,0
+High,Exploration fast-track,2031,Overseas equity,3000.0
+High,Exploration fast-track,2031,Import ceiling (open market),82800.0
+High,Exploration fast-track,2032,Recycling,10244.8
+High,Exploration fast-track,2032,Domestic mining,375.0
+High,Exploration fast-track,2032,Overseas equity,6000.0
+High,Exploration fast-track,2032,Import ceiling (open market),87600.0
+High,Exploration fast-track,2033,Recycling,15512.1
+High,Exploration fast-track,2033,Domestic mining,750.0
+High,Exploration fast-track,2033,Overseas equity,9000.0
+High,Exploration fast-track,2033,Import ceiling (open market),92400.0
+High,Exploration fast-track,2034,Recycling,21986.1
+High,Exploration fast-track,2034,Domestic mining,1125.0
+High,Exploration fast-track,2034,Overseas equity,12000.0
+High,Exploration fast-track,2034,Import ceiling (open market),97200.0
+High,Exploration fast-track,2035,Recycling,31262.5
+High,Exploration fast-track,2035,Domestic mining,1500.0
+High,Exploration fast-track,2035,Overseas equity,15000.0
+High,Exploration fast-track,2035,Import ceiling (open market),102000.0
+High,Exploration fast-track,2036,Recycling,43671.3
+High,Exploration fast-track,2036,Domestic mining,2000.0
+High,Exploration fast-track,2036,Overseas equity,18000.0
+High,Exploration fast-track,2036,Import ceiling (open market),107400.0
+High,Exploration fast-track,2037,Recycling,55964.2
+High,Exploration fast-track,2037,Domestic mining,2500.0
+High,Exploration fast-track,2037,Overseas equity,21000.0
+High,Exploration fast-track,2037,Import ceiling (open market),112800.0
+High,Exploration fast-track,2038,Recycling,73598.0
+High,Exploration fast-track,2038,Domestic mining,3000.0
+High,Exploration fast-track,2038,Overseas equity,24000.0
+High,Exploration fast-track,2038,Import ceiling (open market),118200.0
+High,Exploration fast-track,2039,Recycling,92989.4
+High,Exploration fast-track,2039,Domestic mining,3500.0
+High,Exploration fast-track,2039,Overseas equity,27000.0
+High,Exploration fast-track,2039,Import ceiling (open market),123600.0
+High,Exploration fast-track,2040,Recycling,113848.8
+High,Exploration fast-track,2040,Domestic mining,4000.0
+High,Exploration fast-track,2040,Overseas equity,30000.0
+High,Exploration fast-track,2040,Import ceiling (open market),129000.0
+High,All four levers,2025,Recycling,613.5
+High,All four levers,2025,Domestic mining,0
+High,All four levers,2025,Overseas equity,0
+High,All four levers,2025,Import ceiling (open market),46320.0
+High,All four levers,2026,Recycling,948.0
+High,All four levers,2026,Domestic mining,0
+High,All four levers,2026,Overseas equity,0
+High,All four levers,2026,Import ceiling (open market),52656.0
+High,All four levers,2027,Recycling,1436.9
+High,All four levers,2027,Domestic mining,0
+High,All four levers,2027,Overseas equity,0
+High,All four levers,2027,Import ceiling (open market),58992.0
+High,All four levers,2028,Recycling,2331.5
+High,All four levers,2028,Domestic mining,0
+High,All four levers,2028,Overseas equity,0
+High,All four levers,2028,Import ceiling (open market),65328.0
+High,All four levers,2029,Recycling,3430.9
+High,All four levers,2029,Domestic mining,0
+High,All four levers,2029,Overseas equity,0
+High,All four levers,2029,Import ceiling (open market),71664.0
+High,All four levers,2030,Recycling,5009.2
+High,All four levers,2030,Domestic mining,0
+High,All four levers,2030,Overseas equity,0
+High,All four levers,2030,Import ceiling (open market),78000.0
+High,All four levers,2031,Recycling,6646.5
+High,All four levers,2031,Domestic mining,0
+High,All four levers,2031,Overseas equity,17000.0
+High,All four levers,2031,Import ceiling (open market),82800.0
+High,All four levers,2032,Recycling,10365.4
+High,All four levers,2032,Domestic mining,375.0
+High,All four levers,2032,Overseas equity,24000.0
+High,All four levers,2032,Import ceiling (open market),87600.0
+High,All four levers,2033,Recycling,14896.5
+High,All four levers,2033,Domestic mining,750.0
+High,All four levers,2033,Overseas equity,31000.0
+High,All four levers,2033,Import ceiling (open market),92400.0
+High,All four levers,2034,Recycling,20438.1
+High,All four levers,2034,Domestic mining,1125.0
+High,All four levers,2034,Overseas equity,38000.0
+High,All four levers,2034,Import ceiling (open market),97200.0
+High,All four levers,2035,Recycling,28620.6
+High,All four levers,2035,Domestic mining,1500.0
+High,All four levers,2035,Overseas equity,45000.0
+High,All four levers,2035,Import ceiling (open market),102000.0
+High,All four levers,2036,Recycling,39607.7
+High,All four levers,2036,Domestic mining,2000.0
+High,All four levers,2036,Overseas equity,52000.0
+High,All four levers,2036,Import ceiling (open market),107400.0
+High,All four levers,2037,Recycling,50444.2
+High,All four levers,2037,Domestic mining,2500.0
+High,All four levers,2037,Overseas equity,59000.0
+High,All four levers,2037,Import ceiling (open market),112800.0
+High,All four levers,2038,Recycling,66151.7
+High,All four levers,2038,Domestic mining,3000.0
+High,All four levers,2038,Overseas equity,66000.0
+High,All four levers,2038,Import ceiling (open market),118200.0
+High,All four levers,2039,Recycling,83049.4
+High,All four levers,2039,Domestic mining,3500.0
+High,All four levers,2039,Overseas equity,73000.0
+High,All four levers,2039,Import ceiling (open market),123600.0
+High,All four levers,2040,Recycling,100781.2
+High,All four levers,2040,Domestic mining,4000.0
+High,All four levers,2040,Overseas equity,80000.0
+High,All four levers,2040,Import ceiling (open market),129000.0

@@ -1,0 +1,56 @@
+table Dim_Sector
+	lineageTag: d4339cc3-4393-529e-80d1-a60f5cf2300a
+
+	column Sub_Sector
+		dataType: string
+		lineageTag: 705c580a-9fe1-5417-a755-60414b259a2d
+		summarizeBy: none
+		sourceColumn: Sub_Sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 3c17f126-0154-543f-ae1e-521c5dab71bc
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sector
+		dataType: string
+		lineageTag: 7f2c2886-fa50-5992-8755-8a508969c7a5
+		summarizeBy: none
+		sourceColumn: Sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column Group
+		dataType: string
+		lineageTag: 6597a8e4-d39f-5543-8956-08229871d7a3
+		summarizeBy: none
+		sourceColumn: Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort
+		dataType: int64
+		formatString: 0
+		lineageTag: 8d4ad63a-403f-5461-b409-42030f1a52f0
+		summarizeBy: none
+		sourceColumn: Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Sector = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "Dim_Sector.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"Sub_Sector", type text}, {"Label", type text}, {"Sector", type text}, {"Group", type text}, {"Sort", Int64.Type}}, "en-US"),
+				    Result = Typed
+				in
+				    Result
+
+	annotation PBI_ResultType = Table
